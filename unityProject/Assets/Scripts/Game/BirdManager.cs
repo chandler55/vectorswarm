@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class BirdManager : MonoBehaviour
 {
-    private static float DISTANCE_BETWEEN_BIRDS = 3.0f;
+    private static float DISTANCE_BETWEEN_BIRDS = 2.0f;
 
     public GameObject birdPrefab;
 
@@ -12,7 +12,7 @@ public class BirdManager : MonoBehaviour
     
     void Start()
     {
-        for ( int i = 0; i < 100; i++ )
+        for ( int i = 0; i < 15; i++ )
         {
             GameObject bird = Instantiate( birdPrefab, Vector2.zero, Quaternion.identity ) as GameObject;
 
@@ -38,6 +38,8 @@ public class BirdManager : MonoBehaviour
                 Vector2 keepAway = KeepAwayFromOtherBirds( bird );
                 Vector2 matchVelocity = MatchVelocityWithOtherBirds( bird );
                 Vector2 tendTowardsPlayer = Seek( Camera.main.ScreenToWorldPoint( Input.mousePosition ), bird );
+                
+                //Vector2 randomJitter = new Vector2( Random.Range( -0.1f, 0.1f ), Random.Range( -0.1f, 0.1f ) );
 
                 bird.Velocity += flyTowardCentre + keepAway + tendTowardsPlayer + matchVelocity;
 

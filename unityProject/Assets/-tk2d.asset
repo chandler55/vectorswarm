@@ -70,3 +70,22 @@ MonoBehaviour:
     loadable: 0
     assetName: 
     version: 3
+  - name: VectorSwarm
+    spriteCollectionGUID: 3dcf196cb5f216b4db7865b05776051b
+    spriteCollectionDataGUID: 9b7964f56d659ab42b3ffa9af1eb99e5
+    spriteNames:
+    - squareBird
+    - Player
+    - Bullet
+    spriteTextureGUIDs:
+    - 11905d0ba78abf44296f509c4be50a7f
+    - 7e38abbd43d7fe44298e689b8998da39
+    - c4ea05df443646043965f7c726e0841c
+    spriteTextureTimeStamps:
+    - 1397851883.93551
+    - 1374805396
+    - 1374805396
+    managedSpriteCollection: 0
+    loadable: 0
+    assetName: 
+    version: 3

@@ -1,0 +1,13 @@
+C:\Users\Michael\Desktop\vectorswarm\trunk\unityProject\Temp\UnityVS_bin\Debug\Assembly-CSharp-firstpass.dll
+C:\Users\Michael\Desktop\vectorswarm\trunk\unityProject\Temp\UnityVS_bin\Debug\Assembly-CSharp-firstpass.pdb
+C:\Users\Michael\Desktop\vectorswarm\trunk\unityProject\Temp\UnityVS_bin\Debug\IFacebook.dll
+C:\Users\Michael\Desktop\vectorswarm\trunk\unityProject\Temp\UnityVS_bin\Debug\P31RestKit.dll
+C:\Users\Michael\Desktop\vectorswarm\trunk\unityProject\Temp\UnityVS_bin\Debug\Parse.Unity.dll
+C:\Users\Michael\Desktop\vectorswarm\trunk\unityProject\Temp\UnityVS_bin\Debug\UnityEditor.dll
+C:\Users\Michael\Desktop\vectorswarm\trunk\unityProject\Temp\UnityVS_bin\Debug\UnityEngine.dll
+C:\Users\Michael\Desktop\vectorswarm\trunk\unityProject\Temp\UnityVS_bin\Debug\UnityEngine.xml
+C:\Users\Michael\Desktop\vectorswarm\trunk\unityProject\Temp\UnityVS_bin\Debug\UnityEditor.xml
+C:\Users\Michael\Desktop\vectorswarm\trunk\unityProject\Temp\UnityVS_bin\Debug\Parse.Unity.xml
+C:\Users\Michael\Desktop\vectorswarm\trunk\unityProject\obj\Debug\UnityVS.unityProject.CSharp.Plugins.csprojResolveAssemblyReference.cache
+C:\Users\Michael\Desktop\vectorswarm\trunk\unityProject\obj\Debug\Assembly-CSharp-firstpass.dll
+C:\Users\Michael\Desktop\vectorswarm\trunk\unityProject\obj\Debug\Assembly-CSharp-firstpass.pdb
