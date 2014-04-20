@@ -11,9 +11,23 @@ public class PlayerShip : Entity
     private const float mCooldownTime = 0.1f;
     private float mCoolDownTimeRemaining = 0;
 
-    void Start()
+    private static PlayerShip instance;
+    public static PlayerShip Instance
     {
+        get
+        {
+            return instance;
+        }
+    }
 
+    void Awake()
+    {
+        instance = this;
+    }
+
+    void OnDestroy()
+    {
+        instance = null;
     }
 
     void Update()

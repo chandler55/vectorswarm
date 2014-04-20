@@ -77,13 +77,16 @@ MonoBehaviour:
     - squareBird
     - Player
     - Bullet
+    - Wanderer
     spriteTextureGUIDs:
     - 11905d0ba78abf44296f509c4be50a7f
     - 7e38abbd43d7fe44298e689b8998da39
     - c4ea05df443646043965f7c726e0841c
+    - 48136ff05044c8545be1745c76d7e76d
     spriteTextureTimeStamps:
-    - 1397851883.93551
-    - 1374805396
+    - 1397865933.6854
+    - 1397865933.63538
+    - 1397865933.63038
     - 1374805396
     managedSpriteCollection: 0
     loadable: 0

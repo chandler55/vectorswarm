@@ -75,6 +75,8 @@
     <Compile Include="Assets\Scripts\Game\Bird.cs" />
     <Compile Include="Assets\Scripts\Game\BirdManager.cs" />
     <Compile Include="Assets\Scripts\Game\Bullet.cs" />
+    <Compile Include="Assets\Scripts\Game\Enemy.cs" />
+    <Compile Include="Assets\Scripts\Game\EnemySpawner.cs" />
     <Compile Include="Assets\Scripts\Game\Entity.cs" />
     <Compile Include="Assets\Scripts\Game\EntityManager.cs" />
     <Compile Include="Assets\Scripts\Game\GameOverBox.cs" />
@@ -88,6 +90,7 @@
     <Compile Include="Assets\Scripts\Game\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\Game\PlayerProfile.cs" />
     <Compile Include="Assets\Scripts\Game\PlayerShip.cs" />
+    <Compile Include="Assets\Scripts\Game\SendCollisionTriggerUp.cs" />
     <Compile Include="Assets\Scripts\Game\SettingsBox.cs" />
     <Compile Include="Assets\Scripts\Game\UI\HighScoreUI.cs" />
     <Compile Include="Assets\Scripts\Game\UI\RetryLevel.cs" />
