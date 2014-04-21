@@ -33,8 +33,8 @@ public class EnemySpawner : MonoBehaviour
 
         while ( true )
         {
-            pos = new Vector2( Random.RandomRange( GameSettings.WORLD_BOUNDARY.x, GameSettings.WORLD_BOUNDARY.width ),
-                                Random.RandomRange( GameSettings.WORLD_BOUNDARY.y, GameSettings.WORLD_BOUNDARY.height ) );
+            pos = new Vector2( Random.Range( GameSettings.WORLD_BOUNDARY.x, GameSettings.WORLD_BOUNDARY.width ),
+                                Random.Range( GameSettings.WORLD_BOUNDARY.y, GameSettings.WORLD_BOUNDARY.height ) );
 
             float distance = ( (Vector2)( pos - PlayerShip.Instance.Position ) ).sqrMagnitude;
 

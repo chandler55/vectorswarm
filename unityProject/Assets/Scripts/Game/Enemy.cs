@@ -107,6 +107,7 @@ public class Enemy : Entity
         switch ( collider.tag )
         {
             case "Bullet":
+                ParticleSystemManager.Instance.CreateEnemyExplosion( Position );
                 Destroy( gameObject );
                 break;
             case "Enemy":

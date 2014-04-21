@@ -12,8 +12,10 @@ public class Bullet : Entity
 
     void Update()
     {
+        // delete bullets that go off-screen
         if ( !GameSettings.WORLD_BOUNDARY.Contains( Position ) )
         {
+            ParticleSystemManager.Instance.CreateBulletExplosion( Position );
             Destroy( gameObject );
             return;
         }

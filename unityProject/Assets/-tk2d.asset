@@ -35,41 +35,6 @@ MonoBehaviour:
     managed: 0
     loadable: 0
   spriteCollectionIndex:
-  - name: wordGrid
-    spriteCollectionGUID: 521178f8da58f474da40e7c3630389f9
-    spriteCollectionDataGUID: ad6c401d421b6664d998476616526e14
-    spriteNames:
-    - white
-    - patternfill 1
-    - whitecircle
-    - woodBG
-    spriteTextureGUIDs:
-    - c1acb115f7f6ca547a5dc329cc874794
-    - c5c6ec822199ee94c95b13b9cc390341
-    - ae3c0c24b20b8e1419459206c5b5a3ba
-    - 9317a99182145604189977df4be856d1
-    spriteTextureTimeStamps:
-    - 1397233797.20268
-    - 1397233797.19767
-    - 1397233797.21368
-    - 1397694209.39909
-    managedSpriteCollection: 0
-    loadable: 0
-    assetName: 
-    version: 3
-  - name: wordGridBackground
-    spriteCollectionGUID: 53aefea99833cf041bc13d41100ec097
-    spriteCollectionDataGUID: 9eceecf79a46b2743bfe9421d8bccfe0
-    spriteNames:
-    - background
-    spriteTextureGUIDs:
-    - c754c7c0c81db524b8a9233f3d70708a
-    spriteTextureTimeStamps:
-    - 1397698775.12258
-    managedSpriteCollection: 0
-    loadable: 0
-    assetName: 
-    version: 3
   - name: VectorSwarm
     spriteCollectionGUID: 3dcf196cb5f216b4db7865b05776051b
     spriteCollectionDataGUID: 9b7964f56d659ab42b3ffa9af1eb99e5
@@ -78,16 +43,19 @@ MonoBehaviour:
     - Player
     - Bullet
     - Wanderer
+    - Black Hole
     spriteTextureGUIDs:
     - 11905d0ba78abf44296f509c4be50a7f
     - 7e38abbd43d7fe44298e689b8998da39
     - c4ea05df443646043965f7c726e0841c
     - 48136ff05044c8545be1745c76d7e76d
+    - 26ca03792132e0c43b4431d5756d5535
     spriteTextureTimeStamps:
     - 1397865933.6854
     - 1397865933.63538
     - 1397865933.63038
     - 1374805396
+    - 1374859434
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
