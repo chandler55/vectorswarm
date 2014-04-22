@@ -45,6 +45,8 @@ public class Bird : MonoBehaviour
         set { mMaxSteerForce = value; }
     }
 
+    private bool mDestroy = false;
+
     void Start()
     {
 
@@ -52,6 +54,15 @@ public class Bird : MonoBehaviour
 
     void Update()
     {
+        if ( mDestroy )
+        {
+            ParticleSystemManager.Instance.CreateEnemyExplosion( Position );
+            BirdManager.Instance.DestroyBird( this );
+        }
+    }
 
+    public void Destroy()
+    {
+        mDestroy = true;
     }
 }

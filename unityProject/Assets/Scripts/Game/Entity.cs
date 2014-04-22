@@ -35,10 +35,8 @@ public class Entity : MonoBehaviour
         set { mIsExpired = value; }
     }
 
-
     void Start()
     {
-
     }
 
     void Update()

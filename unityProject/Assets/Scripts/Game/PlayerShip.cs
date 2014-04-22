@@ -63,7 +63,7 @@ public class PlayerShip : Entity
         if ( mCoolDownTimeRemaining <= 0 )
         {
             mCoolDownTimeRemaining = mCooldownTime;
-            ShootBullet();
+            //ShootBullet();
         }
 
         if ( mCoolDownTimeRemaining > 0 )
@@ -80,7 +80,6 @@ public class PlayerShip : Entity
         if ( Velocity.sqrMagnitude > 0.1f )
         {
             // set up some variables
-            Matrix4x4
             float t = Time.realtimeSinceStartup;
             // The primary velocity of the particles is 3 pixels/frame in the direction opposite to which the ship is travelling.
             Vector2 baseVel = Velocity * -3.0f;
@@ -150,6 +149,6 @@ public class PlayerShip : Entity
 
     void CollisionTriggered( Collider2D collider )
     {
-        ParticleSystemManager.Instance.CreatePlayerExplision( Position );
+        //ParticleSystemManager.Instance.CreatePlayerExplision( Position );
     }
 }

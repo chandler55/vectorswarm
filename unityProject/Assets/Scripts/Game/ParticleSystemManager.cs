@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class ParticleSystemManager : MonoBehaviour
 {
     [HideInInspector]
-    public const int MAX_PARTICLES = 10000;
+    public const int MAX_PARTICLES = 1000;
 
     private static ParticleSystemManager instance;
     public static ParticleSystemManager Instance
@@ -286,7 +286,7 @@ public class ParticleSystemManager : MonoBehaviour
     {
         Color yellow = new Color( 0.8f, 0.8f, 0.4f );
 
-        for ( int i = 0; i < 1200; i++ )
+        for ( int i = 0; i < 500; i++ )
         {
             float speed = 1 * ( 1f - 1 / Random.Range( 1.0f, 10f ) );
             Color color = Color.Lerp( Color.white, yellow, Random.Range( 0, 1.0f ) );
