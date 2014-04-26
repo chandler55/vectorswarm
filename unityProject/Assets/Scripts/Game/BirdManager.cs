@@ -69,7 +69,7 @@ public class BirdManager : MonoBehaviour
             //Vector2 flyTowardCentre = FlyTowardCentreOfMass( bird );
             //Vector2 keepAway = KeepAwayFromOtherBirds( bird ) * 5.0f;
             //Vector2 matchVelocity = MatchVelocityWithOtherBirds( bird );
-            Vector2 tendTowardsPlayer = Seek( PlayerShip.Instance.Position, bird );
+            Vector2 tendTowardsPlayer = Seek( PlayerSnake.Instance.Position, bird );
 
             //Vector2 randomJitter = new Vector2( Random.Range( -0.1f, 0.1f ), Random.Range( -0.1f, 0.1f ) );
 
@@ -90,7 +90,7 @@ public class BirdManager : MonoBehaviour
             pos = new Vector2( Random.Range( GameSettings.WORLD_BOUNDARY.x, GameSettings.WORLD_BOUNDARY.width ),
                                 Random.Range( GameSettings.WORLD_BOUNDARY.y, GameSettings.WORLD_BOUNDARY.height ) );
 
-            float distance = ( (Vector2)( pos - PlayerShip.Instance.Position ) ).sqrMagnitude;
+            float distance = ( (Vector2)( pos - PlayerSnake.Instance.Position ) ).sqrMagnitude;
 
             if ( distance > MIN_DISTANCE_FROM_PLAYER_FOR_SPAWNING )
             {

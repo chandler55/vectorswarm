@@ -18,13 +18,16 @@ public class GatesDynamite : Entity
     void CollisionTriggered( Collider2D collider )
     {
         // destroy any birds
-        List<Bird> birdsList = BirdManager.Instance.GetBirdsList();
-        foreach ( Bird b in birdsList )
+        if ( BirdManager.Instance )
         {
-            Vector2 vectorDiff = b.Position - Position;
-            if ( vectorDiff.sqrMagnitude < 100 )
+            List<Bird> birdsList = BirdManager.Instance.GetBirdsList();
+            foreach ( Bird b in birdsList )
             {
-                b.Destroy();
+                Vector2 vectorDiff = b.Position - Position;
+                if ( vectorDiff.sqrMagnitude < 100 )
+                {
+                    b.Destroy();
+                }
             }
         }
 

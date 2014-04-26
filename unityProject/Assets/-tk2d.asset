@@ -44,18 +44,24 @@ MonoBehaviour:
     - Bullet
     - Wanderer
     - Black Hole
+    - playerball
+    - starfield
     spriteTextureGUIDs:
     - 11905d0ba78abf44296f509c4be50a7f
     - 7e38abbd43d7fe44298e689b8998da39
     - c4ea05df443646043965f7c726e0841c
     - 48136ff05044c8545be1745c76d7e76d
     - 26ca03792132e0c43b4431d5756d5535
+    - 7df6c2a350a122141b5f917841666692
+    - aa88da020af235e4293e8aa2cbfd30e9
     spriteTextureTimeStamps:
     - 1397865933.6854
     - 1397865933.63538
     - 1397865933.63038
     - 1374805396
     - 1374859434
+    - 1398277433.74552
+    - 1398480461.04061
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
