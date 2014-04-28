@@ -35,7 +35,7 @@ public class BirdManager : MonoBehaviour
 
     void Start()
     {
-        for ( int i = 0; i < 100; i++ )
+        for ( int i = 0; i < 10; i++ )
         {
             GameObject bird = Instantiate( birdPrefab, Vector2.zero, Quaternion.identity ) as GameObject;
 

@@ -8,5 +8,7 @@ public class GameSettings : MonoBehaviour
     public const int    MAX_GRID_SIZE_Y = 7;
     public const float  TILE_WIDTH_TO_HEIGHT_RATIO_TYPING_AREA = 0.8f;
 
-    public static Rect WORLD_BOUNDARY = new Rect( -50, -50, 100, 100 );
+    public const float LEVEL_SEGMENT_SIZE_Y = 200.0f;
+
+    public static Rect WORLD_BOUNDARY = new Rect( -16, -100000, 32, 200000 );
 }

@@ -51,4 +51,8 @@ public class Entity : MonoBehaviour
         transform.rotation = Quaternion.AngleAxis( angle, Vector3.forward );
     }
 
+    public virtual void CollisionTriggered( Collider2D collider )
+    {
+
+    }
 }

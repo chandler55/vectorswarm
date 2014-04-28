@@ -13,7 +13,9 @@ public class PlayerSnake : Entity
     }
 
     private float mEasingAmount = 0.15f;
-    private float mPlayerSpeedY = 0.2f;
+    private float mPlayerNormalSpeed = 0.2f;
+    private float mCurrentPlayerSpeedY = 0.2f;
+
     private Transform mTransform = null;
 
     void Awake()
@@ -33,6 +35,15 @@ public class PlayerSnake : Entity
 
     void Update()
     {
+        if ( Input.GetKey( KeyCode.X ) )
+        {
+            mCurrentPlayerSpeedY = 1.4f;
+        }
+        else
+        {
+            mCurrentPlayerSpeedY = mPlayerNormalSpeed;
+        }
+
         //Player Movement
         {
             /*
@@ -42,8 +53,8 @@ public class PlayerSnake : Entity
 
             Vector2 tiltPos = new Vector2( Boundaries.Instance.GetPercentageToPosition( percentage ), 0 );
             Vector2 target = tiltPos - Position;
-            */
-
+            /**/
+            
             // move towards mouse
             Vector2 mousePos = Camera.main.ScreenToWorldPoint( Input.mousePosition );
 
@@ -51,11 +62,12 @@ public class PlayerSnake : Entity
             Boundaries.Instance.ClampHorizontal( ref mousePos );
             Vector2 target = mousePos - Position;
 
+            /**/
 
             Velocity = target * mEasingAmount;
 
             // lock y velocity
-            Velocity = new Vector2( Velocity.x, mPlayerSpeedY );
+            Velocity = new Vector2( Velocity.x, mCurrentPlayerSpeedY );
 
             Position += Velocity;
         }

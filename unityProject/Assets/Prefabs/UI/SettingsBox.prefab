@@ -330,7 +330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fac570381f34f647b768dc5a5aa1364, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collection: {fileID: 11400000, guid: ad6c401d421b6664d998476616526e14, type: 2}
+  collection: {fileID: 0}
   _color: {r: .101960786, g: .733333349, b: .607843161, a: 1}
   _scale: {x: 11.1245222, y: 3.45977926, z: 1}
   _spriteId: 0
