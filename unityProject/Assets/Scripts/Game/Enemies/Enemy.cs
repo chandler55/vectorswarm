@@ -36,7 +36,7 @@ public class Enemy : Entity
             ApplyBehaviours();
         }
 
-        Position += Velocity;
+        Position += Velocity * Time.deltaTime;
         Velocity *= 0.8f;
 
         UpdateRotation();

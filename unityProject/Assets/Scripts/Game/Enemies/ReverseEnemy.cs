@@ -12,11 +12,11 @@ public class ReverseEnemy : Entity
 
     void Update()
     {
-        Vector2 target = PlayerSnake.Instance.Position - Position;
+        Vector2 target = -PlayerSnake.Instance.Position - Position;
 
-        Velocity = new Vector2( target.x * mEasingAmount, 0 ) / 8.0f;
+        Velocity = new Vector2( target.x * mEasingAmount, 0 );
 
-        Position += Velocity;
+        Position += Velocity * Time.deltaTime;
     }
 
     public override void CollisionTriggered( Collider2D collider )

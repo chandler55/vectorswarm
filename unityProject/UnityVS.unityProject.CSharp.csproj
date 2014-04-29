@@ -83,8 +83,11 @@
     <Compile Include="Assets\Scripts\Game\CameraFollowPlayer.cs" />
     <Compile Include="Assets\Scripts\Game\Enemies\Enemy.cs" />
     <Compile Include="Assets\Scripts\Game\Enemies\EnemySpawner.cs" />
+    <Compile Include="Assets\Scripts\Game\Enemies\FollowEnemy.cs" />
     <Compile Include="Assets\Scripts\Game\Enemies\ReverseEnemy.cs" />
     <Compile Include="Assets\Scripts\Game\Enemies\SimpleEnemy.cs" />
+    <Compile Include="Assets\Scripts\Game\Enemies\SineEnemy.cs" />
+    <Compile Include="Assets\Scripts\Game\Enemies\StationaryEnemy.cs" />
     <Compile Include="Assets\Scripts\Game\Entity.cs" />
     <Compile Include="Assets\Scripts\Game\EntityManager.cs" />
     <Compile Include="Assets\Scripts\Game\GameOverBox.cs" />

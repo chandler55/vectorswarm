@@ -12,9 +12,9 @@ public class PlayerSnake : Entity
         }
     }
 
-    private float mEasingAmount = 0.15f;
-    private float mPlayerNormalSpeed = 0.2f;
-    private float mCurrentPlayerSpeedY = 0.2f;
+    private float mEasingAmount = 9.0f;
+    private float mPlayerNormalSpeed = 15.0f;
+    private float mCurrentPlayerSpeedY = 15.0f;
 
     private Transform mTransform = null;
 
@@ -35,9 +35,9 @@ public class PlayerSnake : Entity
 
     void Update()
     {
-        if ( Input.GetKey( KeyCode.X ) )
+        if ( Input.GetMouseButton(0) )
         {
-            mCurrentPlayerSpeedY = 1.4f;
+            mCurrentPlayerSpeedY = 60.0f;
         }
         else
         {
@@ -69,7 +69,7 @@ public class PlayerSnake : Entity
             // lock y velocity
             Velocity = new Vector2( Velocity.x, mCurrentPlayerSpeedY );
 
-            Position += Velocity;
+            Position += Velocity * Time.deltaTime;
         }
     }
 

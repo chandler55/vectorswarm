@@ -31,7 +31,7 @@ GameObject:
   - 4: {fileID: 400002}
   - 114: {fileID: 11400004}
   m_Layer: 0
-  m_Name: SimpleEnemy2
+  m_Name: SineEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -156,10 +156,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 100002}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62f1ad9d7f6f4d44f92568606118fa09, type: 3}
+  m_Script: {fileID: 11500000, guid: a89a346f701f7ea4895244922a3c65d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 1
+  waveHeight: 24
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
