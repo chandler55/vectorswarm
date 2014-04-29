@@ -148,7 +148,7 @@ public class PlayerShip : Entity
         }
     }
 
-    void CollisionTriggered( Collider2D collider )
+    public override void CollisionTriggered( Collider2D collider )
     {
         //ParticleSystemManager.Instance.CreatePlayerExplision( Position );
     }

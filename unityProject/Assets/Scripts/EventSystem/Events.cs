@@ -15,6 +15,8 @@ public class Events
         public static string ObjectiveShown = "ObjectiveShown";
 
         public static string IncrementScore = "IncrementScore";
+
+        public static string SetFuelGauge = "SetFuelGauge";
     }
 
     public static class MenuEvents

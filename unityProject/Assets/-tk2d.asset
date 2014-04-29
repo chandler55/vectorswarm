@@ -46,6 +46,7 @@ MonoBehaviour:
     - Black Hole
     - playerball
     - starfield
+    - white
     spriteTextureGUIDs:
     - 11905d0ba78abf44296f509c4be50a7f
     - 7e38abbd43d7fe44298e689b8998da39
@@ -54,14 +55,16 @@ MonoBehaviour:
     - 26ca03792132e0c43b4431d5756d5535
     - 7df6c2a350a122141b5f917841666692
     - aa88da020af235e4293e8aa2cbfd30e9
+    - fbd7571bdb6c2a94fbe8dfd569f5c6fd
     spriteTextureTimeStamps:
-    - 1398378174.1288
-    - 1398378173.89079
-    - 1398378173.83478
-    - 1398378174.1158
-    - 1398378173.82178
-    - 1398690545.14681
-    - 1398690545.15824
+    - 1398718501.37323
+    - 1398718501.27621
+    - 1398718501.2542
+    - 1398718501.36223
+    - 1398718501.2492
+    - 1398718501.36723
+    - 1398718501.37823
+    - 1398718501.08516
     managedSpriteCollection: 0
     loadable: 0
     assetName: 

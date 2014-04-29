@@ -15,7 +15,7 @@ public class GatesDynamite : Entity
 
     }
 
-    void CollisionTriggered( Collider2D collider )
+    public override void CollisionTriggered( Collider2D collider )
     {
         // destroy any birds
         if ( BirdManager.Instance )

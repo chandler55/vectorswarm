@@ -102,7 +102,7 @@ public class Enemy : Entity
         }
     }
 
-    void CollisionTriggered( Collider2D collider )
+    public override void CollisionTriggered( Collider2D collider )
     {
         switch ( collider.tag )
         {
