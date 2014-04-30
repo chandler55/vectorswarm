@@ -4,16 +4,16 @@ using System.Collections;
 public class HighScore : MonoBehaviour
 {
 
-    private int mScore = 0;
+    private long mScore = 0;
 
     void Start()
     {
-        Messenger.AddListener<int>( Events.GameEvents.IncrementScore, OnScoreUpdate );
+        Messenger.AddListener<long>( Events.GameEvents.IncrementScore, OnScoreUpdate );
     }
 
     void OnDestroy()
     {
-        Messenger.RemoveListener<int>( Events.GameEvents.IncrementScore, OnScoreUpdate );
+        Messenger.RemoveListener<long>( Events.GameEvents.IncrementScore, OnScoreUpdate );
     }
 
     void Update()
@@ -21,10 +21,10 @@ public class HighScore : MonoBehaviour
 
     }
 
-    void OnScoreUpdate( int score )
+    void OnScoreUpdate( long score )
     {
         mScore += score;
 
-        Messenger.Broadcast<int>( Events.UIEvents.HighScoreUpdated, mScore );
+        Messenger.Broadcast<long>( Events.UIEvents.HighScoreUpdated, mScore );
     }
 }

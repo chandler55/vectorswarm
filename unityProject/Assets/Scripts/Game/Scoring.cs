@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Scoring : MonoBehaviour
 {
-    private int mHighScore = 0;
+    private long mHighScore = 0;
     private int mMultiplier = 1;
 
     void Start()
@@ -11,14 +11,14 @@ public class Scoring : MonoBehaviour
         mMultiplier = 1;
 
         Messenger.AddListener( Events.GameEvents.IncrementMultipler, OnIncrementMultiplier );
-        Messenger.AddListener<int>( Events.GameEvents.IncrementScore, OnIncrementScore );
+        Messenger.AddListener<long>( Events.GameEvents.IncrementScore, OnIncrementScore );
 
     }
 
     void OnDestroy()
     {
         Messenger.RemoveListener( Events.GameEvents.IncrementMultipler, OnIncrementMultiplier );
-        Messenger.RemoveListener<int>( Events.GameEvents.IncrementScore, OnIncrementScore );
+        Messenger.RemoveListener<long>( Events.GameEvents.IncrementScore, OnIncrementScore );
     }
 
     void Update()
@@ -26,10 +26,10 @@ public class Scoring : MonoBehaviour
 
     }
 
-    void OnIncrementScore( int score )
+    void OnIncrementScore( long score )
     {
         mHighScore += mMultiplier * score;
-        Messenger.Broadcast<int>( Events.UIEvents.HighScoreUpdated, mHighScore );
+        Messenger.Broadcast<long>( Events.UIEvents.HighScoreUpdated, mHighScore );
     }
 
     void OnIncrementMultiplier()

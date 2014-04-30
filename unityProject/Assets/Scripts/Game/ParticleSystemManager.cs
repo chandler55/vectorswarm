@@ -72,8 +72,8 @@ public class ParticleSystemManager : MonoBehaviour
                 color.a = alpha;
 
                 //particle.Scale.x = particle.State.LengthMultiplier * Math.Min( Math.Min( 1f, 0.2f * speed + 0.1f ), alpha );
-                //size = Mathf.Min( Mathf.Min( 1, 0.2f * speed + 0.1f ), alpha ) * 10.0f;
-                size = Mathf.Min( 1, 0.2f * speed + 0.0f ) * 10.0f;
+                size = Mathf.Min( Mathf.Min( 1, 0.2f * 1 + 0.1f ), alpha ) * 10.0f;
+                // size = Mathf.Min( 1, 0.2f * speed + 0.0f ) * 10.0f;
 
                 percentLife -= ( 1f / duration ) * Time.deltaTime;
 
@@ -242,6 +242,8 @@ public class ParticleSystemManager : MonoBehaviour
         particle.alive = true;
         particle.angle = angle;
         particle.percentLife = 1.0f;
+        particle.duration = duration;
+
     }
 
     public static void UpdateParticle( int index, Vector3 pos, Color color, float angle, float size )
@@ -255,7 +257,7 @@ public class ParticleSystemManager : MonoBehaviour
 
     public void CreateEnemyExplosion( Vector3 pos )
     {
-        float hue1 = Random.Range( 0, 6.0f );
+        float hue1 = ( Mathf.Abs( Mathf.Sin( Time.realtimeSinceStartup ) ) * 6.0f + 3.0f ) % 6f;
         float hue2 = ( hue1 + Random.Range( 0, 2.0f ) ) % 6f;
         Color color1 = ColorUtil.HSVToColor( hue1, 0.5f, 1 );
         Color color2 = ColorUtil.HSVToColor( hue2, 0.5f, 1 );

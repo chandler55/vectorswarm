@@ -47,7 +47,7 @@ public class SimpleEnemy : Entity
 
     public override void CollisionTriggered( Collider2D collider )
     {
-        Messenger.Broadcast<int>( Events.GameEvents.IncrementScore, 10 );
+        Messenger.Broadcast<long>( Events.GameEvents.IncrementScore, 10 );
         ParticleSystemManager.Instance.CreateEnemyExplosion( Position );
         Destroy( gameObject );
     }

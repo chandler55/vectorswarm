@@ -4,18 +4,18 @@ using System.Collections;
 public class HighScoreUI : MonoBehaviour
 {
     private tk2dTextMesh mTextMesh = null;
-    private int mScore = 0;
+    private long mScore = 0;
 
     void Start()
     {
         mTextMesh = GetComponent<tk2dTextMesh>();
 
-        Messenger.AddListener<int>( Events.UIEvents.HighScoreUpdated, OnHighScoreUpdated );
+        Messenger.AddListener<long>( Events.UIEvents.HighScoreUpdated, OnHighScoreUpdated );
     }
 
     void OnDestroy()
     {
-        Messenger.RemoveListener<int>( Events.UIEvents.HighScoreUpdated, OnHighScoreUpdated );
+        Messenger.RemoveListener<long>( Events.UIEvents.HighScoreUpdated, OnHighScoreUpdated );
     }
 
     void Update()
@@ -23,7 +23,7 @@ public class HighScoreUI : MonoBehaviour
 
     }
 
-    void OnHighScoreUpdated( int score )
+    void OnHighScoreUpdated( long score )
     {
         mScore = score;
 
