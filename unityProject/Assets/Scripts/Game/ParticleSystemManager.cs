@@ -73,7 +73,7 @@ public class ParticleSystemManager : MonoBehaviour
 
                 //particle.Scale.x = particle.State.LengthMultiplier * Math.Min( Math.Min( 1f, 0.2f * speed + 0.1f ), alpha );
                 //size = Mathf.Min( Mathf.Min( 1, 0.2f * speed + 0.1f ), alpha ) * 10.0f;
-                size = Mathf.Min( Mathf.Min( 1, 0.2f * speed + 0.1f ), alpha ) * 10.0f;
+                size = Mathf.Min( 1, 0.2f * speed + 0.0f ) * 10.0f;
 
                 percentLife -= ( 1f / duration ) * Time.deltaTime;
 
@@ -191,11 +191,6 @@ public class ParticleSystemManager : MonoBehaviour
         if ( mParticleSystemInitialized )
         {
             mParticleSystem.GetParticles( mParticles );
-
-            if ( Input.GetKey( KeyCode.C ) )
-            {
-
-            }
 
             // remove destroyed particles
             int removalCount = 0;

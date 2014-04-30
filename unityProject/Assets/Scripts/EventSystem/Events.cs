@@ -15,8 +15,9 @@ public class Events
         public static string ObjectiveShown = "ObjectiveShown";
 
         public static string IncrementScore = "IncrementScore";
+        public static string IncrementMultipler = "IncrementMultiplier";
 
-        public static string SetFuelGauge = "SetFuelGauge";
+        public static string PlayerSpeedUpdated = "PlayerSpeedUpdated";
     }
 
     public static class MenuEvents
@@ -29,6 +30,8 @@ public class Events
     {
         public static string MovesUpdated = "MovesUpdated";
         public static string HighScoreUpdated = "HighScoreUpdated";
+        public static string MultiplierUpdated = "MultiplierUpdated";
+        public static string FuelGaugeUpdated = "FuelGaugeUpdated";
     }
 
 }

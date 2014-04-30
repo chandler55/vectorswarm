@@ -30,12 +30,14 @@ public class EntityManager : MonoBehaviour
 
     void Update()
     {
+        /*
         isUpdating = true;
 
         foreach( var entity in entities )
         {
 
         }
+        */
 
         isUpdating = false;
 

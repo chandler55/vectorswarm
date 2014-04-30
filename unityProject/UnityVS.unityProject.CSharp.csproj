@@ -75,6 +75,8 @@
     <Compile Include="Assets\Scripts\EventSystem\Messenger.cs" />
     <Compile Include="Assets\Scripts\FadeAndLoad.cs" />
     <Compile Include="Assets\Scripts\FlipAnim.cs" />
+    <Compile Include="Assets\Scripts\Game\Animations\RotateAnimation.cs" />
+    <Compile Include="Assets\Scripts\Game\Animations\ScaleAnimation.cs" />
     <Compile Include="Assets\Scripts\Game\Bird.cs" />
     <Compile Include="Assets\Scripts\Game\BirdManager.cs" />
     <Compile Include="Assets\Scripts\Game\BlackHole.cs" />
@@ -99,6 +101,7 @@
     <Compile Include="Assets\Scripts\Game\LevelSegment.cs" />
     <Compile Include="Assets\Scripts\Game\LoadGame.cs" />
     <Compile Include="Assets\Scripts\Game\LoadScene.cs" />
+    <Compile Include="Assets\Scripts\Game\MultiplierItem.cs" />
     <Compile Include="Assets\Scripts\Game\ObjectiveBox.cs" />
     <Compile Include="Assets\Scripts\Game\ParticleSystemManager.cs" />
     <Compile Include="Assets\Scripts\Game\PauseButton.cs" />
@@ -107,11 +110,13 @@
     <Compile Include="Assets\Scripts\Game\PlayerShip.cs" />
     <Compile Include="Assets\Scripts\Game\PlayerSnake.cs" />
     <Compile Include="Assets\Scripts\Game\PlayerSnake2.cs" />
+    <Compile Include="Assets\Scripts\Game\Scoring.cs" />
     <Compile Include="Assets\Scripts\Game\SendCollisionTriggerUp.cs" />
     <Compile Include="Assets\Scripts\Game\SettingsBox.cs" />
     <Compile Include="Assets\Scripts\Game\Starfield.cs" />
     <Compile Include="Assets\Scripts\Game\UI\HighScoreUI.cs" />
     <Compile Include="Assets\Scripts\Game\UI\LevelUI.cs" />
+    <Compile Include="Assets\Scripts\Game\UI\MultiplierUI.cs" />
     <Compile Include="Assets\Scripts\Game\UI\RetryLevel.cs" />
     <Compile Include="Assets\Scripts\Game\UI\Scalable.cs" />
     <Compile Include="Assets\Scripts\Game\UI\ScaleOnClick.cs" />

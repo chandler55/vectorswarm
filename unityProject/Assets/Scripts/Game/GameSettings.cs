@@ -4,9 +4,7 @@ using System.Collections;
 public class GameSettings : MonoBehaviour
 {
     // game only supports square grids atm
-    public const int    MAX_GRID_SIZE_X = 7;
-    public const int    MAX_GRID_SIZE_Y = 7;
-    public const float  TILE_WIDTH_TO_HEIGHT_RATIO_TYPING_AREA = 0.8f;
+    public const float INVINCIBILITY_FLASH_SPEED = 15.0f;
 
     public const float LEVEL_SEGMENT_SIZE_Y = 200.0f;
 

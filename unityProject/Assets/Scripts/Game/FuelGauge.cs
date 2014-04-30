@@ -4,7 +4,6 @@ using System.Collections;
 public class FuelGauge : MonoBehaviour
 {
     private tk2dClippedSprite mGaugeSprite = null;
-    private float mOriginalYScale = 0.0f;
     private Transform mGaugeTransform = null;
 
     void Start()
@@ -13,16 +12,15 @@ public class FuelGauge : MonoBehaviour
         if ( mGaugeSprite )
         {
             mGaugeTransform = mGaugeSprite.transform;
-            mOriginalYScale = mGaugeTransform.localScale.y;
         }
 
-        Messenger.AddListener<float>( Events.GameEvents.SetFuelGauge, OnSetFuelGauge );
+        Messenger.AddListener<float>( Events.UIEvents.FuelGaugeUpdated, OnSetFuelGauge );
 
     }
 
     void OnDestroy()
     {
-        Messenger.RemoveListener<float>( Events.GameEvents.SetFuelGauge, OnSetFuelGauge );
+        Messenger.RemoveListener<float>( Events.UIEvents.FuelGaugeUpdated, OnSetFuelGauge );
     }
 
     void Update()

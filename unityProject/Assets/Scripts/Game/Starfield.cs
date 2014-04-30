@@ -5,11 +5,17 @@ public class Starfield : MonoBehaviour
 {
     public GameObject 	tile0;
     public GameObject 	tile1;
+
     public float		tileScrollingSpeed = 0.0f;
 
     void Start()
     {
+        Messenger.AddListener<float>( Events.GameEvents.PlayerSpeedUpdated, OnPlayerSpeedUpdated );
+    }
 
+    void OnDestroy()
+    {
+        Messenger.RemoveListener<float>( Events.GameEvents.PlayerSpeedUpdated, OnPlayerSpeedUpdated );
     }
 
     void Update()
@@ -32,5 +38,9 @@ public class Starfield : MonoBehaviour
             tempPosition.y = 0;
             tile0.transform.localPosition = tempPosition;
         }
+    }
+
+    void OnPlayerSpeedUpdated( float playerSpeed )
+    {
     }
 }

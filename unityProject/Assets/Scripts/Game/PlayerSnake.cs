@@ -3,6 +3,8 @@ using System.Collections;
 
 public class PlayerSnake : Entity
 {
+    public tk2dSprite playerSprite = null;
+
     private static PlayerSnake instance;
     public static PlayerSnake Instance
     {
@@ -12,9 +14,11 @@ public class PlayerSnake : Entity
         }
     }
 
+    // speed
     private float mEasingAmount = 9.0f;
     private float mPlayerNormalSpeed = 15.0f;
     private float mCurrentPlayerSpeedY = 15.0f;
+    private float mPlayerAfterburnerSpeed = 60.0f;
 
     private Transform mTransform = null;
 
@@ -22,11 +26,11 @@ public class PlayerSnake : Entity
     private float   mFuelCapacity = 1.0f; // in seconds
     private float   mFuelRemaining = 0.0f;
     private bool    mAfterburnerActivated = false;
+    private float   mFuelChargeRate = 0.1f;
 
     //invincibility
-    private float   mFlashInvincibilityDuration = 2.0f;
-    private float   mInvincibilityRemaining = 2.0f;
-    private bool    mIsInvincible = false;
+    private float   mFlashInvincibilityDuration = 1.5f;
+    private float   mInvincibilityRemaining = 0.0f;
 
     void Awake()
     {
@@ -47,57 +51,89 @@ public class PlayerSnake : Entity
     void Update()
     {
         // invincibility logic
-        {
-            if ( mInvincibilityRemaining > 0 )
-            {
-                mInvincibilityRemaining -= Time.deltaTime;
-                if ( mInvincibilityRemaining <= 0 )
-                {
-                    mIsInvincible = false;
-                    mInvincibilityRemaining = 0.0f;
-                }
-            }
-        }
+        InvincibilityLogic();
 
         // Afterburner Logic
+        AfterburnerLogic();
+
+        // movement logic
+        MovementLogic();
+
+        // lock y velocity to mCurrentPlayerSpeedY variable
+        Velocity = new Vector2( Velocity.x, mCurrentPlayerSpeedY );
+        Position += Velocity * Time.deltaTime;
+    }
+
+    private void InvincibilityLogic()
+    {
+        if ( mInvincibilityRemaining > 0 )
         {
-            if ( Input.GetMouseButton( 0 ) && mFuelRemaining == mFuelCapacity )
+
+            mInvincibilityRemaining -= Time.deltaTime;
+            if ( mInvincibilityRemaining <= 0 )
             {
-                mAfterburnerActivated = true;
-                mCurrentPlayerSpeedY = 60.0f;
-            }
-
-            if ( mAfterburnerActivated )
-            {
-                mFuelRemaining -= Time.deltaTime;
-                if ( mFuelRemaining < 0 )
-                {
-                    mFuelRemaining = 0;
-                    mAfterburnerActivated = false;
-                    mCurrentPlayerSpeedY = mPlayerNormalSpeed;
-
-                    // give player temporary invincibility
-                    FlashInvincibility();
-                }
-
-                Messenger.Broadcast<float>( Events.GameEvents.SetFuelGauge, mFuelRemaining / mFuelCapacity );
+                mInvincibilityRemaining = 0.0f;
             }
             else
             {
-                if ( mFuelRemaining <= mFuelCapacity )
+                if ( playerSprite )
                 {
-                    mFuelRemaining += Time.deltaTime * 0.5f;
-
-                    if ( mFuelRemaining > mFuelCapacity )
-                    {
-                        mFuelRemaining = mFuelCapacity;
-                    }
-
-                    Messenger.Broadcast<float>( Events.GameEvents.SetFuelGauge, mFuelRemaining / mFuelCapacity );
+                    Color newColor = playerSprite.color;
+                    newColor.a = Mathf.Abs( Mathf.Cos( mInvincibilityRemaining * GameSettings.INVINCIBILITY_FLASH_SPEED ) );
+                    playerSprite.color = newColor;
                 }
             }
         }
+    }
 
+    private void AfterburnerLogic()
+    {
+        if ( Input.GetMouseButton( 0 ) && mFuelRemaining == mFuelCapacity )
+        {
+            mAfterburnerActivated = true;
+            SetPlayerSpeed( mPlayerAfterburnerSpeed );
+        }
+
+        if ( mAfterburnerActivated )
+        {
+            mFuelRemaining -= Time.deltaTime;
+            if ( mFuelRemaining < 0 )
+            {
+                mFuelRemaining = 0;
+                mAfterburnerActivated = false;
+                SetPlayerSpeed( mPlayerNormalSpeed );
+
+                // give player temporary invincibility
+                FlashInvincibility();
+
+            }
+
+            Messenger.Broadcast<float>( Events.UIEvents.FuelGaugeUpdated, mFuelRemaining / mFuelCapacity );
+        }
+        else
+        {
+            if ( mFuelRemaining <= mFuelCapacity )
+            {
+                mFuelRemaining += Time.deltaTime * mFuelChargeRate;
+
+                if ( mFuelRemaining > mFuelCapacity )
+                {
+                    mFuelRemaining = mFuelCapacity;
+                }
+
+                Messenger.Broadcast<float>( Events.UIEvents.FuelGaugeUpdated, mFuelRemaining / mFuelCapacity );
+            }
+        }
+    }
+    
+    private void SetPlayerSpeed(float speed)
+    {
+        mCurrentPlayerSpeedY = speed;
+        Messenger.Broadcast<float>( Events.GameEvents.PlayerSpeedUpdated, mCurrentPlayerSpeedY );
+    }
+
+    private void MovementLogic()
+    {
         //Player Horizontal Movement
         {
 #if UNITY_ANDROID || UNITY_IPHONE
@@ -121,22 +157,6 @@ public class PlayerSnake : Entity
             /**/
             Velocity = target * mEasingAmount;
         }
-
-        // lock y velocity to mCurrentPlayerSpeedY variable
-        Velocity = new Vector2( Velocity.x, mCurrentPlayerSpeedY );
-        Position += Velocity * Time.deltaTime;
-    }
-
-    public override void CollisionTriggered( Collider2D collider )
-    {
-        if ( mIsInvincible )
-        {
-
-        }
-        else
-        {
-            //ParticleSystemManager.Instance.CreatePlayerExplision( Position );
-        }
     }
 
     public float GetY()
@@ -146,7 +166,18 @@ public class PlayerSnake : Entity
 
     public void FlashInvincibility()
     {
-        mIsInvincible = true;
         mInvincibilityRemaining = mFlashInvincibilityDuration;
+    }
+
+    public override void CollisionTriggered( Collider2D collider )
+    {
+        if ( mInvincibilityRemaining > 0.0f )
+        {
+
+        }
+        else
+        {
+            //ParticleSystemManager.Instance.CreatePlayerExplision( Position );
+        }
     }
 }

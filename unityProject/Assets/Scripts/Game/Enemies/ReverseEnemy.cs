@@ -3,7 +3,7 @@ using System.Collections;
 
 public class ReverseEnemy : Entity
 {
-    private float mEasingAmount = 0.15f;
+    private float mEasingAmount = 9.0f;
 
     void Start()
     {

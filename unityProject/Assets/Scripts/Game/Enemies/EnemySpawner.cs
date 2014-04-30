@@ -49,7 +49,7 @@ public class EnemySpawner : MonoBehaviour
 
     void CreateEnemy( Vector2 pos )
     {
-        GameObject enemy = Instantiate( enemyPrefab, pos, Quaternion.identity ) as GameObject;
+        Instantiate( enemyPrefab, pos, Quaternion.identity );
     }
 
     void Reset()
