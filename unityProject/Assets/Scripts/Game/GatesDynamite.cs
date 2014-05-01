@@ -31,7 +31,7 @@ public class GatesDynamite : Entity
             }
         }
 
-        ParticleSystemManager.Instance.CreatePlayerExplision( Position );
+        ParticleSystemManager.Instance.CreatePlayerExplosion( Position );
         //Destroy( gameObject );
     }
 }

@@ -23,7 +23,13 @@ public class StationaryEnemy : Entity
 
     public override void CollisionTriggered( Collider2D collider )
     {
-        ParticleSystemManager.Instance.CreateEnemyExplosion( Position );
-        Destroy( gameObject );
+        switch ( collider.tag )
+        {
+            case "Player":
+                ParticleSystemManager.Instance.CreateEnemyExplosion( Position );
+                Destroy( gameObject );
+                break;
+        }
+        
     }
 }

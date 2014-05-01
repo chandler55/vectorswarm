@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class ParticleSystemManager : MonoBehaviour
 {
     [HideInInspector]
-    public const int MAX_PARTICLES = 1000;
+    public const int MAX_PARTICLES = 2000;
 
     private static ParticleSystemManager instance;
     public static ParticleSystemManager Instance
@@ -279,7 +279,7 @@ public class ParticleSystemManager : MonoBehaviour
         }
     }
 
-    public void CreatePlayerExplision( Vector3 pos )
+    public void CreatePlayerExplosion( Vector3 pos )
     {
         Color yellow = new Color( 0.8f, 0.8f, 0.4f );
 

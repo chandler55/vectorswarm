@@ -103,8 +103,8 @@ public class PlayerSnake : Entity
             ParticleSystemManager.Instance.CreateParticle( pos, vel2, sideColor * alpha, 1.0f, new Vector2( 0.5f, 1 ), 0 );
         }*/
 
-        Color exhaustColor = ColorUtil.HSVToColor( Mathf.Abs( Mathf.Sin( Time.realtimeSinceStartup ) ) * 6.0f, 0.5f, 1.0f );
-        ParticleSystemManager.Instance.CreateParticle( Position, -Velocity / 20.0f, exhaustColor, 0.2f, Vector2.one, 0 );
+       // Color exhaustColor = ColorUtil.HSVToColor( Mathf.Abs( Mathf.Sin( Time.realtimeSinceStartup ) ) * 6.0f, 0.5f, 1.0f );
+       // ParticleSystemManager.Instance.CreateParticle( Position, -Velocity / 20.0f, exhaustColor, 0.2f, Vector2.one, 0 );
     }
 
     private void InvincibilityLogic()
