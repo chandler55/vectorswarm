@@ -27,7 +27,7 @@ public class StationaryEnemy : Entity
         {
             case "Player":
                 ParticleSystemManager.Instance.CreateEnemyExplosion( Position );
-                Destroy( gameObject );
+                ObjectPool.Recycle( this );
                 break;
         }
         

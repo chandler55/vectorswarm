@@ -38,7 +38,7 @@ public class MultiplierItem : Entity
                 {
                     Messenger.Broadcast<long>( Events.GameEvents.IncrementScore, 10 );
                     Messenger.Broadcast( Events.GameEvents.IncrementMultipler );
-                    Destroy( gameObject );
+                    ObjectPool.Recycle( this );
                 }
 
                 Velocity = ( mPlayerPos - Position ).normalized * CHASE_SPEED;

@@ -69,6 +69,7 @@
     <Compile Include="Assets\Flocking\BoidController.cs" />
     <Compile Include="Assets\Flocking\BoidFlocking.cs" />
     <Compile Include="Assets\Flocking\BoidWatcher.cs" />
+    <Compile Include="Assets\ObjectPool\Scripts\ObjectPool.cs" />
     <Compile Include="Assets\Scripts\BackgroundTiler.cs" />
     <Compile Include="Assets\Scripts\EventSystem\Callback.cs" />
     <Compile Include="Assets\Scripts\EventSystem\Events.cs" />
@@ -91,6 +92,7 @@
     <Compile Include="Assets\Scripts\Game\Enemies\SineEnemy.cs" />
     <Compile Include="Assets\Scripts\Game\Enemies\StationaryEnemy.cs" />
     <Compile Include="Assets\Scripts\Game\Entity.cs" />
+    <Compile Include="Assets\Scripts\Game\EntityDatabase.cs" />
     <Compile Include="Assets\Scripts\Game\EntityManager.cs" />
     <Compile Include="Assets\Scripts\Game\ExhaustParticles.cs" />
     <Compile Include="Assets\Scripts\Game\ExplosionParticles.cs" />
@@ -99,6 +101,7 @@
     <Compile Include="Assets\Scripts\Game\GameSettings.cs" />
     <Compile Include="Assets\Scripts\Game\GatesDynamite.cs" />
     <Compile Include="Assets\Scripts\Game\HighScore.cs" />
+    <Compile Include="Assets\Scripts\Game\InstantiateEntity.cs" />
     <Compile Include="Assets\Scripts\Game\LevelManager.cs" />
     <Compile Include="Assets\Scripts\Game\LevelSegment.cs" />
     <Compile Include="Assets\Scripts\Game\LoadGame.cs" />

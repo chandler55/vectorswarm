@@ -49,6 +49,6 @@ public class SimpleEnemy : Entity
     {
         Messenger.Broadcast<long>( Events.GameEvents.IncrementScore, 10 );
         ParticleSystemManager.Instance.CreateEnemyExplosion( Position );
-        Destroy( gameObject );
+        ObjectPool.Recycle( this );
     }
 }

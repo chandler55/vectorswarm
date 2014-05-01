@@ -22,6 +22,6 @@ public class FollowEnemy : Entity
     public override void CollisionTriggered( Collider2D collider )
     {
         ParticleSystemManager.Instance.CreateEnemyExplosion( Position );
-        Destroy( gameObject );
+        ObjectPool.Recycle( this );
     }
 }

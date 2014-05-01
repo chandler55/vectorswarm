@@ -74,6 +74,52 @@ NavMeshSettings:
     widthInaccuracy: 16.666666
     heightInaccuracy: 10
   m_NavMesh: {fileID: 0}
+--- !u!1 &89675402
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 89675404}
+  - 114: {fileID: 89675403}
+  m_Layer: 0
+  m_Name: _EntityDatabase
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &89675403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 89675402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48d9cea26ca39e143ac7c98ae5a13e90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  simpleEnemyPrefab: {fileID: 11400004, guid: ffdd6baa72dfb004d87b78a215f387a6, type: 2}
+  followEnemyPrefab: {fileID: 11400000, guid: d7eeb3d6a4f05cc49936f640f5985610, type: 2}
+  reverseEnemyPrefab: {fileID: 11400004, guid: a714f763743b41b48ad2ede1dbfd3cf1, type: 2}
+  sineEnemyPrefab: {fileID: 11400004, guid: 913dfeae237dc8f42a983a4e477d8457, type: 2}
+  stationaryEnemyPrefab: {fileID: 11400000, guid: ef1f05e77b2942a4883f260b79f041d4,
+    type: 2}
+  multiplierItemPrefab: {fileID: 11400000, guid: 0946698eea14c994fa336a977f245060,
+    type: 2}
+--- !u!4 &89675404
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 89675402}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
 --- !u!1001 &266244171
 Prefab:
   m_ObjectHideFlags: 0
