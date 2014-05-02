@@ -18,6 +18,10 @@ public class Events
         public static string IncrementMultipler = "IncrementMultiplier";
 
         public static string PlayerSpeedUpdated = "PlayerSpeedUpdated";
+        public static string AfterburnerTriggered = "AfterburnerTriggered";
+
+        public static string PlayerDied = "PlayerDied";
+        public static string SpawnNewShip = "SpawnNewShip";
     }
 
     public static class MenuEvents

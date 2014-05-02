@@ -257,7 +257,14 @@ public class ParticleSystemManager : MonoBehaviour
 
     public void CreateEnemyExplosion( Vector3 pos )
     {
-        EntityDatabase.Instance.CreateEntity( EntityDatabase.EntityType.EntityType_ExplosionParticles, pos, Quaternion.identity );
+        GameObject go = EntityDatabase.Instance.CreateEntity( EntityDatabase.EntityType.EntityType_ExplosionParticles, pos, Quaternion.identity );
+        ExplosionParticles explosionScript = go.GetComponent<ExplosionParticles>();
+        if ( explosionScript )
+        {
+            float hue1 = ( Mathf.Abs( Mathf.Sin( Time.realtimeSinceStartup ) ) * 6.0f + 3.0f ) % 6f;
+            Color color1 = ColorUtil.HSVToColor( hue1, 0.5f, 1 );
+            explosionScript.SetColor( color1 );
+        }
         /*
         float hue1 = ( Mathf.Abs( Mathf.Sin( Time.realtimeSinceStartup ) ) * 6.0f + 3.0f ) % 6f;
         float hue2 = ( hue1 + Random.Range( 0, 2.0f ) ) % 6f;
@@ -283,6 +290,9 @@ public class ParticleSystemManager : MonoBehaviour
 
     public void CreatePlayerExplosion( Vector3 pos )
     {
+        EntityDatabase.Instance.CreateEntity( EntityDatabase.EntityType.EntityType_PlayerExplosion, pos, Quaternion.identity );
+        //PlayerExplosion explosionScript = go.GetComponent<PlayerExplosion>();
+        /*
         Color yellow = new Color( 0.8f, 0.8f, 0.4f );
 
         for ( int i = 0; i < 500; i++ )
@@ -291,6 +301,6 @@ public class ParticleSystemManager : MonoBehaviour
             Color color = Color.Lerp( Color.white, yellow, Random.Range( 0, 1.0f ) );
             Vector2 velocity = GameUtils.RandomVector2( speed, speed );
             CreateParticle( pos, velocity, color, 3.0f, Vector2.one, 0 );
-        }
+        }*/
     }
 }

@@ -156,6 +156,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tile0: {fileID: 100000}
   tile1: {fileID: 100004}
+  tile0Sprite: {fileID: 11400006}
+  tile1Sprite: {fileID: 11400004}
   tileScrollingSpeed: -.839999974
 --- !u!114 &11400004
 MonoBehaviour:

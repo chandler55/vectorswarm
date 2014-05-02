@@ -111,6 +111,7 @@
     <Compile Include="Assets\Scripts\Game\ParticleSystemManager.cs" />
     <Compile Include="Assets\Scripts\Game\PauseButton.cs" />
     <Compile Include="Assets\Scripts\Game\PauseMenu.cs" />
+    <Compile Include="Assets\Scripts\Game\PlayerExplosion.cs" />
     <Compile Include="Assets\Scripts\Game\PlayerProfile.cs" />
     <Compile Include="Assets\Scripts\Game\PlayerShip.cs" />
     <Compile Include="Assets\Scripts\Game\PlayerSnake.cs" />

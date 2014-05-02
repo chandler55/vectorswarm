@@ -31,12 +31,15 @@ public class GameManager : MonoBehaviour
         // listen for events
         Messenger.AddListener( Events.GameEvents.ObjectiveShown, OnObjectiveShown );
         Messenger.AddListener( Events.GameEvents.RetryLevel, OnRetryLevel );
+        Messenger.AddListener( Events.GameEvents.PlayerDied, OnPlayerDied );
+
     }
 
     void OnDestroy()
     {
         Messenger.RemoveListener( Events.GameEvents.ObjectiveShown, OnObjectiveShown );
         Messenger.RemoveListener( Events.GameEvents.RetryLevel, OnRetryLevel );
+        Messenger.RemoveListener( Events.GameEvents.PlayerDied, OnPlayerDied );
     }
 
     void Update()
@@ -72,4 +75,16 @@ public class GameManager : MonoBehaviour
     {
 
     }
+
+    void OnPlayerDied()
+    {
+        // spawn a new ship
+        Go.to( transform, 2.0f, new GoTweenConfig() ).setOnCompleteHandler( SpawnNewShip );
+    }
+
+    void SpawnNewShip( AbstractGoTween tween )
+    {
+        Messenger.Broadcast( Events.GameEvents.SpawnNewShip );
+    }
+
 }

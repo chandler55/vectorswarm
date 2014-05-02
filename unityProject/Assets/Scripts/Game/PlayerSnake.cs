@@ -3,6 +3,7 @@ using System.Collections;
 
 public class PlayerSnake : Entity
 {
+    public GameObject shipObject = null;
     public tk2dSprite playerSprite = null;
 
     private static PlayerSnake instance;
@@ -18,7 +19,7 @@ public class PlayerSnake : Entity
     private float mEasingAmount = 9.0f;
     private float mPlayerNormalSpeed = 15.0f;
     private float mCurrentPlayerSpeedY = 15.0f;
-    private float mPlayerAfterburnerSpeed = 60.0f;
+    private float mPlayerAfterburnerSpeed = 30.0f;
 
     private Transform mTransform = null;
 
@@ -29,27 +30,48 @@ public class PlayerSnake : Entity
     private float   mFuelChargeRate = 0.1f;
 
     //invincibility
-    private float   mFlashInvincibilityDuration = 2.0f;
+    private float   mFlashInvincibilityDuration = 2.5f;
     private float   mInvincibilityRemaining = 0.0f;
+
+    // alive
+    private bool    mIsAlive = true;
 
     void Awake()
     {
         instance = this;
     }
 
-    void OnDestroy()
-    {
-        instance = null;
-    }
-
     void Start()
     {
         mTransform = gameObject.transform;
         mFuelRemaining = mFuelCapacity;
+
+        Messenger.AddListener( Events.GameEvents.SpawnNewShip, OnSpawnNewShip );
+    }
+
+    void OnDestroy()
+    {
+        instance = null;
+
+        Messenger.RemoveListener( Events.GameEvents.SpawnNewShip, OnSpawnNewShip );
     }
 
     void Update()
     {
+        if ( !mIsAlive )
+        {
+            return;
+        }
+
+        if ( Input.GetKey( KeyCode.X ) )
+        {
+            SetPlayerSpeed( mPlayerAfterburnerSpeed );
+        }
+        else
+        {
+            //SetPlayerSpeed( mPlayerNormalSpeed );
+        }
+
         // invincibility logic
         InvincibilityLogic();
 
@@ -103,8 +125,8 @@ public class PlayerSnake : Entity
             ParticleSystemManager.Instance.CreateParticle( pos, vel2, sideColor * alpha, 1.0f, new Vector2( 0.5f, 1 ), 0 );
         }*/
 
-       // Color exhaustColor = ColorUtil.HSVToColor( Mathf.Abs( Mathf.Sin( Time.realtimeSinceStartup ) ) * 6.0f, 0.5f, 1.0f );
-       // ParticleSystemManager.Instance.CreateParticle( Position, -Velocity / 20.0f, exhaustColor, 0.2f, Vector2.one, 0 );
+        // Color exhaustColor = ColorUtil.HSVToColor( Mathf.Abs( Mathf.Sin( Time.realtimeSinceStartup ) ) * 6.0f, 0.5f, 1.0f );
+        // ParticleSystemManager.Instance.CreateParticle( Position, -Velocity / 20.0f, exhaustColor, 0.2f, Vector2.one, 0 );
     }
 
     private void InvincibilityLogic()
@@ -133,7 +155,7 @@ public class PlayerSnake : Entity
     {
         if ( Input.GetMouseButton( 0 ) && mFuelRemaining == mFuelCapacity )
         {
-            mAfterburnerActivated = true;
+            SetAfterburner( true );
             SetPlayerSpeed( mPlayerAfterburnerSpeed );
         }
 
@@ -143,12 +165,11 @@ public class PlayerSnake : Entity
             if ( mFuelRemaining < 0 )
             {
                 mFuelRemaining = 0;
-                mAfterburnerActivated = false;
+                SetAfterburner( false );
                 SetPlayerSpeed( mPlayerNormalSpeed );
 
                 // give player temporary invincibility
                 FlashInvincibility();
-
             }
 
             Messenger.Broadcast<float>( Events.UIEvents.FuelGaugeUpdated, mFuelRemaining / mFuelCapacity );
@@ -173,6 +194,12 @@ public class PlayerSnake : Entity
     {
         mCurrentPlayerSpeedY = speed;
         Messenger.Broadcast<float>( Events.GameEvents.PlayerSpeedUpdated, mCurrentPlayerSpeedY );
+    }
+
+    private void SetAfterburner( bool on )
+    {
+        mAfterburnerActivated = on;
+        Messenger.Broadcast<bool>( Events.GameEvents.AfterburnerTriggered, on );
     }
 
     private void MovementLogic()
@@ -220,7 +247,42 @@ public class PlayerSnake : Entity
         }
         else
         {
-            //ParticleSystemManager.Instance.CreatePlayerExplision( Position );
+            Die();
         }
+    }
+
+    private void Die()
+    {
+        mIsAlive = false;
+
+        SetPlayerSpeed( 0.0f );
+
+        ParticleSystemManager.Instance.CreatePlayerExplosion( Position );
+
+        Messenger.Broadcast( Events.GameEvents.PlayerDied );
+
+        if ( shipObject != null )
+        {
+            shipObject.SetActive( false );
+        }
+    }
+
+    private void Spawn()
+    {
+        mIsAlive = true;
+
+        if ( shipObject != null )
+        {
+            shipObject.SetActive( true );
+        }
+
+        FlashInvincibility();
+
+        SetPlayerSpeed( mPlayerNormalSpeed );
+    }
+
+    void OnSpawnNewShip()
+    {
+        Spawn();
     }
 }

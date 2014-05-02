@@ -6,16 +6,19 @@ public class Starfield : MonoBehaviour
     public GameObject 	tile0;
     public GameObject 	tile1;
 
+    public tk2dSprite tile0Sprite;
+    public tk2dSprite tile1Sprite;
+
     public float		tileScrollingSpeed = 0.0f;
 
     void Start()
     {
-        Messenger.AddListener<float>( Events.GameEvents.PlayerSpeedUpdated, OnPlayerSpeedUpdated );
+        Messenger.AddListener<bool>( Events.GameEvents.AfterburnerTriggered, OnAfterburnerTriggered );
     }
 
     void OnDestroy()
     {
-        Messenger.RemoveListener<float>( Events.GameEvents.PlayerSpeedUpdated, OnPlayerSpeedUpdated );
+        Messenger.RemoveListener<bool>( Events.GameEvents.AfterburnerTriggered, OnAfterburnerTriggered );
     }
 
     void Update()
@@ -40,7 +43,21 @@ public class Starfield : MonoBehaviour
         }
     }
 
-    void OnPlayerSpeedUpdated( float playerSpeed )
+    void OnAfterburnerTriggered( bool afterBurnerOn )
     {
+        if ( tile0Sprite && tile1Sprite )
+        {
+            if ( afterBurnerOn )
+            {
+                tile0Sprite.SetSprite( "starfield2" );
+                tile1Sprite.SetSprite( "starfield2" );
+            }
+            else
+            {
+                tile0Sprite.SetSprite( "starfield" );
+                tile1Sprite.SetSprite( "starfield" );
+            }
+        }
+
     }
 }
