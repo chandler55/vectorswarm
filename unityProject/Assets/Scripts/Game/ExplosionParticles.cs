@@ -30,5 +30,13 @@ public class ExplosionParticles : Entity
                 */
             }
         }
+
+        if ( mParticleSystem )
+        {
+            if ( !mParticleSystem.IsAlive() )
+            {
+                ObjectPool.Recycle( this );
+            }
+        }
     }
 }

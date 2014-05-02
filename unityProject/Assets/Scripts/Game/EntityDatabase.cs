@@ -14,12 +14,13 @@ public class EntityDatabase : MonoBehaviour
 
     public enum EntityType
     {
-        EntityType_SimpleEnemy,
-        EntityType_FollowEnemy,
-        EntityType_ReverseEnemy,
-        EntityType_SineEnemy,
-        EntityType_StationaryEnemy,
-        EntityType_MultiplierItem,
+        EntityType_SimpleEnemy = 0,
+        EntityType_FollowEnemy = 1,
+        EntityType_ReverseEnemy = 2,
+        EntityType_SineEnemy = 3,
+        EntityType_StationaryEnemy = 4,
+        EntityType_MultiplierItem = 5,
+        EntityType_ExplosionParticles = 6,
     }
 
     public SimpleEnemy simpleEnemyPrefab;
@@ -27,7 +28,11 @@ public class EntityDatabase : MonoBehaviour
     public ReverseEnemy reverseEnemyPrefab;
     public SineEnemy sineEnemyPrefab;
     public StationaryEnemy stationaryEnemyPrefab;
+
     public MultiplierItem multiplierItemPrefab;
+
+    public ExplosionParticles explosionParticlesPrefab;
+
 
     void Awake()
     {
@@ -47,6 +52,7 @@ public class EntityDatabase : MonoBehaviour
         ObjectPool.CreatePool( sineEnemyPrefab );
         ObjectPool.CreatePool( stationaryEnemyPrefab );
         ObjectPool.CreatePool( multiplierItemPrefab );
+        ObjectPool.CreatePool( explosionParticlesPrefab );
     }
 
     public GameObject CreateEntity(EntityType entityType)
@@ -76,6 +82,9 @@ public class EntityDatabase : MonoBehaviour
                 break;
             case EntityType.EntityType_MultiplierItem:
                 entity = multiplierItemPrefab.Spawn( position, rotation ).gameObject;
+                break;
+            case EntityType.EntityType_ExplosionParticles:
+                entity = explosionParticlesPrefab.Spawn( position, rotation ).gameObject;
                 break;
         }
         return entity;

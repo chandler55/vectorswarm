@@ -257,6 +257,8 @@ public class ParticleSystemManager : MonoBehaviour
 
     public void CreateEnemyExplosion( Vector3 pos )
     {
+        EntityDatabase.Instance.CreateEntity( EntityDatabase.EntityType.EntityType_ExplosionParticles, pos, Quaternion.identity );
+        /*
         float hue1 = ( Mathf.Abs( Mathf.Sin( Time.realtimeSinceStartup ) ) * 6.0f + 3.0f ) % 6f;
         float hue2 = ( hue1 + Random.Range( 0, 2.0f ) ) % 6f;
         Color color1 = ColorUtil.HSVToColor( hue1, 0.5f, 1 );
@@ -268,7 +270,7 @@ public class ParticleSystemManager : MonoBehaviour
             Vector2 velocity = GameUtils.RandomVector2( 0, speed );
             Color color = Color.Lerp( color1, color2, Random.Range( 0, 1.0f ) );
             CreateParticle( pos, velocity, color, 3.0f, Vector2.one, 0 );
-        }
+        }*/
     }
 
     public void CreateBulletExplosion( Vector3 pos )
