@@ -56,7 +56,7 @@ public class MultiplierItem : Entity
         Position += Velocity * Time.deltaTime;
     }
 
-    void OnDestroy()
+    void OnDisable()
     {
         if ( mSprite )
         {
@@ -78,6 +78,13 @@ public class MultiplierItem : Entity
         }
 
         Go.to( mSprite.transform, 0.7f, new GoTweenConfig().scale( squishScale ).setEaseType( GoEaseType.Linear ).setIterations( 2, GoLoopType.PingPong ).onComplete( OnCompleteSquish ) );
+    }
+
+    public override void Reset()
+    {
+        base.Reset();
+        mHeadTowardsPlayerShip = false;
+        Velocity = Vector2.zero;
     }
 
     public override void CollisionTriggered( Collider2D collider )

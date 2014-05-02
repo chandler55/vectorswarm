@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ExplosionParticles : MonoBehaviour
+public class ExplosionParticles : Entity
 {
     private ParticleSystem mParticleSystem;
 
@@ -17,9 +17,7 @@ public class ExplosionParticles : MonoBehaviour
             if ( mParticleSystem )
             {
                 mParticleSystem.Stop();
-
                 mParticleSystem.startColor = Color.yellow;
-                
                 mParticleSystem.Play();
 
                 /*

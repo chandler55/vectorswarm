@@ -6,8 +6,8 @@ public sealed class ObjectPool : MonoBehaviour
 {
 	static ObjectPool _instance;
 
-	Dictionary<Component, List<Component>> objectLookup = new Dictionary<Component, List<Component>>();
-	Dictionary<Component, Component> prefabLookup = new Dictionary<Component, Component>();
+	Dictionary<Entity, List<Entity>> objectLookup = new Dictionary<Entity, List<Entity>>();
+	Dictionary<Entity, Entity> prefabLookup = new Dictionary<Entity, Entity>();
 	
 	public static void Clear()
 	{
@@ -15,13 +15,13 @@ public sealed class ObjectPool : MonoBehaviour
 		instance.prefabLookup.Clear();
 	}
 
-	public static void CreatePool<T>(T prefab) where T : Component
+	public static void CreatePool<T>(T prefab) where T : Entity
 	{
 		if (!instance.objectLookup.ContainsKey(prefab))
-			instance.objectLookup.Add(prefab, new List<Component>());
+			instance.objectLookup.Add(prefab, new List<Entity>());
 	}
 	
-	public static T Spawn<T>(T prefab, Vector3 position, Quaternion rotation) where T : Component
+	public static T Spawn<T>(T prefab, Vector3 position, Quaternion rotation) where T : Entity
 	{
 		if (instance.objectLookup.ContainsKey(prefab))
 		{
@@ -40,6 +40,8 @@ public sealed class ObjectPool : MonoBehaviour
 					obj.transform.localPosition = position;
 					obj.transform.localRotation = rotation;
 					obj.gameObject.SetActive(true);
+                    obj.Reset();
+
 					instance.prefabLookup.Add(obj, prefab);
 					return (T)obj;
 				}
@@ -52,17 +54,17 @@ public sealed class ObjectPool : MonoBehaviour
 			return (T)Object.Instantiate(prefab, position, rotation);
 	}
 
-	public static T Spawn<T>(T prefab, Vector3 position) where T : Component
+	public static T Spawn<T>(T prefab, Vector3 position) where T : Entity
 	{
 		return Spawn(prefab, position, Quaternion.identity);
 	}
 
-	public static T Spawn<T>(T prefab) where T : Component
+	public static T Spawn<T>(T prefab) where T : Entity
 	{
 		return Spawn(prefab, Vector3.zero, Quaternion.identity);
 	}
 
-	public static void Recycle<T>(T obj) where T : Component
+	public static void Recycle<T>(T obj) where T : Entity
 	{
 		if (instance.prefabLookup.ContainsKey(obj))
 		{
@@ -70,9 +72,10 @@ public sealed class ObjectPool : MonoBehaviour
 			instance.prefabLookup.Remove(obj);
 			obj.transform.parent = instance.transform;
 			obj.gameObject.SetActive(false);
+
 #if UNITY_EDITOR
             int sum = 0;
-            foreach(KeyValuePair<Component, List<Component>> pair in _instance.objectLookup)
+            foreach(KeyValuePair<Entity, List<Entity>> pair in _instance.objectLookup)
             {
                 sum += pair.Value.Count;
             }
@@ -83,7 +86,7 @@ public sealed class ObjectPool : MonoBehaviour
 			Object.Destroy(obj.gameObject);
 	}
 
-	public static int Count<T>(T prefab) where T : Component
+	public static int Count<T>(T prefab) where T : Entity
 	{
 		if (instance.objectLookup.ContainsKey(prefab))
 			return instance.objectLookup[prefab].Count;
@@ -107,30 +110,30 @@ public sealed class ObjectPool : MonoBehaviour
 
 public static class ObjectPoolExtensions
 {
-	public static void CreatePool<T>(this T prefab) where T : Component
+	public static void CreatePool<T>(this T prefab) where T : Entity
 	{
 		ObjectPool.CreatePool(prefab);
 	}
 	
-	public static T Spawn<T>(this T prefab, Vector3 position, Quaternion rotation) where T : Component
+	public static T Spawn<T>(this T prefab, Vector3 position, Quaternion rotation) where T : Entity
 	{
 		return ObjectPool.Spawn(prefab, position, rotation);
 	}
-	public static T Spawn<T>(this T prefab, Vector3 position) where T : Component
+	public static T Spawn<T>(this T prefab, Vector3 position) where T : Entity
 	{
 		return ObjectPool.Spawn(prefab, position, Quaternion.identity);
 	}
-	public static T Spawn<T>(this T prefab) where T : Component
+	public static T Spawn<T>(this T prefab) where T : Entity
 	{
 		return ObjectPool.Spawn(prefab, Vector3.zero, Quaternion.identity);
 	}
 	
-	public static void Recycle<T>(this T obj) where T : Component
+	public static void Recycle<T>(this T obj) where T : Entity
 	{
 		ObjectPool.Recycle(obj);
 	}
 
-	public static int Count<T>(T prefab) where T : Component
+	public static int Count<T>(T prefab) where T : Entity
 	{
 		return ObjectPool.Count(prefab);
 	}

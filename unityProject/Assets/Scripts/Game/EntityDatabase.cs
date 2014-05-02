@@ -49,24 +49,6 @@ public class EntityDatabase : MonoBehaviour
         ObjectPool.CreatePool( multiplierItemPrefab );
     }
 
-    public T EnumToPrefab<T>( EntityType entityType ) where T : Component
-    {
-        switch ( entityType )
-        {
-            case EntityType.EntityType_SimpleEnemy:
-                return (T)(Object)simpleEnemyPrefab;
-        }
-
-        Debug.LogError( "Couldnt find prefab" );
-        return null;
-    }
-
-    public T CreateEntity<T>( EntityType entityType ) where T : Component
-    {
-        T getPrefab = ObjectPool.Spawn<T>( EnumToPrefab<T>( entityType ) );
-        return getPrefab;
-    }
-
     public GameObject CreateEntity(EntityType entityType)
     {
         return CreateEntity( entityType, Vector3.zero, Quaternion.identity );

@@ -58,10 +58,10 @@ MonoBehaviour:
     normals: []
     tangents: []
     uvs:
-    - {x: .533204079, y: .00195410149}
-    - {x: .595702171, y: .00195410149}
-    - {x: .533204079, y: .064452149}
-    - {x: .595702171, y: .064452149}
+    - {x: .662110329, y: .00195410149}
+    - {x: .724608421, y: .00195410149}
+    - {x: .662110329, y: .064452149}
+    - {x: .724608421, y: .064452149}
     indices: 000000000300000001000000020000000300000000000000
     material: {fileID: 2100000, guid: ea761dcdc09d7cc4b98f42eef23c9e84, type: 2}
     materialId: 0
@@ -263,10 +263,10 @@ MonoBehaviour:
     normals: []
     tangents: []
     uvs:
-    - {x: .599610329, y: .00195410149}
-    - {x: .662108421, y: .00195410149}
-    - {x: .599610329, y: .064452149}
-    - {x: .662108421, y: .064452149}
+    - {x: .728516579, y: .00195410149}
+    - {x: .791014671, y: .00195410149}
+    - {x: .728516579, y: .064452149}
+    - {x: .791014671, y: .064452149}
     indices: 000000000300000001000000020000000300000000000000
     material: {fileID: 2100000, guid: ea761dcdc09d7cc4b98f42eef23c9e84, type: 2}
     materialId: 0
@@ -411,6 +411,47 @@ MonoBehaviour:
     polygonCollider2D: []
     edgeCollider2D: []
     attachPoints: []
+  - name: playerShip
+    boundsData:
+    - {x: 0, y: 0, z: 0}
+    - {x: 6.0999999, y: 6.4000001, z: 0}
+    untrimmedBoundsData:
+    - {x: 0, y: 0, z: 0}
+    - {x: 6.4000001, y: 6.4000001, z: 0}
+    texelSize: {x: .0500000007, y: .0500000007}
+    positions:
+    - {x: -3.04999995, y: -3.20000005, z: 0}
+    - {x: 3.04999995, y: -3.20000005, z: 0}
+    - {x: -3.04999995, y: 3.20000005, z: 0}
+    - {x: 3.04999995, y: 3.20000005, z: 0}
+    normals: []
+    tangents: []
+    uvs:
+    - {x: .533204079, y: .00195410149}
+    - {x: .533204079, y: .121092774}
+    - {x: .658202171, y: .00195410149}
+    - {x: .658202171, y: .121092774}
+    indices: 000000000300000001000000020000000300000000000000
+    material: {fileID: 2100000, guid: ea761dcdc09d7cc4b98f42eef23c9e84, type: 2}
+    materialId: 0
+    sourceTextureGUID: 1db8e3b45051e8d40bcde32ed639db71
+    extractRegion: 0
+    regionX: 0
+    regionY: 0
+    regionW: 0
+    regionH: 0
+    flipped: 1
+    complexGeometry: 0
+    physicsEngine: 1
+    colliderType: 0
+    colliderVertices: []
+    colliderIndicesFwd: 
+    colliderIndicesBack: 
+    colliderConvex: 0
+    colliderSmoothSphereCollisions: 0
+    polygonCollider2D: []
+    edgeCollider2D: []
+    attachPoints: []
   premultipliedAlpha: 0
   material: {fileID: 0}
   materials:
@@ -428,7 +469,7 @@ MonoBehaviour:
   loadable: 0
   invOrthoSize: 2
   halfTargetHeight: 10
-  buildKey: 1286994050
+  buildKey: 1063132937
   dataGuid: 9b7964f56d659ab42b3ffa9af1eb99e5
   managedSpriteCollection: 0
   hasPlatformData: 0

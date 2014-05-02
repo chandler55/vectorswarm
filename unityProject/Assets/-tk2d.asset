@@ -34,6 +34,10 @@ MonoBehaviour:
     dataGUID: 50955e56bf2ec46498ea20426630d570
     managed: 0
     loadable: 0
+  - assetGUID: 2e73d500da661f54787f099fceff902c
+    dataGUID: 7bb0b96e74b14334cb5efc4ed0c1253f
+    managed: 0
+    loadable: 0
   spriteCollectionIndex:
   - name: VectorSwarm
     spriteCollectionGUID: 3dcf196cb5f216b4db7865b05776051b
@@ -48,6 +52,7 @@ MonoBehaviour:
     - starfield
     - white
     - multiplierSquare
+    - playerShip
     spriteTextureGUIDs:
     - 11905d0ba78abf44296f509c4be50a7f
     - 7e38abbd43d7fe44298e689b8998da39
@@ -58,16 +63,18 @@ MonoBehaviour:
     - aa88da020af235e4293e8aa2cbfd30e9
     - fbd7571bdb6c2a94fbe8dfd569f5c6fd
     - cf8b95963c1061d4ab4971ef9f7fba54
+    - 1db8e3b45051e8d40bcde32ed639db71
     spriteTextureTimeStamps:
-    - 1398739484.85101
-    - 1398739484.61499
-    - 1398739484.57099
-    - 1398739484.83
-    - 1398739484.55999
-    - 1398739484.84101
-    - 1398739484.86101
-    - 1398739484.87201
-    - 1398788699.69214
+    - 1398966226.30453
+    - 1398966226.1795
+    - 1398966226.1605
+    - 1398966226.28453
+    - 1398966226.15549
+    - 1398966226.29953
+    - 1398966226.30953
+    - 1398966226.31353
+    - 1398966226.29453
+    - 1398988845.56796
     managedSpriteCollection: 0
     loadable: 0
     assetName: 

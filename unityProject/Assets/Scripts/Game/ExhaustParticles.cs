@@ -12,6 +12,12 @@ public class ExhaustParticles : MonoBehaviour
 
     void Update()
     {
+        if ( mParticleSystem )
+        {
+            Color exhaustColor = ColorUtil.HSVToColor( Mathf.Abs( Mathf.Sin( Time.realtimeSinceStartup ) ) * 6.0f, 0.5f, 1.0f );
+            mParticleSystem.startColor = exhaustColor;
+        }
+
         if ( Input.GetKeyDown( KeyCode.H ) )
         {
             if ( mParticleSystem )
