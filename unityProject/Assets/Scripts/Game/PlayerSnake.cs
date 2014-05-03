@@ -241,9 +241,18 @@ public class PlayerSnake : Entity
 
     public override void CollisionTriggered( Collider2D collider )
     {
-        if ( mInvincibilityRemaining > 0.0f )
+        if ( mInvincibilityRemaining > 0.0f || mAfterburnerActivated )
         {
+            if ( collider.tag == "Enemy" )
+            {
+                GameObject go = collider.gameObject;
 
+                SendDestroySignal sendDestroySignal = go.GetComponent<SendDestroySignal>();
+                if ( sendDestroySignal )
+                {
+                    sendDestroySignal.SendDestroyEnemySignal();
+                }
+            }
         }
         else
         {

@@ -308,7 +308,8 @@ static internal class Messenger
             }
             else
             {
-                throw CreateBroadcastSignatureException( eventType );
+                // don't require receiver
+                //throw CreateBroadcastSignatureException( eventType );
             }
         }
     }

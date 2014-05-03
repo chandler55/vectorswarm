@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SineEnemy : Entity
+public class SineEnemy : Enemy
 {
     public float waveHeight = 6.0f;
 
@@ -61,7 +61,12 @@ public class SineEnemy : Entity
 
     public override void CollisionTriggered( Collider2D collider )
     {
-        ParticleSystemManager.Instance.CreateEnemyExplosion( Position );
-        ObjectPool.Recycle( this );
+        switch ( collider.tag )
+        {
+            case "Player":
+                ParticleSystemManager.Instance.CreateEnemyExplosion( Position );
+                ObjectPool.Recycle( this );
+                break;
+        }
     }
 }

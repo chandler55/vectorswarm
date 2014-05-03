@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ReverseEnemy : Entity
+public class ReverseEnemy : Enemy
 {
     private float mEasingAmount = 9.0f;
 
@@ -21,7 +21,12 @@ public class ReverseEnemy : Entity
 
     public override void CollisionTriggered( Collider2D collider )
     {
-        ParticleSystemManager.Instance.CreateEnemyExplosion( Position );
+        base.CollisionTriggered( collider );
+    }
+
+    public override void Recycle()
+    {
+        Debug.Log( "Recycle" );
         ObjectPool.Recycle( this );
     }
 }

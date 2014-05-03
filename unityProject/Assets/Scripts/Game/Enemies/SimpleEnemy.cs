@@ -2,7 +2,7 @@
 using System.Collections;
 
 // this enemy moves left and right , nothing special
-public class SimpleEnemy : Entity
+public class SimpleEnemy : Enemy
 {
     public float movementDuration = 2.0f;
 
@@ -47,8 +47,12 @@ public class SimpleEnemy : Entity
 
     public override void CollisionTriggered( Collider2D collider )
     {
-        Messenger.Broadcast<long>( Events.GameEvents.IncrementScore, 10 );
-        ParticleSystemManager.Instance.CreateEnemyExplosion( Position );
+        base.CollisionTriggered( collider );
+    }
+
+    public override void Recycle()
+    {
+        Debug.Log( "derived Recycle" );
         ObjectPool.Recycle( this );
     }
 }

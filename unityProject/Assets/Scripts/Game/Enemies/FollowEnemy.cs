@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class FollowEnemy : Entity
+public class FollowEnemy : Enemy
 {
     private float mEasingAmount = 0.15f;
 
@@ -21,7 +21,12 @@ public class FollowEnemy : Entity
 
     public override void CollisionTriggered( Collider2D collider )
     {
-        ParticleSystemManager.Instance.CreateEnemyExplosion( Position );
+        base.CollisionTriggered( collider );
+    }
+
+    public override void Recycle()
+    {
+        Debug.Log( "Recycle" );
         ObjectPool.Recycle( this );
     }
 }
