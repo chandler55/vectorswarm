@@ -87,6 +87,7 @@
     <Compile Include="Assets\Scripts\Game\Enemies\Enemy.cs" />
     <Compile Include="Assets\Scripts\Game\Enemies\EnemySpawner.cs" />
     <Compile Include="Assets\Scripts\Game\Enemies\FollowEnemy.cs" />
+    <Compile Include="Assets\Scripts\Game\Enemies\LeverEnemy.cs" />
     <Compile Include="Assets\Scripts\Game\Enemies\ReverseEnemy.cs" />
     <Compile Include="Assets\Scripts\Game\Enemies\SimpleEnemy.cs" />
     <Compile Include="Assets\Scripts\Game\Enemies\SineEnemy.cs" />

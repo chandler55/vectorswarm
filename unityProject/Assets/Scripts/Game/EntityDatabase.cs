@@ -19,21 +19,25 @@ public class EntityDatabase : MonoBehaviour
         EntityType_ReverseEnemy = 2,
         EntityType_SineEnemy = 3,
         EntityType_StationaryEnemy = 4,
-        EntityType_MultiplierItem = 5,
-        EntityType_ExplosionParticles = 6,
-        EntityType_PlayerExplosion = 7,
+        EntityType_LeverEnemy = 5,
+
+        EntityType_MultiplierItem = 100,
+
+        EntityType_ExplosionParticles = 200,
+        EntityType_PlayerExplosion = 201,
     }
 
-    public SimpleEnemy simpleEnemyPrefab;
-    public FollowEnemy followEnemyPrefab;
-    public ReverseEnemy reverseEnemyPrefab;
-    public SineEnemy sineEnemyPrefab;
-    public StationaryEnemy stationaryEnemyPrefab;
+    public SimpleEnemy      simpleEnemyPrefab;
+    public FollowEnemy      followEnemyPrefab;
+    public ReverseEnemy     reverseEnemyPrefab;
+    public SineEnemy        sineEnemyPrefab;
+    public StationaryEnemy  stationaryEnemyPrefab;
+    public LeverEnemy       leverEnemyPrefab;
 
-    public MultiplierItem multiplierItemPrefab;
+    public MultiplierItem   multiplierItemPrefab;
 
-    public ExplosionParticles explosionParticlesPrefab;
-    public PlayerExplosion playerExplosionPrefab;
+    public ExplosionParticles   explosionParticlesPrefab;
+    public PlayerExplosion      playerExplosionPrefab;
 
 
     void Awake()
@@ -53,6 +57,8 @@ public class EntityDatabase : MonoBehaviour
         ObjectPool.CreatePool( reverseEnemyPrefab );
         ObjectPool.CreatePool( sineEnemyPrefab );
         ObjectPool.CreatePool( stationaryEnemyPrefab );
+        ObjectPool.CreatePool( leverEnemyPrefab );
+
         ObjectPool.CreatePool( multiplierItemPrefab );
         ObjectPool.CreatePool( explosionParticlesPrefab );
         ObjectPool.CreatePool( playerExplosionPrefab );
@@ -82,6 +88,9 @@ public class EntityDatabase : MonoBehaviour
                 break;
             case EntityType.EntityType_StationaryEnemy:
                 entity = stationaryEnemyPrefab.Spawn( position, rotation ).gameObject;
+                break;
+            case EntityType.EntityType_LeverEnemy:
+                entity = leverEnemyPrefab.Spawn( position, rotation ).gameObject;
                 break;
             case EntityType.EntityType_MultiplierItem:
                 entity = multiplierItemPrefab.Spawn( position, rotation ).gameObject;
