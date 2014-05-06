@@ -20,6 +20,8 @@ public class EntityDatabase : MonoBehaviour
         EntityType_SineEnemy = 3,
         EntityType_StationaryEnemy = 4,
         EntityType_LeverEnemy = 5,
+        EntityType_ShortPathEnemy = 6,
+        EntityType_VerticalEnemy = 7,
 
         EntityType_MultiplierItem = 100,
 
@@ -33,6 +35,8 @@ public class EntityDatabase : MonoBehaviour
     public SineEnemy        sineEnemyPrefab;
     public StationaryEnemy  stationaryEnemyPrefab;
     public LeverEnemy       leverEnemyPrefab;
+    public ShortPathEnemy   shortPathEnemyPrefab;
+    public VerticalEnemy    verticalEnemyPrefab;
 
     public MultiplierItem   multiplierItemPrefab;
 
@@ -58,6 +62,8 @@ public class EntityDatabase : MonoBehaviour
         ObjectPool.CreatePool( sineEnemyPrefab );
         ObjectPool.CreatePool( stationaryEnemyPrefab );
         ObjectPool.CreatePool( leverEnemyPrefab );
+        ObjectPool.CreatePool( shortPathEnemyPrefab );
+        ObjectPool.CreatePool( verticalEnemyPrefab );
 
         ObjectPool.CreatePool( multiplierItemPrefab );
         ObjectPool.CreatePool( explosionParticlesPrefab );
@@ -92,9 +98,17 @@ public class EntityDatabase : MonoBehaviour
             case EntityType.EntityType_LeverEnemy:
                 entity = leverEnemyPrefab.Spawn( position, rotation ).gameObject;
                 break;
+            case EntityType.EntityType_ShortPathEnemy:
+                entity = shortPathEnemyPrefab.Spawn( position, rotation ).gameObject;
+                break;
+            case EntityType.EntityType_VerticalEnemy:
+                entity = verticalEnemyPrefab.Spawn( position, rotation ).gameObject;
+                break;
+
             case EntityType.EntityType_MultiplierItem:
                 entity = multiplierItemPrefab.Spawn( position, rotation ).gameObject;
                 break;
+
             case EntityType.EntityType_ExplosionParticles:
                 entity = explosionParticlesPrefab.Spawn( position, rotation ).gameObject;
                 break;
@@ -102,6 +116,7 @@ public class EntityDatabase : MonoBehaviour
                 entity = playerExplosionPrefab.Spawn( position, rotation ).gameObject;
                 break;
         }
+
         return entity;
     }
 }

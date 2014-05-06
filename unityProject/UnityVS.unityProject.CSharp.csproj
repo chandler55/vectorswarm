@@ -89,10 +89,12 @@
     <Compile Include="Assets\Scripts\Game\Enemies\FollowEnemy.cs" />
     <Compile Include="Assets\Scripts\Game\Enemies\LeverEnemy.cs" />
     <Compile Include="Assets\Scripts\Game\Enemies\ReverseEnemy.cs" />
+    <Compile Include="Assets\Scripts\Game\Enemies\ShortPathEnemy.cs" />
     <Compile Include="Assets\Scripts\Game\Enemies\SimpleEnemy.cs" />
     <Compile Include="Assets\Scripts\Game\Enemies\SineEnemy.cs" />
     <Compile Include="Assets\Scripts\Game\Enemies\SpinnerEnemy.cs" />
     <Compile Include="Assets\Scripts\Game\Enemies\StationaryEnemy.cs" />
+    <Compile Include="Assets\Scripts\Game\Enemies\VerticalEnemy.cs" />
     <Compile Include="Assets\Scripts\Game\Entity.cs" />
     <Compile Include="Assets\Scripts\Game\EntityDatabase.cs" />
     <Compile Include="Assets\Scripts\Game\EntityManager.cs" />

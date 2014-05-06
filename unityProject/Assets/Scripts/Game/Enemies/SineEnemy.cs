@@ -10,7 +10,7 @@ public class SineEnemy : Enemy
     private float mBaselineY = 0.0f;
     private tk2dSprite mSprite = null;
 
-    void Start()
+    void OnEnable()
     {
         mMovingRight = Position.x > 0;
         if ( mSprite )

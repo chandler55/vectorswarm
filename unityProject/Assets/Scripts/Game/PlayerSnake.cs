@@ -67,8 +67,9 @@ public class PlayerSnake : Entity
         {
             SetPlayerSpeed( mPlayerAfterburnerSpeed );
         }
-        else
+        else if ( Input.GetKey( KeyCode.C ) )
         {
+            SetPlayerSpeed( 0 );
             //SetPlayerSpeed( mPlayerNormalSpeed );
         }
 
@@ -241,7 +242,7 @@ public class PlayerSnake : Entity
 
     public override void CollisionTriggered( Collider2D collider )
     {
-        if ( mAfterburnerActivated || Input.GetKey(KeyCode.X) )
+        if ( mAfterburnerActivated || Input.GetKey( KeyCode.X ) )
         {
             if ( collider.tag == "Enemy" )
             {
