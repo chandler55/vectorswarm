@@ -8,11 +8,18 @@ public class SineEnemy : Enemy
     private bool mMovingRight = false;
     private const float SPEED = 30.0f;
     private float mBaselineY = 0.0f;
+    private tk2dSprite mSprite = null;
 
     void Start()
     {
         mMovingRight = Position.x > 0;
+        if ( mSprite )
+        {
+            mSprite.FlipX = !mMovingRight;
+        }
+
         mBaselineY = Position.y;
+        mSprite = GetComponent<tk2dSprite>();
     }
 
     void Update()
@@ -27,6 +34,10 @@ public class SineEnemy : Enemy
             if ( Position.x >= GameSettings.WORLD_BOUNDARY.x + GameSettings.WORLD_BOUNDARY.width )
             {
                 mMovingRight = false;
+                if ( mSprite )
+                {
+                    mSprite.FlipX = true;
+                }
             }
         }
         else
@@ -34,6 +45,10 @@ public class SineEnemy : Enemy
             if ( Position.x <= GameSettings.WORLD_BOUNDARY.x )
             {
                 mMovingRight = true;
+                if ( mSprite )
+                {
+                    mSprite.FlipX = false;
+                }
             }
         }
 
@@ -59,14 +74,16 @@ public class SineEnemy : Enemy
         //Go.to( transform, movementDuration, new GoTweenConfig().position( newPos ) ).setOnCompleteHandler( OnCompleteTween );
     }
 
-    public override void CollisionTriggered( Collider2D collider )
+    public override void DestroyEnemy()
     {
-        switch ( collider.tag )
-        {
-            case "Player":
-                ParticleSystemManager.Instance.CreateEnemyExplosion( Position );
-                ObjectPool.Recycle( this );
-                break;
-        }
+        base.DestroyEnemy();
+        Die();
+    }
+
+    public void Die()
+    {
+        Messenger.Broadcast<int>( Events.GameEvents.IncrementScore, 10 );
+        ParticleSystemManager.Instance.CreateEnemyExplosion( Position );
+        ObjectPool.Recycle( this );
     }
 }

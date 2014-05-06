@@ -16,14 +16,13 @@ public class Enemy : Entity
 
     public virtual void DestroyEnemy()
     {
-        Debug.Log( "destroy enemy" );
-        //Messenger.Broadcast<int>( Events.GameEvents.IncrementScore, 10 );
+        Messenger.Broadcast<int>( Events.GameEvents.IncrementScore, 10 );
         ParticleSystemManager.Instance.CreateEnemyExplosion( Position );
-        Recycle();
+        //Recycle();
     }
 
     public virtual void Recycle()
     {
-        Debug.Log( "base Recycle" );
+        //Debug.Log( "base Recycle" );
     }
 }

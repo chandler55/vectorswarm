@@ -45,14 +45,16 @@ public class SimpleEnemy : Enemy
         Go.to( transform, movementDuration, new GoTweenConfig().position( newPos ) ).setOnCompleteHandler( OnCompleteTween );
     }
 
-    public override void CollisionTriggered( Collider2D collider )
+    public override void DestroyEnemy()
     {
-        base.CollisionTriggered( collider );
+        base.DestroyEnemy();
+        Die();
     }
 
-    public override void Recycle()
+    public void Die()
     {
-        Debug.Log( "derived Recycle" );
+        Messenger.Broadcast<int>( Events.GameEvents.IncrementScore, 10 );
+        ParticleSystemManager.Instance.CreateEnemyExplosion( Position );
         ObjectPool.Recycle( this );
     }
 }

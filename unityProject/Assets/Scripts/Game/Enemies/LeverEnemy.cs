@@ -24,13 +24,16 @@ public class LeverEnemy : Enemy
         }
     }
 
-    public override void CollisionTriggered( Collider2D collider )
+    public override void DestroyEnemy()
     {
-        base.CollisionTriggered( collider );
+        base.DestroyEnemy();
+        Die();
     }
 
-    public override void Recycle()
+    public void Die()
     {
+        Messenger.Broadcast<int>( Events.GameEvents.IncrementScore, 10 );
+        ParticleSystemManager.Instance.CreateEnemyExplosion( Position );
         ObjectPool.Recycle( this );
     }
 }

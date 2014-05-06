@@ -1,0 +1,6 @@
+enemy -> player
+	destroy player
+
+player -> enemy
+	destroy enemy
+
