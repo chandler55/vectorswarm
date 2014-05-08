@@ -38,6 +38,10 @@ MonoBehaviour:
     dataGUID: 7bb0b96e74b14334cb5efc4ed0c1253f
     managed: 0
     loadable: 0
+  - assetGUID: 6962e250d8f9d7540a88c5107e6c5d5f
+    dataGUID: a64727ced551f7548aa857d32b586a51
+    managed: 0
+    loadable: 0
   spriteCollectionIndex:
   - name: VectorSwarm
     spriteCollectionGUID: 3dcf196cb5f216b4db7865b05776051b

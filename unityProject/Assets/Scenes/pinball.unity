@@ -1558,17 +1558,17 @@ MonoBehaviour:
   lineSpacing: 0
   data:
     version: 1
-    font: {fileID: 11400000, guid: 7bb0b96e74b14334cb5efc4ed0c1253f, type: 2}
-    text: 0
+    font: {fileID: 11400000, guid: a64727ced551f7548aa857d32b586a51, type: 2}
+    text: 50,000,000
     color: {r: 1, g: 1, b: 1, a: 1}
     color2: {r: 1, g: 1, b: 1, a: 1}
     useGradient: 0
     textureGradient: 0
-    anchor: 6
+    anchor: 4
     renderLayer: 0
     scale: {x: 1, y: 1, z: 1}
     kerning: 0
-    maxChars: 16
+    maxChars: 20
     inlineStyling: 0
     formatting: 0
     wordWrapWidth: 0
@@ -1586,7 +1586,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: e1916a24a31b9884cb34a35ba5e6869b, type: 2}
+  - {fileID: 2100000, guid: dc924567d2395ab41b05510089dab6b1, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -1609,8 +1609,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 417433523}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.0634675, y: 18.0273094, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 1.33700132, y: 19.1425076, z: 0}
+  m_LocalScale: {x: .600000024, y: .600000024, z: 1}
   m_Children: []
   m_Father: {fileID: 183074852}
 --- !u!114 &417433528
@@ -1788,8 +1788,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 552994597}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.06346798, y: 14.8905363, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 12.1068287, y: 19.2232151, z: 0}
+  m_LocalScale: {x: .800000012, y: .800000012, z: 1}
   m_Children: []
   m_Father: {fileID: 183074852}
 --- !u!114 &552994599
@@ -1820,13 +1820,13 @@ MonoBehaviour:
   lineSpacing: 0
   data:
     version: 1
-    font: {fileID: 11400000, guid: 7bb0b96e74b14334cb5efc4ed0c1253f, type: 2}
-    text: 16x
-    color: {r: .235294104, g: .779411674, b: 1, a: 1}
+    font: {fileID: 11400000, guid: a64727ced551f7548aa857d32b586a51, type: 2}
+    text: 216X
+    color: {r: 1, g: 1, b: 1, a: 1}
     color2: {r: 1, g: 1, b: 1, a: 1}
     useGradient: 0
     textureGradient: 0
-    anchor: 6
+    anchor: 4
     renderLayer: 0
     scale: {x: 1, y: 1, z: 1}
     kerning: 0
@@ -1848,7 +1848,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: e1916a24a31b9884cb34a35ba5e6869b, type: 2}
+  - {fileID: 2100000, guid: dc924567d2395ab41b05510089dab6b1, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
