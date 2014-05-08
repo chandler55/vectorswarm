@@ -25,8 +25,6 @@ public class FollowEnemy : Enemy
 
     public void Die()
     {
-        Messenger.Broadcast<int>( Events.GameEvents.IncrementScore, 10 );
-        ParticleSystemManager.Instance.CreateEnemyExplosion( Position );
         ObjectPool.Recycle( this );
     }
 }

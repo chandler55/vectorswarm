@@ -16,8 +16,10 @@ public class Enemy : Entity
 
     public virtual void DestroyEnemy()
     {
-        Messenger.Broadcast<int>( Events.GameEvents.IncrementScore, 10 );
+        Messenger.Broadcast<long, Vector3>( Events.GameEvents.IncrementScore, 10, Position );
         ParticleSystemManager.Instance.CreateEnemyExplosion( Position );
+        
+
         //Recycle();
     }
 

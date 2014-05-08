@@ -10,15 +10,15 @@ public class Scoring : MonoBehaviour
     {
         mMultiplier = 1;
 
-        Messenger.AddListener( Events.GameEvents.IncrementMultipler, OnIncrementMultiplier );
-        Messenger.AddListener<long>( Events.GameEvents.IncrementScore, OnIncrementScore );
+        Messenger.AddListener<Vector3>( Events.GameEvents.IncrementMultipler, OnIncrementMultiplier );
+        Messenger.AddListener<long, Vector3>( Events.GameEvents.IncrementScore, OnIncrementScore );
 
     }
 
     void OnDestroy()
     {
-        Messenger.RemoveListener( Events.GameEvents.IncrementMultipler, OnIncrementMultiplier );
-        Messenger.RemoveListener<long>( Events.GameEvents.IncrementScore, OnIncrementScore );
+        Messenger.RemoveListener<Vector3>( Events.GameEvents.IncrementMultipler, OnIncrementMultiplier );
+        Messenger.RemoveListener<long, Vector3>( Events.GameEvents.IncrementScore, OnIncrementScore );
     }
 
     void Update()
@@ -26,15 +26,32 @@ public class Scoring : MonoBehaviour
 
     }
 
-    void OnIncrementScore( long score )
+    void OnIncrementScore( long score, Vector3 worldPos )
     {
-        mHighScore += mMultiplier * score;
+        long addScore = mMultiplier * score;
+        mHighScore += addScore;
+
+        GameObject go = EntityDatabase.Instance.CreateEntity( EntityDatabase.EntityType.EntityType_ScoreIndicator, worldPos, Quaternion.identity );
+        ScoreIndicator scoreIndicatorComponent = go.GetComponent<ScoreIndicator>();
+        if ( scoreIndicatorComponent )
+        {
+            scoreIndicatorComponent.SetScore( addScore );
+        }
+
         Messenger.Broadcast<long>( Events.UIEvents.HighScoreUpdated, mHighScore );
     }
 
-    void OnIncrementMultiplier()
+    void OnIncrementMultiplier( Vector3 worldPos )
     {
         mMultiplier++;
+
+        GameObject go = EntityDatabase.Instance.CreateEntity( EntityDatabase.EntityType.EntityType_ScoreIndicator, worldPos, Quaternion.identity );
+        ScoreIndicator scoreIndicatorComponent = go.GetComponent<ScoreIndicator>();
+        if ( scoreIndicatorComponent )
+        {
+            scoreIndicatorComponent.SetMultiplier( mMultiplier );
+        }
+
         Messenger.Broadcast<int>( Events.UIEvents.MultiplierUpdated, mMultiplier );
     }
 }

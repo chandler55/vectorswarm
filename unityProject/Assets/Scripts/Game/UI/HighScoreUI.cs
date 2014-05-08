@@ -29,7 +29,7 @@ public class HighScoreUI : MonoBehaviour
 
         if ( mTextMesh )
         {
-            mTextMesh.text = mScore.ToString();
+            mTextMesh.text = GameUtils.FormatNumber( mScore ); ;
         }
     }
 }

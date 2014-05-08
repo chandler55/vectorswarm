@@ -36,8 +36,7 @@ public class MultiplierItem : Entity
             {
                 if ( distance < 1.0f )
                 {
-                    Messenger.Broadcast<long>( Events.GameEvents.IncrementScore, 10 );
-                    Messenger.Broadcast( Events.GameEvents.IncrementMultipler );
+                    Messenger.Broadcast<Vector3>( Events.GameEvents.IncrementMultipler, Position );
                     ObjectPool.Recycle( this );
                 }
 

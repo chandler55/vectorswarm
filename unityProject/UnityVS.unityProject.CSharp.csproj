@@ -133,6 +133,8 @@
     <Compile Include="Assets\Scripts\Game\UI\RetryLevel.cs" />
     <Compile Include="Assets\Scripts\Game\UI\Scalable.cs" />
     <Compile Include="Assets\Scripts\Game\UI\ScaleOnClick.cs" />
+    <Compile Include="Assets\Scripts\Game\UI\ScoreIndicator.cs" />
+    <Compile Include="Assets\Scripts\Game\UI\ScoreIndicatorManager.cs" />
     <Compile Include="Assets\Scripts\Game\UI\SquishAnimation.cs" />
     <Compile Include="Assets\Scripts\Game\UI\TileSize.cs" />
     <Compile Include="Assets\Scripts\Game\UI\TriggerEvent.cs" />
