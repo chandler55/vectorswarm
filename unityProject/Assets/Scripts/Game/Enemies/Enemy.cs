@@ -18,7 +18,9 @@ public class Enemy : Entity
     {
         Messenger.Broadcast<long, Vector3>( Events.GameEvents.IncrementScore, 10, Position );
         ParticleSystemManager.Instance.CreateEnemyExplosion( Position );
-        
+
+        // spawn multiplier item
+        EntityDatabase.Instance.CreateEntity( EntityDatabase.EntityType.EntityType_MultiplierItem, Position, Quaternion.identity );
 
         //Recycle();
     }
