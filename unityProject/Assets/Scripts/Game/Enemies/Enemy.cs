@@ -20,13 +20,25 @@ public class Enemy : Entity
         ParticleSystemManager.Instance.CreateEnemyExplosion( Position );
 
         // spawn multiplier item
-        EntityDatabase.Instance.CreateEntity( EntityDatabase.EntityType.EntityType_MultiplierItem, Position, Quaternion.identity );
+        //EntityDatabase.Instance.CreateEntity( EntityDatabase.EntityType.EntityType_MultiplierItem, Position, Quaternion.identity );
 
         //Recycle();
+    }
+
+    void OnEnable()
+    {
+        Init();
+    }
+
+    protected virtual void Init()
+    {
+
     }
 
     public virtual void Recycle()
     {
         //Debug.Log( "base Recycle" );
     }
+
+    
 }

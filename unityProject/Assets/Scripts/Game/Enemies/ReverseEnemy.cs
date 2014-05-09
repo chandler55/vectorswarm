@@ -5,11 +5,6 @@ public class ReverseEnemy : Enemy
 {
     private float mEasingAmount = 9.0f;
 
-    void Start()
-    {
-
-    }
-
     void Update()
     {
         Vector2 target = -PlayerSnake.Instance.Position - Position;

@@ -6,13 +6,14 @@ public class SpinnerEnemy : Enemy
     public float movementDuration = 2.0f;
     private bool mMovingRight = false;
 
-    void Start()
+    protected override void Init()
     {
+        base.Init();
         mMovingRight = Position.x > 0;
         Move();
     }
 
-    void OnDestroy()
+    void OnDisable()
     {
         Go.killAllTweensWithTarget( transform );
     }

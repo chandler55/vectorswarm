@@ -11,7 +11,7 @@ public class VerticalEnemy : Enemy
     private Vector3 mPosition1 = Vector3.zero;
     private Vector3 mPosition2 = Vector3.zero;
 
-    void Start()
+    protected override void Init()
     {
         mPosition1 = Position;
         if ( positionTarget )
@@ -24,11 +24,7 @@ public class VerticalEnemy : Enemy
         Rotate();
     }
 
-    void Update()
-    {
-    }
-
-    void OnDestroy()
+    void OnDisable()
     {
         Go.killAllTweensWithTarget( transform );
     }

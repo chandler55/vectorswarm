@@ -61,7 +61,7 @@ public class ParticleSystemManager : MonoBehaviour
 
                 Velocity *= 0.97f;
 
-                Vector2 dir = ( Position + Velocity ) - (Vector2)Position;
+                //Vector2 dir = ( Position + Velocity ) - (Vector2)Position;
                 Vector2 normalized = Velocity.normalized;
                 float angle2 = 360 - Mathf.Atan2( normalized.y, normalized.x ) * Mathf.Rad2Deg;
 

@@ -8,6 +8,7 @@ public class HighScoreUI : MonoBehaviour
 
     void Start()
     {
+        OnHighScoreUpdated( 0 );
         mTextMesh = GetComponent<tk2dTextMesh>();
 
         Messenger.AddListener<long>( Events.UIEvents.HighScoreUpdated, OnHighScoreUpdated );

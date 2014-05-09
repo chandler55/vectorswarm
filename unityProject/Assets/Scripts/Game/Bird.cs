@@ -4,7 +4,7 @@ using System.Collections;
 public class Bird : MonoBehaviour
 {
     private static float MAX_SPEED = 20.0f;
-    private static float MAX_STEER_FORCE = 3.0f;
+//    private static float MAX_STEER_FORCE = 3.0f;
 
     public Vector2 Position
     {

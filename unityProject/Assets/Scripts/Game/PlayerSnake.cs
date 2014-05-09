@@ -15,6 +15,9 @@ public class PlayerSnake : Entity
         }
     }
 
+    public CircleCollider2D deathCollider;
+    public CircleCollider2D destroyEnemyCollider;
+
     // speed
     private float mEasingAmount = 9.0f;
     private float mPlayerNormalSpeed = 15.0f;
@@ -24,7 +27,7 @@ public class PlayerSnake : Entity
     private Transform mTransform = null;
 
     // fuel
-    private float   mFuelCapacity = 1.0f; // in seconds
+    private float   mFuelCapacity = 3.0f; // in seconds
     private float   mFuelRemaining = 0.0f;
     private bool    mAfterburnerActivated = false;
     private float   mFuelChargeRate = 0.1f;
@@ -71,6 +74,12 @@ public class PlayerSnake : Entity
         {
             SetPlayerSpeed( 0 );
             //SetPlayerSpeed( mPlayerNormalSpeed );
+        }
+
+        if ( deathCollider && destroyEnemyCollider )
+        {
+            deathCollider.enabled = !mAfterburnerActivated;
+            destroyEnemyCollider.enabled = mAfterburnerActivated;
         }
 
         // invincibility logic
@@ -179,7 +188,7 @@ public class PlayerSnake : Entity
         {
             if ( mFuelRemaining <= mFuelCapacity )
             {
-                mFuelRemaining += Time.deltaTime * mFuelChargeRate;
+                mFuelRemaining += Time.deltaTime * mFuelChargeRate * mFuelCapacity;
 
                 if ( mFuelRemaining > mFuelCapacity )
                 {

@@ -3,45 +3,28 @@ using System.Collections;
 
 public class HourGlassEnemy : Enemy
 {
-    public float movementDuration = 2.0f;
+    public Transform    originOfCircle = null;
 
-    private bool mMovingRight = false;
+    public float        movementSpeed = 2.0f;
 
-    void Start()
+    private float mAngle = 0.0f;
+    private float mRadius = 180.0f;
+    private Vector3 mOriginPos = Vector3.zero;
+
+    protected override void Init()
     {
-        mMovingRight = Position.x > 0;
-        Move();
+        mRadius = ( Position - (Vector2)originOfCircle.position ).magnitude;
+        mOriginPos = originOfCircle.position;
     }
 
     void Update()
     {
-    }
-
-    void OnDestroy()
-    {
-        Go.killAllTweensWithTarget( transform );
-    }
-
-    void OnCompleteTween( AbstractGoTween tween )
-    {
-        Move();
-    }
-
-    void Move()
-    {
-        mMovingRight = !mMovingRight;
-
-        Vector3 newPos;
-        if ( mMovingRight )
+        if ( originOfCircle )
         {
-            newPos = new Vector3( GameSettings.WORLD_BOUNDARY.x + GameSettings.WORLD_BOUNDARY.width, Position.y, gameObject.transform.position.z );
+            mAngle -= Time.deltaTime * movementSpeed;
+            Vector2 newPos = new Vector2( Mathf.Cos( mAngle ) * mRadius + mOriginPos.x, Mathf.Sin( mAngle ) * mRadius + mOriginPos.y );
+            Position = newPos;
         }
-        else
-        {
-            newPos = new Vector3( GameSettings.WORLD_BOUNDARY.x, Position.y, gameObject.transform.position.z );
-        }
-
-        Go.to( transform, movementDuration, new GoTweenConfig().position( newPos ) ).setOnCompleteHandler( OnCompleteTween );
     }
 
     public override void DestroyEnemy()

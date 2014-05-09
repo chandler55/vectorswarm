@@ -10,17 +10,14 @@ public class ShortPathEnemy : Enemy
 
     private float mPauseDuration = 0.5f;
 
-    void Start()
+    protected override void Init()
     {
+        base.Init();
         mMovingRight = Position.x > 0;
         Move();
     }
 
-    void Update()
-    {
-    }
-
-    void OnDestroy()
+    void OnDisable()
     {
         Go.killAllTweensWithTarget( transform );
     }
@@ -62,7 +59,6 @@ public class ShortPathEnemy : Enemy
             newPos = new Vector3( newX, Position.y, gameObject.transform.position.z );
         }
 
-        float distance = Mathf.Abs(newPos.x - Position.x);
         Go.to( transform, 0.1f, new GoTweenConfig().position( newPos ) ).setOnCompleteHandler( OnCompleteMove );
     }
 

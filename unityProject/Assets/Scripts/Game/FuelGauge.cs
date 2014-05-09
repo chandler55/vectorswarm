@@ -9,6 +9,7 @@ public class FuelGauge : MonoBehaviour
     void Start()
     {
         mGaugeSprite = GetComponentInChildren<tk2dClippedSprite>();
+
         if ( mGaugeSprite )
         {
             mGaugeTransform = mGaugeSprite.transform;
@@ -21,11 +22,6 @@ public class FuelGauge : MonoBehaviour
     void OnDestroy()
     {
         Messenger.RemoveListener<float>( Events.UIEvents.FuelGaugeUpdated, OnSetFuelGauge );
-    }
-
-    void Update()
-    {
-
     }
 
     void OnSetFuelGauge( float pct )

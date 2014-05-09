@@ -3,20 +3,17 @@ using System.Collections;
 
 public class LeverEnemy : Enemy
 {
-    private float mEasingAmount = 9.0f;
     private Transform mTransform = null;
 
-    void Start()
+    protected override void Init()
     {
+        base.Init();
+
         mTransform = transform;
     }
 
     void Update()
     {
-        //Vector2 target = -PlayerSnake.Instance.Position - Position;
-        //Velocity = new Vector2( target.x * mEasingAmount, 0 );
-        //Position += Velocity * Time.deltaTime;
-
         float yDistanceToPlayer = PlayerSnake.Instance.Position.y - Position.y;
         if ( mTransform )
         {

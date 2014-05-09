@@ -6,6 +6,7 @@ public class Scoring : MonoBehaviour
     private long mHighScore = 0;
     private int mMultiplier = 1;
 
+    private Vector3 mScoreOffset = new Vector3( 0, -2.5f, 0 );
     void Start()
     {
         mMultiplier = 1;
@@ -31,6 +32,7 @@ public class Scoring : MonoBehaviour
         long addScore = mMultiplier * score;
         mHighScore += addScore;
 
+        worldPos += mScoreOffset;
         GameObject go = EntityDatabase.Instance.CreateEntity( EntityDatabase.EntityType.EntityType_ScoreIndicator, worldPos, Quaternion.identity );
         ScoreIndicator scoreIndicatorComponent = go.GetComponent<ScoreIndicator>();
         if ( scoreIndicatorComponent )
@@ -45,6 +47,7 @@ public class Scoring : MonoBehaviour
     {
         mMultiplier++;
 
+        worldPos += mScoreOffset;
         GameObject go = EntityDatabase.Instance.CreateEntity( EntityDatabase.EntityType.EntityType_ScoreIndicator, worldPos, Quaternion.identity );
         ScoreIndicator scoreIndicatorComponent = go.GetComponent<ScoreIndicator>();
         if ( scoreIndicatorComponent )

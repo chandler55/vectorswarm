@@ -4,28 +4,48 @@ using System.Collections;
 // this enemy moves left and right , nothing special
 public class SimpleEnemy : Enemy
 {
-    public float movementDuration = 2.0f;
+    public float movementSpeed = 2.0f;
 
     private bool mMovingRight = false;
 
-    void Start()
+    protected override void Init()
     {
+        base.Init();
         mMovingRight = Position.x > 0;
-        Move();
+    }
+
+    public void SetMovingRight( bool moveRight )
+    {
+        mMovingRight = moveRight;
     }
 
     void Update()
     {
-    }
+        if ( mMovingRight )
+        {
+            if ( Position.x >= GameSettings.WORLD_BOUNDARY.x + GameSettings.WORLD_BOUNDARY.width )
+            {
+                mMovingRight = false;
+            }
+        }
+        else
+        {
+            if ( Position.x <= GameSettings.WORLD_BOUNDARY.x )
+            {
+                mMovingRight = true;
+            }
+        }
 
-    void OnDestroy()
-    {
-        Go.killAllTweensWithTarget( transform );
-    }
+        if ( mMovingRight )
+        {
+            Velocity = new Vector2( movementSpeed, 0 );
+        }
+        else
+        {
+            Velocity = new Vector2( -movementSpeed, 0 );
+        }
 
-    void OnCompleteTween( AbstractGoTween tween )
-    {
-        Move();
+        Position += Velocity * Time.deltaTime;
     }
 
     void Move()
@@ -41,8 +61,6 @@ public class SimpleEnemy : Enemy
         {
             newPos = new Vector3( GameSettings.WORLD_BOUNDARY.x, Position.y, gameObject.transform.position.z );
         }
-
-        Go.to( transform, movementDuration, new GoTweenConfig().position( newPos ) ).setOnCompleteHandler( OnCompleteTween );
     }
 
     public override void DestroyEnemy()
