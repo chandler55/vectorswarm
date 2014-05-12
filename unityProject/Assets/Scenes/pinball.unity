@@ -1884,11 +1884,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05b769d8a98bff94491eb9df546de157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useTestLevel: 1
-  levelSegmentTest: {fileID: 100000, guid: 9af351d8da4037c44b431a2fd9d20f4b, type: 2}
+  useTestLevel: 0
+  levelSegmentTest: {fileID: 100006, guid: 2494a92d17f5df94cbe61392afa9b40f, type: 2}
   levelSegmentPrefabs:
-  - {fileID: 100084, guid: 05f5be3ebdd09514dbaa649066b26028, type: 2}
   - {fileID: 100098, guid: 26c90373627978b4cadc738e909b9e79, type: 2}
+  - {fileID: 100084, guid: 05f5be3ebdd09514dbaa649066b26028, type: 2}
+  - {fileID: 100000, guid: 160e2676720b9644d8f24876f53462ca, type: 2}
+  - {fileID: 100000, guid: fc5be91bfef3b8647b15c42662ff7f01, type: 2}
+  - {fileID: 100000, guid: aa210de5a91fa5442b5689afcb48ed63, type: 2}
+  - {fileID: 100054, guid: d1da52a64e2e01e49a0da7d09c79915c, type: 2}
+  - {fileID: 100000, guid: 8f46aa2878557644f8bf1a2c0e30d850, type: 2}
+  - {fileID: 100036, guid: 22b13e862319fc64890971494dc6a66a, type: 2}
+  - {fileID: 100036, guid: 0da4cb4a8b6cec141bed12e3ec9ed558, type: 2}
+  - {fileID: 100020, guid: f3020b634eebfa8488632d02fc910987, type: 2}
+  - {fileID: 100020, guid: 3539d6a0346463c42b41bd5364bb69bc, type: 2}
+  - {fileID: 100000, guid: 9af351d8da4037c44b431a2fd9d20f4b, type: 2}
+  - {fileID: 100060, guid: e99081036cca3c04bbd758216157537b, type: 2}
+  - {fileID: 100002, guid: 30f1de7c3ab737e41b91216fb9e753a9, type: 2}
+  - {fileID: 100028, guid: ff0cde6aaec5c0b4885f94b442c47285, type: 2}
+  - {fileID: 100038, guid: 80f764861d1ea8b4c8b745268276f285, type: 2}
+  - {fileID: 100038, guid: 9d5cc81d1302e944194855c432d319ea, type: 2}
+  - {fileID: 100006, guid: cba45fe3d6afd694d8cdebd3055276b4, type: 2}
+  - {fileID: 100006, guid: 2494a92d17f5df94cbe61392afa9b40f, type: 2}
 --- !u!4 &833252713
 Transform:
   m_ObjectHideFlags: 0
