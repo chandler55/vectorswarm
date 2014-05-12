@@ -1885,7 +1885,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useTestLevel: 1
-  levelSegmentTest: {fileID: 100036, guid: 0da4cb4a8b6cec141bed12e3ec9ed558, type: 2}
+  levelSegmentTest: {fileID: 100000, guid: 9af351d8da4037c44b431a2fd9d20f4b, type: 2}
   levelSegmentPrefabs:
   - {fileID: 100084, guid: 05f5be3ebdd09514dbaa649066b26028, type: 2}
   - {fileID: 100098, guid: 26c90373627978b4cadc738e909b9e79, type: 2}
