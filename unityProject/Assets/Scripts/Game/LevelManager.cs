@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class LevelManager : MonoBehaviour
 {
+    public bool useTestLevel = false;
+    public GameObject levelSegmentTest;
 
     public List<GameObject> levelSegmentPrefabs;
 
@@ -15,7 +17,7 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
-        mCurrentLevelSegment = Instantiate( levelSegmentPrefabs[0], mNextLevelSegmentPos, Quaternion.identity ) as GameObject;
+        mCurrentLevelSegment = Instantiate( GetRandomLevelSegment(), mNextLevelSegmentPos, Quaternion.identity ) as GameObject;
         CreateNextLevelSegment();
     }
 
@@ -38,10 +40,23 @@ public class LevelManager : MonoBehaviour
 
     }
 
+    GameObject GetRandomLevelSegment()
+    {
+        // choose random level segment
+        int prefabIndex = Random.Range( 0, levelSegmentPrefabs.Count );
+        GameObject levelSegmentPrefab = levelSegmentPrefabs[prefabIndex];
+        if ( useTestLevel && levelSegmentTest )
+        {
+            levelSegmentPrefab = levelSegmentTest;
+        }
+
+        return levelSegmentPrefab;
+    }
+
     void CreateNextLevelSegment()
     {
         mNextLevelSegmentPos += new Vector3( 0, GameSettings.LEVEL_SEGMENT_SIZE_Y, 0 );
-        mNextLevelSegment = Instantiate( levelSegmentPrefabs[0], mNextLevelSegmentPos, Quaternion.identity ) as GameObject;
+        mNextLevelSegment = Instantiate( GetRandomLevelSegment(), mNextLevelSegmentPos, Quaternion.identity ) as GameObject;
         mNextLevelSegmentTransform = mNextLevelSegment.transform;
     }
 }
