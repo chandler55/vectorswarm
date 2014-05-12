@@ -2040,7 +2040,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelSegmentPrefabs:
-  - {fileID: 100072, guid: 8cc05363fea4973469e69edc75d7fe71, type: 2}
+  - {fileID: 100084, guid: 05f5be3ebdd09514dbaa649066b26028, type: 2}
+  - {fileID: 100098, guid: 26c90373627978b4cadc738e909b9e79, type: 2}
 --- !u!4 &833252713
 Transform:
   m_ObjectHideFlags: 0

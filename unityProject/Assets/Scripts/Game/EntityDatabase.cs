@@ -29,7 +29,6 @@ public class EntityDatabase : MonoBehaviour
         EntityType_PlayerExplosion = 201,
 
         EntityType_ScoreIndicator = 300,
-
     }
 
     public SimpleEnemy      simpleEnemyPrefab;

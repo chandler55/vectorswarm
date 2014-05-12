@@ -3,6 +3,7 @@ using System.Collections;
 
 public class StationaryEnemy : Enemy
 {
+    public float randomSpread = 0.7f;
     private Vector2 mOriginalPosition = Vector2.zero;
 
     void OnDisable()
@@ -19,7 +20,7 @@ public class StationaryEnemy : Enemy
 
     void MoveToNewPosition( AbstractGoTween tween )
     {
-        Vector2 newPos = new Vector2( mOriginalPosition.x + Random.Range( -1.0f, 1.0f ), mOriginalPosition.y + Random.Range( -1.0f, 1.0f ) );
+        Vector2 newPos = new Vector2( mOriginalPosition.x + Random.Range( -randomSpread, randomSpread ), mOriginalPosition.y + Random.Range( -randomSpread, randomSpread ) );
         Go.to( transform, 1.0f, new GoTweenConfig().position( newPos ) ).setOnCompleteHandler( MoveToNewPosition );
     }
 

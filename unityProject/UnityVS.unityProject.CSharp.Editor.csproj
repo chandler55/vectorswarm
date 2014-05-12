@@ -86,6 +86,7 @@
     <Compile Include="Assets\Editor\android\ManifestMod.cs" />
     <Compile Include="Assets\Editor\FacebookPostprocess.cs" />
     <Compile Include="Assets\Editor\FacebookSettingsEditor.cs" />
+    <Compile Include="Assets\Editor\InstantiateEntityEditor.cs" />
     <Compile Include="Assets\Editor\iOS\FixupFiles.cs" />
     <Compile Include="Assets\Editor\iOS\PlistMod.cs" />
     <Compile Include="Assets\Editor\iOS\third_party\XCodeEditor-for-Unity\PBXBuildFile.cs" />

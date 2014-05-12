@@ -29,9 +29,49 @@ public class InstantiateEntity : MonoBehaviour
 
     }
 
+#if UNITY_EDITOR
     void OnDrawGizmos()
     {
         Gizmos.DrawWireCube( transform.position, Vector3.one );
 
+        switch ( entityType )
+        {
+            case EntityDatabase.EntityType.EntityType_SimpleEnemy:
+                Gizmos.color = Color.red;
+                Gizmos.DrawWireSphere( transform.position, 1 );
+                break;
+            case EntityDatabase.EntityType.EntityType_FollowEnemy:
+                break;
+            case EntityDatabase.EntityType.EntityType_ReverseEnemy:
+                Gizmos.color = Color.yellow;
+                Gizmos.DrawWireSphere( transform.position, 0.5f );
+                break;
+            case EntityDatabase.EntityType.EntityType_SineEnemy:
+                Gizmos.color = Color.green;
+                Gizmos.DrawWireSphere( transform.position, 1.0f );
+                break;
+            case EntityDatabase.EntityType.EntityType_StationaryEnemy:
+                Gizmos.color = Color.yellow;
+                Gizmos.DrawWireSphere( transform.position, 0.5f );
+                break;
+            case EntityDatabase.EntityType.EntityType_LeverEnemy:
+                Gizmos.color = new Color(255, 0, 255);
+                Gizmos.DrawWireSphere( transform.position, 3.0f );
+                break;
+            case EntityDatabase.EntityType.EntityType_ShortPathEnemy:
+                Gizmos.color = new Color( 255, 0, 255 );
+                Gizmos.DrawWireSphere( transform.position, 1.5f );
+                break;
+            case EntityDatabase.EntityType.EntityType_VerticalEnemy:
+                Gizmos.color = new Color( 255, 155, 0 );
+                Gizmos.DrawWireSphere( transform.position, 1.5f );
+                break;
+            case EntityDatabase.EntityType.EntityType_MultiplierItem:
+                Gizmos.color = Color.blue;
+                Gizmos.DrawWireSphere( transform.position, 0.5f );
+                break;
+        }
     }
+#endif
+
 }
