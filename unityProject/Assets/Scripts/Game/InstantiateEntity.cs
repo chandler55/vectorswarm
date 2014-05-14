@@ -21,6 +21,13 @@ public class InstantiateEntity : MonoBehaviour
                     simpleEnemy.SetMovingRight( simpleMoveRight );
                 }
                 break;
+            case EntityDatabase.EntityType.EntityType_SlowerSimpleEnemy:
+                SlowerSimpleEnemy slowerSimpleEnemy = go.GetComponent<SlowerSimpleEnemy>();
+                if ( slowerSimpleEnemy )
+                {
+                    slowerSimpleEnemy.SetMovingRight( simpleMoveRight );
+                }
+                break;
         }
     }
 
@@ -65,6 +72,10 @@ public class InstantiateEntity : MonoBehaviour
             case EntityDatabase.EntityType.EntityType_VerticalEnemy:
                 Gizmos.color = new Color( 255, 155, 0 );
                 Gizmos.DrawWireSphere( transform.position, 1.5f );
+                break;
+            case EntityDatabase.EntityType.EntityType_SlowerSimpleEnemy:
+                Gizmos.color = new Color( 0, 150, 0 );
+                Gizmos.DrawWireSphere( transform.position, 1f );
                 break;
             case EntityDatabase.EntityType.EntityType_MultiplierItem:
                 Gizmos.color = Color.blue;

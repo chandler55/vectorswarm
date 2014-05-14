@@ -24,6 +24,8 @@ public class GameManager : MonoBehaviour
 
     private int waitFrames = 0;
 
+    private int mRemainingLives = 0;
+
     void Start()
     {
         Application.targetFrameRate = 60;
@@ -33,6 +35,8 @@ public class GameManager : MonoBehaviour
         Messenger.AddListener( Events.GameEvents.RetryLevel, OnRetryLevel );
         Messenger.AddListener( Events.GameEvents.PlayerDied, OnPlayerDied );
 
+        mRemainingLives = 5;
+        Messenger.Broadcast<int>( Events.UIEvents.RemainingLivesUpdated, mRemainingLives );
     }
 
     void OnDestroy()
@@ -84,6 +88,9 @@ public class GameManager : MonoBehaviour
 
     void SpawnNewShip( AbstractGoTween tween )
     {
+        --mRemainingLives;
+        Messenger.Broadcast<int>( Events.UIEvents.RemainingLivesUpdated, mRemainingLives );
+
         Messenger.Broadcast( Events.GameEvents.SpawnNewShip );
     }
 

@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 400000}
   - 114: {fileID: 11400000}
   m_Layer: 0
-  m_Name: VectorSwarm
+  m_Name: VectorSwarmAdditiveSprites
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -833,12 +833,12 @@ MonoBehaviour:
   textureMipMaps: 0
   allowMultipleAtlases: 0
   spriteCollectionGUID: 3dcf196cb5f216b4db7865b05776051b
-  spriteCollectionName: VectorSwarm
+  spriteCollectionName: VectorSwarmAdditiveSprites
   assetName: 
   loadable: 0
   invOrthoSize: 2
   halfTargetHeight: 10
-  buildKey: 178388049
+  buildKey: 1548566680
   dataGuid: 9b7964f56d659ab42b3ffa9af1eb99e5
   managedSpriteCollection: 0
   hasPlatformData: 0

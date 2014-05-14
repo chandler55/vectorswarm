@@ -13,6 +13,9 @@ public class InstantiateEntityEditor : Editor
             case EntityDatabase.EntityType.EntityType_SimpleEnemy:
                 myTarget.simpleMoveRight = EditorGUILayout.Toggle( "Move Right", myTarget.simpleMoveRight );
                 break;
+            case EntityDatabase.EntityType.EntityType_SlowerSimpleEnemy:
+                myTarget.simpleMoveRight = EditorGUILayout.Toggle( "Move Right", myTarget.simpleMoveRight );
+                break;
         }
     }
 }

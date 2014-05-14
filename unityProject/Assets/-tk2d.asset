@@ -43,7 +43,7 @@ MonoBehaviour:
     managed: 0
     loadable: 0
   spriteCollectionIndex:
-  - name: VectorSwarm
+  - name: VectorSwarmAdditiveSprites
     spriteCollectionGUID: 3dcf196cb5f216b4db7865b05776051b
     spriteCollectionDataGUID: 9b7964f56d659ab42b3ffa9af1eb99e5
     spriteNames:
@@ -87,25 +87,53 @@ MonoBehaviour:
     - aac182b7be1578242b99cef9bb7802aa
     - d7d95ab3f90e2fb4ca4c334a91f3a4b7
     spriteTextureTimeStamps:
-    - 1399381390.76243
-    - 1399381390.59042
-    - 1399381390.56742
-    - 1399381390.67543
-    - 1399381390.53642
-    - 1399381390.75543
-    - 1399381390.76843
-    - 1399381390.78043
-    - 1399517141.46322
-    - 1399381390.74843
-    - 1399381390.77543
-    - 1399381390.73943
-    - 1399517141.45322
-    - 1399517141.45522
-    - 1399381390.72343
-    - 1399381390.68343
-    - 1399517141.47022
-    - 1399517141.46422
-    - 1399517141.45622
+    - 1399572603.31714
+    - 1399572603.2503
+    - 1399572603.24229
+    - 1399572603.29413
+    - 1399572603.24029
+    - 1399572603.31514
+    - 1399572603.31914
+    - 1399572603.32514
+    - 1399572603.30713
+    - 1399572603.31314
+    - 1399572603.32114
+    - 1399572603.30913
+    - 1399572603.29813
+    - 1399572603.29913
+    - 1399572603.30513
+    - 1399572603.29513
+    - 1399572603.32314
+    - 1399572603.31113
+    - 1399572603.30113
+    managedSpriteCollection: 0
+    loadable: 0
+    assetName: 
+    version: 3
+  - name: VectorSwarmSprites
+    spriteCollectionGUID: b386c198367a78e4882e0b96b146ba78
+    spriteCollectionDataGUID: 477333b17a430674fa32d8e2535aef0d
+    spriteNames:
+    - heart
+    - shieldicon
+    - gaugeNotFilledMeter
+    - gaugeGreyBackground
+    - gaugeFilledMeter
+    - lightningbolt
+    spriteTextureGUIDs:
+    - 9c4326713a27f54439a7a547ed9869be
+    - 11715875beef04548943f823796c31ff
+    - 1010a6df8fa54ea4580d9b396fbf5c85
+    - 90d9e1e0e9b6b6f4e9d9259710b4a064
+    - 506a3aa5f88a3c340abfef279666029c
+    - 784a27234e995fe4e83fa087f04b448c
+    spriteTextureTimeStamps:
+    - 1399998645.56176
+    - 1400024734.81362
+    - 1400015742.6546
+    - 1400019876.59013
+    - 1400019817.20807
+    - 1400024723.0866
     managedSpriteCollection: 0
     loadable: 0
     assetName: 

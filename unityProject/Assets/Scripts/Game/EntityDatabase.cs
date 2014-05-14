@@ -22,6 +22,7 @@ public class EntityDatabase : MonoBehaviour
         EntityType_LeverEnemy = 5,
         EntityType_ShortPathEnemy = 6,
         EntityType_VerticalEnemy = 7,
+        EntityType_SlowerSimpleEnemy = 8,
 
         EntityType_MultiplierItem = 100,
 
@@ -31,14 +32,15 @@ public class EntityDatabase : MonoBehaviour
         EntityType_ScoreIndicator = 300,
     }
 
-    public SimpleEnemy      simpleEnemyPrefab;
-    public FollowEnemy      followEnemyPrefab;
-    public ReverseEnemy     reverseEnemyPrefab;
-    public SineEnemy        sineEnemyPrefab;
-    public StationaryEnemy  stationaryEnemyPrefab;
-    public LeverEnemy       leverEnemyPrefab;
-    public ShortPathEnemy   shortPathEnemyPrefab;
-    public VerticalEnemy    verticalEnemyPrefab;
+    public SimpleEnemy          simpleEnemyPrefab;
+    public FollowEnemy          followEnemyPrefab;
+    public ReverseEnemy         reverseEnemyPrefab;
+    public SineEnemy            sineEnemyPrefab;
+    public StationaryEnemy      stationaryEnemyPrefab;
+    public LeverEnemy           leverEnemyPrefab;
+    public ShortPathEnemy       shortPathEnemyPrefab;
+    public VerticalEnemy        verticalEnemyPrefab;
+    public SlowerSimpleEnemy    slowerSimpleEnemyPrefab;
 
     public MultiplierItem   multiplierItemPrefab;
 
@@ -68,6 +70,7 @@ public class EntityDatabase : MonoBehaviour
         ObjectPool.CreatePool( leverEnemyPrefab );
         ObjectPool.CreatePool( shortPathEnemyPrefab );
         ObjectPool.CreatePool( verticalEnemyPrefab );
+        ObjectPool.CreatePool( slowerSimpleEnemyPrefab );
 
         ObjectPool.CreatePool( multiplierItemPrefab );
         ObjectPool.CreatePool( explosionParticlesPrefab );
@@ -109,6 +112,9 @@ public class EntityDatabase : MonoBehaviour
                 break;
             case EntityType.EntityType_VerticalEnemy:
                 entity = verticalEnemyPrefab.Spawn( position, rotation ).gameObject;
+                break;
+            case EntityType.EntityType_SlowerSimpleEnemy:
+                entity = slowerSimpleEnemyPrefab.Spawn( position, rotation ).gameObject;
                 break;
 
             case EntityType.EntityType_MultiplierItem:

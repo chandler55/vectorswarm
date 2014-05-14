@@ -36,6 +36,8 @@ public class Events
         public static string HighScoreUpdated = "HighScoreUpdated";
         public static string MultiplierUpdated = "MultiplierUpdated";
         public static string FuelGaugeUpdated = "FuelGaugeUpdated";
+        public static string RemainingLivesUpdated = "RemainingLivesUpdated";
+
     }
 
 }

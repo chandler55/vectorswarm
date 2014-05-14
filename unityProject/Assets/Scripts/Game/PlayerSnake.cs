@@ -50,6 +50,8 @@ public class PlayerSnake : Entity
         mFuelRemaining = mFuelCapacity;
 
         Messenger.AddListener( Events.GameEvents.SpawnNewShip, OnSpawnNewShip );
+
+        FlashInvincibility();
     }
 
     void OnDestroy()
@@ -283,6 +285,8 @@ public class PlayerSnake : Entity
         {
             shipObject.SetActive( false );
         }
+
+        
     }
 
     private void Spawn()
