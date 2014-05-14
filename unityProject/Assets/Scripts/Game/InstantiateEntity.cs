@@ -74,8 +74,8 @@ public class InstantiateEntity : MonoBehaviour
                 Gizmos.DrawWireSphere( transform.position, 1.5f );
                 break;
             case EntityDatabase.EntityType.EntityType_SlowerSimpleEnemy:
-                Gizmos.color = new Color( 0, 150, 0 );
-                Gizmos.DrawWireSphere( transform.position, 1f );
+                Gizmos.color = new Color( 127, 0, 255 );
+                Gizmos.DrawWireSphere( transform.position, 1.6f );
                 break;
             case EntityDatabase.EntityType.EntityType_MultiplierItem:
                 Gizmos.color = Color.blue;

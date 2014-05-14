@@ -3,10 +3,11 @@ using System.Collections;
 
 public class SineEnemy : Enemy
 {
+    public float speed = 25.0f;
+
     public float waveHeight = 6.0f;
 
     private bool mMovingRight = false;
-    private const float SPEED = 30.0f;
     private float mBaselineY = 0.0f;
     private tk2dSprite mSprite = null;
 
@@ -38,7 +39,8 @@ public class SineEnemy : Enemy
                 mMovingRight = false;
                 if ( mSprite )
                 {
-                    mSprite.FlipX = true;
+                    gameObject.transform.localScale = new Vector3( -1, 1, 1 );
+                    //mSprite.FlipX = true;
                 }
             }
         }
@@ -49,7 +51,8 @@ public class SineEnemy : Enemy
                 mMovingRight = true;
                 if ( mSprite )
                 {
-                    mSprite.FlipX = false;
+                    gameObject.transform.localScale = new Vector3( 1, 1, 1 );
+                    //mSprite.FlipX = false;
                 }
             }
         }
@@ -66,7 +69,7 @@ public class SineEnemy : Enemy
 
         Velocity = (Vector2)newPos - Position;
 
-        Velocity = Velocity.normalized * SPEED;
+        Velocity = Velocity.normalized * speed;
 
         float timeSinceStartup = Time.realtimeSinceStartup;
         Velocity = new Vector2( Velocity.x, ( ( mBaselineY - Position.y ) + Mathf.Sin( timeSinceStartup * 10.0f ) * waveHeight ) );

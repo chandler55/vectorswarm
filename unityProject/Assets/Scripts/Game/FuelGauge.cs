@@ -4,7 +4,8 @@ using System.Collections;
 public class FuelGauge : MonoBehaviour
 {
     public tk2dSlicedSprite mGaugeSprite = null;
-    public tk2dSprite mLightningBolt = null;
+    public tk2dSprite   mLightningBolt = null;
+    public Color        mGaugeAlternatingColor = Color.white;
 
     private Transform   mGaugeTransform = null;
     private float       mGaugeFilledSizeX = 0.0f;
@@ -15,6 +16,8 @@ public class FuelGauge : MonoBehaviour
     private bool        mBoltDarkening = true;
     private float       mBoltFlashingDuration = 0.5f; // in seconds
 
+    private Color       mOriginalGaugeColor = Color.white;
+
     void Start()
     {
         GameUtils.Assert( mGaugeSprite );
@@ -24,6 +27,7 @@ public class FuelGauge : MonoBehaviour
         {
             mGaugeTransform = mGaugeSprite.transform;
             mGaugeFilledSizeX = mGaugeSprite.dimensions.x;
+            mOriginalGaugeColor = mGaugeSprite.color;
         }
 
         Messenger.AddListener<float>( Events.UIEvents.FuelGaugeUpdated, OnSetFuelGauge );
@@ -55,10 +59,14 @@ public class FuelGauge : MonoBehaviour
             }
 
             mLightningBolt.color = new Color( 1.0f, 1.0f, 1.0f, mBoltAlpha );
+
+            // brighten the gauge as well
+            //mGaugeSprite.color = mBoltAlpha * mGaugeAlternatingColor + mOriginalGaugeColor * ( 1 - mBoltAlpha );
         }
         else
         {
             mLightningBolt.color = Color.white;
+            mGaugeSprite.color = mOriginalGaugeColor;
         }
     }
 

@@ -6,7 +6,7 @@ using System.Collections;
 public static class tk2dUndo {
 	public static void RecordObject( UnityEngine.Object obj, string name ) {
 #if UNITY_3_5 || UNITY_4_0 || UNITY_4_0_1 || UNITY_4_1 || UNITY_4_2
-		Undo.RecordObject(obj, name);
+		Undo.RegisterUndo(obj, name);
 #else
 		Undo.RecordObject(obj, name);
 #endif
@@ -14,7 +14,7 @@ public static class tk2dUndo {
 
 	public static void RegisterCompleteObjectUndo( UnityEngine.Object obj, string name ) {
 #if UNITY_3_5 || UNITY_4_0 || UNITY_4_0_1 || UNITY_4_1 || UNITY_4_2
-		Undo.RecordObject(obj, name);
+		Undo.RegisterUndo(obj, name);
 #else
 		Undo.RegisterCompleteObjectUndo(obj, name);
 #endif
@@ -22,7 +22,7 @@ public static class tk2dUndo {
 
 	public static void RecordObjects( UnityEngine.Object[] objs, string name ) {
 #if UNITY_3_5 || UNITY_4_0 || UNITY_4_0_1 || UNITY_4_1 || UNITY_4_2
-		Undo.RecordObject(objs, name);
+		Undo.RegisterUndo(objs, name);
 #else
 		Undo.RecordObjects(objs, name);
 #endif

@@ -73,16 +73,6 @@ public class tk2dUIItem : MonoBehaviour
     public GameObject sendMessageTarget = null;
 
     /// <summary>
-    /// Function name to SendMessage OnEnter
-    /// </summary>
-    public string SendMessageOnEnterMethodName = "";
-
-    /// <summary>
-    /// Function name to SendMessage OnEnter
-    /// </summary>
-    public string SendMessageOnExitMethodName = "";
-
-    /// <summary>
     /// Function name to SendMessage OnDown
     /// </summary>
     public string SendMessageOnDownMethodName = "";
@@ -120,7 +110,6 @@ public class tk2dUIItem : MonoBehaviour
     public Transform[] editorExtraBounds = new Transform[0]; // This is used by the editor to include additional meshes when calculating bounds. Eg. label area in dropdown
     public Transform[] editorIgnoreBounds = new Transform[0]; // This is used by the editor to ignore certain meshes when calculating bounds. Eg. content in scrollable area
     private bool isPressed = false; //need to be listening to OnUp or OnClicked for this to show the current state
-    private bool isEntered = false; // to detect touch inputs entering and exiting (not required to have initial click)
     private bool isHoverOver = false; //is currently hover over (only if hover enabld)
     private tk2dUITouch touch; //touch struct of the active touch
     private tk2dUIItem parentUIItem = null; //parent UIItem, only used if isChild is set
@@ -316,23 +305,6 @@ public class tk2dUIItem : MonoBehaviour
                     parentUIItem.CurrentOverUIItem(overUIItem);
                 }
             }
-        }
-    }
-
-    public void SetTouchEntered(bool touch)
-    {
-        if ( isEntered != touch )
-        {
-            isEntered = touch;
-            if ( isEntered )
-            {
-                DoSendMessage(SendMessageOnEnterMethodName);
-            }
-            else
-            {
-                DoSendMessage( SendMessageOnExitMethodName );
-            }
-            //Debug.Log("setting touch " + gameObject.name + " " + isEntered);
         }
     }
 

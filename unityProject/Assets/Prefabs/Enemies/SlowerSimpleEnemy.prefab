@@ -85,7 +85,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: .939999998
+  m_Radius: 1.73000002
   m_Center: {x: 0, y: 0}
 --- !u!114 &11400000
 MonoBehaviour:
@@ -101,7 +101,7 @@ MonoBehaviour:
   collection: {fileID: 11400000, guid: 9b7964f56d659ab42b3ffa9af1eb99e5, type: 2}
   _color: {r: 1, g: 1, b: 1, a: 1}
   _scale: {x: 1, y: 1, z: 1}
-  _spriteId: 0
+  _spriteId: 19
   boxCollider2D: {fileID: 0}
   polygonCollider2D: []
   edgeCollider2D: []

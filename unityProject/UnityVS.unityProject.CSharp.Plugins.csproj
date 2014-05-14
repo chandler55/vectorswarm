@@ -200,6 +200,7 @@
     <None Include="Assets\TK2DROOT\tk2d\Shaders\PremulVertexColor.shader" />
     <None Include="Assets\TK2DROOT\tk2d\Shaders\resources\BlendVertexColor.shader" />
     <None Include="Assets\TK2DROOT\tk2d\Shaders\SolidVertexColor.shader" />
+    <None Include="Assets\TK2DROOT\tk2d_demo\Credits.txt" />
     <None Include="Assets\TK2DROOT\tk2dUI\Shaders\DepthMask.shader" />
     <None Include="Assets\TK2DROOT\tk2dUI\Shaders\DepthMaskSolid.shader" />
     <None Include="Assets\Plugins\Facebook\Scripts\IFacebook.dll" />

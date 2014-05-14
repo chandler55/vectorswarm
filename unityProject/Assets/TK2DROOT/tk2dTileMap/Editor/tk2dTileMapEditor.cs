@@ -436,19 +436,19 @@ public class tk2dTileMapEditor : Editor, ITileMapEditorHost
 		
 		if (deleteLayer != -1)
 		{
-			//Undo.RecordObject(new Object[] { tileMap, tileMap.data }, "Deleted layer");
+			//Undo.RegisterUndo(new Object[] { tileMap, tileMap.data }, "Deleted layer");
 			tk2dEditor.TileMap.TileMapUtility.DeleteLayer(tileMap, deleteLayer);
 		}
 		
 		if (moveUp != -1)
 		{
-			//Undo.RecordObject(new Object[] { tileMap, tileMap.data }, "Moved layer");
+			//Undo.RegisterUndo(new Object[] { tileMap, tileMap.data }, "Moved layer");
 			tk2dEditor.TileMap.TileMapUtility.MoveLayer(tileMap, moveUp, -1);
 		}
 		
 		if (moveDown != -1)
 		{
-			//Undo.RecordObject(new Object[] { tileMap, tileMap.data }, "Moved layer");
+			//Undo.RegisterUndo(new Object[] { tileMap, tileMap.data }, "Moved layer");
 			tk2dEditor.TileMap.TileMapUtility.MoveLayer(tileMap, moveDown, 1);
 		}
 		
@@ -1228,7 +1228,7 @@ public class tk2dTileMapEditor : Editor, ITileMapEditorHost
 			return;
 		}
 
-		if (sceneGUI != null)
+		if (sceneGUI != null && tk2dEditorUtility.IsEditable(target))
 		{
 			sceneGUI.OnSceneGUI();
 		}
