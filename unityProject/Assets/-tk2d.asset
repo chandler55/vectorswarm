@@ -740,6 +740,7 @@ MonoBehaviour:
     - ninjaStarEnemy
     - hourGlassEnemy
     - slowEnemy
+    - gooStar
     spriteTextureGUIDs:
     - 11905d0ba78abf44296f509c4be50a7f
     - 7e38abbd43d7fe44298e689b8998da39
@@ -761,6 +762,7 @@ MonoBehaviour:
     - aac182b7be1578242b99cef9bb7802aa
     - d7d95ab3f90e2fb4ca4c334a91f3a4b7
     - b099e0a7894c601479e4f54ea3fa8d2f
+    - 62e5d9016fa6df245ac7ca02ff11a29f
     spriteTextureTimeStamps:
     - 1399572603.31714
     - 1399572603.2503
@@ -782,6 +784,7 @@ MonoBehaviour:
     - 1400081227.59193
     - 1399572603.30113
     - 1400081182.2269
+    - 1400105209.90251
     managedSpriteCollection: 0
     loadable: 0
     assetName: 

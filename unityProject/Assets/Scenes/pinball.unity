@@ -2483,7 +2483,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useTestLevel: 1
-  levelSegmentTest: {fileID: 100036, guid: 22b13e862319fc64890971494dc6a66a, type: 2}
+  levelSegmentTest: {fileID: 100054, guid: 9d5bb59f756524441a9b36b5bcdc76da, type: 2}
   levelSegmentPrefabs:
   - {fileID: 100098, guid: 26c90373627978b4cadc738e909b9e79, type: 2}
   - {fileID: 100084, guid: 05f5be3ebdd09514dbaa649066b26028, type: 2}

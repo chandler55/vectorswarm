@@ -50,7 +50,7 @@ public class InstantiateEntity : MonoBehaviour
             case EntityDatabase.EntityType.EntityType_FollowEnemy:
                 break;
             case EntityDatabase.EntityType.EntityType_ReverseEnemy:
-                Gizmos.color = Color.yellow;
+                Gizmos.color = new Color( 255, 168, 0 );
                 Gizmos.DrawWireSphere( transform.position, 0.5f );
                 break;
             case EntityDatabase.EntityType.EntityType_SineEnemy:
@@ -62,7 +62,7 @@ public class InstantiateEntity : MonoBehaviour
                 Gizmos.DrawWireSphere( transform.position, 0.5f );
                 break;
             case EntityDatabase.EntityType.EntityType_LeverEnemy:
-                Gizmos.color = new Color(255, 0, 255);
+                Gizmos.color = new Color( 255, 0, 255 );
                 Gizmos.DrawWireSphere( transform.position, 4.8f );
                 break;
             case EntityDatabase.EntityType.EntityType_ShortPathEnemy:
