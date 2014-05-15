@@ -23,6 +23,8 @@ public class EntityDatabase : MonoBehaviour
         EntityType_ShortPathEnemy = 6,
         EntityType_VerticalEnemy = 7,
         EntityType_SlowerSimpleEnemy = 8,
+        EntityType_MovingStationaryEnemy = 9,
+        EntityType_HourGlassEnemy = 10,
 
         EntityType_MultiplierItem = 100,
 
@@ -32,15 +34,17 @@ public class EntityDatabase : MonoBehaviour
         EntityType_ScoreIndicator = 300,
     }
 
-    public SimpleEnemy          simpleEnemyPrefab;
-    public FollowEnemy          followEnemyPrefab;
-    public ReverseEnemy         reverseEnemyPrefab;
-    public SineEnemy            sineEnemyPrefab;
-    public StationaryEnemy      stationaryEnemyPrefab;
-    public LeverEnemy           leverEnemyPrefab;
-    public ShortPathEnemy       shortPathEnemyPrefab;
-    public VerticalEnemy        verticalEnemyPrefab;
-    public SlowerSimpleEnemy    slowerSimpleEnemyPrefab;
+    public SimpleEnemy              simpleEnemyPrefab;
+    public FollowEnemy              followEnemyPrefab;
+    public ReverseEnemy             reverseEnemyPrefab;
+    public SineEnemy                sineEnemyPrefab;
+    public StationaryEnemy          stationaryEnemyPrefab;
+    public LeverEnemy               leverEnemyPrefab;
+    public ShortPathEnemy           shortPathEnemyPrefab;
+    public VerticalEnemy            verticalEnemyPrefab;
+    public SlowerSimpleEnemy        slowerSimpleEnemyPrefab;
+    public MovingStationaryEnemy    movingStationaryEnemyPrefab;
+    public HourGlassEnemy           hourGlassEnemyPrefab;
 
     public MultiplierItem   multiplierItemPrefab;
 
@@ -71,6 +75,8 @@ public class EntityDatabase : MonoBehaviour
         ObjectPool.CreatePool( shortPathEnemyPrefab );
         ObjectPool.CreatePool( verticalEnemyPrefab );
         ObjectPool.CreatePool( slowerSimpleEnemyPrefab );
+        ObjectPool.CreatePool( movingStationaryEnemyPrefab );
+        ObjectPool.CreatePool( hourGlassEnemyPrefab );
 
         ObjectPool.CreatePool( multiplierItemPrefab );
         ObjectPool.CreatePool( explosionParticlesPrefab );
@@ -115,6 +121,12 @@ public class EntityDatabase : MonoBehaviour
                 break;
             case EntityType.EntityType_SlowerSimpleEnemy:
                 entity = slowerSimpleEnemyPrefab.Spawn( position, rotation ).gameObject;
+                break;
+            case EntityType.EntityType_MovingStationaryEnemy:
+                entity = movingStationaryEnemyPrefab.Spawn( position, rotation ).gameObject;
+                break;
+            case EntityType.EntityType_HourGlassEnemy:
+                entity = hourGlassEnemyPrefab.Spawn( position, rotation ).gameObject;
                 break;
 
             case EntityType.EntityType_MultiplierItem:

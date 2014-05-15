@@ -114,6 +114,10 @@ MonoBehaviour:
     type: 2}
   slowerSimpleEnemyPrefab: {fileID: 11400004, guid: 517f7e3be01d7e341ba6a980983f78f3,
     type: 2}
+  movingStationaryEnemyPrefab: {fileID: 11400002, guid: 806c81e8e2884984bb2a08c519fbe4c8,
+    type: 2}
+  hourGlassEnemyPrefab: {fileID: 11400002, guid: e4e75c7f35d2f4340a16fb62b7221d73,
+    type: 2}
   multiplierItemPrefab: {fileID: 11400000, guid: 0946698eea14c994fa336a977f245060,
     type: 2}
   explosionParticlesPrefab: {fileID: 11400000, guid: c9153866a280d1a41ba2caac2d94d46e,
@@ -2483,7 +2487,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useTestLevel: 1
-  levelSegmentTest: {fileID: 100054, guid: 9d5bb59f756524441a9b36b5bcdc76da, type: 2}
+  levelSegmentTest: {fileID: 100060, guid: e99081036cca3c04bbd758216157537b, type: 2}
   levelSegmentPrefabs:
   - {fileID: 100098, guid: 26c90373627978b4cadc738e909b9e79, type: 2}
   - {fileID: 100084, guid: 05f5be3ebdd09514dbaa649066b26028, type: 2}
@@ -2506,6 +2510,9 @@ MonoBehaviour:
   - {fileID: 100006, guid: 2494a92d17f5df94cbe61392afa9b40f, type: 2}
   - {fileID: 100070, guid: 662a2b4c96a48f64f9646af975f852e9, type: 2}
   - {fileID: 100002, guid: fd82bb650151ae84fa162423a74e37d5, type: 2}
+  - {fileID: 100002, guid: 3a72caa648913e0409bb6b609adc9eab, type: 2}
+  - {fileID: 100054, guid: 9d5bb59f756524441a9b36b5bcdc76da, type: 2}
+  - {fileID: 100002, guid: 4ec2e45ee62f42e4a8485b81aa642c4e, type: 2}
 --- !u!4 &833252713
 Transform:
   m_ObjectHideFlags: 0

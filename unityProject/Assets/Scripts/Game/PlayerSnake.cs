@@ -39,6 +39,10 @@ public class PlayerSnake : Entity
     // alive
     private bool    mIsAlive = true;
 
+    // controls
+    private float   mPreviousAccelerationX = 0.0f;
+    private float   mThresholdForAccelerometer = 0.01f;
+
     void Awake()
     {
         instance = this;
@@ -222,10 +226,23 @@ public class PlayerSnake : Entity
 
             // move towards accelerometer tilt
             // tilt to horizontal percentage -0.25 to 0.25
-            float percentage = Mathf.InverseLerp( -0.25f, 0.25f, Input.acceleration.x );
+            float accelerationValueToUse = 0.0f;
+
+            if ( mPreviousAccelerationX - Input.acceleration.x < mThresholdForAccelerometer )
+            {
+                accelerationValueToUse = mPreviousAccelerationX;
+            }
+            else
+            {
+                accelerationValueToUse = Input.acceleration.x;
+            }
+
+            float percentage = Mathf.InverseLerp( -0.25f, 0.25f, accelerationValueToUse );
+            mPreviousAccelerationX = Input.acceleration.x;
 
             Vector2 tiltPos = new Vector2( Boundaries.Instance.GetPercentageToPosition( percentage ), 0 );
             Vector2 target = tiltPos - Position;
+
             /**/
 #else
             // move towards mouse
@@ -286,7 +303,7 @@ public class PlayerSnake : Entity
             shipObject.SetActive( false );
         }
 
-        
+
     }
 
     private void Spawn()

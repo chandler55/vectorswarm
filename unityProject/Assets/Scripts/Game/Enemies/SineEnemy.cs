@@ -16,13 +16,11 @@ public class SineEnemy : Enemy
         base.Init();
 
         mMovingRight = Position.x > 0;
-        if ( mSprite )
-        {
-            mSprite.FlipX = !mMovingRight;
-        }
+        FixOrientation();
 
         mBaselineY = Position.y;
         mSprite = GetComponent<tk2dSprite>();
+
     }
 
     void Update()
@@ -37,11 +35,7 @@ public class SineEnemy : Enemy
             if ( Position.x >= GameSettings.WORLD_BOUNDARY.x + GameSettings.WORLD_BOUNDARY.width )
             {
                 mMovingRight = false;
-                if ( mSprite )
-                {
-                    gameObject.transform.localScale = new Vector3( -1, 1, 1 );
-                    //mSprite.FlipX = true;
-                }
+                FixOrientation();
             }
         }
         else
@@ -49,14 +43,11 @@ public class SineEnemy : Enemy
             if ( Position.x <= GameSettings.WORLD_BOUNDARY.x )
             {
                 mMovingRight = true;
-                if ( mSprite )
-                {
-                    gameObject.transform.localScale = new Vector3( 1, 1, 1 );
-                    //mSprite.FlipX = false;
-                }
+                FixOrientation();
             }
         }
 
+        // calculate velocity
         Vector3 newPos;
         if ( mMovingRight )
         {
@@ -77,6 +68,29 @@ public class SineEnemy : Enemy
         Position += Velocity * Time.deltaTime;
 
         //Go.to( transform, movementDuration, new GoTweenConfig().position( newPos ) ).setOnCompleteHandler( OnCompleteTween );
+    }
+
+    void FixOrientation()
+    {
+        if ( mSprite )
+        {
+            if ( !mMovingRight )
+            {
+                gameObject.transform.localScale = new Vector3( -1, 1, 1 );
+                if ( gameObject.transform.lossyScale.x != -1 )
+                {
+                    gameObject.transform.localScale = new Vector3( 1, 1, 1 );
+                }
+            }
+            else
+            {
+                gameObject.transform.localScale = new Vector3( 1, 1, 1 );
+                if ( gameObject.transform.lossyScale.x != 1 )
+                {
+                    gameObject.transform.localScale = new Vector3( -1, 1, 1 );
+                }
+            }
+        }
     }
 
     public override void DestroyEnemy()
