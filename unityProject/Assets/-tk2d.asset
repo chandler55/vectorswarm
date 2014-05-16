@@ -742,6 +742,7 @@ MonoBehaviour:
     - slowEnemy
     - gooStar
     - octagon
+    - arrowEnemyYellow
     spriteTextureGUIDs:
     - 11905d0ba78abf44296f509c4be50a7f
     - 7e38abbd43d7fe44298e689b8998da39
@@ -765,6 +766,7 @@ MonoBehaviour:
     - b099e0a7894c601479e4f54ea3fa8d2f
     - 62e5d9016fa6df245ac7ca02ff11a29f
     - 0fdfcdedb6379fd4caa6bbac721b4cbd
+    - 526c98a66bbc3d84489e690f25443644
     spriteTextureTimeStamps:
     - 1399572603.31714
     - 1399572603.2503
@@ -788,6 +790,7 @@ MonoBehaviour:
     - 1400081182.2269
     - 1400105209.90251
     - 1400110226.83986
+    - 1400177568.47637
     managedSpriteCollection: 0
     loadable: 0
     assetName: 

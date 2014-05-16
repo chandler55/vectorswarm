@@ -96,7 +96,9 @@
     <Compile Include="Assets\Scripts\Game\Enemies\SineEnemy.cs" />
     <Compile Include="Assets\Scripts\Game\Enemies\SlowerSimpleEnemy.cs" />
     <Compile Include="Assets\Scripts\Game\Enemies\SpinnerEnemy.cs" />
+    <Compile Include="Assets\Scripts\Game\Enemies\SquareSineEnemy.cs" />
     <Compile Include="Assets\Scripts\Game\Enemies\StationaryEnemy.cs" />
+    <Compile Include="Assets\Scripts\Game\Enemies\TriangleSineEnemy.cs" />
     <Compile Include="Assets\Scripts\Game\Enemies\VerticalEnemy.cs" />
     <Compile Include="Assets\Scripts\Game\Entity.cs" />
     <Compile Include="Assets\Scripts\Game\EntityDatabase.cs" />
