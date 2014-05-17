@@ -118,6 +118,8 @@ MonoBehaviour:
     type: 2}
   hourGlassEnemyPrefab: {fileID: 11400002, guid: e4e75c7f35d2f4340a16fb62b7221d73,
     type: 2}
+  triangleSineEnemyPrefab: {fileID: 11400002, guid: 003c864b8f1a1e24ca2c1f7a4239b35a,
+    type: 2}
   multiplierItemPrefab: {fileID: 11400000, guid: 0946698eea14c994fa336a977f245060,
     type: 2}
   explosionParticlesPrefab: {fileID: 11400000, guid: c9153866a280d1a41ba2caac2d94d46e,
@@ -287,6 +289,14 @@ Prefab:
     - target: {fileID: 3300000, guid: 8f92734853f0dd444b2c057d67eca9a7, type: 2}
       propertyPath: m_Mesh
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8f92734853f0dd444b2c057d67eca9a7, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8f92734853f0dd444b2c057d67eca9a7, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8f92734853f0dd444b2c057d67eca9a7, type: 2}
@@ -2487,7 +2497,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useTestLevel: 1
-  levelSegmentTest: {fileID: 100060, guid: e99081036cca3c04bbd758216157537b, type: 2}
+  levelSegmentTest: {fileID: 100048, guid: 5d6cf12d19c95924cb7aa4fef02b5279, type: 2}
   levelSegmentPrefabs:
   - {fileID: 100098, guid: 26c90373627978b4cadc738e909b9e79, type: 2}
   - {fileID: 100084, guid: 05f5be3ebdd09514dbaa649066b26028, type: 2}
@@ -2513,6 +2523,10 @@ MonoBehaviour:
   - {fileID: 100002, guid: 3a72caa648913e0409bb6b609adc9eab, type: 2}
   - {fileID: 100054, guid: 9d5bb59f756524441a9b36b5bcdc76da, type: 2}
   - {fileID: 100002, guid: 4ec2e45ee62f42e4a8485b81aa642c4e, type: 2}
+  - {fileID: 100002, guid: e5b2a9dc7c677a24b8ac2bdc0e378320, type: 2}
+  - {fileID: 100000, guid: 359609dd7b8a68647abea70d817231d9, type: 2}
+  - {fileID: 100064, guid: 751b22645cef6db418ac20880f290f13, type: 2}
+  - {fileID: 100048, guid: 5d6cf12d19c95924cb7aa4fef02b5279, type: 2}
 --- !u!4 &833252713
 Transform:
   m_ObjectHideFlags: 0

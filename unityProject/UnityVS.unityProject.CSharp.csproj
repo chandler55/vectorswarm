@@ -126,6 +126,8 @@
     <Compile Include="Assets\Scripts\Game\PlayerSnake.cs" />
     <Compile Include="Assets\Scripts\Game\PlayerSnake2.cs" />
     <Compile Include="Assets\Scripts\Game\RotateOnVelocity.cs" />
+    <Compile Include="Assets\Scripts\Game\SaveData.cs" />
+    <Compile Include="Assets\Scripts\Game\SaveLoad.cs" />
     <Compile Include="Assets\Scripts\Game\Scoring.cs" />
     <Compile Include="Assets\Scripts\Game\SendCollisionTriggerUp.cs" />
     <Compile Include="Assets\Scripts\Game\SendDestroySignal.cs" />

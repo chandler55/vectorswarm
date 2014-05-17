@@ -25,6 +25,7 @@ public class EntityDatabase : MonoBehaviour
         EntityType_SlowerSimpleEnemy = 8,
         EntityType_MovingStationaryEnemy = 9,
         EntityType_HourGlassEnemy = 10,
+        EntityType_TriangleSineEnemy = 11,
 
         EntityType_MultiplierItem = 100,
 
@@ -45,6 +46,7 @@ public class EntityDatabase : MonoBehaviour
     public SlowerSimpleEnemy        slowerSimpleEnemyPrefab;
     public MovingStationaryEnemy    movingStationaryEnemyPrefab;
     public HourGlassEnemy           hourGlassEnemyPrefab;
+    public TriangleSineEnemy        triangleSineEnemyPrefab;
 
     public MultiplierItem   multiplierItemPrefab;
 
@@ -77,6 +79,7 @@ public class EntityDatabase : MonoBehaviour
         ObjectPool.CreatePool( slowerSimpleEnemyPrefab );
         ObjectPool.CreatePool( movingStationaryEnemyPrefab );
         ObjectPool.CreatePool( hourGlassEnemyPrefab );
+        ObjectPool.CreatePool( triangleSineEnemyPrefab );
 
         ObjectPool.CreatePool( multiplierItemPrefab );
         ObjectPool.CreatePool( explosionParticlesPrefab );
@@ -127,6 +130,9 @@ public class EntityDatabase : MonoBehaviour
                 break;
             case EntityType.EntityType_HourGlassEnemy:
                 entity = hourGlassEnemyPrefab.Spawn( position, rotation ).gameObject;
+                break;
+            case EntityType.EntityType_TriangleSineEnemy:
+                entity = triangleSineEnemyPrefab.Spawn( position, rotation ).gameObject;
                 break;
 
             case EntityType.EntityType_MultiplierItem:
