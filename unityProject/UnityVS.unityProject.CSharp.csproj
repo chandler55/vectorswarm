@@ -46,6 +46,9 @@
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
+    <Reference Include="Fluvio.Runtime">
+      <HintPath>Assets\Fluvio\_Main\Fluvio.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="Parse.Unity">
       <HintPath>Assets\Parse.Unity.dll</HintPath>
     </Reference>
@@ -69,6 +72,31 @@
     <Compile Include="Assets\Flocking\BoidController.cs" />
     <Compile Include="Assets\Flocking\BoidFlocking.cs" />
     <Compile Include="Assets\Flocking\BoidWatcher.cs" />
+    <Compile Include="Assets\Fluvio\_Main\Resources\Fluvio_PreventCodeStripping.cs" />
+    <Compile Include="Assets\Fluvio\Fluvio Example Project\Common\Image Effects\FluvioFisheye.cs" />
+    <Compile Include="Assets\Fluvio\Fluvio Example Project\Common\Image Effects\FluvioImageEffectBase.cs" />
+    <Compile Include="Assets\Fluvio\Fluvio Example Project\Common\Image Effects\FluvioImageEffects.cs" />
+    <Compile Include="Assets\Fluvio\Fluvio Example Project\Common\Image Effects\FluvioTwirlEffect.cs" />
+    <Compile Include="Assets\Fluvio\Fluvio Example Project\Common\Projectors\AnimatedProjector.cs" />
+    <Compile Include="Assets\Fluvio\Fluvio Example Project\Common\Scripts\FluvioCameraFly.cs" />
+    <Compile Include="Assets\Fluvio\Fluvio Example Project\Common\Scripts\FluvioDisplayVersion.cs" />
+    <Compile Include="Assets\Fluvio\Fluvio Example Project\Common\Scripts\FluvioFpsCounter.cs" />
+    <Compile Include="Assets\Fluvio\Fluvio Example Project\Common\Scripts\FluvioGUI.cs" />
+    <Compile Include="Assets\Fluvio\Fluvio Example Project\Common\Scripts\FluvioInstructions.cs" />
+    <Compile Include="Assets\Fluvio\Fluvio Example Project\Common\Scripts\FluvioParticleCountSlider.cs" />
+    <Compile Include="Assets\Fluvio\Fluvio Example Project\Common\Scripts\FluvioQualitySettings.cs" />
+    <Compile Include="Assets\Fluvio\Fluvio Example Project\Common\Scripts\FluvioReverseNormals.cs" />
+    <Compile Include="Assets\Fluvio\Fluvio Example Project\Common\Scripts\FluvioSetTimeSettings.cs" />
+    <Compile Include="Assets\Fluvio\Fluvio Example Project\Common\Scripts\FluvioSlowMotion.cs" />
+    <Compile Include="Assets\Fluvio\Fluvio Example Project\Common\Scripts\FluvioTouch.cs" />
+    <Compile Include="Assets\Fluvio\Fluvio Example Project\Common\Scripts\FluvioUnderwaterEffects.cs" />
+    <Compile Include="Assets\Fluvio\Fluvio Example Project\Common\Water4\Sources\Scripts\FluvioDisplace.cs" />
+    <Compile Include="Assets\Fluvio\Fluvio Example Project\Common\Water4\Sources\Scripts\FluvioGerstnerDisplace.cs" />
+    <Compile Include="Assets\Fluvio\Fluvio Example Project\Common\Water4\Sources\Scripts\FluvioMeshContainer.cs" />
+    <Compile Include="Assets\Fluvio\Fluvio Example Project\Common\Water4\Sources\Scripts\FluvioPlanarReflection.cs" />
+    <Compile Include="Assets\Fluvio\Fluvio Example Project\Common\Water4\Sources\Scripts\FluvioSpecularLighting.cs" />
+    <Compile Include="Assets\Fluvio\Fluvio Example Project\Common\Water4\Sources\Scripts\FluvioWaterBase.cs" />
+    <Compile Include="Assets\Fluvio\Fluvio Example Project\Common\Water4\Sources\Scripts\FluvioWaterTile.cs" />
     <Compile Include="Assets\ObjectPool\Scripts\ObjectPool.cs" />
     <Compile Include="Assets\Scripts\BackgroundTiler.cs" />
     <Compile Include="Assets\Scripts\EventSystem\Callback.cs" />
@@ -237,6 +265,15 @@
     <Compile Include="Assets\TK2DROOT\tk2dUI_demo\tk2dUIDemo6Controller.cs" />
     <Compile Include="Assets\TK2DROOT\tk2dUI_demo\tk2dUIDemoController.cs" />
     <None Include="Assets\AdMobPlugin\AdMobPlugin\LICENSE.txt" />
+    <None Include="Assets\Fluvio\_Main\Fluvio.Runtime.xml" />
+    <None Include="Assets\Fluvio\Fluvio Example Project\Common\Image Effects\_Sources\Shaders\FluvioFisheyeShader.shader" />
+    <None Include="Assets\Fluvio\Fluvio Example Project\Common\Image Effects\_Sources\Shaders\FluvioTwirlEffect.shader" />
+    <None Include="Assets\Fluvio\Fluvio Example Project\Common\Projectors\Shaders\Projector Light.shader" />
+    <None Include="Assets\Fluvio\Fluvio Example Project\Common\Water4\Sources\Shaders\FX-SimpleWater4.shader" />
+    <None Include="Assets\Fluvio\Fluvio Example Project\Common\Water4\Sources\Shaders\FX-Water4.shader" />
+    <None Include="Assets\Fluvio\Fluvio Example Project\Common\Water4\Sources\Shaders\FX-Water4Underwater.shader" />
+    <None Include="Assets\Fluvio\Fluvio Example Project\Common\Water4\Sources\Shaders\WaterInclude.cginc" />
+    <None Include="Assets\Fluvio\Fluvio Example Project\Unity-4.3.0\Scenes\Fluvio3DExample\BeastSettings.xml" />
     <None Include="Assets\Parse.Unity.xml" />
     <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
     <None Include="Assets\Plugins\Android\facebook\AndroidManifest.xml" />
@@ -303,6 +340,7 @@
     <None Include="Assets\TK2DROOT\tk2d_demo\Credits.txt" />
     <None Include="Assets\TK2DROOT\tk2dUI\Shaders\DepthMask.shader" />
     <None Include="Assets\TK2DROOT\tk2dUI\Shaders\DepthMaskSolid.shader" />
+    <None Include="Assets\Fluvio\_Main\Fluvio.Runtime.dll" />
     <None Include="Assets\Parse.Unity.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2013\UnityVS.CSharp.targets" />

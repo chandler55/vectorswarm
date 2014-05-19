@@ -86,9 +86,16 @@ public class EntityDatabase : MonoBehaviour
         ObjectPool.CreatePool( playerExplosionPrefab );
 
         ObjectPool.CreatePool( scoreIndicatorPrefab );
+
+
+        // precache a few explosion particles 
+        CreateEntity( EntityType.EntityType_ExplosionParticles, new Vector3( -10000, 0, 0 ), Quaternion.identity );
+        CreateEntity( EntityType.EntityType_ExplosionParticles, new Vector3( -10000, 0, 0 ), Quaternion.identity );
+        CreateEntity( EntityType.EntityType_ExplosionParticles, new Vector3( -10000, 0, 0 ), Quaternion.identity );
+        CreateEntity( EntityType.EntityType_ExplosionParticles, new Vector3( -10000, 0, 0 ), Quaternion.identity );
     }
 
-    public GameObject CreateEntity(EntityType entityType)
+    public GameObject CreateEntity( EntityType entityType )
     {
         return CreateEntity( entityType, Vector3.zero, Quaternion.identity );
     }
@@ -96,10 +103,10 @@ public class EntityDatabase : MonoBehaviour
     public GameObject CreateEntity( EntityType entityType, Vector3 position, Quaternion rotation )
     {
         GameObject entity = null;
-        switch (entityType)
+        switch ( entityType )
         {
             case EntityType.EntityType_SimpleEnemy:
-                entity = simpleEnemyPrefab.Spawn(position, rotation).gameObject;
+                entity = simpleEnemyPrefab.Spawn( position, rotation ).gameObject;
                 break;
             case EntityType.EntityType_FollowEnemy:
                 entity = followEnemyPrefab.Spawn( position, rotation ).gameObject;
