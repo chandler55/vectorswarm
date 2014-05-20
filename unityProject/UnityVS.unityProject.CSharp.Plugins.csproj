@@ -46,9 +46,6 @@
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="Fluvio.Runtime">
-      <HintPath>Assets\Fluvio\_Main\Fluvio.Runtime.dll</HintPath>
-    </Reference>
     <Reference Include="Parse.Unity">
       <HintPath>Assets\Parse.Unity.dll</HintPath>
     </Reference>
@@ -140,15 +137,6 @@
     <Compile Include="Assets\Plugins\GoKit\properties\splines\GoSplineQuadraticBezierSolver.cs" />
     <Compile Include="Assets\Plugins\GoKit\properties\splines\GoSplineStraightLineSolver.cs" />
     <None Include="Assets\AdMobPlugin\AdMobPlugin\LICENSE.txt" />
-    <None Include="Assets\Fluvio\_Main\Fluvio.Runtime.xml" />
-    <None Include="Assets\Fluvio\Fluvio Example Project\Common\Image Effects\_Sources\Shaders\FluvioFisheyeShader.shader" />
-    <None Include="Assets\Fluvio\Fluvio Example Project\Common\Image Effects\_Sources\Shaders\FluvioTwirlEffect.shader" />
-    <None Include="Assets\Fluvio\Fluvio Example Project\Common\Projectors\Shaders\Projector Light.shader" />
-    <None Include="Assets\Fluvio\Fluvio Example Project\Common\Water4\Sources\Shaders\FX-SimpleWater4.shader" />
-    <None Include="Assets\Fluvio\Fluvio Example Project\Common\Water4\Sources\Shaders\FX-Water4.shader" />
-    <None Include="Assets\Fluvio\Fluvio Example Project\Common\Water4\Sources\Shaders\FX-Water4Underwater.shader" />
-    <None Include="Assets\Fluvio\Fluvio Example Project\Common\Water4\Sources\Shaders\WaterInclude.cginc" />
-    <None Include="Assets\Fluvio\Fluvio Example Project\Unity-4.3.0\Scenes\Fluvio3DExample\BeastSettings.xml" />
     <None Include="Assets\Parse.Unity.xml" />
     <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
     <None Include="Assets\Plugins\Android\facebook\AndroidManifest.xml" />

@@ -2500,7 +2500,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05b769d8a98bff94491eb9df546de157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useTestLevel: 1
+  useTestLevel: 0
   levelSegmentTest: {fileID: 100002, guid: 28f58b149cb8d294daac7025fee3240e, type: 2}
   levelSegmentPrefabs:
   - {fileID: 100098, guid: 26c90373627978b4cadc738e909b9e79, type: 2}

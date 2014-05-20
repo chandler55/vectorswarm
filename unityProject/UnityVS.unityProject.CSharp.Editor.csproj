@@ -46,15 +46,6 @@
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="Fluvio.Runtime">
-      <HintPath>Assets\Fluvio\_Main\Fluvio.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Fluvio.Editor">
-      <HintPath>Assets\Fluvio\Editor\Fluvio.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Ionic.Zip.Reduced">
-      <HintPath>Assets\Fluvio\Editor\Ionic.Zip.Reduced.dll</HintPath>
-    </Reference>
     <Reference Include="Parse.Unity">
       <HintPath>Assets\Parse.Unity.dll</HintPath>
     </Reference>
@@ -114,11 +105,6 @@
     <Compile Include="Assets\Editor\iOS\third_party\XCodeEditor-for-Unity\XCProject.cs" />
     <Compile Include="Assets\Editor\iOS\third_party\XCodeEditor-for-Unity\XCSourceFile.cs" />
     <Compile Include="Assets\Editor\iOS\third_party\XCodeEditor-for-Unity\XCTarget.cs" />
-    <Compile Include="Assets\Fluvio\Fluvio Example Project\Common\Water4\Editor\FluvioGerstnerDisplaceEditor.cs" />
-    <Compile Include="Assets\Fluvio\Fluvio Example Project\Common\Water4\Editor\FluvioPlanarReflectionEditor.cs" />
-    <Compile Include="Assets\Fluvio\Fluvio Example Project\Common\Water4\Editor\FluvioSpecularLightingEditor.cs" />
-    <Compile Include="Assets\Fluvio\Fluvio Example Project\Common\Water4\Editor\FluvioWaterBaseEditor.cs" />
-    <Compile Include="Assets\Fluvio\Fluvio Example Project\Common\Water4\Editor\FluvioWaterEditorUtility.cs" />
     <Compile Include="Assets\TK2DROOT\tk2d\Editor\Camera\tk2dCameraAnchorEditor.cs" />
     <Compile Include="Assets\TK2DROOT\tk2d\Editor\Camera\tk2dCameraEditor.cs" />
     <Compile Include="Assets\TK2DROOT\tk2d\Editor\Fonts\tk2dFontBuilder.cs" />
@@ -211,15 +197,6 @@
     <Compile Include="Assets\TK2DROOT\tk2dUI\Editor\Core\tk2dUIMethodBindingHelper.cs" />
     <Compile Include="Assets\TK2DROOT\tk2dUI\Editor\Core\tk2dUISpriteAnimatorEditor.cs" />
     <None Include="Assets\AdMobPlugin\AdMobPlugin\LICENSE.txt" />
-    <None Include="Assets\Fluvio\_Main\Fluvio.Runtime.xml" />
-    <None Include="Assets\Fluvio\Fluvio Example Project\Common\Image Effects\_Sources\Shaders\FluvioFisheyeShader.shader" />
-    <None Include="Assets\Fluvio\Fluvio Example Project\Common\Image Effects\_Sources\Shaders\FluvioTwirlEffect.shader" />
-    <None Include="Assets\Fluvio\Fluvio Example Project\Common\Projectors\Shaders\Projector Light.shader" />
-    <None Include="Assets\Fluvio\Fluvio Example Project\Common\Water4\Sources\Shaders\FX-SimpleWater4.shader" />
-    <None Include="Assets\Fluvio\Fluvio Example Project\Common\Water4\Sources\Shaders\FX-Water4.shader" />
-    <None Include="Assets\Fluvio\Fluvio Example Project\Common\Water4\Sources\Shaders\FX-Water4Underwater.shader" />
-    <None Include="Assets\Fluvio\Fluvio Example Project\Common\Water4\Sources\Shaders\WaterInclude.cginc" />
-    <None Include="Assets\Fluvio\Fluvio Example Project\Unity-4.3.0\Scenes\Fluvio3DExample\BeastSettings.xml" />
     <None Include="Assets\Parse.Unity.xml" />
     <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
     <None Include="Assets\Plugins\Android\facebook\AndroidManifest.xml" />
@@ -286,8 +263,6 @@
     <None Include="Assets\TK2DROOT\tk2d_demo\Credits.txt" />
     <None Include="Assets\TK2DROOT\tk2dUI\Shaders\DepthMask.shader" />
     <None Include="Assets\TK2DROOT\tk2dUI\Shaders\DepthMaskSolid.shader" />
-    <None Include="Assets\Fluvio\Editor\Fluvio.Editor.dll" />
-    <None Include="Assets\Fluvio\Editor\Ionic.Zip.Reduced.dll" />
     <None Include="Assets\Plugins\UnityVS\Editor\SyntaxTree.VisualStudio.Unity.Bridge.dll" />
     <None Include="Assets\Plugins\UnityVS\Editor\SyntaxTree.VisualStudio.Unity.Messaging.dll" />
     <None Include="Assets\Plugins\UnityVS\Editor\UnityVS.VersionSpecific.dll" />
