@@ -96,8 +96,10 @@
     <Compile Include="Assets\Scripts\Game\Enemies\SineEnemy.cs" />
     <Compile Include="Assets\Scripts\Game\Enemies\SlowerSimpleEnemy.cs" />
     <Compile Include="Assets\Scripts\Game\Enemies\SpinnerEnemy.cs" />
+    <Compile Include="Assets\Scripts\Game\Enemies\SquareSineEnemy.cs" />
     <Compile Include="Assets\Scripts\Game\Enemies\StationaryEnemy.cs" />
     <Compile Include="Assets\Scripts\Game\Enemies\StraightSineEnemy.cs" />
+    <Compile Include="Assets\Scripts\Game\Enemies\TriangleSineEnemy.cs" />
     <Compile Include="Assets\Scripts\Game\Enemies\VerticalEnemy.cs" />
     <Compile Include="Assets\Scripts\Game\Entity.cs" />
     <Compile Include="Assets\Scripts\Game\EntityDatabase.cs" />
@@ -126,6 +128,8 @@
     <Compile Include="Assets\Scripts\Game\PlayerSnake.cs" />
     <Compile Include="Assets\Scripts\Game\PlayerSnake2.cs" />
     <Compile Include="Assets\Scripts\Game\RotateOnVelocity.cs" />
+    <Compile Include="Assets\Scripts\Game\SaveData.cs" />
+    <Compile Include="Assets\Scripts\Game\SaveLoad.cs" />
     <Compile Include="Assets\Scripts\Game\Scoring.cs" />
     <Compile Include="Assets\Scripts\Game\ScreenBomb.cs" />
     <Compile Include="Assets\Scripts\Game\SendCollisionTriggerUp.cs" />

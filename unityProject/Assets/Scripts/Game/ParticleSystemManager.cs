@@ -257,13 +257,26 @@ public class ParticleSystemManager : MonoBehaviour
 
     public void CreateEnemyExplosion( Vector3 pos )
     {
+        CreateEnemyExplosion( pos, false, Color.black );
+    }
+
+    public void CreateEnemyExplosion( Vector3 pos, bool overrideColor, Color color )
+    {
         GameObject go = EntityDatabase.Instance.CreateEntity( EntityDatabase.EntityType.EntityType_ExplosionParticles, pos, Quaternion.identity );
         ExplosionParticles explosionScript = go.GetComponent<ExplosionParticles>();
         if ( explosionScript )
         {
             float hue1 = ( Mathf.Abs( Mathf.Sin( Time.realtimeSinceStartup ) ) * 6.0f + 3.0f ) % 6f;
+
             Color color1 = ColorUtil.HSVToColor( hue1, 0.5f, 1 );
-            explosionScript.SetColor( color1 );
+            if ( overrideColor )
+            {
+                explosionScript.SetColor( color );
+            }
+            else
+            {
+                explosionScript.SetColor( color1 );
+            }
         }
         /*
         float hue1 = ( Mathf.Abs( Mathf.Sin( Time.realtimeSinceStartup ) ) * 6.0f + 3.0f ) % 6f;

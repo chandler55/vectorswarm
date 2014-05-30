@@ -56,7 +56,15 @@ public class LevelManager : MonoBehaviour
     void CreateNextLevelSegment()
     {
         mNextLevelSegmentPos += new Vector3( 0, GameSettings.LEVEL_SEGMENT_SIZE_Y, 0 );
+
         mNextLevelSegment = Instantiate( GetRandomLevelSegment(), mNextLevelSegmentPos, Quaternion.identity ) as GameObject;
+
+        // rotate levels randomly
+        if ( UnityEngine.Random.Range( 0, 1 ) == 0 )
+        {
+            //mNextLevelSegment.transform.localScale = new Vector3( -1, 0, 0 );
+        }
+
         mNextLevelSegmentTransform = mNextLevelSegment.transform;
     }
 }

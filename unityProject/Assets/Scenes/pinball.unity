@@ -118,6 +118,8 @@ MonoBehaviour:
     type: 2}
   hourGlassEnemyPrefab: {fileID: 11400002, guid: e4e75c7f35d2f4340a16fb62b7221d73,
     type: 2}
+  triangleSineEnemyPrefab: {fileID: 11400002, guid: 003c864b8f1a1e24ca2c1f7a4239b35a,
+    type: 2}
   multiplierItemPrefab: {fileID: 11400000, guid: 0946698eea14c994fa336a977f245060,
     type: 2}
   screenBombPrefab: {fileID: 11400000, guid: 4595120c72ffc3a49bb8244f8afa598e, type: 2}

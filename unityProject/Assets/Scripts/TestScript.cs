@@ -14,7 +14,12 @@ public class TestScript : MonoBehaviour
 #if UNITY_EDITOR
         if ( Input.GetKeyUp( KeyCode.A ) )
         {
-            //Test();
+            SaveGame();
+        }
+
+        if ( Input.GetKeyUp( KeyCode.F ) )
+        {
+            LoadGame();
         }
 #endif
     }
@@ -42,5 +47,24 @@ public class TestScript : MonoBehaviour
     void OnTriggerEnter2D( Collider2D collider )
     {
         Debug.Log( "trigger2D" );
+    }
+
+    void SaveGame()
+    {
+        SaveData.current.money = 5;
+        SaveLoad.Save();
+
+        Debug.Log( "game saved" );
+    }
+
+    void LoadGame()
+    {
+        if (!SaveLoad.Load())
+        {
+            // create new save data
+            SaveData.current = new SaveData();
+        }
+
+        Debug.Log( "game loaded" );
     }
 }

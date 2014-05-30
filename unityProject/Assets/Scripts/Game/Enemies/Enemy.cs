@@ -17,7 +17,7 @@ public class Enemy : Entity
     public virtual void DestroyEnemy()
     {
         Messenger.Broadcast<long, Vector3>( Events.GameEvents.IncrementScore, 10, Position );
-        ParticleSystemManager.Instance.CreateEnemyExplosion( Position );
+        ParticleSystemManager.Instance.CreateEnemyExplosion( Position, true, Color.cyan );
 
         // spawn multiplier item
         //EntityDatabase.Instance.CreateEntity( EntityDatabase.EntityType.EntityType_MultiplierItem, Position, Quaternion.identity );

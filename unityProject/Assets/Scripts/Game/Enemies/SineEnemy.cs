@@ -7,8 +7,8 @@ public class SineEnemy : Enemy
 
     public float waveHeight = 6.0f;
 
+    protected float mBaselineY = 0.0f;
     private bool mMovingRight = false;
-    private float mBaselineY = 0.0f;
     private tk2dSprite mSprite = null;
 
     protected override void Init()

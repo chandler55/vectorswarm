@@ -25,6 +25,7 @@ public class EntityDatabase : MonoBehaviour
         EntityType_SlowerSimpleEnemy = 8,
         EntityType_MovingStationaryEnemy = 9,
         EntityType_HourGlassEnemy = 10,
+        EntityType_TriangleSineEnemy = 11,
 
         EntityType_MultiplierItem = 100,
         EntityType_ScreenBomb = 101,
@@ -46,6 +47,7 @@ public class EntityDatabase : MonoBehaviour
     public SlowerSimpleEnemy        slowerSimpleEnemyPrefab;
     public MovingStationaryEnemy    movingStationaryEnemyPrefab;
     public HourGlassEnemy           hourGlassEnemyPrefab;
+    public TriangleSineEnemy        triangleSineEnemyPrefab;
 
     public MultiplierItem   multiplierItemPrefab;
     public ScreenBomb       screenBombPrefab;
@@ -79,6 +81,7 @@ public class EntityDatabase : MonoBehaviour
         ObjectPool.CreatePool( slowerSimpleEnemyPrefab );
         ObjectPool.CreatePool( movingStationaryEnemyPrefab );
         ObjectPool.CreatePool( hourGlassEnemyPrefab );
+        ObjectPool.CreatePool( triangleSineEnemyPrefab );
 
         ObjectPool.CreatePool( multiplierItemPrefab );
         ObjectPool.CreatePool( screenBombPrefab );
@@ -87,9 +90,16 @@ public class EntityDatabase : MonoBehaviour
         ObjectPool.CreatePool( playerExplosionPrefab );
 
         ObjectPool.CreatePool( scoreIndicatorPrefab );
+
+
+        // precache a few explosion particles 
+        CreateEntity( EntityType.EntityType_ExplosionParticles, new Vector3( -10000, 0, 0 ), Quaternion.identity );
+        CreateEntity( EntityType.EntityType_ExplosionParticles, new Vector3( -10000, 0, 0 ), Quaternion.identity );
+        CreateEntity( EntityType.EntityType_ExplosionParticles, new Vector3( -10000, 0, 0 ), Quaternion.identity );
+        CreateEntity( EntityType.EntityType_ExplosionParticles, new Vector3( -10000, 0, 0 ), Quaternion.identity );
     }
 
-    public GameObject CreateEntity(EntityType entityType)
+    public GameObject CreateEntity( EntityType entityType )
     {
         return CreateEntity( entityType, Vector3.zero, Quaternion.identity );
     }
@@ -97,10 +107,10 @@ public class EntityDatabase : MonoBehaviour
     public GameObject CreateEntity( EntityType entityType, Vector3 position, Quaternion rotation )
     {
         GameObject entity = null;
-        switch (entityType)
+        switch ( entityType )
         {
             case EntityType.EntityType_SimpleEnemy:
-                entity = simpleEnemyPrefab.Spawn(position, rotation).gameObject;
+                entity = simpleEnemyPrefab.Spawn( position, rotation ).gameObject;
                 break;
             case EntityType.EntityType_FollowEnemy:
                 entity = followEnemyPrefab.Spawn( position, rotation ).gameObject;
@@ -131,6 +141,9 @@ public class EntityDatabase : MonoBehaviour
                 break;
             case EntityType.EntityType_HourGlassEnemy:
                 entity = hourGlassEnemyPrefab.Spawn( position, rotation ).gameObject;
+                break;
+            case EntityType.EntityType_TriangleSineEnemy:
+                entity = triangleSineEnemyPrefab.Spawn( position, rotation ).gameObject;
                 break;
 
             case EntityType.EntityType_MultiplierItem:
