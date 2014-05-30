@@ -7,11 +7,11 @@ public class MultiplierUI : MonoBehaviour
 
     void Start()
     {
-        OnMultiplierUpdated( 0 );
-
         textMesh = GetComponent<tk2dTextMesh>();
 
         Messenger.AddListener<int>( Events.UIEvents.MultiplierUpdated, OnMultiplierUpdated );
+
+        OnMultiplierUpdated( 0 );
     }
 
     void OnDestroy()

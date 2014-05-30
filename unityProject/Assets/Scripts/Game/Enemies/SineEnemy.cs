@@ -62,12 +62,16 @@ public class SineEnemy : Enemy
 
         Velocity = Velocity.normalized * speed;
 
-        float timeSinceStartup = Time.realtimeSinceStartup;
-        Velocity = new Vector2( Velocity.x, ( ( mBaselineY - Position.y ) + Mathf.Sin( timeSinceStartup * 10.0f ) * waveHeight ) );
-
+        CalculateVelocityY();
         Position += Velocity * Time.deltaTime;
 
         //Go.to( transform, movementDuration, new GoTweenConfig().position( newPos ) ).setOnCompleteHandler( OnCompleteTween );
+    }
+
+    protected virtual void CalculateVelocityY()
+    {
+        float timeSinceStartup = Time.realtimeSinceStartup;
+        Velocity = new Vector2( Velocity.x, ( ( mBaselineY - Position.y ) + Mathf.Sin( timeSinceStartup * 10.0f ) * waveHeight ) );
     }
 
     void FixOrientation()

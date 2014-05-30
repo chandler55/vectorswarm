@@ -27,6 +27,7 @@ public class EntityDatabase : MonoBehaviour
         EntityType_HourGlassEnemy = 10,
 
         EntityType_MultiplierItem = 100,
+        EntityType_ScreenBomb = 101,
 
         EntityType_ExplosionParticles = 200,
         EntityType_PlayerExplosion = 201,
@@ -47,6 +48,7 @@ public class EntityDatabase : MonoBehaviour
     public HourGlassEnemy           hourGlassEnemyPrefab;
 
     public MultiplierItem   multiplierItemPrefab;
+    public ScreenBomb       screenBombPrefab;
 
     public ExplosionParticles   explosionParticlesPrefab;
     public PlayerExplosion      playerExplosionPrefab;
@@ -79,6 +81,8 @@ public class EntityDatabase : MonoBehaviour
         ObjectPool.CreatePool( hourGlassEnemyPrefab );
 
         ObjectPool.CreatePool( multiplierItemPrefab );
+        ObjectPool.CreatePool( screenBombPrefab );
+
         ObjectPool.CreatePool( explosionParticlesPrefab );
         ObjectPool.CreatePool( playerExplosionPrefab );
 
@@ -131,6 +135,9 @@ public class EntityDatabase : MonoBehaviour
 
             case EntityType.EntityType_MultiplierItem:
                 entity = multiplierItemPrefab.Spawn( position, rotation ).gameObject;
+                break;
+            case EntityType.EntityType_ScreenBomb:
+                entity = screenBombPrefab.Spawn( position, rotation ).gameObject;
                 break;
 
             case EntityType.EntityType_ExplosionParticles:

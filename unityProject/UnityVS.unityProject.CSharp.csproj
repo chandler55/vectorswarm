@@ -97,6 +97,7 @@
     <Compile Include="Assets\Scripts\Game\Enemies\SlowerSimpleEnemy.cs" />
     <Compile Include="Assets\Scripts\Game\Enemies\SpinnerEnemy.cs" />
     <Compile Include="Assets\Scripts\Game\Enemies\StationaryEnemy.cs" />
+    <Compile Include="Assets\Scripts\Game\Enemies\StraightSineEnemy.cs" />
     <Compile Include="Assets\Scripts\Game\Enemies\VerticalEnemy.cs" />
     <Compile Include="Assets\Scripts\Game\Entity.cs" />
     <Compile Include="Assets\Scripts\Game\EntityDatabase.cs" />
@@ -120,11 +121,13 @@
     <Compile Include="Assets\Scripts\Game\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\Game\PlayerExplosion.cs" />
     <Compile Include="Assets\Scripts\Game\PlayerProfile.cs" />
+    <Compile Include="Assets\Scripts\Game\PlayerShield.cs" />
     <Compile Include="Assets\Scripts\Game\PlayerShip.cs" />
     <Compile Include="Assets\Scripts\Game\PlayerSnake.cs" />
     <Compile Include="Assets\Scripts\Game\PlayerSnake2.cs" />
     <Compile Include="Assets\Scripts\Game\RotateOnVelocity.cs" />
     <Compile Include="Assets\Scripts\Game\Scoring.cs" />
+    <Compile Include="Assets\Scripts\Game\ScreenBomb.cs" />
     <Compile Include="Assets\Scripts\Game\SendCollisionTriggerUp.cs" />
     <Compile Include="Assets\Scripts\Game\SendDestroySignal.cs" />
     <Compile Include="Assets\Scripts\Game\SettingsBox.cs" />
@@ -168,6 +171,7 @@
     <Compile Include="Assets\TK2DROOT\tk2d\Code\Sprites\tk2dClippedSprite.cs" />
     <Compile Include="Assets\TK2DROOT\tk2d\Code\Sprites\tk2dEditorSpriteDataUnloader.cs" />
     <Compile Include="Assets\TK2DROOT\tk2d\Code\Sprites\tk2dPixelPerfectHelper.cs" />
+    <Compile Include="Assets\TK2DROOT\tk2d\Code\Sprites\tk2dRadialSprite.cs" />
     <Compile Include="Assets\TK2DROOT\tk2d\Code\Sprites\tk2dRuntimeSpriteCollection.cs" />
     <Compile Include="Assets\TK2DROOT\tk2d\Code\Sprites\tk2dSlicedSprite.cs" />
     <Compile Include="Assets\TK2DROOT\tk2d\Code\Sprites\tk2dSprite.cs" />
@@ -232,6 +236,7 @@
     <Compile Include="Assets\TK2DROOT\tk2dUI_demo\tk2dUIDemo5Controller.cs" />
     <Compile Include="Assets\TK2DROOT\tk2dUI_demo\tk2dUIDemo6Controller.cs" />
     <Compile Include="Assets\TK2DROOT\tk2dUI_demo\tk2dUIDemoController.cs" />
+    <Compile Include="Assets\Unsupported\RadialSprite\tk2dRadialSpriteGeomGen.cs" />
     <None Include="Assets\AdMobPlugin\AdMobPlugin\LICENSE.txt" />
     <None Include="Assets\Parse.Unity.xml" />
     <None Include="Assets\Plugins\Android\AndroidManifest.xml" />

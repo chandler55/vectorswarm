@@ -5,6 +5,7 @@ public class PlayerSnake : Entity
 {
     public GameObject shipObject = null;
     public tk2dSprite playerSprite = null;
+    public tk2dRadialSprite shieldSprite = null;
 
     private static PlayerSnake instance;
     public static PlayerSnake Instance
@@ -27,7 +28,7 @@ public class PlayerSnake : Entity
     private Transform mTransform = null;
 
     // fuel
-    private float   mFuelCapacity = 3.0f; // in seconds
+    private float   mFuelCapacity = 6.0f; // in seconds
     private float   mFuelRemaining = 0.0f;
     private bool    mAfterburnerActivated = false;
     private float   mFuelChargeRate = 0.1f;
@@ -50,6 +51,8 @@ public class PlayerSnake : Entity
 
     void Start()
     {
+        GameUtils.Assert( shieldSprite );
+        GameUtils.Assert( playerSprite );
         mTransform = gameObject.transform;
         mFuelRemaining = mFuelCapacity;
 
@@ -100,49 +103,6 @@ public class PlayerSnake : Entity
         // lock y velocity to mCurrentPlayerSpeedY variable
         Velocity = new Vector2( Velocity.x, mCurrentPlayerSpeedY );
         Position += Velocity * Time.deltaTime;
-
-        MakeExhaustFire();
-    }
-
-    private void MakeExhaustFire()
-    {
-        /*
-        if ( Velocity.sqrMagnitude > 0.1f )
-        {
-            // set up some variables
-            float t = Time.realtimeSinceStartup;
-
-            // The primary velocity of the particles is 3 pixels/frame in the direction opposite to which the ship is travelling.
-            Vector2 baseVel = Velocity * -3.0f;
-
-            // Calculate the sideways velocity for the two side streams. The direction is perpendicular to the ship's velocity and the
-            // magnitude varies sinusoidally.
-            Vector2 perpVel = new Vector2( baseVel.y, -baseVel.x ) * ( 0.6f * (float)Mathf.Sin( t * 10.0f ) );
-
-            Color sideColor = new Color( 200 / 255.0f, 38 / 255.0f, 9 / 255.0f );    // deep red
-            Color midColor = new Color( 255 / 255.0f, 187 / 255.0f, 30 / 255.0f );   // orange-yellow
-            Vector2 pos = Position;   // position of the ship's exhaust pipe.
-            const float alpha = 0.7f;
-
-            // middle particle stream
-            Vector2 velMid = baseVel + GameUtils.RandomVector2( 0, 1 );
-
-            ParticleSystemManager.Instance.CreateParticle( pos, perpVel, Color.white * alpha, 1.0f, new Vector2( 0.5f, 1 ), 0 );
-            ParticleSystemManager.Instance.CreateParticle( pos, velMid, midColor * alpha, 1.0f, new Vector2( 0.5f, 1 ), 0 );
-
-            // side particle streams
-            Vector2 vel1 = baseVel + perpVel + GameUtils.RandomVector2( 0, 0.3f );
-            Vector2 vel2 = baseVel - perpVel + GameUtils.RandomVector2( 0, 0.3f );
-
-            ParticleSystemManager.Instance.CreateParticle( pos, vel1, Color.white * alpha, 1.0f, new Vector2( 0.5f, 1 ), 0 );
-            ParticleSystemManager.Instance.CreateParticle( pos, vel2, Color.white * alpha, 1.0f, new Vector2( 0.5f, 1 ), 0 );
-
-            ParticleSystemManager.Instance.CreateParticle( pos, vel1, sideColor * alpha, 1.0f, new Vector2( 0.5f, 1 ), 0 );
-            ParticleSystemManager.Instance.CreateParticle( pos, vel2, sideColor * alpha, 1.0f, new Vector2( 0.5f, 1 ), 0 );
-        }*/
-
-        // Color exhaustColor = ColorUtil.HSVToColor( Mathf.Abs( Mathf.Sin( Time.realtimeSinceStartup ) ) * 6.0f, 0.5f, 1.0f );
-        // ParticleSystemManager.Instance.CreateParticle( Position, -Velocity / 20.0f, exhaustColor, 0.2f, Vector2.one, 0 );
     }
 
     private void InvincibilityLogic()
@@ -154,6 +114,7 @@ public class PlayerSnake : Entity
             if ( mInvincibilityRemaining <= 0 )
             {
                 mInvincibilityRemaining = 0.0f;
+                playerSprite.color = Color.white;
             }
             else
             {
@@ -186,8 +147,10 @@ public class PlayerSnake : Entity
 
                 // give player temporary invincibility
                 FlashInvincibility();
-            }
 
+                // shoot a clear screen bomb
+                EntityDatabase.Instance.CreateEntity( EntityDatabase.EntityType.EntityType_ScreenBomb, transform.position, Quaternion.identity );
+            }
             Messenger.Broadcast<float>( Events.UIEvents.FuelGaugeUpdated, mFuelRemaining / mFuelCapacity );
         }
         else
@@ -214,6 +177,11 @@ public class PlayerSnake : Entity
 
     private void SetAfterburner( bool on )
     {
+        if ( shieldSprite )
+        {
+            shieldSprite.color = on ? Color.white : Color.clear;
+        }
+
         mAfterburnerActivated = on;
         Messenger.Broadcast<bool>( Events.GameEvents.AfterburnerTriggered, on );
     }
@@ -290,6 +258,9 @@ public class PlayerSnake : Entity
 
     private void Die()
     {
+        // if shield kills all enemies on screen
+        //if ( PlayerProfile.GetInstance().hasKillAllShield )
+
         mIsAlive = false;
 
         SetPlayerSpeed( 0.0f );
@@ -303,7 +274,21 @@ public class PlayerSnake : Entity
             shipObject.SetActive( false );
         }
 
+        /*
+        PlayerShield shield = GetComponentInChildren<PlayerShield>();
+        if ( shield )
+        {
+            bool shieldCharged = shield.IsCharged();
 
+            if ( shieldCharged )
+            {
+                shield.UseShield();
+            }
+            else
+            {
+                
+            }
+        }*/
     }
 
     private void Spawn()
