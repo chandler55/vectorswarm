@@ -78,6 +78,10 @@ MonoBehaviour:
     dataGUID: eed86ffc91909c04399f11db7ab51056
     managed: 0
     loadable: 0
+  - assetGUID: 64aed8d31885c9d43949e780c28c700a
+    dataGUID: d8d9ff0008c4d034b83da693d225698a
+    managed: 0
+    loadable: 0
   spriteCollectionIndex:
   - name: DemoSpiderSpriteCollection
     spriteCollectionGUID: 1fe2f34d6bac2b440944f04ac87d9e8a
@@ -743,6 +747,7 @@ MonoBehaviour:
     - gooStar
     - octagon
     - playershield
+    - arrowEnemyYellow
     spriteTextureGUIDs:
     - 11905d0ba78abf44296f509c4be50a7f
     - 7e38abbd43d7fe44298e689b8998da39
@@ -767,30 +772,32 @@ MonoBehaviour:
     - 62e5d9016fa6df245ac7ca02ff11a29f
     - 0fdfcdedb6379fd4caa6bbac721b4cbd
     - 7dcac00dfad7e284bac7cda7104d3a08
+    - 526c98a66bbc3d84489e690f25443644
     spriteTextureTimeStamps:
-    - 1399381390.76243
-    - 1399381390.59042
-    - 1399381390.56742
-    - 1399381390.67543
-    - 1399381390.53642
-    - 1401291575.13555
-    - 1399381390.76843
-    - 1399381390.78043
-    - 1399517141.46322
-    - 1400124242.12099
-    - 1399381390.77543
-    - 1399381390.73943
-    - 1400124242.09999
-    - 1399517141.45522
-    - 1399381390.72343
-    - 1400124242.09499
-    - 1399517141.47022
-    - 1400124242.11799
-    - 1399517141.45622
-    - 1400124242.12699
-    - 1400124242.11099
-    - 1400164987.34531
-    - 1401299586.1573
+    - 1399572603.31714
+    - 1399572603.2503
+    - 1399572603.24229
+    - 1399572603.29413
+    - 1399572603.24029
+    - 1401478115.97938
+    - 1399572603.31914
+    - 1399572603.32514
+    - 1399572603.30713
+    - 1400085741.69085
+    - 1399572603.32114
+    - 1399572603.30913
+    - 1400081686.7657
+    - 1399572603.29913
+    - 1399572603.30513
+    - 1400081279.11814
+    - 1399572603.32314
+    - 1400081227.59193
+    - 1399572603.30113
+    - 1400081182.2269
+    - 1400105209.90251
+    - 1400110226.83986
+    - 1401478115.97938
+    - 1400177568.47637
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
@@ -806,6 +813,8 @@ MonoBehaviour:
     - gaugeFilledMeter
     - lightningbolt
     - gaugeHighlight
+    - taptoretry
+    - white
     spriteTextureGUIDs:
     - 9c4326713a27f54439a7a547ed9869be
     - 11715875beef04548943f823796c31ff
@@ -814,6 +823,8 @@ MonoBehaviour:
     - 506a3aa5f88a3c340abfef279666029c
     - 784a27234e995fe4e83fa087f04b448c
     - e44ddbd85e0201844a9c2d3863816839
+    - 54a7f7a8971a3aa4884c3c1cbbe1be2c
+    - fbd7571bdb6c2a94fbe8dfd569f5c6fd
     spriteTextureTimeStamps:
     - 1399998645.56176
     - 1400035151.80523
@@ -822,6 +833,8 @@ MonoBehaviour:
     - 1400034389.94819
     - 1400024723.0866
     - 1400085889.81413
+    - 1401495343.08064
+    - 1399572603.32514
     managedSpriteCollection: 0
     loadable: 0
     assetName: 

@@ -28,10 +28,10 @@ public class PlayerSnake : Entity
     private Transform mTransform = null;
 
     // fuel
-    private float   mFuelCapacity = 6.0f; // in seconds
+    private float   mFuelCapacity = 8.0f; // in seconds
     private float   mFuelRemaining = 0.0f;
     private bool    mAfterburnerActivated = false;
-    private float   mFuelChargeRate = 0.1f;
+    private float   mFuelChargeRate = 0.08f;
 
     //invincibility
     private float   mFlashInvincibilityDuration = 2.5f;
@@ -44,6 +44,9 @@ public class PlayerSnake : Entity
     private float   mPreviousAccelerationX = 0.0f;
     private float   mThresholdForAccelerometer = 0.01f;
 
+    // respawning
+    private Vector3 mStartPosition = Vector3.zero;
+
     void Awake()
     {
         instance = this;
@@ -53,10 +56,12 @@ public class PlayerSnake : Entity
     {
         GameUtils.Assert( shieldSprite );
         GameUtils.Assert( playerSprite );
-        mTransform = gameObject.transform;
-        mFuelRemaining = mFuelCapacity;
 
-        Messenger.AddListener( Events.GameEvents.SpawnNewShip, OnSpawnNewShip );
+        mStartPosition = gameObject.transform.position;
+        mTransform = gameObject.transform;
+        
+        Messenger.AddListener( Events.GameEvents.NewGameStarted, OnNewGameStarted );
+        Messenger.AddListener( Events.GameEvents.GameStart, OnGameStarted );
 
         FlashInvincibility();
     }
@@ -65,7 +70,8 @@ public class PlayerSnake : Entity
     {
         instance = null;
 
-        Messenger.RemoveListener( Events.GameEvents.SpawnNewShip, OnSpawnNewShip );
+        Messenger.RemoveListener( Events.GameEvents.NewGameStarted, OnNewGameStarted );
+        Messenger.RemoveListener( Events.GameEvents.GameStart, OnGameStarted );
     }
 
     void Update()
@@ -132,6 +138,7 @@ public class PlayerSnake : Entity
     {
         if ( Input.GetMouseButton( 0 ) && mFuelRemaining == mFuelCapacity )
         {
+            SoundManager.Instance.PlaySound( SoundManager.Sounds.Sounds_Afterburner );
             SetAfterburner( true );
             SetPlayerSpeed( mPlayerAfterburnerSpeed );
         }
@@ -261,6 +268,8 @@ public class PlayerSnake : Entity
         // if shield kills all enemies on screen
         //if ( PlayerProfile.GetInstance().hasKillAllShield )
 
+        SoundManager.Instance.PlaySound( SoundManager.Sounds.Sounds_PlayerHit );
+
         mIsAlive = false;
 
         SetPlayerSpeed( 0.0f );
@@ -293,6 +302,8 @@ public class PlayerSnake : Entity
 
     private void Spawn()
     {
+        mFuelRemaining = mFuelCapacity;
+
         mIsAlive = true;
 
         if ( shipObject != null )
@@ -305,8 +316,14 @@ public class PlayerSnake : Entity
         SetPlayerSpeed( mPlayerNormalSpeed );
     }
 
-    void OnSpawnNewShip()
+    void OnNewGameStarted()
     {
+        gameObject.transform.position = mStartPosition;
         Spawn();
+    }
+
+    void OnGameStarted()
+    {
+        SetPlayerSpeed( mPlayerNormalSpeed );
     }
 }

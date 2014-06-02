@@ -28,10 +28,9 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        Application.targetFrameRate = 30;
+        Application.targetFrameRate = 60;
 
         // listen for events
-        Messenger.AddListener( Events.GameEvents.ObjectiveShown, OnObjectiveShown );
         Messenger.AddListener( Events.GameEvents.RetryLevel, OnRetryLevel );
         Messenger.AddListener( Events.GameEvents.PlayerDied, OnPlayerDied );
 
@@ -41,7 +40,6 @@ public class GameManager : MonoBehaviour
 
     void OnDestroy()
     {
-        Messenger.RemoveListener( Events.GameEvents.ObjectiveShown, OnObjectiveShown );
         Messenger.RemoveListener( Events.GameEvents.RetryLevel, OnRetryLevel );
         Messenger.RemoveListener( Events.GameEvents.PlayerDied, OnPlayerDied );
     }
@@ -60,38 +58,33 @@ public class GameManager : MonoBehaviour
     void LoadLevel()
     {
         Messenger.Broadcast( Events.GameEvents.GameStart );
-        Messenger.Broadcast( Events.GameEvents.ShowObjective );
+        Messenger.Broadcast( Events.GameEvents.NewGameStarted );
 
-        m_gameState = GameState.GameState_ShowObjective;
+        m_gameState = GameState.GameState_Playing;
     }
 
     void OnRetryLevel()
     {
-        Application.LoadLevel( "start" );
-    }
-
-    void OnObjectiveShown()
-    {
-        m_gameState = GameState.GameState_Playing;
-    }
-
-    void CheckObjectives()
-    {
-
+        Messenger.Broadcast( Events.GameEvents.NewGameStarted );
+        m_gameState = GameState.GameState_Start;
     }
 
     void OnPlayerDied()
     {
-        // spawn a new ship
-        Go.to( transform, 2.0f, new GoTweenConfig() ).setOnCompleteHandler( SpawnNewShip );
+        m_gameState = GameState.GameState_GameOver;
+
+        // check high score
+        Score score = GetComponent<Score>();
+        if ( score )
+        {
+            int playerScore = score.GetScore();
+            if ( playerScore > SaveData.current.highScore )
+            {
+                SaveData.current.highScore = playerScore;
+                SaveLoad.Save();
+
+                Messenger.Broadcast<long>( Events.UIEvents.HighScoreUpdated, SaveData.current.highScore );
+            }
+        }
     }
-
-    void SpawnNewShip( AbstractGoTween tween )
-    {
-        --mRemainingLives;
-        Messenger.Broadcast<int>( Events.UIEvents.RemainingLivesUpdated, mRemainingLives );
-
-        Messenger.Broadcast( Events.GameEvents.SpawnNewShip );
-    }
-
 }

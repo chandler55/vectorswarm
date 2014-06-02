@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Scoring : MonoBehaviour
 {
-    private long mHighScore = 0;
+    private long mScore = 0;
     private int mMultiplier = 1;
 
     private Vector3 mScoreOffset = new Vector3( 0, -2.5f, 0 );
@@ -30,7 +30,7 @@ public class Scoring : MonoBehaviour
     void OnIncrementScore( long score, Vector3 worldPos )
     {
         long addScore = mMultiplier * score;
-        mHighScore += addScore;
+        mScore += addScore;
 
         worldPos += mScoreOffset;
         GameObject go = EntityDatabase.Instance.CreateEntity( EntityDatabase.EntityType.EntityType_ScoreIndicator, worldPos, Quaternion.identity );
@@ -40,7 +40,7 @@ public class Scoring : MonoBehaviour
             scoreIndicatorComponent.SetScore( addScore );
         }
 
-        Messenger.Broadcast<long>( Events.UIEvents.HighScoreUpdated, mHighScore );
+        Messenger.Broadcast<long>( Events.UIEvents.ScoreUpdated, mScore );
     }
 
     void OnIncrementMultiplier( Vector3 worldPos )

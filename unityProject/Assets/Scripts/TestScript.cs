@@ -51,7 +51,7 @@ public class TestScript : MonoBehaviour
 
     void SaveGame()
     {
-        SaveData.current.money = 5;
+       // SaveData.current.money = 5;
         SaveLoad.Save();
 
         Debug.Log( "game saved" );

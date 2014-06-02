@@ -12,6 +12,7 @@ public class ScreenBomb : Entity
     {
         mTimer = 0.0f;
         transform.localScale = Vector3.one;
+        SoundManager.Instance.PlaySound( SoundManager.Sounds.Sounds_Bomb );
     }
 
     void Update()

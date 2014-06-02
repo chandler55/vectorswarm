@@ -21,7 +21,8 @@ public class Events
         public static string AfterburnerTriggered = "AfterburnerTriggered";
 
         public static string PlayerDied = "PlayerDied";
-        public static string SpawnNewShip = "SpawnNewShip";
+
+        public static string NewGameStarted = "NewGameStarted";
     }
 
     public static class MenuEvents
@@ -37,6 +38,7 @@ public class Events
         public static string MultiplierUpdated = "MultiplierUpdated";
         public static string FuelGaugeUpdated = "FuelGaugeUpdated";
         public static string RemainingLivesUpdated = "RemainingLivesUpdated";
+        public static string ScoreUpdated = "ScoreUpdated";
 
     }
 

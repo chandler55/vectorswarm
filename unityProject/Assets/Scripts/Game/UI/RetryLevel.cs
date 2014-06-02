@@ -14,7 +14,7 @@ public class RetryLevel : MonoBehaviour
 
     }
 
-    void OnClick()
+    void Retry()
     {
         Messenger.Broadcast( Events.GameEvents.RetryLevel );
     }

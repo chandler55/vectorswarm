@@ -6,44 +6,59 @@ public class LevelManager : MonoBehaviour
 {
     public bool useTestLevel = false;
     public GameObject levelSegmentTest;
+    public GameObject levelSegmentsRoot;
 
     public List<GameObject> levelSegmentPrefabs;
 
     private float DESTROY_PREVIOUS_SEGMENT_BUFFER = 100.0f;
     private Vector3 mNextLevelSegmentPos = Vector3.zero;
-    private GameObject mCurrentLevelSegment = null;
-    private GameObject mNextLevelSegment = null;
+    private LevelSegment mCurrentLevelSegment = null;
+    private LevelSegment mNextLevelSegment = null;
     private Transform mNextLevelSegmentTransform = null;
 
     void Start()
     {
-        mCurrentLevelSegment = Instantiate( GetRandomLevelSegment(), mNextLevelSegmentPos, Quaternion.identity ) as GameObject;
-        CreateNextLevelSegment();
+        GameUtils.Assert( levelSegmentsRoot );
+
+        Messenger.AddListener( Events.GameEvents.NewGameStarted, OnNewGameStarted );
+        Messenger.AddListener( Events.GameEvents.PlayerDied, OnPlayerDied );
+    }
+
+    void OnDestroy()
+    {
+        Messenger.RemoveListener( Events.GameEvents.NewGameStarted, OnNewGameStarted );
+        Messenger.RemoveListener( Events.GameEvents.PlayerDied, OnPlayerDied );
     }
 
     void Update()
     {
-        if ( Input.GetKeyDown( KeyCode.C ) || Input.GetMouseButtonUp( 0 ) )
+        if ( mNextLevelSegmentTransform )
         {
-            //Instantiate( levelSegmentPrefabs[0], mNextLevelSegmentPos, Quaternion.identity );
+            if ( PlayerSnake.Instance.Position.y >= mNextLevelSegmentTransform.position.y + DESTROY_PREVIOUS_SEGMENT_BUFFER )
+            {
+                Destroy( mCurrentLevelSegment.gameObject );
+
+                mCurrentLevelSegment = mNextLevelSegment;
+
+                CreateNextLevelSegment();
+            }
         }
-
-        if ( PlayerSnake.Instance.Position.y >= mNextLevelSegmentTransform.position.y + DESTROY_PREVIOUS_SEGMENT_BUFFER )
-        {
-            Destroy( mCurrentLevelSegment );
-
-            mCurrentLevelSegment = mNextLevelSegment;
-
-            CreateNextLevelSegment();
-        }
-
-
     }
 
-    GameObject GetRandomLevelSegment()
+    GameObject GetRandomLevelSegment( int indexMax = -1 )
     {
         // choose random level segment
-        int prefabIndex = Random.Range( 0, levelSegmentPrefabs.Count );
+        int prefabIndex;
+        if ( indexMax == -1 )
+        {
+            prefabIndex = Random.Range( 0, levelSegmentPrefabs.Count );
+        }
+        else
+        {
+            prefabIndex = Random.Range( 0, indexMax );
+        }
+
+
         GameObject levelSegmentPrefab = levelSegmentPrefabs[prefabIndex];
         if ( useTestLevel && levelSegmentTest )
         {
@@ -53,11 +68,48 @@ public class LevelManager : MonoBehaviour
         return levelSegmentPrefab;
     }
 
+    void OnNewGameStarted()
+    {
+        // reset level starting position
+        DestroyLevelSegments();
+
+        mNextLevelSegmentPos = new Vector3( 0, 0, 0 );
+        CreateBeginningLevelSegments();
+    }
+
+    void OnPlayerDied()
+    {
+        //DestroyLevelSegments();
+    }
+
+    void DestroyLevelSegments()
+    {
+        LevelSegment[] levelSegments = levelSegmentsRoot.GetComponentsInChildren<LevelSegment>();
+        foreach ( LevelSegment segment in levelSegments )
+        {
+            Destroy( segment.gameObject );
+        }
+    }
+
+    void CreateBeginningLevelSegments()
+    {
+        GameObject currentSegmentGameObject = Instantiate( GetRandomLevelSegment(), mNextLevelSegmentPos, Quaternion.identity ) as GameObject;
+        mCurrentLevelSegment = currentSegmentGameObject.GetComponent<LevelSegment>();
+
+        if ( mCurrentLevelSegment )
+        {
+            mCurrentLevelSegment.transform.parent = levelSegmentsRoot.transform;
+        }
+
+        CreateNextLevelSegment();
+    }
+
     void CreateNextLevelSegment()
     {
         mNextLevelSegmentPos += new Vector3( 0, GameSettings.LEVEL_SEGMENT_SIZE_Y, 0 );
 
-        mNextLevelSegment = Instantiate( GetRandomLevelSegment(), mNextLevelSegmentPos, Quaternion.identity ) as GameObject;
+        GameObject nextLevelSegment = Instantiate( GetRandomLevelSegment(), mNextLevelSegmentPos, Quaternion.identity ) as GameObject;
+        mNextLevelSegment = nextLevelSegment.GetComponent<LevelSegment>();
 
         // rotate levels randomly
         if ( UnityEngine.Random.Range( 0, 1 ) == 0 )
@@ -66,5 +118,10 @@ public class LevelManager : MonoBehaviour
         }
 
         mNextLevelSegmentTransform = mNextLevelSegment.transform;
+
+        if ( levelSegmentsRoot )
+        {
+            mNextLevelSegment.transform.parent = levelSegmentsRoot.transform;
+        }
     }
 }

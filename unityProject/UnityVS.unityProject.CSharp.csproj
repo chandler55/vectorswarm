@@ -107,6 +107,7 @@
     <Compile Include="Assets\Scripts\Game\ExhaustParticles.cs" />
     <Compile Include="Assets\Scripts\Game\ExplosionParticles.cs" />
     <Compile Include="Assets\Scripts\Game\FuelGauge.cs" />
+    <Compile Include="Assets\Scripts\Game\GameHudUI.cs" />
     <Compile Include="Assets\Scripts\Game\GameOverBox.cs" />
     <Compile Include="Assets\Scripts\Game\GameSettings.cs" />
     <Compile Include="Assets\Scripts\Game\GatesDynamite.cs" />
@@ -130,11 +131,13 @@
     <Compile Include="Assets\Scripts\Game\RotateOnVelocity.cs" />
     <Compile Include="Assets\Scripts\Game\SaveData.cs" />
     <Compile Include="Assets\Scripts\Game\SaveLoad.cs" />
+    <Compile Include="Assets\Scripts\Game\Score.cs" />
     <Compile Include="Assets\Scripts\Game\Scoring.cs" />
     <Compile Include="Assets\Scripts\Game\ScreenBomb.cs" />
     <Compile Include="Assets\Scripts\Game\SendCollisionTriggerUp.cs" />
     <Compile Include="Assets\Scripts\Game\SendDestroySignal.cs" />
     <Compile Include="Assets\Scripts\Game\SettingsBox.cs" />
+    <Compile Include="Assets\Scripts\Game\SoundManager.cs" />
     <Compile Include="Assets\Scripts\Game\Starfield.cs" />
     <Compile Include="Assets\Scripts\Game\UI\HighScoreUI.cs" />
     <Compile Include="Assets\Scripts\Game\UI\LevelUI.cs" />
@@ -145,6 +148,7 @@
     <Compile Include="Assets\Scripts\Game\UI\ScaleOnClick.cs" />
     <Compile Include="Assets\Scripts\Game\UI\ScoreIndicator.cs" />
     <Compile Include="Assets\Scripts\Game\UI\ScoreIndicatorManager.cs" />
+    <Compile Include="Assets\Scripts\Game\UI\ScoreUI.cs" />
     <Compile Include="Assets\Scripts\Game\UI\SquishAnimation.cs" />
     <Compile Include="Assets\Scripts\Game\UI\TileSize.cs" />
     <Compile Include="Assets\Scripts\Game\UI\TriggerEvent.cs" />

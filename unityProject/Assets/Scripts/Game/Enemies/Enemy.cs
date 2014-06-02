@@ -16,6 +16,7 @@ public class Enemy : Entity
 
     public virtual void DestroyEnemy()
     {
+        SoundManager.Instance.PlaySound( SoundManager.Sounds.Sounds_Explosion );
         Messenger.Broadcast<long, Vector3>( Events.GameEvents.IncrementScore, 10, Position );
         ParticleSystemManager.Instance.CreateEnemyExplosion( Position, true, Color.cyan );
 
