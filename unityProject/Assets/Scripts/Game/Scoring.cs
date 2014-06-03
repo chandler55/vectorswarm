@@ -9,22 +9,23 @@ public class Scoring : MonoBehaviour
     private Vector3 mScoreOffset = new Vector3( 0, -2.5f, 0 );
     void Start()
     {
-        mMultiplier = 1;
-
+        Messenger.AddListener( Events.GameEvents.NewGameStarted, OnNewGameStart );
         Messenger.AddListener<Vector3>( Events.GameEvents.IncrementMultipler, OnIncrementMultiplier );
         Messenger.AddListener<long, Vector3>( Events.GameEvents.IncrementScore, OnIncrementScore );
-
+        Messenger.AddListener( Events.GameEvents.PlayerDied, OnPlayerDeath );
     }
 
     void OnDestroy()
     {
+        Messenger.RemoveListener( Events.GameEvents.NewGameStarted, OnNewGameStart );
         Messenger.RemoveListener<Vector3>( Events.GameEvents.IncrementMultipler, OnIncrementMultiplier );
         Messenger.RemoveListener<long, Vector3>( Events.GameEvents.IncrementScore, OnIncrementScore );
+        Messenger.RemoveListener( Events.GameEvents.PlayerDied, OnPlayerDeath );
     }
 
-    void Update()
+    void OnPlayerDeath()
     {
-
+        Messenger.Broadcast<long>( Events.GameEvents.PostGameOverScore, mScore );
     }
 
     void OnIncrementScore( long score, Vector3 worldPos )
@@ -55,6 +56,15 @@ public class Scoring : MonoBehaviour
             scoreIndicatorComponent.SetMultiplier( mMultiplier );
         }
 
+        Messenger.Broadcast<int>( Events.UIEvents.MultiplierUpdated, mMultiplier );
+    }
+
+    void OnNewGameStart()
+    {
+        mScore = 0;
+        mMultiplier = 1;
+
+        Messenger.Broadcast<long>( Events.UIEvents.ScoreUpdated, mScore );
         Messenger.Broadcast<int>( Events.UIEvents.MultiplierUpdated, mMultiplier );
     }
 }

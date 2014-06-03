@@ -59,11 +59,15 @@ public class PlayerSnake : Entity
 
         mStartPosition = gameObject.transform.position;
         mTransform = gameObject.transform;
-        
+
         Messenger.AddListener( Events.GameEvents.NewGameStarted, OnNewGameStarted );
         Messenger.AddListener( Events.GameEvents.GameStart, OnGameStarted );
 
-        FlashInvincibility();
+        // start with player disabled
+
+        DisablePlayer();
+
+        //FlashInvincibility();
     }
 
     void OnDestroy()
@@ -109,6 +113,8 @@ public class PlayerSnake : Entity
         // lock y velocity to mCurrentPlayerSpeedY variable
         Velocity = new Vector2( Velocity.x, mCurrentPlayerSpeedY );
         Position += Velocity * Time.deltaTime;
+
+        Messenger.Broadcast( Events.GameEvents.PlayerMoved );
     }
 
     private void InvincibilityLogic()
@@ -190,6 +196,16 @@ public class PlayerSnake : Entity
         }
 
         mAfterburnerActivated = on;
+
+        if ( on )
+        {
+            Go.to( shipObject.transform, 0.3f, new GoTweenConfig().scale( new Vector3( 1.5f, 1.5f, 1.0f ) ) );
+        }
+        else
+        {
+            Go.to( shipObject.transform, 0.4f, new GoTweenConfig().scale( Vector3.one ) );
+        }
+
         Messenger.Broadcast<bool>( Events.GameEvents.AfterburnerTriggered, on );
     }
 
@@ -202,7 +218,6 @@ public class PlayerSnake : Entity
             // move towards accelerometer tilt
             // tilt to horizontal percentage -0.25 to 0.25
             float accelerationValueToUse = 0.0f;
-
             if ( mPreviousAccelerationX - Input.acceleration.x < mThresholdForAccelerometer )
             {
                 accelerationValueToUse = mPreviousAccelerationX;
@@ -259,51 +274,57 @@ public class PlayerSnake : Entity
         }
         else
         {
-            Die();
+            //Die();
         }
     }
 
     private void Die()
     {
-        // if shield kills all enemies on screen
-        //if ( PlayerProfile.GetInstance().hasKillAllShield )
+        DisablePlayer();
 
         SoundManager.Instance.PlaySound( SoundManager.Sounds.Sounds_PlayerHit );
-
-        mIsAlive = false;
-
-        SetPlayerSpeed( 0.0f );
 
         ParticleSystemManager.Instance.CreatePlayerExplosion( Position );
 
         Messenger.Broadcast( Events.GameEvents.PlayerDied );
-
-        if ( shipObject != null )
-        {
-            shipObject.SetActive( false );
-        }
-
-        /*
-        PlayerShield shield = GetComponentInChildren<PlayerShield>();
-        if ( shield )
-        {
-            bool shieldCharged = shield.IsCharged();
-
-            if ( shieldCharged )
-            {
-                shield.UseShield();
-            }
-            else
-            {
-                
-            }
-        }*/
     }
 
     private void Spawn()
     {
         mFuelRemaining = mFuelCapacity;
 
+        EnablePlayer();
+
+        FlashInvincibility();
+    }
+
+    void OnNewGameStarted()
+    {
+        gameObject.transform.position = mStartPosition;
+        Spawn();
+
+        Messenger.Broadcast( Events.GameEvents.PlayerMoved );
+    }
+
+    void OnGameStarted()
+    {
+        SetPlayerSpeed( mPlayerNormalSpeed );
+    }
+
+    void DisablePlayer()
+    {
+        mIsAlive = false;
+
+        SetPlayerSpeed( 0.0f );
+
+        if ( shipObject != null )
+        {
+            shipObject.SetActive( false );
+        }
+    }
+
+    void EnablePlayer()
+    {
         mIsAlive = true;
 
         if ( shipObject != null )
@@ -311,19 +332,6 @@ public class PlayerSnake : Entity
             shipObject.SetActive( true );
         }
 
-        FlashInvincibility();
-
-        SetPlayerSpeed( mPlayerNormalSpeed );
-    }
-
-    void OnNewGameStarted()
-    {
-        gameObject.transform.position = mStartPosition;
-        Spawn();
-    }
-
-    void OnGameStarted()
-    {
         SetPlayerSpeed( mPlayerNormalSpeed );
     }
 }

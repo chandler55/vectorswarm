@@ -57,10 +57,10 @@ public class GameManager : MonoBehaviour
 
     void LoadLevel()
     {
-        Messenger.Broadcast( Events.GameEvents.GameStart );
-        Messenger.Broadcast( Events.GameEvents.NewGameStarted );
+        //Messenger.Broadcast( Events.GameEvents.GameStart );
+        //Messenger.Broadcast( Events.GameEvents.NewGameStarted );
 
-        m_gameState = GameState.GameState_Playing;
+        m_gameState = GameState.GameState_Start;
     }
 
     void OnRetryLevel()

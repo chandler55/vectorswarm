@@ -70,33 +70,26 @@ public class EntityDatabase : MonoBehaviour
 
     void Start()
     {
-        ObjectPool.CreatePool( simpleEnemyPrefab );
+        ObjectPool.CreatePool( simpleEnemyPrefab, 20 );
         ObjectPool.CreatePool( followEnemyPrefab );
-        ObjectPool.CreatePool( reverseEnemyPrefab );
-        ObjectPool.CreatePool( sineEnemyPrefab );
-        ObjectPool.CreatePool( stationaryEnemyPrefab );
-        ObjectPool.CreatePool( leverEnemyPrefab );
-        ObjectPool.CreatePool( shortPathEnemyPrefab );
-        ObjectPool.CreatePool( verticalEnemyPrefab );
+        ObjectPool.CreatePool( reverseEnemyPrefab, 20 );
+        ObjectPool.CreatePool( sineEnemyPrefab, 20 );
+        ObjectPool.CreatePool( stationaryEnemyPrefab, 20 );
+        ObjectPool.CreatePool( leverEnemyPrefab, 20 );
+        ObjectPool.CreatePool( shortPathEnemyPrefab, 20 );
+        ObjectPool.CreatePool( verticalEnemyPrefab, 20 );
         ObjectPool.CreatePool( slowerSimpleEnemyPrefab );
-        ObjectPool.CreatePool( movingStationaryEnemyPrefab );
-        ObjectPool.CreatePool( hourGlassEnemyPrefab );
-        ObjectPool.CreatePool( triangleSineEnemyPrefab );
+        ObjectPool.CreatePool( movingStationaryEnemyPrefab, 20 );
+        ObjectPool.CreatePool( hourGlassEnemyPrefab, 20 );
+        ObjectPool.CreatePool( triangleSineEnemyPrefab, 20 );
 
-        ObjectPool.CreatePool( multiplierItemPrefab );
-        ObjectPool.CreatePool( screenBombPrefab );
+        ObjectPool.CreatePool( multiplierItemPrefab, 20 );
+        ObjectPool.CreatePool( screenBombPrefab, 1 );
 
-        ObjectPool.CreatePool( explosionParticlesPrefab );
-        ObjectPool.CreatePool( playerExplosionPrefab );
+        ObjectPool.CreatePool( explosionParticlesPrefab, 5 );
+        ObjectPool.CreatePool( playerExplosionPrefab, 1 );
 
-        ObjectPool.CreatePool( scoreIndicatorPrefab );
-
-
-        // precache a few explosion particles 
-        CreateEntity( EntityType.EntityType_ExplosionParticles, new Vector3( -10000, 0, 0 ), Quaternion.identity );
-        CreateEntity( EntityType.EntityType_ExplosionParticles, new Vector3( -10000, 0, 0 ), Quaternion.identity );
-        CreateEntity( EntityType.EntityType_ExplosionParticles, new Vector3( -10000, 0, 0 ), Quaternion.identity );
-        CreateEntity( EntityType.EntityType_ExplosionParticles, new Vector3( -10000, 0, 0 ), Quaternion.identity );
+        ObjectPool.CreatePool( scoreIndicatorPrefab, 5 );
     }
 
     public GameObject CreateEntity( EntityType entityType )

@@ -91,4 +91,9 @@ public class MultiplierItem : Entity
     {
 
     }
+
+    public void Die()
+    {
+        ObjectPool.Recycle( this );
+    }
 }

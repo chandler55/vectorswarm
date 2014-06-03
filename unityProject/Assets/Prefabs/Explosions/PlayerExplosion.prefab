@@ -25,7 +25,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.29156256, y: -59.6581879, z: .154785007}
+  m_LocalPosition: {x: 36.7719688, y: -44.2407951, z: .154785007}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -338,10 +338,10 @@ ParticleSystem:
     cnt1: 150
     cnt2: 150
     cnt3: 150
-    time0: .100000001
-    time1: .200000003
-    time2: .300000012
-    time3: .400000006
+    time0: 0
+    time1: .100000001
+    time2: .200000003
+    time3: .300000012
     m_BurstCount: 4
   SizeModule:
     enabled: 1

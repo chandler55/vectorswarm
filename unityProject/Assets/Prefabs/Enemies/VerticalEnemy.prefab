@@ -124,6 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db89c10c7f73feb4aa0ae7896d5ae83b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathParticlesColor: {r: .988235295, g: .952941179, b: .933333337, a: 1}
   positionTarget: {fileID: 400002}
   movementDuration: 1
   rotationDuration: .5

@@ -248,7 +248,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62f1ad9d7f6f4d44f92568606118fa09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementDuration: 1
+  deathParticlesColor: {r: .219607845, g: .219607845, b: .219607845, a: 1}
+  movementSpeed: 2
 --- !u!114 &11400010
 MonoBehaviour:
   m_ObjectHideFlags: 1

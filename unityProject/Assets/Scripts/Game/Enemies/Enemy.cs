@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class Enemy : Entity
 {
+    public Color deathParticlesColor = Color.blue;
+
     public override void CollisionTriggered( Collider2D collider )
     {
         base.CollisionTriggered( collider );
@@ -18,7 +20,7 @@ public class Enemy : Entity
     {
         SoundManager.Instance.PlaySound( SoundManager.Sounds.Sounds_Explosion );
         Messenger.Broadcast<long, Vector3>( Events.GameEvents.IncrementScore, 10, Position );
-        ParticleSystemManager.Instance.CreateEnemyExplosion( Position, true, Color.cyan );
+        ParticleSystemManager.Instance.CreateEnemyExplosion( Position, false, deathParticlesColor );
 
         // spawn multiplier item
         //EntityDatabase.Instance.CreateEntity( EntityDatabase.EntityType.EntityType_MultiplierItem, Position, Quaternion.identity );

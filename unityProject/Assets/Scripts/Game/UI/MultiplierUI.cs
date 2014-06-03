@@ -10,21 +10,11 @@ public class MultiplierUI : MonoBehaviour
         textMesh = GetComponent<tk2dTextMesh>();
 
         Messenger.AddListener<int>( Events.UIEvents.MultiplierUpdated, UpdateMultiplier );
-        Messenger.AddListener( Events.GameEvents.NewGameStarted, OnNewGameStart );
-
-        UpdateMultiplier( 0 );
-
     }
 
     void OnDestroy()
     {
         Messenger.RemoveListener<int>( Events.UIEvents.MultiplierUpdated, UpdateMultiplier );
-        Messenger.RemoveListener( Events.GameEvents.NewGameStarted, OnNewGameStart );
-    }
-
-    void Update()
-    {
-
     }
 
     void UpdateMultiplier( int multiplier )
@@ -33,10 +23,5 @@ public class MultiplierUI : MonoBehaviour
         {
             textMesh.text = multiplier.ToString() + "X";
         }
-    }
-
-    void OnNewGameStart()
-    {
-        UpdateMultiplier( 0 );
     }
 }

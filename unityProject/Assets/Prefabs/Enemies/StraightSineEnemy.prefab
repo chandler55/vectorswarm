@@ -167,6 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff95d39162519e340a17ac4708d08fbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathParticlesColor: {r: .843137264, g: .97647059, b: .839215696, a: 1}
   speed: 25
   waveHeight: 24
 --- !u!114 &11400002

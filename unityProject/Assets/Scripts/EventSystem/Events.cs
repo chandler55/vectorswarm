@@ -23,6 +23,10 @@ public class Events
         public static string PlayerDied = "PlayerDied";
 
         public static string NewGameStarted = "NewGameStarted";
+
+        public static string PlayerMoved = "PlayerMoved";
+
+        public static string PostGameOverScore = "PostGameOverScore";
     }
 
     public static class MenuEvents

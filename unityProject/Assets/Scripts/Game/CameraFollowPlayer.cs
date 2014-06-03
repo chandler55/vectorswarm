@@ -11,9 +11,29 @@ public class CameraFollowPlayer : MonoBehaviour
     void Start()
     {
         mOriginalPosition = gameObject.transform.position;
+
+        Messenger.AddListener( Events.GameEvents.NewGameStarted, OnNewGameStarted );
+        Messenger.AddListener( Events.GameEvents.PlayerMoved, OnPlayerMove );
+
     }
 
-    void Update()
+    void OnDestroy()
+    {
+        Messenger.RemoveListener( Events.GameEvents.NewGameStarted, OnNewGameStarted );
+        Messenger.RemoveListener( Events.GameEvents.PlayerMoved, OnPlayerMove );
+    }
+
+    void OnNewGameStarted()
+    {
+        FollowPlayerPositionUpdate();
+    }
+
+    void OnPlayerMove()
+    {
+        FollowPlayerPositionUpdate();
+    }
+
+    public void FollowPlayerPositionUpdate()
     {
         if ( mFollowPlayer )
         {

@@ -190,6 +190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a89a346f701f7ea4895244922a3c65d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathParticlesColor: {r: .843137264, g: .97647059, b: .839215696, a: 1}
   speed: 30
   waveHeight: 24
 --- !u!1001 &100100000

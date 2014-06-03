@@ -9,9 +9,8 @@ public class ScoreUI : MonoBehaviour
     void Start()
     {
         mTextMesh = GetComponent<tk2dTextMesh>();
-        Messenger.AddListener<long>( Events.UIEvents.ScoreUpdated, UpdateScore );
-        UpdateScore( 0 );
 
+        Messenger.AddListener<long>( Events.UIEvents.ScoreUpdated, UpdateScore );
         Messenger.AddListener( Events.GameEvents.NewGameStarted, OnNewGameStart );
     }
 
@@ -19,11 +18,6 @@ public class ScoreUI : MonoBehaviour
     {
         Messenger.RemoveListener<long>( Events.UIEvents.ScoreUpdated, UpdateScore );
         Messenger.RemoveListener( Events.GameEvents.NewGameStarted, OnNewGameStart );
-    }
-
-    void Update()
-    {
-
     }
 
     void UpdateScore( long score )

@@ -97,6 +97,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bed69fb15ca38b34e94235d4efb9263b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathParticlesColor: {r: .949019611, g: .952941179, b: .811764717, a: 1}
+  randomSpread: .699999988
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1

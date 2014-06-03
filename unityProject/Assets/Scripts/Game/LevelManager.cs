@@ -36,6 +36,12 @@ public class LevelManager : MonoBehaviour
         {
             if ( PlayerSnake.Instance.Position.y >= mNextLevelSegmentTransform.position.y + DESTROY_PREVIOUS_SEGMENT_BUFFER )
             {
+                Entity[] entities = mCurrentLevelSegment.gameObject.GetComponentsInChildren<Entity>();
+                foreach ( Entity entity in entities )
+                {
+                    entity.SendMessage( "Die" );
+                }
+
                 Destroy( mCurrentLevelSegment.gameObject );
 
                 mCurrentLevelSegment = mNextLevelSegment;

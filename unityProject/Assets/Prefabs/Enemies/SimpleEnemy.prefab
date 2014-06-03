@@ -134,6 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62f1ad9d7f6f4d44f92568606118fa09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathParticlesColor: {r: .541176498, g: .121568628, b: .125490203, a: 1}
   movementSpeed: 10
 --- !u!1001 &100100000
 Prefab:

@@ -148,6 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05bda7b8abf7bbc43804fa535904e664, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathParticlesColor: {r: .741176486, g: .862745106, b: .725490212, a: 1}
   originOfCircle: {fileID: 400000}
   movementSpeed: 2
 --- !u!114 &11400004
