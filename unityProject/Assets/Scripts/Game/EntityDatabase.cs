@@ -29,6 +29,7 @@ public class EntityDatabase : MonoBehaviour
 
         EntityType_MultiplierItem = 100,
         EntityType_ScreenBomb = 101,
+        EntityType_Bullet = 102,
 
         EntityType_ExplosionParticles = 200,
         EntityType_PlayerExplosion = 201,
@@ -51,6 +52,7 @@ public class EntityDatabase : MonoBehaviour
 
     public MultiplierItem   multiplierItemPrefab;
     public ScreenBomb       screenBombPrefab;
+    public Bullet           bulletPrefab;
 
     public ExplosionParticles   explosionParticlesPrefab;
     public PlayerExplosion      playerExplosionPrefab;
@@ -85,6 +87,7 @@ public class EntityDatabase : MonoBehaviour
 
         ObjectPool.CreatePool( multiplierItemPrefab, 20 );
         ObjectPool.CreatePool( screenBombPrefab, 1 );
+        ObjectPool.CreatePool( bulletPrefab, 10 );
 
         ObjectPool.CreatePool( explosionParticlesPrefab, 5 );
         ObjectPool.CreatePool( playerExplosionPrefab, 1 );
@@ -144,6 +147,9 @@ public class EntityDatabase : MonoBehaviour
                 break;
             case EntityType.EntityType_ScreenBomb:
                 entity = screenBombPrefab.Spawn( position, rotation ).gameObject;
+                break;
+            case EntityType.EntityType_Bullet:
+                entity = bulletPrefab.Spawn( position, rotation ).gameObject;
                 break;
 
             case EntityType.EntityType_ExplosionParticles:

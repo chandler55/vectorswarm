@@ -19,6 +19,8 @@ public class PlayerSnake : Entity
     public CircleCollider2D deathCollider;
     public CircleCollider2D destroyEnemyCollider;
 
+    public Transform gunTransform;
+
     // speed
     private float mEasingAmount = 9.0f;
     private float mPlayerNormalSpeed = 15.0f;
@@ -47,6 +49,9 @@ public class PlayerSnake : Entity
     // respawning
     private Vector3 mStartPosition = Vector3.zero;
 
+    private float mShootDelay = 0.2f;
+    private float mShootTimer = 0.0f;
+
     void Awake()
     {
         instance = this;
@@ -54,6 +59,7 @@ public class PlayerSnake : Entity
 
     void Start()
     {
+        GameUtils.Assert( gunTransform );
         GameUtils.Assert( shieldSprite );
         GameUtils.Assert( playerSprite );
 
@@ -109,6 +115,14 @@ public class PlayerSnake : Entity
 
         // movement logic
         MovementLogic();
+
+        // shooting logic
+        mShootTimer += Time.deltaTime;
+        if ( mShootTimer > mShootDelay )
+        {
+            mShootTimer = 0.0f;
+            ShootGun();
+        }
 
         // lock y velocity to mCurrentPlayerSpeedY variable
         Velocity = new Vector2( Velocity.x, mCurrentPlayerSpeedY );
@@ -180,6 +194,11 @@ public class PlayerSnake : Entity
                 Messenger.Broadcast<float>( Events.UIEvents.FuelGaugeUpdated, mFuelRemaining / mFuelCapacity );
             }
         }
+    }
+
+    void ShootGun()
+    {
+        //EntityDatabase.Instance.CreateEntity( EntityDatabase.EntityType.EntityType_Bullet, gunTransform.position, Quaternion.identity );
     }
 
     private void SetPlayerSpeed( float speed )
@@ -274,7 +293,7 @@ public class PlayerSnake : Entity
         }
         else
         {
-            //Die();
+            Die();
         }
     }
 
