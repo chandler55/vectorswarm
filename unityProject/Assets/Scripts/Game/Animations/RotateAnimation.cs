@@ -8,6 +8,6 @@ public class RotateAnimation : MonoBehaviour
 
     void Update()
     {
-        transform.Rotate( rotationAxis, Time.deltaTime * rotateSpeed );
+       // transform.Rotate( rotationAxis, Time.deltaTime * rotateSpeed );
     }
 }

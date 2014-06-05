@@ -38,10 +38,14 @@ public class MultiplierItem : Entity
                 {
                     Messenger.Broadcast<long>( Events.GameEvents.IncrementScore, 10 );
                     Messenger.Broadcast<Vector3>( Events.GameEvents.IncrementMultipler, Position );
+                    SoundManager.Instance.PlaySound( SoundManager.Sounds.Sounds_GetMultiplier );
                     ObjectPool.Recycle( this );
                 }
-
-                Velocity = ( mPlayerPos - Position ).normalized * CHASE_SPEED;
+                else
+                {
+                    Velocity = ( mPlayerPos - Position ).normalized * CHASE_SPEED;
+                    Position += Velocity * Time.deltaTime;
+                }
             }
             else
             {
@@ -50,10 +54,7 @@ public class MultiplierItem : Entity
                     mHeadTowardsPlayerShip = true;
                 }
             }
-
         }
-
-        Position += Velocity * Time.deltaTime;
     }
 
     void OnDisable()

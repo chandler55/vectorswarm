@@ -9,6 +9,7 @@ public class SoundManager : MonoBehaviour
         Sounds_Bomb,
         Sounds_PlayerHit,
         Sounds_Afterburner,
+        Sounds_GetMultiplier,
     }
 
     private static SoundManager instance;
@@ -24,6 +25,7 @@ public class SoundManager : MonoBehaviour
     public AudioSource bombSound;
     public AudioSource playerHitSound;
     public AudioSource afterburnerSound;
+    public AudioSource getMultiplierSound;
 
     void Awake()
     {
@@ -41,6 +43,7 @@ public class SoundManager : MonoBehaviour
         GameUtils.Assert( bombSound );
         GameUtils.Assert( playerHitSound );
         GameUtils.Assert( afterburnerSound );
+        GameUtils.Assert( getMultiplierSound );
     }
 
     public void PlaySound( Sounds sound )
@@ -69,6 +72,12 @@ public class SoundManager : MonoBehaviour
                 if ( afterburnerSound )
                 {
                     afterburnerSound.Play();
+                }
+                break;
+            case Sounds.Sounds_GetMultiplier:
+                if ( getMultiplierSound )
+                {
+                    getMultiplierSound.Play();
                 }
                 break;
         }

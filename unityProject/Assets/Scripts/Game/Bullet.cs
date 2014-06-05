@@ -31,7 +31,7 @@ public class Bullet : Entity
 
         Position += Velocity;
 
-        UpdateRotation();
+        //UpdateRotation();
     }
 
     public override void CollisionTriggered( Collider2D collider )
