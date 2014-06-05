@@ -7,11 +7,25 @@ public class Entity : MonoBehaviour
     {
         get
         {
-            return gameObject.transform.position;
+            if ( mTransformCache )
+            {
+                return mTransformCache.position;
+            }
+            else
+            {
+                return gameObject.transform.position;
+            }
         }
         set
         {
-            gameObject.transform.position = value;
+            if ( mTransformCache )
+            {
+                mTransformCache.position = value;
+            }
+            else
+            {
+                gameObject.transform.position = value;
+            }
         }
     }
 
@@ -35,8 +49,11 @@ public class Entity : MonoBehaviour
         set { mIsExpired = value; }
     }
 
-    void Start()
+    private Transform mTransformCache = null;
+
+    void Awake()
     {
+        mTransformCache = gameObject.transform;
     }
 
     void Update()

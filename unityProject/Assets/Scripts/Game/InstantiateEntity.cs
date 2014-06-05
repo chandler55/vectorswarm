@@ -7,7 +7,41 @@ public class InstantiateEntity : MonoBehaviour
 
     public bool simpleMoveRight = false;
 
+    private bool mEntityCreated = false;
+    private bool mRecycled = false;
+
     void Start()
+    {
+    }
+
+    void Update()
+    {
+        float distance = transform.position.y - PlayerSnake.Instance.Position.y;
+
+        if ( !mEntityCreated )
+        {
+            if ( distance < 50 )
+            {
+                mEntityCreated = true;
+                CreateEntity();
+            }
+        }
+        else if ( mEntityCreated && !mRecycled )
+        {
+            if ( distance < -50 )
+            {
+                mRecycled = true;
+
+                Entity[] entities = gameObject.GetComponentsInChildren<Entity>();
+                foreach ( Entity entity in entities )
+                {
+                    entity.SendMessage( "Die" );
+                }
+            }
+        }
+    }
+
+    void CreateEntity()
     {
         GameObject go = EntityDatabase.Instance.CreateEntity( entityType, transform.position, Quaternion.identity );
         go.transform.parent = transform;
@@ -29,11 +63,6 @@ public class InstantiateEntity : MonoBehaviour
                 }
                 break;
         }
-    }
-
-    void Update()
-    {
-
     }
 
 #if UNITY_EDITOR

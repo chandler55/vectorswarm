@@ -85,7 +85,7 @@ public class EntityDatabase : MonoBehaviour
         ObjectPool.CreatePool( hourGlassEnemyPrefab, 20 );
         ObjectPool.CreatePool( triangleSineEnemyPrefab, 20 );
 
-        ObjectPool.CreatePool( multiplierItemPrefab, 20 );
+        ObjectPool.CreatePool( multiplierItemPrefab, 100 );
         ObjectPool.CreatePool( screenBombPrefab, 1 );
         ObjectPool.CreatePool( bulletPrefab, 10 );
 
