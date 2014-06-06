@@ -8,13 +8,20 @@ public class LevelManager : MonoBehaviour
     public GameObject levelSegmentTest;
     public GameObject levelSegmentsRoot;
 
-    public List<GameObject> levelSegmentPrefabs;
+    public List<GameObject> levelSegmentPrefabs1;
+    public List<GameObject> levelSegmentPrefabs2;
+    public List<GameObject> levelSegmentPrefabs3;
+    public List<GameObject> levelSegmentPrefabs4;
+    public List<GameObject> levelSegmentPrefabs5;
+    public List<GameObject> levelSegmentPrefabs6;
 
     private float DESTROY_PREVIOUS_SEGMENT_BUFFER = 50.0f;
     private Vector3 mNextLevelSegmentPos = Vector3.zero;
     private LevelSegment mCurrentLevelSegment = null;
     private LevelSegment mNextLevelSegment = null;
     private Transform mNextLevelSegmentTransform = null;
+    
+    private int mCurrentLevel = 1;
 
     void Start()
     {
@@ -57,7 +64,7 @@ public class LevelManager : MonoBehaviour
         int prefabIndex;
         if ( indexMax == -1 )
         {
-            prefabIndex = Random.Range( 0, levelSegmentPrefabs.Count );
+            prefabIndex = Random.Range( 0, levelSegmentPrefabs1.Count );
         }
         else
         {
@@ -65,7 +72,7 @@ public class LevelManager : MonoBehaviour
         }
 
 
-        GameObject levelSegmentPrefab = levelSegmentPrefabs[prefabIndex];
+        GameObject levelSegmentPrefab = levelSegmentPrefabs1[prefabIndex];
         if ( useTestLevel && levelSegmentTest )
         {
             levelSegmentPrefab = levelSegmentTest;

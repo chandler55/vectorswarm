@@ -38,7 +38,7 @@ public class MultiplierItem : Entity
                 {
                     Messenger.Broadcast<long>( Events.GameEvents.IncrementScore, 10 );
                     Messenger.Broadcast<Vector3>( Events.GameEvents.IncrementMultipler, Position );
-                    SoundManager.Instance.PlaySound( SoundManager.Sounds.Sounds_GetMultiplier );
+                   //SoundManager.Instance.PlaySound( SoundManager.Sounds.Sounds_GetMultiplier );
                     ObjectPool.Recycle( this );
                 }
                 else
