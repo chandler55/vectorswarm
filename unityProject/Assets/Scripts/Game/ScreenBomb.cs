@@ -39,7 +39,7 @@ public class ScreenBomb : Entity
         ObjectPool.Recycle( this );
     }
 
-    public override void CollisionTriggered( Collider2D collider )
+    void OnTriggerEnter2D( Collider2D collider )
     {
         if ( collider.tag == "Enemy" )
         {

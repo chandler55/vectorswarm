@@ -22,7 +22,6 @@ public class PlayerSnake : Entity
     public Transform gunTransform;
 
     // speed
-    private float mEasingAmount = 9.0f;
     private float mPlayerNormalSpeed = 15.0f;
     private float mCurrentPlayerSpeedY = 15.0f;
     private float mPlayerAfterburnerSpeed = 30.0f;
@@ -41,10 +40,6 @@ public class PlayerSnake : Entity
 
     // alive
     private bool    mIsAlive = true;
-
-    // controls
-    private float   mPreviousAccelerationX = 0.0f;
-    private float   mThresholdForAccelerometer = 0.01f;
 
     // respawning
     private Vector3 mStartPosition = Vector3.zero;
@@ -112,9 +107,6 @@ public class PlayerSnake : Entity
 
         // Afterburner Logic
         AfterburnerLogic();
-
-        // movement logic
-        MovementLogic();
 
         // shooting logic
         mShootTimer += Time.deltaTime;
@@ -228,45 +220,6 @@ public class PlayerSnake : Entity
         Messenger.Broadcast<bool>( Events.GameEvents.AfterburnerTriggered, on );
     }
 
-    private void MovementLogic()
-    {
-        //Player Horizontal Movement
-        {
-#if UNITY_ANDROID || UNITY_IPHONE
-
-            // move towards accelerometer tilt
-            // tilt to horizontal percentage -0.25 to 0.25
-            float accelerationValueToUse = 0.0f;
-            if ( mPreviousAccelerationX - Input.acceleration.x < mThresholdForAccelerometer )
-            {
-                accelerationValueToUse = mPreviousAccelerationX;
-            }
-            else
-            {
-                accelerationValueToUse = Input.acceleration.x;
-            }
-
-            float percentage = Mathf.InverseLerp( -0.25f, 0.25f, accelerationValueToUse );
-            mPreviousAccelerationX = Input.acceleration.x;
-
-            Vector2 tiltPos = new Vector2( Boundaries.Instance.GetPercentageToPosition( percentage ), 0 );
-            Vector2 target = tiltPos - Position;
-
-            /**/
-#else
-            // move towards mouse
-            Vector2 mousePos = Camera.main.ScreenToWorldPoint( Input.mousePosition );
-
-            // lock target within screen 
-            Boundaries.Instance.ClampHorizontal( ref mousePos );
-            Vector2 target = mousePos - Position;
-#endif
-
-            /**/
-            Velocity = target * mEasingAmount;
-        }
-    }
-
     public float GetY()
     {
         return mTransform.position.y;
@@ -293,7 +246,7 @@ public class PlayerSnake : Entity
         }
         else
         {
-            Die();
+            //Die();
         }
     }
 

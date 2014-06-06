@@ -10,7 +10,7 @@ public class LevelManager : MonoBehaviour
 
     public List<GameObject> levelSegmentPrefabs;
 
-    private float DESTROY_PREVIOUS_SEGMENT_BUFFER = 100.0f;
+    private float DESTROY_PREVIOUS_SEGMENT_BUFFER = 50.0f;
     private Vector3 mNextLevelSegmentPos = Vector3.zero;
     private LevelSegment mCurrentLevelSegment = null;
     private LevelSegment mNextLevelSegment = null;
