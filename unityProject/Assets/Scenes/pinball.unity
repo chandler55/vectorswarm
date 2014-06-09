@@ -3042,7 +3042,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 950157577}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -24.0566673, z: 0}
+  m_LocalPosition: {x: 0, y: -22.3500004, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1392607158}
@@ -3378,7 +3378,7 @@ MonoBehaviour:
   viewportRegion: {x: 0, y: 0, z: 100, w: 100}
   zoomFactor: 1
   forceResolutionInEditor: 1
-  forceResolution: {x: 640, y: 960}
+  forceResolution: {x: 800, y: 1280}
 --- !u!20 &983782037
 Camera:
   m_ObjectHideFlags: 3
@@ -3446,7 +3446,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 983782032}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2a8622425a97b41e998bc9362adf6050, type: 3}
   m_Name: 
@@ -4287,6 +4287,18 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400018, guid: 8f92734853f0dd444b2c057d67eca9a7, type: 2}
+      propertyPath: mEasingAmount
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400018, guid: 8f92734853f0dd444b2c057d67eca9a7, type: 2}
+      propertyPath: mThresholdForAccelerometer
+      value: .00999999978
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 8f92734853f0dd444b2c057d67eca9a7, type: 2}
+      propertyPath: invulnerableToggle
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8f92734853f0dd444b2c057d67eca9a7, type: 2}
   m_RootGameObject: {fileID: 1700451253}
@@ -4767,6 +4779,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 498be4438faeaf44982108fd4c822fc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  invulnerableToggle: 0
   shipObject: {fileID: 523982934}
   playerSprite: {fileID: 2000889842}
   shieldSprite: {fileID: 579976861}
@@ -4799,7 +4812,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75d9531fc2d9b874da5c019be01ae91e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mEasingAmount: 5.5
+  mEasingAmount: 6
+  mThresholdForAccelerometer: .00999999978
 --- !u!1 &1703299671
 GameObject:
   m_ObjectHideFlags: 0
@@ -5014,7 +5028,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1817703828}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 24.8066673, z: 0}
+  m_LocalPosition: {x: 0, y: 23.1000004, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 621225692}

@@ -3,6 +3,7 @@ using System.Collections;
 
 public class PlayerSnake : Entity
 {
+    public bool invulnerableToggle = false;
     public GameObject shipObject = null;
     public tk2dSprite playerSprite = null;
     public tk2dRadialSprite shieldSprite = null;
@@ -148,7 +149,7 @@ public class PlayerSnake : Entity
 
     private void AfterburnerLogic()
     {
-        
+
         if ( Input.GetMouseButton( 0 ) && mFuelRemaining == mFuelCapacity )
         {
             SoundManager.Instance.PlaySound( SoundManager.Sounds.Sounds_Afterburner );
@@ -248,7 +249,10 @@ public class PlayerSnake : Entity
         }
         else
         {
-            Die();
+            if ( !invulnerableToggle )
+            {
+                Die();
+            }
         }
     }
 
