@@ -26,10 +26,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.06346798, y: 2.07544804, z: -50}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+  m_RootOrder: 0
 --- !u!23 &2300000
 Renderer:
   m_ObjectHideFlags: 1
@@ -48,9 +49,8 @@ Renderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayer: 0
-  m_SortingOrder: 0
   m_SortingLayerID: 0
+  m_SortingOrder: 0
 --- !u!33 &3300000
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -70,6 +70,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 1
+  scoreColor: {r: 1, g: 1, b: 1, a: 1}
+  scoreColor2: {r: 1, g: 1, b: 1, a: 1}
+  multiplierColor: {r: .266666681, g: .811764717, b: .996078432, a: 1}
+  multiplierColor2: {r: 0, g: .996078432, b: .952941179, a: 1}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -100,9 +104,9 @@ MonoBehaviour:
     version: 1
     font: {fileID: 11400000, guid: a64727ced551f7548aa857d32b586a51, type: 2}
     text: 500
-    color: {r: 1, g: 1, b: 1, a: 1}
-    color2: {r: 1, g: 1, b: 1, a: 1}
-    useGradient: 0
+    color: {r: .264705896, g: .817444324, b: 1, a: 1}
+    color2: {r: 0, g: 1, b: .95862031, a: 1}
+    useGradient: 1
     textureGradient: 0
     anchor: 4
     renderLayer: 0

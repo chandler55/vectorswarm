@@ -34,7 +34,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &100004
 GameObject:
   m_ObjectHideFlags: 0
@@ -83,7 +83,7 @@ GameObject:
   - 23: {fileID: 2300006}
   - 114: {fileID: 11400010}
   m_Layer: 0
-  m_Name: GaugeUnfilledMeter
+  m_Name: GaugeFilledMeter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -101,7 +101,7 @@ GameObject:
   - 23: {fileID: 2300008}
   - 114: {fileID: 11400012}
   m_Layer: 0
-  m_Name: GaugeFilledMeter
+  m_Name: GaugeHighlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -114,10 +114,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .0876131058, y: -.00218963623, z: 0}
+  m_LocalPosition: {x: .0876131058, y: -.00218963623, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400002}
+  m_RootOrder: 4
 --- !u!4 &400002
 Transform:
   m_ObjectHideFlags: 1
@@ -128,12 +129,13 @@ Transform:
   m_LocalPosition: {x: -13.5, y: -21.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 400004}
   - {fileID: 400010}
+  - {fileID: 400004}
   - {fileID: 400008}
   - {fileID: 400006}
   - {fileID: 400000}
   m_Father: {fileID: 0}
+  m_RootOrder: 0
 --- !u!4 &400004
 Transform:
   m_ObjectHideFlags: 1
@@ -145,6 +147,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400002}
+  m_RootOrder: 1
 --- !u!4 &400006
 Transform:
   m_ObjectHideFlags: 1
@@ -156,6 +159,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400002}
+  m_RootOrder: 3
 --- !u!4 &400008
 Transform:
   m_ObjectHideFlags: 1
@@ -163,10 +167,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100008}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.40983772, y: -.96651268, z: 3}
+  m_LocalPosition: {x: 1.40983772, y: -.96651268, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400002}
+  m_RootOrder: 2
 --- !u!4 &400010
 Transform:
   m_ObjectHideFlags: 1
@@ -174,10 +179,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100010}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.40983772, y: -.96651268, z: 2}
+  m_LocalPosition: {x: 1.35878098, y: -.0563850403, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400002}
+  m_RootOrder: 0
 --- !u!23 &2300000
 Renderer:
   m_ObjectHideFlags: 1
@@ -196,9 +202,8 @@ Renderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayer: 0
-  m_SortingOrder: 0
   m_SortingLayerID: 0
+  m_SortingOrder: 0
 --- !u!23 &2300002
 Renderer:
   m_ObjectHideFlags: 1
@@ -217,9 +222,8 @@ Renderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayer: 0
-  m_SortingOrder: 0
   m_SortingLayerID: 0
+  m_SortingOrder: 0
 --- !u!23 &2300004
 Renderer:
   m_ObjectHideFlags: 1
@@ -238,9 +242,8 @@ Renderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayer: 0
-  m_SortingOrder: 0
   m_SortingLayerID: 0
+  m_SortingOrder: 0
 --- !u!23 &2300006
 Renderer:
   m_ObjectHideFlags: 1
@@ -259,9 +262,8 @@ Renderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayer: 0
-  m_SortingOrder: 0
   m_SortingLayerID: 0
+  m_SortingOrder: 0
 --- !u!23 &2300008
 Renderer:
   m_ObjectHideFlags: 1
@@ -280,9 +282,8 @@ Renderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayer: 0
-  m_SortingOrder: 0
   m_SortingLayerID: 0
+  m_SortingOrder: 0
 --- !u!33 &3300000
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -352,8 +353,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92298915564bb5149b172b9634de4f37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mGaugeSprite: {fileID: 11400012}
+  mGaugeSprite: {fileID: 11400010}
   mLightningBolt: {fileID: 11400000}
+  mGaugeAlternatingColor: {r: .764705896, g: .975376189, b: 1, a: 1}
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -438,9 +440,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collection: {fileID: 11400000, guid: 477333b17a430674fa32d8e2535aef0d, type: 2}
-  _color: {r: 1, g: 1, b: 1, a: 1}
+  _color: {r: 0, g: .895348787, b: 1, a: 1}
   _scale: {x: 1, y: 1, z: 1}
-  _spriteId: 2
+  _spriteId: 4
   boxCollider2D: {fileID: 0}
   polygonCollider2D: []
   edgeCollider2D: []
@@ -455,8 +457,8 @@ MonoBehaviour:
   legacyMode: 0
   borderTop: .200000003
   borderBottom: .200000003
-  borderLeft: .200000003
-  borderRight: .200000003
+  borderLeft: .065789476
+  borderRight: .065789476
   _createBoxCollider: 0
 --- !u!114 &11400012
 MonoBehaviour:
@@ -472,7 +474,7 @@ MonoBehaviour:
   collection: {fileID: 11400000, guid: 477333b17a430674fa32d8e2535aef0d, type: 2}
   _color: {r: 1, g: 1, b: 1, a: 1}
   _scale: {x: 1, y: 1, z: 1}
-  _spriteId: 4
+  _spriteId: 6
   boxCollider2D: {fileID: 0}
   polygonCollider2D: []
   edgeCollider2D: []
@@ -481,7 +483,7 @@ MonoBehaviour:
   meshColliderPositions: []
   meshColliderMesh: {fileID: 0}
   renderLayer: 0
-  _dimensions: {x: 275, y: 38}
+  _dimensions: {x: 284, y: 24}
   _anchor: 0
   _borderOnly: 0
   legacyMode: 0

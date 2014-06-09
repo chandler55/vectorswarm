@@ -29,7 +29,7 @@ public class PlayerSnake : Entity
     private Transform mTransform = null;
 
     // fuel
-    private float   mFuelCapacity = 8.0f; // in seconds
+    private float   mFuelCapacity = 4.0f; // in seconds
     private float   mFuelRemaining = 0.0f;
     private bool    mAfterburnerActivated = false;
     private float   mFuelChargeRate = 0.08f;
@@ -148,12 +148,14 @@ public class PlayerSnake : Entity
 
     private void AfterburnerLogic()
     {
+        
         if ( Input.GetMouseButton( 0 ) && mFuelRemaining == mFuelCapacity )
         {
             SoundManager.Instance.PlaySound( SoundManager.Sounds.Sounds_Afterburner );
             SetAfterburner( true );
             SetPlayerSpeed( mPlayerAfterburnerSpeed );
         }
+        /**/
 
         if ( mAfterburnerActivated )
         {
@@ -246,7 +248,7 @@ public class PlayerSnake : Entity
         }
         else
         {
-            //Die();
+            Die();
         }
     }
 

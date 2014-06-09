@@ -21,11 +21,14 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    public AudioSource explosionSound;
-    public AudioSource bombSound;
-    public AudioSource playerHitSound;
-    public AudioSource afterburnerSound;
-    public AudioSource getMultiplierSound;
+    public AudioClip explosionSound;
+    public AudioClip bombSound;
+    public AudioClip playerHitSound;
+    public AudioClip afterburnerSound;
+    public AudioClip getMultiplierSound;
+    public AudioSource audioSource;
+
+    private int limitMultiplierSound = 10;
 
     void Awake()
     {
@@ -44,6 +47,8 @@ public class SoundManager : MonoBehaviour
         GameUtils.Assert( playerHitSound );
         GameUtils.Assert( afterburnerSound );
         GameUtils.Assert( getMultiplierSound );
+
+        GameUtils.Assert( audioSource );
     }
 
     public void PlaySound( Sounds sound )
@@ -53,31 +58,31 @@ public class SoundManager : MonoBehaviour
             case Sounds.Sounds_Explosion:
                 if ( explosionSound )
                 {
-                    explosionSound.Play();
+                    audioSource.PlayOneShot( explosionSound );
                 }
                 break;
             case Sounds.Sounds_Bomb:
                 if ( bombSound )
                 {
-                    bombSound.Play();
+                    audioSource.PlayOneShot( bombSound );
                 }
                 break;
             case Sounds.Sounds_PlayerHit:
                 if ( playerHitSound )
                 {
-                    playerHitSound.Play();
+                    audioSource.PlayOneShot( playerHitSound );
                 }
                 break;
             case Sounds.Sounds_Afterburner:
                 if ( afterburnerSound )
                 {
-                    afterburnerSound.Play();
+                    audioSource.PlayOneShot( afterburnerSound );
                 }
                 break;
             case Sounds.Sounds_GetMultiplier:
                 if ( getMultiplierSound )
                 {
-                    getMultiplierSound.Play();
+                    audioSource.PlayOneShot( getMultiplierSound );
                 }
                 break;
         }

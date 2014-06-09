@@ -5,6 +5,12 @@ public class ScoreIndicator : Entity
 {
     public float duration = 1.0f;
 
+    public Color scoreColor;
+    public Color scoreColor2;
+
+    public Color multiplierColor;
+    public Color multiplierColor2;
+
     private Transform mTransform = null;
     private float mLifetime = 0.0f;
     private tk2dTextMesh mTextMesh = null;
@@ -47,6 +53,8 @@ public class ScoreIndicator : Entity
         if ( mTextMesh )
         {
             mTextMesh.text = GameUtils.FormatNumber( score );
+            mTextMesh.color = scoreColor;
+            mTextMesh.color2 = scoreColor2;
         }
     }
 
@@ -55,6 +63,8 @@ public class ScoreIndicator : Entity
         if ( mTextMesh )
         {
             mTextMesh.text = GameUtils.FormatNumber( multiplier ) + "X";
+            mTextMesh.color = multiplierColor;
+            mTextMesh.color2 = multiplierColor2;
         }
     }
 }

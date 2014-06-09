@@ -3,6 +3,7 @@ using System.Collections;
 
 public class MultiplierItem : Entity
 {
+    private const float MULTIPLIER_GRAB_DISTANCE = 7.0f;
     private const float CHASE_SPEED = 30.0f;
 
     private tk2dSprite mSprite = null;
@@ -38,7 +39,7 @@ public class MultiplierItem : Entity
                 {
                     Messenger.Broadcast<long>( Events.GameEvents.IncrementScore, 10 );
                     Messenger.Broadcast<Vector3>( Events.GameEvents.IncrementMultipler, Position );
-                   //SoundManager.Instance.PlaySound( SoundManager.Sounds.Sounds_GetMultiplier );
+                    SoundManager.Instance.PlaySound( SoundManager.Sounds.Sounds_GetMultiplier );
                     ObjectPool.Recycle( this );
                 }
                 else
@@ -49,7 +50,7 @@ public class MultiplierItem : Entity
             }
             else
             {
-                if ( distance < 10.0f )
+                if ( distance < MULTIPLIER_GRAB_DISTANCE )
                 {
                     mHeadTowardsPlayerShip = true;
                 }
@@ -78,7 +79,7 @@ public class MultiplierItem : Entity
             squishScale = new Vector3( mOriginalScale.x * 1.5f, mOriginalScale.y * 0.55f, mOriginalScale.z );
         }
 
-        Go.to( mSprite.transform, 0.7f, new GoTweenConfig().scale( squishScale ).setEaseType( GoEaseType.Linear ).setIterations( 2, GoLoopType.PingPong ).onComplete( OnCompleteSquish ) );
+        Go.to( mSprite.transform, 0.35f, new GoTweenConfig().scale( squishScale ).setEaseType( GoEaseType.Linear ).setIterations( 2, GoLoopType.PingPong ).onComplete( OnCompleteSquish ) );
     }
 
     public override void Reset()

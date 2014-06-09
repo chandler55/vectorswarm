@@ -29,6 +29,14 @@ MonoBehaviour:
     dataGUID: 
     managed: 0
     loadable: 0
+  - assetGUID: 0f3fc72b5057ec649bfacf5c278b24c5
+    dataGUID: 
+    managed: 0
+    loadable: 0
+  - assetGUID: 15d5d995c1735f542a2806268950c0b6
+    dataGUID: 
+    managed: 0
+    loadable: 0
   fontIndex:
   - assetGUID: 063b15d80dbb4604d890600a64c79cf8
     dataGUID: e7a6b09a73c6b2b4f8060096ddbd3b5e
@@ -736,11 +744,11 @@ MonoBehaviour:
     - flowerpetal14
     - flowerpetal11
     - white
-    - multiplierSquare
+    - multiplierSquare17
     - playerShip
     - flowerpetal12
     - flowerpetal16
-    - 
+    - multiplierSquare18
     - hexagon
     - lever
     - arrowEnemy
@@ -776,6 +784,65 @@ MonoBehaviour:
     - flowerpetal9
     - flowerpetal23
     - flowerpetal4
+    - multiplierSquare25
+    - multiplierSquare26
+    - multiplierSquare29
+    - multiplierSquare15
+    - multiplierSquare7
+    - multiplierSquare2
+    - multiplierSquare4
+    - multiplierSquare12
+    - multiplierSquare23
+    - multiplierSquare1
+    - multiplierSquare10
+    - multiplierSquare19
+    - multiplierSquare0
+    - multiplierSquare11
+    - multiplierSquare21
+    - multiplierSquare22
+    - multiplierSquare5
+    - multiplierSquare13
+    - multiplierSquare24
+    - multiplierSquare6
+    - multiplierSquare8
+    - multiplierSquare9
+    - multiplierSquare14
+    - multiplierSquare16
+    - multiplierSquare28
+    - multiplierSquare3
+    - multiplierSquare27
+    - multiplierSquare20
+    - multiplierSquare30
+    - multiplierSquare41
+    - multiplierSquare56
+    - multiplierSquare53
+    - multiplierSquare36
+    - multiplierSquare40
+    - multiplierSquare31
+    - multiplierSquare49
+    - multiplierSquare59
+    - multiplierSquare58
+    - multiplierSquare43
+    - multiplierSquare47
+    - multiplierSquare54
+    - multiplierSquare42
+    - multiplierSquare32
+    - multiplierSquare34
+    - multiplierSquare44
+    - 
+    - multiplierSquare38
+    - multiplierSquare37
+    - multiplierSquare51
+    - multiplierSquare50
+    - multiplierSquare52
+    - multiplierSquare55
+    - multiplierSquare35
+    - multiplierSquare57
+    - multiplierSquare48
+    - multiplierSquare39
+    - multiplierSquare33
+    - multiplierSquare45
+    - multiplierSquare46
     spriteTextureGUIDs:
     - 11905d0ba78abf44296f509c4be50a7f
     - 7df6c2a350a122141b5f917841666692
@@ -785,11 +852,11 @@ MonoBehaviour:
     - 242d4b309b86dfb4295e6010ed1c2fec
     - 3cfb7876a7b1a3047bff288249738d1f
     - fbd7571bdb6c2a94fbe8dfd569f5c6fd
-    - cf8b95963c1061d4ab4971ef9f7fba54
+    - 1a0de68e0d6979d4090cf2b992812581
     - 1db8e3b45051e8d40bcde32ed639db71
     - 41c0ff0c0330a27479d62bcf16d0aa20
     - 421fae0c4453b1e459787b2b855c8054
-    - 
+    - 1e2f81080e6bc844c8371714c98badbc
     - 6cab712a839ffe743aa9341226e184a8
     - ace598163386a194d8856d90bb133ca5
     - d09c7773d0b861c49a73acb8f4f75508
@@ -825,6 +892,65 @@ MonoBehaviour:
     - ea4973728348b0b4c86e0b897b451c76
     - ed70949dd3f635f43b79cb2e44ff60bc
     - f879c925a52416e4ea2085b790937290
+    - 2ca30ce646310d2498d64c1ccdfb6f63
+    - 305656f912e29114d99818e915e7e184
+    - 3754e334acbc5db4c9516c4591436176
+    - 3799865b2eaeaa141bbfb5ca171bc9f5
+    - 45b3b2a2d98643d488917dc2414fa278
+    - 4ac5d4d7274826f4881ca31cb3502604
+    - 58b9cb7e3c562f841b4a421ad265afed
+    - 5ab18e6f95ddc554b81d2d95717d6f82
+    - 60928551339fb3649b8a1d2315b7c8a7
+    - 65ebc8290171d2c42a2a9cd8b16f64f2
+    - 6b068ab758a90bf4c88574b39e1cbbcd
+    - 74151f564529acd42a4d92e2f041d855
+    - 7b1a9fd65b6505149836f0c2c26a4b9d
+    - 7c5f82531cd8e83459baeae8ffa764ac
+    - 82d34cd9b13efcd4f90c3df06c6d826b
+    - a31fd8cab52bcdc499ceb72389640e9e
+    - b702d9a7265e53e449491735d224babf
+    - c461db847eaaa84479f0e0a5659dbb41
+    - cfd7727bd1003ff419f52ab0be5190f5
+    - d047725e8df65ce4e96b216951146ede
+    - d1381558b195eb641ae70cd5919282c5
+    - d46247c417bb2fe4cae7505f8239fe5d
+    - d5089815146c7ce47a43527f748c090c
+    - e33b1ca2dec47db4d842fbcc5764cf09
+    - e4c4ac0696a0d47499d6d1c1839ffbaf
+    - e588059e6ba131045b3cd601ca883024
+    - ec1ea78bfa78c0e47aecc4e3b95655d5
+    - f872c26ab29cba0439d391edd4934a77
+    - 15bdb6a215be6964b8843530bfaa79d9
+    - 1a51aba9e0c59c3429add9a4325721a8
+    - 1d78b98b72b294044b5872462c5921ab
+    - 30e4556ff9fc53742a4c472e73a8d724
+    - 3ec9778f3bb2e7e47957e43bcba40b25
+    - 457ae2cb6cb02ea4882b446273d6087f
+    - 5d45b8ca8974c734bbb424eff867e7de
+    - 5e3f3d1c938fb3d468a98137d86d4c4a
+    - 62c0212e393fc374b9d75d60ea73ccc2
+    - 67264d0c8f50ba940add4c6c46ba4b2d
+    - 6f1f4d2c8088761498f1b5b546d3fdc1
+    - 7bb78faa51376fa4c86ea75774805b9e
+    - 9789d16ecf14ba544aabe2c6ae3a5105
+    - 9834dfd5b05fd904a8e385aad99e0ba4
+    - 993cf712853d7964abf6654eb97291f0
+    - 9d08038fb986cb249a16818266880ea1
+    - 9d595146542401f4990f06519c7552d5
+    - 
+    - b23c479932912d540835f7839affa26c
+    - b9096046ff888ff488d36308e4a36864
+    - b932a77a039087049a128a3e657f8d2b
+    - c82eed72b554f2b4590d611b13ef7ac4
+    - ca89be34dc2e8ef4289e968a41fb3a0f
+    - ccbb3b2f8cd1a914d93c7e677b39f2eb
+    - e2bce22bc4167734b8c94aadc9459ce0
+    - e3fb7d8f3483e664ebcb27eb67dda086
+    - ece3a6cbdb27e6747b3a70dc915fcac2
+    - f0885f2eb7791b642aa15f20107e9cda
+    - f1e24ca381de7904eb3fb493ef08cedd
+    - f2a9417874fb63e4482badc2f5aeb414
+    - fb75783ff45badb45bacb47a1f5754b2
     spriteTextureTimeStamps:
     - 1399572603.31714
     - 1401478115.97938
@@ -834,11 +960,11 @@ MonoBehaviour:
     - 1401906666.45721
     - 1401906666.35919
     - 1399572603.32514
-    - 1399572603.30713
+    - 1402182878.77887
     - 1400085741.69085
     - 1401906666.3922
     - 1401906666.51923
-    - 0
+    - 1402182878.80987
     - 1399572603.29913
     - 1399572603.30513
     - 1400081279.11814
@@ -874,6 +1000,65 @@ MonoBehaviour:
     - 1401906666.29217
     - 1401906666.74929
     - 1401906666.12713
+    - 1402182879.03093
+    - 1402182879.06193
+    - 1402182879.15396
+    - 1402182878.71585
+    - 1402182878.47079
+    - 1402182878.31544
+    - 1402182878.37746
+    - 1402182878.62383
+    - 1402182878.96791
+    - 1402182878.28444
+    - 1402182878.56281
+    - 1402182878.84188
+    - 1402182878.25443
+    - 1402182878.59282
+    - 1402182878.9059
+    - 1402182878.93691
+    - 1402182878.40747
+    - 1402182878.65383
+    - 1402182878.99792
+    - 1402182878.43878
+    - 1402182878.5008
+    - 1402182878.53081
+    - 1402182878.68584
+    - 1402182878.74586
+    - 1402182879.12395
+    - 1402182878.34645
+    - 1402182879.09294
+    - 1402182878.87589
+    - 1402182879.18496
+    - 1402182879.62707
+    - 1402182880.09319
+    - 1402182880.00017
+    - 1402182879.43303
+    - 1402182879.59707
+    - 1402182879.21497
+    - 1402182879.87514
+    - 1402182880.18521
+    - 1402182880.1552
+    - 1402182879.68709
+    - 1402182879.81112
+    - 1402182880.03117
+    - 1402182879.65808
+    - 1402182879.24498
+    - 1402182879.324
+    - 1402182879.7181
+    - 0
+    - 1402182879.53305
+    - 1402182879.50304
+    - 1402182879.93715
+    - 1402182879.90714
+    - 1402182879.96816
+    - 1402182880.06318
+    - 1402182879.38901
+    - 1402182880.1242
+    - 1402182879.84313
+    - 1402182879.56706
+    - 1402182879.27599
+    - 1402182879.7471
+    - 1402182879.78011
     managedSpriteCollection: 0
     loadable: 0
     assetName: 

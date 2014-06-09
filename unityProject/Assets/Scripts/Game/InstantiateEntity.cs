@@ -43,7 +43,12 @@ public class InstantiateEntity : MonoBehaviour
 
     void CreateEntity()
     {
-        GameObject go = EntityDatabase.Instance.CreateEntity( entityType, transform.position, Quaternion.identity );
+        Vector3 rotation = Vector3.zero;
+        if ( entityType == EntityDatabase.EntityType.EntityType_MultiplierItem )
+        {
+            rotation = new Vector3( 0, 0, Random.Range( 0, 360.0f ) );
+        }
+        GameObject go = EntityDatabase.Instance.CreateEntity( entityType, transform.position, Quaternion.Euler( rotation ) );
         go.transform.parent = transform;
 
         switch ( entityType )

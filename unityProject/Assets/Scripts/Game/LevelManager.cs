@@ -2,6 +2,17 @@
 using System.Collections;
 using System.Collections.Generic;
 
+[System.Serializable]
+public class LevelRandomSelection
+{
+    public bool includeSegmentsLevel1 = false;
+    public bool includeSegmentsLevel2 = false;
+    public bool includeSegmentsLevel3 = false;
+    public bool includeSegmentsLevel4 = false;
+    public bool includeSegmentsLevel5 = false;
+    public bool includeSegmentsLevel6 = false;
+}
+
 public class LevelManager : MonoBehaviour
 {
     public bool useTestLevel = false;
@@ -15,13 +26,15 @@ public class LevelManager : MonoBehaviour
     public List<GameObject> levelSegmentPrefabs5;
     public List<GameObject> levelSegmentPrefabs6;
 
+    public List<LevelRandomSelection> levelSelection;
+
     private float DESTROY_PREVIOUS_SEGMENT_BUFFER = 50.0f;
     private Vector3 mNextLevelSegmentPos = Vector3.zero;
     private LevelSegment mCurrentLevelSegment = null;
     private LevelSegment mNextLevelSegment = null;
     private Transform mNextLevelSegmentTransform = null;
-    
-    private int mCurrentLevel = 1;
+
+    private int mCurrentLevel = 0;
 
     void Start()
     {
@@ -58,21 +71,55 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    GameObject GetRandomLevelSegment( int indexMax = -1 )
+    GameObject GetRandomLevelSegment()
     {
-        // choose random level segment
-        int prefabIndex;
-        if ( indexMax == -1 )
+        LevelRandomSelection selection;
+        if ( mCurrentLevel < levelSelection.Count )
         {
-            prefabIndex = Random.Range( 0, levelSegmentPrefabs1.Count );
+            selection = levelSelection[mCurrentLevel];
         }
         else
         {
-            prefabIndex = Random.Range( 0, indexMax );
+            selection = levelSelection[levelSelection.Count - 1];
         }
 
+        mCurrentLevel++;
 
-        GameObject levelSegmentPrefab = levelSegmentPrefabs1[prefabIndex];
+        List<List<GameObject>> listPrefabs = new List<List<GameObject>>();
+        if ( selection.includeSegmentsLevel1 )
+        {
+            listPrefabs.Add( levelSegmentPrefabs1 );
+        }
+        if ( selection.includeSegmentsLevel2 )
+        {
+            listPrefabs.Add( levelSegmentPrefabs2 );
+        }
+        if ( selection.includeSegmentsLevel3 )
+        {
+            listPrefabs.Add( levelSegmentPrefabs3 );
+        }
+        if ( selection.includeSegmentsLevel4 )
+        {
+            listPrefabs.Add( levelSegmentPrefabs4 );
+        }
+        if ( selection.includeSegmentsLevel5 )
+        {
+            listPrefabs.Add( levelSegmentPrefabs5 );
+        }
+        if ( selection.includeSegmentsLevel6 )
+        {
+            listPrefabs.Add( levelSegmentPrefabs6 );
+        }
+
+        int randomPrefabSelection = Random.Range( 0, listPrefabs.Count );
+
+        List<GameObject> currentList = listPrefabs[randomPrefabSelection];
+
+        // choose random level segment
+        int prefabIndex;
+        prefabIndex = Random.Range( 0, currentList.Count );
+
+        GameObject levelSegmentPrefab = currentList[prefabIndex];
         if ( useTestLevel && levelSegmentTest )
         {
             levelSegmentPrefab = levelSegmentTest;
@@ -83,6 +130,8 @@ public class LevelManager : MonoBehaviour
 
     void OnNewGameStarted()
     {
+        mCurrentLevel = 0;
+
         // reset level starting position
         DestroyLevelSegments();
 
