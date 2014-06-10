@@ -31,7 +31,7 @@ public class InstantiateEntityEditor : Editor
                     myTarget.gameObject.name = "SineEnemy";
                     break;
                 case EntityDatabase.EntityType.EntityType_StationaryEnemy:
-                    myTarget.gameObject.name = "StationaryEnem";
+                    myTarget.gameObject.name = "StationaryEnemy";
                     break;
                 case EntityDatabase.EntityType.EntityType_LeverEnemy:
                     myTarget.gameObject.name = "LeverEnemy";

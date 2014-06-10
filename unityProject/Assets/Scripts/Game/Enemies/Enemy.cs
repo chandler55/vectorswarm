@@ -19,7 +19,7 @@ public class Enemy : Entity
     public virtual void DestroyEnemy()
     {
         SoundManager.Instance.PlaySound( SoundManager.Sounds.Sounds_Explosion );
-        Messenger.Broadcast<long, Vector3>( Events.GameEvents.IncrementScore, 10, Position );
+        Messenger.Broadcast<long, Vector3>( Events.GameEvents.IncrementScore, 1, Position );
         ParticleSystemManager.Instance.CreateEnemyExplosion( Position, false, deathParticlesColor );
 
         // spawn multiplier item
