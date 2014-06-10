@@ -27,6 +27,7 @@ public class Events
         public static string PlayerMoved = "PlayerMoved";
 
         public static string PostGameOverScore = "PostGameOverScore";
+
     }
 
     public static class MenuEvents
