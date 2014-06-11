@@ -35,7 +35,7 @@ public class InstantiateEntity : MonoBehaviour
                 Entity[] entities = gameObject.GetComponentsInChildren<Entity>();
                 foreach ( Entity entity in entities )
                 {
-                    entity.SendMessage( "Die" );
+                    entity.Die();
                 }
             }
         }
@@ -48,6 +48,7 @@ public class InstantiateEntity : MonoBehaviour
         {
             rotation = new Vector3( 0, 0, Random.Range( 0, 360.0f ) );
         }
+
         GameObject go = EntityDatabase.Instance.CreateEntity( entityType, transform.position, Quaternion.Euler( rotation ) );
         go.transform.parent = transform;
 

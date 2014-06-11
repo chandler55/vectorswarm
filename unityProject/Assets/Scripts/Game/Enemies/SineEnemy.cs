@@ -103,8 +103,9 @@ public class SineEnemy : Enemy
         Die();
     }
 
-    public void Die()
+    public override void Die()
     {
+        base.Die();
         ObjectPool.Recycle( this );
     }
 }

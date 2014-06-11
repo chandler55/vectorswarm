@@ -124,6 +124,8 @@ MonoBehaviour:
     type: 2}
   screenBombPrefab: {fileID: 11400000, guid: 4595120c72ffc3a49bb8244f8afa598e, type: 2}
   bulletPrefab: {fileID: 11400000, guid: 9ec2ebd9d7619784fbe58737474942bf, type: 2}
+  afterburnerItemPrefab: {fileID: 11400000, guid: 4adb2683db1453945ace2c81b6ecb4bb,
+    type: 2}
   explosionParticlesPrefab: {fileID: 11400000, guid: c9153866a280d1a41ba2caac2d94d46e,
     type: 2}
   playerExplosionPrefab: {fileID: 11400000, guid: e4dfc29758a240348b35547819ed237a,
@@ -333,7 +335,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!1 &400650355
 GameObject:
   m_ObjectHideFlags: 0
@@ -3078,11 +3080,11 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 881844345}
-  - 33: {fileID: 881844349}
-  - 23: {fileID: 881844348}
-  - 114: {fileID: 881844347}
+  - 33: {fileID: 881844348}
+  - 23: {fileID: 881844347}
+  - 114: {fileID: 881844346}
   m_Layer: 0
-  m_Name: GameOverText
+  m_Name: TitleText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3100,7 +3102,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 400650356}
   m_RootOrder: 0
---- !u!114 &881844347
+--- !u!114 &881844346
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -3108,43 +3110,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 881844344}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 994457055a9434b4aa7b65ad37262d67, type: 3}
+  m_Script: {fileID: 11500000, guid: 3fac570381f34f647b768dc5a5aa1364, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _font: {fileID: 0}
-  _text: 
+  collection: {fileID: 11400000, guid: 477333b17a430674fa32d8e2535aef0d, type: 2}
   _color: {r: 1, g: 1, b: 1, a: 1}
-  _color2: {r: 1, g: 1, b: 1, a: 1}
-  _useGradient: 0
-  _textureGradient: 0
-  _anchor: 6
-  _scale: {x: 1, y: 1, z: 1}
-  _kerning: 0
-  _maxChars: 16
-  _inlineStyling: 0
-  _formatting: 0
-  _wordWrapWidth: 0
-  spacing: 0
-  lineSpacing: 0
-  data:
-    version: 1
-    font: {fileID: 11400000, guid: d8d9ff0008c4d034b83da693d225698a, type: 2}
-    text: VECTOR SWARM
-    color: {r: .529411793, g: .972915649, b: 1, a: 1}
-    color2: {r: 1, g: 1, b: 1, a: 1}
-    useGradient: 0
-    textureGradient: 0
-    anchor: 4
-    renderLayer: 0
-    scale: {x: 1, y: 1, z: 1}
-    kerning: 0
-    maxChars: 20
-    inlineStyling: 0
-    formatting: 0
-    wordWrapWidth: 0
-    spacing: 0
-    lineSpacing: 0
---- !u!23 &881844348
+  _scale: {x: .800000012, y: .800000012, z: 1}
+  _spriteId: 9
+  boxCollider2D: {fileID: 0}
+  polygonCollider2D: []
+  edgeCollider2D: []
+  boxCollider: {fileID: 0}
+  meshCollider: {fileID: 0}
+  meshColliderPositions: []
+  meshColliderMesh: {fileID: 0}
+  renderLayer: 0
+--- !u!23 &881844347
 Renderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -3156,7 +3137,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: b57ecd5aa0291bb4290d1d90402390d8, type: 2}
+  - {fileID: 2100000, guid: d26f340dca71159408fad405d808e265, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -3164,7 +3145,7 @@ Renderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!33 &881844349
+--- !u!33 &881844348
 MeshFilter:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -5620,7 +5601,7 @@ Transform:
   - {fileID: 731797855}
   - {fileID: 806882154}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
 --- !u!114 &2012076555
 MonoBehaviour:
   m_ObjectHideFlags: 0

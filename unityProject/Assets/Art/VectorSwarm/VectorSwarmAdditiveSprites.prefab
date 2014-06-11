@@ -63,7 +63,7 @@ MonoBehaviour:
   atlasWidth: 1024
   atlasHeight: 2048
   forceSquareAtlas: 0
-  atlasWastage: 23.6626625
+  atlasWastage: 23.3920097
   allowMultipleAtlases: 0
   removeDuplicates: 1
   textureParams:
@@ -846,11 +846,11 @@ MonoBehaviour:
     colliderSmoothSphereCollisions: 0
     colliderColor: 0
     attachPoints: []
-  - name: 
+  - name: lightningbolt
     disableTrimming: 0
     additive: 0
     scale: {x: 1, y: 1, z: 1}
-    texture: {fileID: 0}
+    texture: {fileID: 2800000, guid: 784a27234e995fe4e83fa087f04b448c, type: 3}
     materialId: 0
     anchor: 4
     anchorX: 0

@@ -18,6 +18,8 @@ public class Events
         public static string IncrementMultipler = "IncrementMultiplier";
 
         public static string PlayerSpeedUpdated = "PlayerSpeedUpdated";
+
+        public static string TriggerAfterburner = "TriggerAfterburner";
         public static string AfterburnerTriggered = "AfterburnerTriggered";
 
         public static string PlayerDied = "PlayerDied";

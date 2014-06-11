@@ -73,8 +73,10 @@
     <Compile Include="Assets\Scripts\EventSystem\Messenger.cs" />
     <Compile Include="Assets\Scripts\FadeAndLoad.cs" />
     <Compile Include="Assets\Scripts\FlipAnim.cs" />
+    <Compile Include="Assets\Scripts\Game\AfterburnerItem.cs" />
     <Compile Include="Assets\Scripts\Game\Animations\RotateAnimation.cs" />
     <Compile Include="Assets\Scripts\Game\Animations\ScaleAnimation.cs" />
+    <Compile Include="Assets\Scripts\Game\Animations\SquishingAnimation.cs" />
     <Compile Include="Assets\Scripts\Game\Bird.cs" />
     <Compile Include="Assets\Scripts\Game\BirdManager.cs" />
     <Compile Include="Assets\Scripts\Game\BlackHole.cs" />

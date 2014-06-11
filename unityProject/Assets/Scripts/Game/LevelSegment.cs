@@ -3,9 +3,20 @@ using System.Collections;
 
 public class LevelSegment : MonoBehaviour
 {
+    public bool shouldIncludeAfterburnerPowerup = false;
+
     void Start()
     {
-
+        if ( shouldIncludeAfterburnerPowerup )
+        {
+            // change one of the multiplier items into afterburner powerups
+            InstantiateEntity[] instantiateEntities = GetComponentsInChildren<InstantiateEntity>();
+            if ( instantiateEntities.Length > 0 )
+            {
+                int randomChoice = Random.Range( 0, instantiateEntities.Length );
+                instantiateEntities[randomChoice].entityType = EntityDatabase.EntityType.EntityType_AfterburnerItem;
+            }
+        }
     }
 
     void Update()

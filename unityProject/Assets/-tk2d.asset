@@ -755,7 +755,7 @@ MonoBehaviour:
     - verticalEnemy
     - ninjaStarEnemy
     - hourGlassEnemy
-    - 
+    - lightningbolt
     - gooStar
     - octagon
     - playershield
@@ -922,7 +922,7 @@ MonoBehaviour:
     - 9ccb8002bcd592d4b91afa6f75003107
     - aac182b7be1578242b99cef9bb7802aa
     - d7d95ab3f90e2fb4ca4c334a91f3a4b7
-    - 
+    - 784a27234e995fe4e83fa087f04b448c
     - 62e5d9016fa6df245ac7ca02ff11a29f
     - 0fdfcdedb6379fd4caa6bbac721b4cbd
     - 7dcac00dfad7e284bac7cda7104d3a08
@@ -1089,7 +1089,7 @@ MonoBehaviour:
     - 1399572603.32314
     - 1400081227.59193
     - 1399572603.30113
-    - 0
+    - 1402447822.78061
     - 1400105209.90251
     - 1400110226.83986
     - 1401478115.97938
@@ -1253,6 +1253,7 @@ MonoBehaviour:
     - gaugeHighlight
     - taptoretry
     - white
+    - titletext
     spriteTextureGUIDs:
     - 9c4326713a27f54439a7a547ed9869be
     - 11715875beef04548943f823796c31ff
@@ -1263,16 +1264,18 @@ MonoBehaviour:
     - e44ddbd85e0201844a9c2d3863816839
     - 54a7f7a8971a3aa4884c3c1cbbe1be2c
     - fbd7571bdb6c2a94fbe8dfd569f5c6fd
+    - a371843032b7dd74ca516cf35f02de4c
     spriteTextureTimeStamps:
     - 1399998645.56176
     - 1400035151.80523
     - 1400015742.6546
     - 1400033911.14007
     - 1400034389.94819
-    - 1400024723.0866
+    - 1402447822.78061
     - 1400085889.81413
     - 1401495343.08064
     - 1399572603.32514
+    - 1402447362.36524
     managedSpriteCollection: 0
     loadable: 0
     assetName: 

@@ -36,22 +36,34 @@ public class LevelManager : MonoBehaviour
 
     private int mCurrentLevel = 0;
 
+    // logic for putting in afterburner items (1 per 15 secs)
+    private float       mTimeSinceAfterburner = 0.0f;
+    private const float mTimeDelayForAfterburnerSpawns = 15.0f;
+    private bool        mShouldIncludeAfterburnerIcon = true;
+
     void Start()
     {
         GameUtils.Assert( levelSegmentsRoot );
 
         Messenger.AddListener( Events.GameEvents.NewGameStarted, OnNewGameStarted );
         Messenger.AddListener( Events.GameEvents.PlayerDied, OnPlayerDied );
+        Messenger.AddListener<bool>( Events.GameEvents.AfterburnerTriggered, OnAfterburnerTriggered );
     }
 
     void OnDestroy()
     {
         Messenger.RemoveListener( Events.GameEvents.NewGameStarted, OnNewGameStarted );
         Messenger.RemoveListener( Events.GameEvents.PlayerDied, OnPlayerDied );
+        Messenger.RemoveListener<bool>( Events.GameEvents.AfterburnerTriggered, OnAfterburnerTriggered );
     }
 
     void Update()
     {
+        if ( mCurrentLevel > 1 )
+        {
+            mTimeSinceAfterburner += Time.deltaTime;
+        }
+
         if ( mNextLevelSegmentTransform )
         {
             if ( PlayerSnake.Instance.Position.y >= mNextLevelSegmentTransform.position.y + DESTROY_PREVIOUS_SEGMENT_BUFFER )
@@ -173,17 +185,38 @@ public class LevelManager : MonoBehaviour
         GameObject nextLevelSegment = Instantiate( GetRandomLevelSegment(), mNextLevelSegmentPos, Quaternion.identity ) as GameObject;
         mNextLevelSegment = nextLevelSegment.GetComponent<LevelSegment>();
 
-        // rotate levels randomly
-        if ( UnityEngine.Random.Range( 0, 1 ) == 0 )
+        if ( mTimeSinceAfterburner > mTimeDelayForAfterburnerSpawns )
         {
-            //mNextLevelSegment.transform.localScale = new Vector3( -1, 0, 0 );
+            mShouldIncludeAfterburnerIcon = true;
         }
+
+        if ( mCurrentLevel % 2 == 0 )
+        {
+            mNextLevelSegment.shouldIncludeAfterburnerPowerup = mShouldIncludeAfterburnerIcon;
+            mShouldIncludeAfterburnerIcon = false;
+            Debug.Log( mShouldIncludeAfterburnerIcon );
+        }
+
+        // rotate levels randomly
+        //if ( UnityEngine.Random.Range( 0, 1 ) == 0 )
+        //{
+        //mNextLevelSegment.transform.localScale = new Vector3( -1, 0, 0 );
+        //}
 
         mNextLevelSegmentTransform = mNextLevelSegment.transform;
 
         if ( levelSegmentsRoot )
         {
             mNextLevelSegment.transform.parent = levelSegmentsRoot.transform;
+        }
+    }
+
+    void OnAfterburnerTriggered( bool triggered )
+    {
+        if ( triggered )
+        {
+            mTimeSinceAfterburner = 0.0f;
+            mShouldIncludeAfterburnerIcon = false;
         }
     }
 }

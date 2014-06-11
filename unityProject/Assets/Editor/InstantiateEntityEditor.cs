@@ -1,6 +1,8 @@
 ﻿using UnityEditor;
 
+
 [CustomEditor( typeof( InstantiateEntity ) )]
+[CanEditMultipleObjects]
 public class InstantiateEntityEditor : Editor
 {
     public override void OnInspectorGUI()

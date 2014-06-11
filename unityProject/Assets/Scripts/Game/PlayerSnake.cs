@@ -64,6 +64,7 @@ public class PlayerSnake : Entity
 
         Messenger.AddListener( Events.GameEvents.NewGameStarted, OnNewGameStarted );
         Messenger.AddListener( Events.GameEvents.GameStart, OnGameStarted );
+        Messenger.AddListener( Events.GameEvents.TriggerAfterburner, OnTriggerAfterburner );
 
         // start with player disabled
 
@@ -78,6 +79,7 @@ public class PlayerSnake : Entity
 
         Messenger.RemoveListener( Events.GameEvents.NewGameStarted, OnNewGameStarted );
         Messenger.RemoveListener( Events.GameEvents.GameStart, OnGameStarted );
+        Messenger.RemoveListener( Events.GameEvents.TriggerAfterburner, OnTriggerAfterburner );
     }
 
     void Update()
@@ -149,15 +151,6 @@ public class PlayerSnake : Entity
 
     private void AfterburnerLogic()
     {
-
-        if ( Input.GetMouseButton( 0 ) && mFuelRemaining == mFuelCapacity )
-        {
-            SoundManager.Instance.PlaySound( SoundManager.Sounds.Sounds_Afterburner );
-            SetAfterburner( true );
-            SetPlayerSpeed( mPlayerAfterburnerSpeed );
-        }
-        /**/
-
         if ( mAfterburnerActivated )
         {
             mFuelRemaining -= Time.deltaTime;
@@ -189,6 +182,13 @@ public class PlayerSnake : Entity
                 Messenger.Broadcast<float>( Events.UIEvents.FuelGaugeUpdated, mFuelRemaining / mFuelCapacity );
             }
         }
+    }
+
+    void OnTriggerAfterburner()
+    {
+        SoundManager.Instance.PlaySound( SoundManager.Sounds.Sounds_Afterburner );
+        SetAfterburner( true );
+        SetPlayerSpeed( mPlayerAfterburnerSpeed );
     }
 
     void ShootGun()
