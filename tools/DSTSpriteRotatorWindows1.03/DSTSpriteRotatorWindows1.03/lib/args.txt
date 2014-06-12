@@ -1,0 +1,3 @@
+
+spriterotator2
+spriterotator2.jar,core.jar

@@ -32,7 +32,6 @@ public class MovementLogic : MonoBehaviour
             }
             else
             {
-                Debug.Log( Mathf.Abs( mPreviousAccelerationX - Input.acceleration.x ) );
                 accelerationValueToUse = Input.acceleration.x;
             }
 
