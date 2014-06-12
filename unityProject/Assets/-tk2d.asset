@@ -1254,6 +1254,14 @@ MonoBehaviour:
     - taptoretry
     - white
     - titletext
+    - musicsymbol
+    - 30fpsicon
+    - 60fpsicon
+    - soundicon
+    - mainmenubutton
+    - noads
+    - officon
+    - mainmenubuttondown
     spriteTextureGUIDs:
     - 9c4326713a27f54439a7a547ed9869be
     - 11715875beef04548943f823796c31ff
@@ -1265,6 +1273,14 @@ MonoBehaviour:
     - 54a7f7a8971a3aa4884c3c1cbbe1be2c
     - fbd7571bdb6c2a94fbe8dfd569f5c6fd
     - a371843032b7dd74ca516cf35f02de4c
+    - 12b857ad9c541344f9d8aee80cacb877
+    - 23d4154e10dcece42ad30c8c0f34a90e
+    - 5e01908cdbb8a7d4d84fa9fd04a9465d
+    - 6d95c45278d285d41be6c1a475d14c34
+    - ad56ab2fe2b5aa9499fb98858e3e4627
+    - ba5857a622d60e74f94b400306208b84
+    - bc28b4f66ae0fe040a07f88e32d60185
+    - d2a197b1aeaca4442bfb1fce8542ef5e
     spriteTextureTimeStamps:
     - 1399998645.56176
     - 1400035151.80523
@@ -1276,6 +1292,14 @@ MonoBehaviour:
     - 1401495343.08064
     - 1399572603.32514
     - 1402447362.36524
+    - 1402524505.15506
+    - 1402524694.82323
+    - 1402524706.21353
+    - 1402524546.49366
+    - 1402524385.30381
+    - 1402524980.13095
+    - 1402524676.39813
+    - 1402525306.18539
     managedSpriteCollection: 0
     loadable: 0
     assetName: 

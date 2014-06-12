@@ -45,6 +45,8 @@ public class GameOverScores : MonoBehaviour
             }
         }
 
+        SaveLoad.Save();
+
         UpdateScoresText();
     }
 

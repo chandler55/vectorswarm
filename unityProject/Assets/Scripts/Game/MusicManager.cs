@@ -58,20 +58,23 @@ public class MusicManager : MonoBehaviour
 
     public void PlayRandomSong()
     {
-        if ( musicAudioSource )
+        if ( SaveData.current != null && SaveData.current.musicOn )
         {
-            if ( mSongToPlay == 1 )
+            if ( musicAudioSource )
             {
-                musicAudioSource.clip = song1;
-                mSongToPlay = 2;
-            }
-            else if ( mSongToPlay == 2 )
-            {
-                musicAudioSource.clip = song2;
-                mSongToPlay = 1;
-            }
+                if ( mSongToPlay == 1 )
+                {
+                    musicAudioSource.clip = song1;
+                    mSongToPlay = 2;
+                }
+                else if ( mSongToPlay == 2 )
+                {
+                    musicAudioSource.clip = song2;
+                    mSongToPlay = 1;
+                }
 
-            musicAudioSource.Play();
+                musicAudioSource.Play();
+            }
         }
     }
 }

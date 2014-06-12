@@ -194,7 +194,6 @@ public class LevelManager : MonoBehaviour
         {
             mNextLevelSegment.shouldIncludeAfterburnerPowerup = mShouldIncludeAfterburnerIcon;
             mShouldIncludeAfterburnerIcon = false;
-            Debug.Log( mShouldIncludeAfterburnerIcon );
         }
 
         // rotate levels randomly

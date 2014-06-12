@@ -10,9 +10,13 @@ public class SaveData
     public int saveVersion = 0;
 
     public long highScore = 0;
-
+    
     public List<long> previousScores = new List<long>( new long[] { 0, 0, 0, 0, 0 } );
     public List<long> topScores = new List<long>( new long[] { 0, 0, 0, 0, 0 } );
+
+    public bool soundOn = true;
+    public bool musicOn = true;
+    public bool fps30On = false;
 
     public SaveData()
     {

@@ -89,9 +89,10 @@ public class PlayerSnake : Entity
             return;
         }
 
-        if ( Input.GetKey( KeyCode.X ) )
+        if ( Input.GetKey( KeyCode.X ) && !mAfterburnerActivated )
         {
-            SetPlayerSpeed( mPlayerAfterburnerSpeed );
+            Messenger.Broadcast(Events.GameEvents.TriggerAfterburner);
+           // SetPlayerSpeed( mPlayerAfterburnerSpeed );
         }
         else if ( Input.GetKey( KeyCode.C ) )
         {

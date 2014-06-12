@@ -53,39 +53,41 @@ public class SoundManager : MonoBehaviour
 
     public void PlaySound( Sounds sound )
     {
-        switch (sound)
+        if ( SaveData.current != null && SaveData.current.soundOn )
         {
-            case Sounds.Sounds_Explosion:
-                if ( explosionSound )
-                {
-                    audioSource.PlayOneShot( explosionSound );
-                }
-                break;
-            case Sounds.Sounds_Bomb:
-                if ( bombSound )
-                {
-                    audioSource.PlayOneShot( bombSound );
-                }
-                break;
-            case Sounds.Sounds_PlayerHit:
-                if ( playerHitSound )
-                {
-                    audioSource.PlayOneShot( playerHitSound );
-                }
-                break;
-            case Sounds.Sounds_Afterburner:
-                if ( afterburnerSound )
-                {
-                    audioSource.PlayOneShot( afterburnerSound );
-                }
-                break;
-            case Sounds.Sounds_GetMultiplier:
-                if ( getMultiplierSound )
-                {
-                    audioSource.PlayOneShot( getMultiplierSound );
-                }
-                break;
+            switch ( sound )
+            {
+                case Sounds.Sounds_Explosion:
+                    if ( explosionSound )
+                    {
+                        audioSource.PlayOneShot( explosionSound );
+                    }
+                    break;
+                case Sounds.Sounds_Bomb:
+                    if ( bombSound )
+                    {
+                        audioSource.PlayOneShot( bombSound );
+                    }
+                    break;
+                case Sounds.Sounds_PlayerHit:
+                    if ( playerHitSound )
+                    {
+                        audioSource.PlayOneShot( playerHitSound );
+                    }
+                    break;
+                case Sounds.Sounds_Afterburner:
+                    if ( afterburnerSound )
+                    {
+                        audioSource.PlayOneShot( afterburnerSound );
+                    }
+                    break;
+                case Sounds.Sounds_GetMultiplier:
+                    if ( getMultiplierSound )
+                    {
+                        audioSource.PlayOneShot( getMultiplierSound );
+                    }
+                    break;
+            }
         }
-        
     }
 }

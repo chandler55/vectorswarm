@@ -8,18 +8,6 @@ public class SaveSystem : MonoBehaviour
         LoadGame();
     }
 
-    void OnDestroy()
-    {
-        SaveGame();
-    }
-
-    void SaveGame()
-    {
-        SaveLoad.Save();
-
-        Debug.Log( "game saved" );
-    }
-
     void LoadGame()
     {
         if ( !SaveLoad.Load() )
@@ -28,7 +16,5 @@ public class SaveSystem : MonoBehaviour
             Debug.Log( "created new save data" );
             SaveData.current = new SaveData();
         }
-
-        Debug.Log( "game loaded" );
     }
 }

@@ -214,7 +214,7 @@ public class tk2dUIItem : MonoBehaviour
                 {
                     isPressed = true;
 
-                    if (OnDown != null) { OnDown(); }
+                    if ( OnDown != null ) { OnDown(); }
                     if (OnDownUIItem != null) { OnDownUIItem(this); }
                     DoSendMessage( SendMessageOnDownMethodName );
                 }

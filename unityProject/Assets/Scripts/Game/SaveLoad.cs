@@ -11,6 +11,8 @@ public static class SaveLoad
         FileStream file = File.Create( Application.persistentDataPath + "/savedGame.gd" );
         bf.Serialize( file, SaveData.current );
         file.Close();
+
+        Debug.Log( "game saved" );
     }
 
     public static bool Load()
@@ -21,6 +23,8 @@ public static class SaveLoad
             FileStream file = File.Open( Application.persistentDataPath + "/savedGame.gd", FileMode.Open );
             SaveData.current = (SaveData)bf.Deserialize( file );
             file.Close();
+
+            Debug.Log( "game loaded" );
             return true;
         }
         else

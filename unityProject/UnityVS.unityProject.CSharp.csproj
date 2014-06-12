@@ -143,9 +143,12 @@
     <Compile Include="Assets\Scripts\Game\SettingsBox.cs" />
     <Compile Include="Assets\Scripts\Game\SoundManager.cs" />
     <Compile Include="Assets\Scripts\Game\Starfield.cs" />
+    <Compile Include="Assets\Scripts\Game\UI\FPSButton.cs" />
     <Compile Include="Assets\Scripts\Game\UI\HighScoreUI.cs" />
     <Compile Include="Assets\Scripts\Game\UI\LevelUI.cs" />
     <Compile Include="Assets\Scripts\Game\UI\MultiplierUI.cs" />
+    <Compile Include="Assets\Scripts\Game\UI\MusicButton.cs" />
+    <Compile Include="Assets\Scripts\Game\UI\OnOffSwitch.cs" />
     <Compile Include="Assets\Scripts\Game\UI\RemainingLivesUI.cs" />
     <Compile Include="Assets\Scripts\Game\UI\RetryLevel.cs" />
     <Compile Include="Assets\Scripts\Game\UI\Scalable.cs" />
@@ -153,6 +156,7 @@
     <Compile Include="Assets\Scripts\Game\UI\ScoreIndicator.cs" />
     <Compile Include="Assets\Scripts\Game\UI\ScoreIndicatorManager.cs" />
     <Compile Include="Assets\Scripts\Game\UI\ScoreUI.cs" />
+    <Compile Include="Assets\Scripts\Game\UI\SoundButton.cs" />
     <Compile Include="Assets\Scripts\Game\UI\SquishAnimation.cs" />
     <Compile Include="Assets\Scripts\Game\UI\TileSize.cs" />
     <Compile Include="Assets\Scripts\Game\UI\TriggerEvent.cs" />
