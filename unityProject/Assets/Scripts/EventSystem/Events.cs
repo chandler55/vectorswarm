@@ -47,6 +47,8 @@ public class Events
         public static string RemainingLivesUpdated = "RemainingLivesUpdated";
         public static string ScoreUpdated = "ScoreUpdated";
 
+        public static string ToggleTutorialScreen = "ToggleTutorialScreen";
+
     }
 
 }

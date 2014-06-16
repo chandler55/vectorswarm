@@ -1262,6 +1262,7 @@ MonoBehaviour:
     - noads
     - officon
     - mainmenubuttondown
+    - starfield
     spriteTextureGUIDs:
     - 9c4326713a27f54439a7a547ed9869be
     - 11715875beef04548943f823796c31ff
@@ -1281,6 +1282,7 @@ MonoBehaviour:
     - ba5857a622d60e74f94b400306208b84
     - bc28b4f66ae0fe040a07f88e32d60185
     - d2a197b1aeaca4442bfb1fce8542ef5e
+    - aa88da020af235e4293e8aa2cbfd30e9
     spriteTextureTimeStamps:
     - 1399998645.56176
     - 1400035151.80523
@@ -1300,6 +1302,20 @@ MonoBehaviour:
     - 1402524980.13095
     - 1402524676.39813
     - 1402525306.18539
+    - 1399572603.31914
+    managedSpriteCollection: 0
+    loadable: 0
+    assetName: 
+    version: 3
+  - name: tutorialScreens
+    spriteCollectionGUID: 1519eb18a426dc1488b871c5f51b09c1
+    spriteCollectionDataGUID: 9d3c3706973dc274b9bb4698d98ac4e1
+    spriteNames:
+    - tutorialscreen
+    spriteTextureGUIDs:
+    - 42ff779495bd0924da0990c5ebdb1de9
+    spriteTextureTimeStamps:
+    - 1402881035.46247
     managedSpriteCollection: 0
     loadable: 0
     assetName: 

@@ -9,6 +9,7 @@ public class FPSButton : MonoBehaviour
     void Start()
     {
         UpdateIcons();
+        Application.targetFrameRate = SaveData.current.fps30On ? 30 : 60;
     }
 
 

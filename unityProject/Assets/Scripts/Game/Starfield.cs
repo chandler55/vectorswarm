@@ -13,12 +13,12 @@ public class Starfield : MonoBehaviour
 
     void Start()
     {
-        Messenger.AddListener<bool>( Events.GameEvents.AfterburnerTriggered, OnAfterburnerTriggered );
+        //Messenger.AddListener<bool>( Events.GameEvents.AfterburnerTriggered, OnAfterburnerTriggered );
     }
 
     void OnDestroy()
     {
-        Messenger.RemoveListener<bool>( Events.GameEvents.AfterburnerTriggered, OnAfterburnerTriggered );
+        //Messenger.RemoveListener<bool>( Events.GameEvents.AfterburnerTriggered, OnAfterburnerTriggered );
     }
 
     void Update()

@@ -28,6 +28,8 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
+
         // listen for events
         Messenger.AddListener( Events.GameEvents.RetryLevel, OnRetryLevel );
         Messenger.AddListener( Events.GameEvents.PlayerDied, OnPlayerDied );

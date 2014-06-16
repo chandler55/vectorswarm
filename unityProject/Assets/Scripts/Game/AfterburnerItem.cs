@@ -3,8 +3,8 @@ using System.Collections;
 
 public class AfterburnerItem : Entity
 {
-    private const float AFTERBURNER_GRAB_DISTANCE = 2.0f;
-    private const float CHASE_SPEED = 30.0f;
+    private const float AFTERBURNER_GRAB_DISTANCE = 4.0f;
+    private const float CHASE_SPEED = 60.0f;
 
     private bool    mHeadTowardsPlayerShip = false;
 
@@ -23,7 +23,7 @@ public class AfterburnerItem : Entity
 
             if ( mHeadTowardsPlayerShip )
             {
-                if ( distance < 1.0f )
+                if ( distance < 2.0f )
                 {
                     Messenger.Broadcast( Events.GameEvents.TriggerAfterburner );
                     ObjectPool.Recycle( this );
