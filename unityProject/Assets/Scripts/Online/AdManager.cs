@@ -9,7 +9,7 @@ public class AdManager : MonoBehaviour
     void Start()
     {
         // Create a 320x50 banner at the top of the screen.
-        bannerView = new BannerView( "ca-app-pub-6248233767469489/4977557899", AdSize.Banner, AdPosition.Bottom );
+        bannerView = new BannerView( "ca-app-pub-6248233767469489/4911567496", AdSize.Banner, AdPosition.Bottom );
 
         // Create an empty ad request.
         AdRequest request = new AdRequest.Builder().Build();

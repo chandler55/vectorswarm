@@ -45,24 +45,24 @@ MonoBehaviour:
   spriteDefinitions:
   - name: tutorialscreen
     boundsData:
-    - {x: 0, y: -.0249996185, z: 0}
-    - {x: 22.7000008, y: 34.1500015, z: 0}
+    - {x: 0, y: 0, z: 0}
+    - {x: 22.7000008, y: 45, z: 0}
     untrimmedBoundsData:
-    - {x: 0, y: -.0249996185, z: 0}
-    - {x: 22.7000008, y: 34.1500015, z: 0}
+    - {x: 0, y: 0, z: 0}
+    - {x: 22.7000008, y: 45, z: 0}
     texelSize: {x: .0500000007, y: .0500000007}
     positions:
-    - {x: -11.3500004, y: -17.1000004, z: 0}
-    - {x: 11.3500004, y: -17.1000004, z: 0}
-    - {x: -11.3500004, y: 17.0500011, z: 0}
-    - {x: 11.3500004, y: 17.0500011, z: 0}
+    - {x: -11.3500004, y: -22.5, z: 0}
+    - {x: 11.3500004, y: -22.5, z: 0}
+    - {x: -11.3500004, y: 22.5, z: 0}
+    - {x: 11.3500004, y: 22.5, z: 0}
     normals: []
     tangents: []
     uvs:
     - {x: .00390820298, y: .00195410149}
     - {x: .890623033, y: .00195410149}
-    - {x: .00390820298, y: .668944359}
-    - {x: .890623033, y: .668944359}
+    - {x: .00390820298, y: .880858421}
+    - {x: .890623033, y: .880858421}
     indices: 000000000300000001000000020000000300000000000000
     material: {fileID: 2100000, guid: 1cd2afd1d10ece24b98e95a5b1f0e36a, type: 2}
     materialId: 0
@@ -102,7 +102,7 @@ MonoBehaviour:
   loadable: 0
   invOrthoSize: 2
   halfTargetHeight: 10
-  buildKey: 1957957874
+  buildKey: 1008592526
   dataGuid: 9d3c3706973dc274b9bb4698d98ac4e1
   managedSpriteCollection: 0
   hasPlatformData: 0

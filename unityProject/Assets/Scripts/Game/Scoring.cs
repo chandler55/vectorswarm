@@ -25,7 +25,25 @@ public class Scoring : MonoBehaviour
 
     void OnPlayerDeath()
     {
+        // post to gpg leaderboards
+        if ( Social.localUser.authenticated )
+        {
+            Social.ReportScore( mScore, "CgkI6ZDq1r0FEAIQAA", OnScorePosted );
+        }
+
         Messenger.Broadcast<long>( Events.GameEvents.PostGameOverScore, mScore );
+    }
+
+    void OnScorePosted( bool success )
+    {
+        if ( success )
+        {
+            Debug.Log( "score posting failed" );
+        }
+        else
+        {
+            Debug.Log( "failed to post score" );
+        }
     }
 
     void OnIncrementScore( long score, Vector3 worldPos )

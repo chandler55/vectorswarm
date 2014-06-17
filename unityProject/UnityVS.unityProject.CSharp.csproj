@@ -22,7 +22,7 @@
     <OutputPath>Temp\UnityVS_bin\Debug\</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DefineConstants>DEBUG;TRACE;UNITY_4_5_0;UNITY_4_5;UNITY_STANDALONE_WIN;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_PRO_LICENSE</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;UNITY_4_5_0;UNITY_4_5;UNITY_ANDROID;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;UNITY_ANDROID_API;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_PRO_LICENSE</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -30,7 +30,7 @@
     <OutputPath>Temp\UnityVS_bin\Release\</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DefineConstants>TRACE;UNITY_4_5_0;UNITY_4_5;UNITY_STANDALONE_WIN;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_PRO_LICENSE</DefineConstants>
+    <DefineConstants>TRACE;UNITY_4_5_0;UNITY_4_5;UNITY_ANDROID;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;UNITY_ANDROID_API;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_PRO_LICENSE</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
@@ -48,6 +48,9 @@
     <Reference Include="System.Xml.Linq" />
     <Reference Include="Parse.Unity">
       <HintPath>Assets\Parse.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="GPGSUtils">
+      <HintPath>Assets\Plugins\GPGSUtils.dll</HintPath>
     </Reference>
     <Reference Include="P31RestKit">
       <HintPath>Assets\Plugins\P31RestKit.dll</HintPath>
@@ -83,6 +86,42 @@
     <Compile Include="Assets\GoogleMobileAds\Platforms\iOS\IOSBannerClient.cs" />
     <Compile Include="Assets\GoogleMobileAds\Platforms\iOS\IOSInterstitialClient.cs" />
     <Compile Include="Assets\GoogleMobileAds\Platforms\iOS\MonoPInvokeCallbackAttribute.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\Achievement.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\DummyClient.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\IPlayGamesClient.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\Multiplayer\Invitation.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\Multiplayer\IRealTimeMultiplayerClient.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\Multiplayer\ITurnBasedMultiplayerClient.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\Multiplayer\MatchOutcome.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\Multiplayer\Participant.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\Multiplayer\Player.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\Multiplayer\RealTimeMultiplayerListener.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\Multiplayer\TurnBasedMatch.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\OnStateLoadedListener.cs" />
+    <Compile Include="Assets\GooglePlayGames\ISocialPlatform\PlayGamesAchievement.cs" />
+    <Compile Include="Assets\GooglePlayGames\ISocialPlatform\PlayGamesLocalUser.cs" />
+    <Compile Include="Assets\GooglePlayGames\ISocialPlatform\PlayGamesPlatform.cs" />
+    <Compile Include="Assets\GooglePlayGames\ISocialPlatform\PlayGamesScore.cs" />
+    <Compile Include="Assets\GooglePlayGames\ISocialPlatform\PlayGamesUserProfile.cs" />
+    <Compile Include="Assets\GooglePlayGames\OurUtils\Logger.cs" />
+    <Compile Include="Assets\GooglePlayGames\OurUtils\Misc.cs" />
+    <Compile Include="Assets\GooglePlayGames\OurUtils\PlayGamesHelperObject.cs" />
+    <Compile Include="Assets\GooglePlayGames\Platforms\Android\AchievementBank.cs" />
+    <Compile Include="Assets\GooglePlayGames\Platforms\Android\AndroidClient.cs" />
+    <Compile Include="Assets\GooglePlayGames\Platforms\Android\AndroidRtmpClient.cs" />
+    <Compile Include="Assets\GooglePlayGames\Platforms\Android\AndroidTbmpClient.cs" />
+    <Compile Include="Assets\GooglePlayGames\Platforms\Android\GameHelperManager.cs" />
+    <Compile Include="Assets\GooglePlayGames\Platforms\Android\JavaConsts.cs" />
+    <Compile Include="Assets\GooglePlayGames\Platforms\Android\JavaUtil.cs" />
+    <Compile Include="Assets\GooglePlayGames\Platforms\Android\NoopProxy.cs" />
+    <Compile Include="Assets\GooglePlayGames\Platforms\Android\OnStateResultProxy.cs" />
+    <Compile Include="Assets\GooglePlayGames\Platforms\iOS\IOSClient.cs" />
+    <Compile Include="Assets\GooglePlayGames\Platforms\iOS\IOSRtmpClient.cs" />
+    <Compile Include="Assets\GooglePlayGames\Platforms\iOS\iOSTbmpClient.cs" />
+    <Compile Include="Assets\GooglePlayGames\Platforms\iOS\MiniJSON.cs" />
+    <Compile Include="Assets\GooglePlayGames\Platforms\iOS\MonoPInvokeCallbackAttribute.cs" />
+    <Compile Include="Assets\GooglePlayGames\Platforms\PlayGamesClientFactory.cs" />
+    <Compile Include="Assets\GooglePlayGames\PluginVersion.cs" />
     <Compile Include="Assets\ObjectPool\Scripts\ObjectPool.cs" />
     <Compile Include="Assets\Scripts\BackgroundTiler.cs" />
     <Compile Include="Assets\Scripts\EventSystem\Callback.cs" />
@@ -177,11 +216,13 @@
     <Compile Include="Assets\Scripts\Game\UI\SoundButton.cs" />
     <Compile Include="Assets\Scripts\Game\UI\SquishAnimation.cs" />
     <Compile Include="Assets\Scripts\Game\UI\TileSize.cs" />
+    <Compile Include="Assets\Scripts\Game\UI\ToggleLeaderboardsMenu.cs" />
     <Compile Include="Assets\Scripts\Game\UI\ToggleTutorialButton.cs" />
     <Compile Include="Assets\Scripts\Game\UI\TriggerEvent.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\InstantiatePrefab.cs" />
     <Compile Include="Assets\Scripts\Online\AdManager.cs" />
+    <Compile Include="Assets\Scripts\Online\GPGManager.cs" />
     <Compile Include="Assets\Scripts\Online\OnlineManager.cs" />
     <Compile Include="Assets\Scripts\PrefabPlacement.cs" />
     <Compile Include="Assets\Scripts\Scroller.cs" />
@@ -273,8 +314,13 @@
     <Compile Include="Assets\TK2DROOT\tk2dUI_demo\tk2dUIDemo6Controller.cs" />
     <Compile Include="Assets\TK2DROOT\tk2dUI_demo\tk2dUIDemoController.cs" />
     <Compile Include="Assets\Unsupported\RadialSprite\tk2dRadialSpriteGeomGen.cs" />
+    <None Include="Assets\Editor\projsettings.txt" />
+    <None Include="Assets\Editor\template-AndroidManifest.txt" />
+    <None Include="Assets\Editor\template-GPGSParams.txt" />
     <None Include="Assets\Parse.Unity.xml" />
     <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
+    <None Include="Assets\Plugins\Android\BaseGameUtils\AndroidManifest.xml" />
+    <None Include="Assets\Plugins\Android\BaseGameUtils\res\values\gamehelper_strings.xml" />
     <None Include="Assets\Plugins\Android\google-play-services_lib\AndroidManifest.xml" />
     <None Include="Assets\Plugins\Android\google-play-services_lib\proguard.txt" />
     <None Include="Assets\Plugins\Android\google-play-services_lib\README.txt" />
@@ -410,6 +456,7 @@
     <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-zh-rTW\common_strings.xml" />
     <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-zu\auth_strings.xml" />
     <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-zu\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\MainLibProj\AndroidManifest.xml" />
     <None Include="Assets\Plugins\FPSGraph\ReadMe.txt" />
     <None Include="Assets\Plugins\GoKit\easing\easeEquationsLicense.txt" />
     <None Include="Assets\readme.txt" />

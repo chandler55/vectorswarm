@@ -51,16 +51,6 @@ public class SimpleEnemy : Enemy
     void Move()
     {
         mMovingRight = !mMovingRight;
-
-        Vector3 newPos;
-        if ( mMovingRight )
-        {
-            newPos = new Vector3( GameSettings.WORLD_BOUNDARY.x + GameSettings.WORLD_BOUNDARY.width, Position.y, gameObject.transform.position.z );
-        }
-        else
-        {
-            newPos = new Vector3( GameSettings.WORLD_BOUNDARY.x, Position.y, gameObject.transform.position.z );
-        }
     }
 
     public override void DestroyEnemy()

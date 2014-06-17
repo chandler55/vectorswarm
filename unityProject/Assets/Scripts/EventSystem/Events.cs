@@ -38,6 +38,11 @@ public class Events
         public static string TriggerSettingsMenu = "TriggerSettingsMenu";
     }
 
+    public static class OnlineEvents
+    {
+        public static string TryAuthenticateUser = "TryAuthenticateUser";
+    }
+
     public static class UIEvents
     {
         public static string MovesUpdated = "MovesUpdated";

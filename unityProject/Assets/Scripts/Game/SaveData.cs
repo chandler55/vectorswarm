@@ -17,6 +17,7 @@ public class SaveData
     public bool soundOn = true;
     public bool musicOn = true;
     public bool fps30On = false;
+    public bool socialAuthenticated = false;
 
     public SaveData()
     {

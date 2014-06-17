@@ -89,6 +89,7 @@ public class PlayerSnake : Entity
             return;
         }
 
+#if DEBUG
         if ( Input.GetKey( KeyCode.X ) && !mAfterburnerActivated )
         {
             Messenger.Broadcast(Events.GameEvents.TriggerAfterburner);
@@ -99,6 +100,7 @@ public class PlayerSnake : Entity
             SetPlayerSpeed( 0 );
             //SetPlayerSpeed( mPlayerNormalSpeed );
         }
+#endif
 
         if ( deathCollider && destroyEnemyCollider )
         {
@@ -236,7 +238,7 @@ public class PlayerSnake : Entity
 
     public override void CollisionTriggered( Collider2D collider )
     {
-        if ( mAfterburnerActivated || Input.GetKey( KeyCode.X ) )
+        if ( mAfterburnerActivated )
         {
             if ( collider.tag == "Enemy" )
             {
@@ -257,7 +259,7 @@ public class PlayerSnake : Entity
         }
     }
 
-    private void Die()
+    public override void Die()
     {
         DisablePlayer();
 

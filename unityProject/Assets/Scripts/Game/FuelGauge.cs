@@ -7,7 +7,6 @@ public class FuelGauge : MonoBehaviour
     public tk2dSprite   mLightningBolt = null;
     public Color        mGaugeAlternatingColor = Color.white;
 
-    private Transform   mGaugeTransform = null;
     private float       mGaugeFilledSizeX = 0.0f;
 
     // animating lightning bolt flash when full
@@ -25,7 +24,6 @@ public class FuelGauge : MonoBehaviour
 
         if ( mGaugeSprite )
         {
-            mGaugeTransform = mGaugeSprite.transform;
             mGaugeFilledSizeX = mGaugeSprite.dimensions.x;
             mOriginalGaugeColor = mGaugeSprite.color;
         }

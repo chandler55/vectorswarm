@@ -11,7 +11,7 @@ PlayerSettings:
   targetResolution: 0
   accelerometerFrequency: 60
   companyName: Moonlight Games
-  productName: Tappy Plane
+  productName: Vector Swarm
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   defaultScreenWidth: 768
@@ -64,11 +64,11 @@ PlayerSettings:
     16:10: 0
     16:9: 0
     Others: 0
-  iPhoneBundleIdentifier: com.moonlightgames.tappyplane
+  iPhoneBundleIdentifier: com.moonlightgames.vectorswarm
   metroEnableIndependentInputSource: 0
   metroEnableLowLatencyPresentationAPI: 0
   productGUID: 4ce6c6415184cab43b1cb9b18445c758
-  iPhoneBundleVersion: 1.01
+  iPhoneBundleVersion: 1.0
   AndroidBundleVersionCode: 2
   AndroidMinSdkVersion: 9
   AndroidPreferredInstallLocation: 1
@@ -80,7 +80,7 @@ PlayerSettings:
   ForceSDCardPermission: 0
   CreateWallpaper: 0
   APKExpansionFiles: 0
-  StripUnusedMeshComponents: 0
+  StripUnusedMeshComponents: 1
   iPhoneSdkVersion: 988
   iPhoneTargetOSVersion: 16
   uIPrerenderedIcon: 0
@@ -105,18 +105,6 @@ PlayerSettings:
     m_Icons:
     - m_Icon: {fileID: 2800000, guid: 7ac417998d5b3ce4ab8cf6b20aa5dc97, type: 3}
       m_Size: 128
-  - m_BuildTarget: Android
-    m_Icons:
-    - m_Icon: {fileID: 2800000, guid: 7ac417998d5b3ce4ab8cf6b20aa5dc97, type: 3}
-      m_Size: 144
-    - m_Icon: {fileID: 0}
-      m_Size: 96
-    - m_Icon: {fileID: 0}
-      m_Size: 72
-    - m_Icon: {fileID: 0}
-      m_Size: 48
-    - m_Icon: {fileID: 0}
-      m_Size: 36
   m_BuildTargetBatching: []
   webPlayerTemplate: APPLICATION:Default
   m_TemplateCustomTags: {}

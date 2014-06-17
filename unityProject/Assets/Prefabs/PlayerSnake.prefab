@@ -401,6 +401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 498be4438faeaf44982108fd4c822fc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  invulnerableToggle: 0
   shipObject: {fileID: 100012}
   playerSprite: {fileID: 11400004}
   shieldSprite: {fileID: 11400012}
@@ -538,7 +539,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75d9531fc2d9b874da5c019be01ae91e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mEasingAmount: 5.5
+  mEasingAmount: 6
+  mThresholdForAccelerometer: .00999999978
 --- !u!120 &12000000
 LineRenderer:
   m_ObjectHideFlags: 1
