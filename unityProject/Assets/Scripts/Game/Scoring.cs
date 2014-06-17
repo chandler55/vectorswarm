@@ -28,7 +28,7 @@ public class Scoring : MonoBehaviour
         // post to gpg leaderboards
         if ( Social.localUser.authenticated )
         {
-            Social.ReportScore( mScore, "CgkI6ZDq1r0FEAIQAA", OnScorePosted );
+            Social.ReportScore( mScore, GPGManager.leaderboardID, OnScorePosted );
         }
 
         Messenger.Broadcast<long>( Events.GameEvents.PostGameOverScore, mScore );

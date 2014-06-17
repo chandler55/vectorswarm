@@ -5,6 +5,14 @@ using UnityEngine.SocialPlatforms;
 
 public class GPGManager : MonoBehaviour
 {
+#if UNITY_ANDROID
+    public static string leaderboardID = "CgkI6ZDq1r0FEAIQAA";
+#elif UNITY_IPHONE
+    public static string leaderboardID = "vectorswarmhighscore";
+#else
+    public static string leaderboardID = "test";
+#endif
+
     void Start()
     {
         // recommended for debugging:
@@ -52,7 +60,7 @@ public class GPGManager : MonoBehaviour
                 if ( showLeaderboards )
                 {
 #if UNITY_ANDROID
-                    ( (PlayGamesPlatform)Social.Active ).ShowLeaderboardUI( "CgkI6ZDq1r0FEAIQAA" );
+                    ( (PlayGamesPlatform)Social.Active ).ShowLeaderboardUI( GPGManager.leaderboardID );
 #elif UNITY_IPHONE
                     Social.Active.ShowLeaderboardUI();
 #endif
