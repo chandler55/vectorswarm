@@ -29,7 +29,7 @@ public class Bullet : Entity
         }
         
 
-        Position += Velocity;
+        Position += Velocity * Time.deltaTime;
 
         //UpdateRotation();
     }

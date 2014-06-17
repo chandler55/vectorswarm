@@ -46,6 +46,18 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        if ( Debug.isDebugBuild )
+        {
+            if ( Input.GetKey( KeyCode.S ) )
+            {
+                Time.timeScale = 0;
+            }
+            else if ( Input.GetKey( KeyCode.D ) )
+            {
+                Time.timeScale = 1;
+            }
+        }
+
         waitFrames++;
 
         if ( !mInitialized && waitFrames == 1 )
