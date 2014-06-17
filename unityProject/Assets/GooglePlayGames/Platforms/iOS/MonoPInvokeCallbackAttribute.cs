@@ -19,8 +19,10 @@ using System;
 
 // Attribute that the AOT compiler understands as "this method will
 // be called as a callback from native code". Needed on iOS.
+/*
 public class MonoPInvokeCallbackAttribute : System.Attribute
 {
     public MonoPInvokeCallbackAttribute(Type t) {}
 }
+ * */
 #endif

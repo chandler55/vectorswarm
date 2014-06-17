@@ -13,8 +13,10 @@ public class GPGManager : MonoBehaviour
             PlayGamesPlatform.DebugLogEnabled = true;
         }
 
+#if UNITY_ANDROID
         // Activate the Google Play Games platform
         PlayGamesPlatform.Activate();
+#endif
 
         Messenger.AddListener<bool>( Events.OnlineEvents.TryAuthenticateUser, TryAuthenticate );
 
@@ -49,7 +51,11 @@ public class GPGManager : MonoBehaviour
             {
                 if ( showLeaderboards )
                 {
+#if UNITY_ANDROID
                     ( (PlayGamesPlatform)Social.Active ).ShowLeaderboardUI( "CgkI6ZDq1r0FEAIQAA" );
+#elif UNITY_IPHONE
+                    Social.Active.ShowLeaderboardUI();
+#endif
                 }
                 Debug.Log( "user authenticated" );
             }

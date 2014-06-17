@@ -8,7 +8,11 @@ public class ToggleLeaderboardsMenu : MonoBehaviour
     {
         if ( Social.localUser.authenticated )
         {
-            ( (PlayGamesPlatform) Social.Active ).ShowLeaderboardUI( "CgkI6ZDq1r0FEAIQAA" );
+#if UNITY_ANDROID
+            ( (PlayGamesPlatform)Social.Active ).ShowLeaderboardUI( "CgkI6ZDq1r0FEAIQAA" );
+#elif UNITY_IPHONE
+            Social.Active.ShowLeaderboardUI();
+#endif
         }
         else
         {
