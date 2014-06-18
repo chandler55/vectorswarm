@@ -37,8 +37,10 @@ public class GameHudUI : MonoBehaviour
         menuHUD.SetActive( true );
         gameHUD.SetActive( false );
 
+#if !UNITY_WP8
         menuHUD.transform.localPosition = menuDisabledTransform.localPosition;
         Go.to( menuHUD.transform, 1.5f, new GoTweenConfig().localPosition( Vector3.zero ).setEaseType( GoEaseType.SineOut ) );
+#endif
     }
 
     void OnNewGameStarted()

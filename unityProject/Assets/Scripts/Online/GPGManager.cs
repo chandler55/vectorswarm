@@ -35,8 +35,9 @@ public class GPGManager : MonoBehaviour
             SaveLoad.Save();
         }
         */
-
+#if UNITY_ANDROID || UNITY_IPHONE
         TryAuthenticate( false );
+#endif
     }
 
     void OnDestroy()

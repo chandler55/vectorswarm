@@ -20,7 +20,7 @@ public class MovementLogic : MonoBehaviour
 
         //Player Horizontal Movement
         {
-#if UNITY_ANDROID || UNITY_IPHONE
+#if UNITY_ANDROID || UNITY_IPHONE || UNITY_WP8
 
             // move towards accelerometer tilt
             // tilt to horizontal percentage -0.25 to 0.25
