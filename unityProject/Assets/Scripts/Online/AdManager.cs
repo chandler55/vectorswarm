@@ -12,7 +12,7 @@ public class AdManager : MonoBehaviour
         bannerView = new BannerView( "ca-app-pub-6248233767469489/4911567496", AdSize.Banner, AdPosition.Bottom );
 
         // Create an empty ad request.
-        AdRequest request = new AdRequest.Builder().Build();
+		AdRequest request = new AdRequest.Builder().AddTestDevice("18c368de3bc4d699be3b12c3b00e2eec").Build();
 
         // Load the banner with the request.
         if ( bannerView != null )
