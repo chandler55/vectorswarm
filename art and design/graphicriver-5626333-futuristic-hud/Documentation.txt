@@ -1,0 +1,9 @@
+Right click and ungroup elements to edit/change individual components.
+If you have any trouble, feel free to ask for support through comments on GraphicRiver.
+
+I suggest you use a slight glow effect depending on your color (White if you keep the default color elements).
+You can do this from Effects>Stylize>Outer Glow
+
+Free Font used:
+
+Orbitron (http://www.fontsquirrel.com/fonts/Orbitron)
