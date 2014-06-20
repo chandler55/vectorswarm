@@ -20,6 +20,23 @@ public class TutorialManager : MonoBehaviour
         Messenger.RemoveListener( Events.UIEvents.ToggleTutorialScreen, OnToggleTutorialScreen );
     }
 
+    void Update()
+    {
+
+        if ( Input.GetKeyDown( KeyCode.Escape ) )
+        {
+            if ( mCurrentlyShown )
+            {
+                Messenger.Broadcast( Events.UIEvents.ToggleTutorialScreen );
+            }
+            else
+            {
+                Application.Quit();
+            }
+        }
+
+    }
+
     public void ToggleTutorialScreen()
     {
         if ( mCurrentlyShown )
