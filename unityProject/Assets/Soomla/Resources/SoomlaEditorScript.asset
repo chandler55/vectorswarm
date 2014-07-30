@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97db1d3efb8d149a1a81687bf682f373, type: 3}
+  m_Name: SoomlaEditorScript
+  m_EditorClassIdentifier: 
+  SoomlaSettings:
+    values:
+    - name: SoomlaSecret
+      value: chandler55
+    - name: GPlayBP
+      value: True
+    - name: AndroidPublicKey
+      value: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwPcU+cHIrF0TK5JUkAdMuj38cKoMYcanM4bR6jfQPxdofwpK+K1ZBaDJsy89N+A/cm+YUae06Na/Gy1r2m5QF27dSTkuO0TqRDqq2/NX3bzt0aITTg2ZwCCSgyGQoAS0jwJt/wArQKR0PrNIRbHQctLMz/65NCFwxixUhBaIqEAFiR6kzLuLccaL4JdKFWx5mCCx9JZpfjj7a1+B/2ch7Kuv9mHi7u317rbHTqYXmi5anTTeG2+qUPQ1TeSvPrU+v+4j38UE0zOqabSQbc8cChmfLnbXuXVJEpKsUfnAJowwfFQ929bOIGyjKxubgdFgWHIu/5l1mKeYpUOgmANMewIDAQAB
+    - name: AndroidTestPurchases
+      value: True
+    - name: DebugMessages
+      value: True

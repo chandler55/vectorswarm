@@ -5,7 +5,6 @@ public class ExitGame : MonoBehaviour
 {
     void Start()
     {
-
     }
 
     void Update()

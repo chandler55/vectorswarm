@@ -56,4 +56,10 @@ public class Events
 
     }
 
+    public static class StoreEvents
+    {
+        public static string StoreInitialized = "StoreInitialized";
+        public static string PurchaseNoAds = "PurchaseNoAds";
+        public static string NoAdsPurchased = "NoAdsPurchased";
+    }
 }

@@ -11,3 +11,12 @@ C:\Users\Michael\Desktop\vectorswarm\trunk\unityProject\Temp\UnityVS_bin\Debug\P
 C:\Users\Michael\Desktop\vectorswarm\trunk\unityProject\obj\Debug\UnityVS.unityProject.CSharp.Plugins.csprojResolveAssemblyReference.cache
 C:\Users\Michael\Desktop\vectorswarm\trunk\unityProject\obj\Debug\Assembly-CSharp-firstpass.dll
 C:\Users\Michael\Desktop\vectorswarm\trunk\unityProject\obj\Debug\Assembly-CSharp-firstpass.pdb
+C:\Users\Michael\Desktop\vectorswarm2\unityProject\Temp\UnityVS_bin\Debug\Assembly-CSharp-firstpass.dll
+C:\Users\Michael\Desktop\vectorswarm2\unityProject\Temp\UnityVS_bin\Debug\Assembly-CSharp-firstpass.pdb
+C:\Users\Michael\Desktop\vectorswarm2\unityProject\Temp\UnityVS_bin\Debug\GPGSUtils.dll
+C:\Users\Michael\Desktop\vectorswarm2\unityProject\Temp\UnityVS_bin\Debug\P31RestKit.dll
+C:\Users\Michael\Desktop\vectorswarm2\unityProject\Temp\UnityVS_bin\Debug\UnityEditor.dll
+C:\Users\Michael\Desktop\vectorswarm2\unityProject\Temp\UnityVS_bin\Debug\UnityEngine.dll
+C:\Users\Michael\Desktop\vectorswarm2\unityProject\obj\Debug\UnityVS.unityProject.CSharp.Plugins.csprojResolveAssemblyReference.cache
+C:\Users\Michael\Desktop\vectorswarm2\unityProject\obj\Debug\Assembly-CSharp-firstpass.dll
+C:\Users\Michael\Desktop\vectorswarm2\unityProject\obj\Debug\Assembly-CSharp-firstpass.pdb
