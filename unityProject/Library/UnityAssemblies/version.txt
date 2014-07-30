@@ -1,1 +1,1 @@
-4.5.0f6:iPhone
+4.5.0f6:Android

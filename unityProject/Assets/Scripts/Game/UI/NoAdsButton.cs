@@ -8,6 +8,7 @@ public class NoAdsButton : MonoBehaviour
     {
         Messenger.AddListener( Events.StoreEvents.StoreInitialized, OnStoreInitialized );
         Messenger.AddListener( Events.StoreEvents.NoAdsPurchased, OnNoAdsPurchased );
+        
         if ( SaveData.current.noAdsUnlocked )
         {
             gameObject.SetActive( false );
@@ -34,10 +35,12 @@ public class NoAdsButton : MonoBehaviour
         bool hasNoAds = StoreInventory.NonConsumableItemExists( VectorSwarmAssets.NO_ADDS_NONCONS_PRODUCT_ID );
         if ( hasNoAds )
         {
+            Debug.Log( "has no ads" );
             gameObject.SetActive( false );
         }
         else
         {
+            Debug.Log( "has ads" );
             gameObject.SetActive( true );
         }
     }

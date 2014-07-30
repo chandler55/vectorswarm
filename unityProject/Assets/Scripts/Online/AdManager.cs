@@ -15,7 +15,6 @@ public class AdManager : MonoBehaviour
 #endif
 
     BannerView bannerView = null;
-    private bool adsOn = true;
 
     void Start()
     {
@@ -34,6 +33,7 @@ public class AdManager : MonoBehaviour
         Messenger.AddListener( Events.GameEvents.PlayerDied, OnPlayerDeath );
         Messenger.AddListener( Events.GameEvents.NewGameStarted, OnNewGameStarted );
         Messenger.AddListener( Events.StoreEvents.StoreInitialized, OnStoreInitialized );
+        Messenger.AddListener( Events.StoreEvents.NoAdsPurchased, OnNoAdsPurchased );
     }
 
     void OnDestroy()
@@ -41,6 +41,7 @@ public class AdManager : MonoBehaviour
         Messenger.RemoveListener( Events.GameEvents.PlayerDied, OnPlayerDeath );
         Messenger.RemoveListener( Events.GameEvents.NewGameStarted, OnNewGameStarted );
         Messenger.RemoveListener( Events.StoreEvents.StoreInitialized, OnStoreInitialized );
+        Messenger.RemoveListener( Events.StoreEvents.NoAdsPurchased, OnNoAdsPurchased );
 
         bannerView.Destroy();
     }
@@ -52,7 +53,7 @@ public class AdManager : MonoBehaviour
 
     void OnPlayerDeath()
     {
-        if ( bannerView != null && adsOn )
+        if ( bannerView != null && !SaveData.current.noAdsUnlocked )
         {
             bannerView.Show();
         }
@@ -71,7 +72,17 @@ public class AdManager : MonoBehaviour
         bool hasNoAds = StoreInventory.NonConsumableItemExists( VectorSwarmAssets.NO_ADDS_NONCONS_PRODUCT_ID );
         if ( hasNoAds )
         {
-            adsOn = false;
+            if ( bannerView != null )
+            {
+                bannerView.Hide();
+            }
+        }
+    }
+
+    void OnNoAdsPurchased()
+    {
+        if ( bannerView != null )
+        {
             bannerView.Hide();
         }
     }
