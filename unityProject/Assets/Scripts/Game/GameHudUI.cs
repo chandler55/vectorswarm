@@ -39,7 +39,7 @@ public class GameHudUI : MonoBehaviour
 
 #if !UNITY_WP8
         menuHUD.transform.localPosition = menuDisabledTransform.localPosition;
-        Go.to( menuHUD.transform, 1.5f, new GoTweenConfig().localPosition( Vector3.zero ).setEaseType( GoEaseType.SineOut ) );
+        Go.to( menuHUD.transform, 1.5f, new GoTweenConfig().localPosition( Vector3.zero ).setEaseType( GoEaseType.SineOut ) ).setOnCompleteHandler( OnCompleteShowMenu );
 #endif
     }
 
@@ -47,5 +47,10 @@ public class GameHudUI : MonoBehaviour
     {
         menuHUD.SetActive( false );
         gameHUD.SetActive( true );
+    }
+
+    void OnCompleteShowMenu( AbstractGoTween tween )
+    {
+        Messenger.Broadcast( Events.MenuEvents.OnShowMainMenuFinished );
     }
 }

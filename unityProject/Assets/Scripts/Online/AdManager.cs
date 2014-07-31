@@ -14,23 +14,36 @@ public class AdManager : MonoBehaviour
 	public static string adIdentifier = "";
 #endif
 
+    public static string interstitialAdIdentifier = "ca-app-pub-6248233767469489/4289761093";
+
     BannerView bannerView = null;
+    InterstitialAd interstitialAd = null;
 
     void Start()
     {
         // Create a 320x50 banner at the top of the screen.
         bannerView = new BannerView( adIdentifier, AdSize.Banner, AdPosition.Bottom );
 
+        // create interstitial
+        interstitialAd = new InterstitialAd( interstitialAdIdentifier );
+
         // Create an empty ad request.
         AdRequest request = new AdRequest.Builder().AddTestDevice( "18c368de3bc4d699be3b12c3b00e2eec" ).Build();
 
+        /*
         // Load the banner with the request.
         if ( bannerView != null )
         {
             bannerView.LoadAd( request );
         }
+         */
 
-        Messenger.AddListener( Events.GameEvents.PlayerDied, OnPlayerDeath );
+        if ( interstitialAd != null )
+        {
+            interstitialAd.LoadAd( request );
+        }
+
+        Messenger.AddListener( Events.MenuEvents.OnShowMainMenuFinished, OnMainMenuShown );
         Messenger.AddListener( Events.GameEvents.NewGameStarted, OnNewGameStarted );
         Messenger.AddListener( Events.StoreEvents.StoreInitialized, OnStoreInitialized );
         Messenger.AddListener( Events.StoreEvents.NoAdsPurchased, OnNoAdsPurchased );
@@ -38,12 +51,13 @@ public class AdManager : MonoBehaviour
 
     void OnDestroy()
     {
-        Messenger.RemoveListener( Events.GameEvents.PlayerDied, OnPlayerDeath );
+        Messenger.RemoveListener( Events.MenuEvents.OnShowMainMenuFinished, OnMainMenuShown );
         Messenger.RemoveListener( Events.GameEvents.NewGameStarted, OnNewGameStarted );
         Messenger.RemoveListener( Events.StoreEvents.StoreInitialized, OnStoreInitialized );
         Messenger.RemoveListener( Events.StoreEvents.NoAdsPurchased, OnNoAdsPurchased );
 
         bannerView.Destroy();
+        interstitialAd.Destroy();
     }
 
     void Update()
@@ -51,11 +65,14 @@ public class AdManager : MonoBehaviour
 
     }
 
-    void OnPlayerDeath()
+    void OnMainMenuShown()
     {
-        if ( bannerView != null && !SaveData.current.noAdsUnlocked )
+        if ( !SaveData.current.noAdsUnlocked )
         {
-            bannerView.Show();
+            if ( interstitialAd != null && interstitialAd.IsLoaded() )
+            {
+                interstitialAd.Show();
+            }
         }
     }
 

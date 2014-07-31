@@ -36,6 +36,7 @@ public class Events
     {
         public static string TriggerPauseMenu = "TriggerPauseMenu";
         public static string TriggerSettingsMenu = "TriggerSettingsMenu";
+        public static string OnShowMainMenuFinished = "OnShowMainMenuFinished";
     }
 
     public static class OnlineEvents
