@@ -1264,6 +1264,8 @@ MonoBehaviour:
     - mainmenubuttondown
     - starfield
     - leaderboardsicon
+    - applestorebadge
+    - googleplaybadge
     spriteTextureGUIDs:
     - 9c4326713a27f54439a7a547ed9869be
     - 11715875beef04548943f823796c31ff
@@ -1285,6 +1287,8 @@ MonoBehaviour:
     - d2a197b1aeaca4442bfb1fce8542ef5e
     - aa88da020af235e4293e8aa2cbfd30e9
     - 1f03f1af26146a24498a9ff3a5daa4df
+    - 53e00bdd16a5f354497dda2e70f46552
+    - d262271f7cb9d364384df13b89ec7556
     spriteTextureTimeStamps:
     - 1399998645.56176
     - 1400035151.80523
@@ -1306,6 +1310,8 @@ MonoBehaviour:
     - 1402525306.18539
     - 1399572603.31914
     - 1402937319.54664
+    - 1408291069.77931
+    - 1408291064.22679
     managedSpriteCollection: 0
     loadable: 0
     assetName: 
@@ -1318,7 +1324,7 @@ MonoBehaviour:
     spriteTextureGUIDs:
     - 42ff779495bd0924da0990c5ebdb1de9
     spriteTextureTimeStamps:
-    - 1402935641.54844
+    - 1408289472.24146
     managedSpriteCollection: 0
     loadable: 0
     assetName: 

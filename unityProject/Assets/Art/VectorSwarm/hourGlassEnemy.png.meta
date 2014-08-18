@@ -1,6 +1,8 @@
 fileFormatVersion: 2
 guid: d7d95ab3f90e2fb4ca4c334a91f3a4b7
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: hourGlassEnemy
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -35,6 +37,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
   textureType: 5

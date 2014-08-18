@@ -5,11 +5,5 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/start.unity
-  - enabled: 0
-    path: Assets/Scenes/testscene.unity
-  - enabled: 0
-    path: Assets/Scenes/levelselect.unity
-  - enabled: 0
-    path: Assets/Scenes/tilesystemTest.unity
+  - enabled: 1
+    path: Assets/Scenes/webBuild.unity

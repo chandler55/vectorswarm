@@ -1,6 +1,8 @@
 fileFormatVersion: 2
 guid: 10ef0d38c72399345849c8d1aac15ebe
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: museofont_0
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

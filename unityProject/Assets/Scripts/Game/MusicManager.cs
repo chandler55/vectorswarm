@@ -3,8 +3,8 @@ using System.Collections;
 
 public class MusicManager : MonoBehaviour
 {
-    public AudioClip song1;
-    public AudioClip song2;
+    //public AudioClip song1;
+    //public AudioClip song2;
 
     public AudioSource musicAudioSource;
 
@@ -62,6 +62,7 @@ public class MusicManager : MonoBehaviour
         {
             if ( musicAudioSource )
             {
+                /*
                 if ( mSongToPlay == 1 )
                 {
                     musicAudioSource.clip = song1;
@@ -71,7 +72,7 @@ public class MusicManager : MonoBehaviour
                 {
                     musicAudioSource.clip = song2;
                     mSongToPlay = 1;
-                }
+                }*/
 
                 musicAudioSource.Play();
             }

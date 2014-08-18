@@ -11,7 +11,7 @@ public static class SaveLoad
     {
         SetEnvironmentVariables();
 
-#if UNITY_WP8
+#if UNITY_WP8 || UNITY_WEBPLAYER
         PlayerPrefs.SetInt( "saveVersion", SaveData.current.saveVersion );
         PlayerPrefs.SetInt( "highScore", (int)SaveData.current.highScore );
 
@@ -43,7 +43,7 @@ public static class SaveLoad
     public static bool Load()
     {
         SetEnvironmentVariables();
-#if UNITY_WP8
+#if UNITY_WP8 || UNITY_WEBPLAYER
         if ( SaveData.current == null )
         {
             SaveData.current = new SaveData();
@@ -88,7 +88,7 @@ public static class SaveLoad
 
     static void SetEnvironmentVariables()
     {
-#if !UNITY_WP8
+#if !UNITY_WP8 && !UNITY_WEBPLAYER
         if ( !mEnvironmentVariablesSet )
         {
             mEnvironmentVariablesSet = true;
