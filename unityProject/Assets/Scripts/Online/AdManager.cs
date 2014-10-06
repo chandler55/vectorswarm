@@ -38,9 +38,21 @@ public class AdManager : MonoBehaviour
         }
          */
 
-        if ( interstitialAd != null )
+        bool disableAds = false;
+        if ( SaveData.current != null )
         {
-            interstitialAd.LoadAd( request );
+            if ( SaveData.current.noAdsUnlocked )
+            {
+                disableAds = true;
+            }
+        }
+
+        if ( !disableAds )
+        {
+            if ( interstitialAd != null )
+            {
+                interstitialAd.LoadAd( request );
+            }
         }
 
         Messenger.AddListener( Events.MenuEvents.OnShowMainMenuFinished, OnMainMenuShown );

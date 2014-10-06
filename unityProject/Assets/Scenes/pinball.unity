@@ -8628,8 +8628,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52f192bd15d663445947deccdf300598, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  song1: {fileID: 8300000, guid: 96e281d39c06e1f4bbeace0463e1626b, type: 3}
-  song2: {fileID: 8300000, guid: 5b35391f677fe6c41ac432a2c7c82ace, type: 3}
   musicAudioSource: {fileID: 731797856}
 --- !u!1 &2018447122
 GameObject:

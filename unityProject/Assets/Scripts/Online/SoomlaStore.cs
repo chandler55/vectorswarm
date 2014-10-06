@@ -27,7 +27,12 @@ public class SoomlaStore : MonoBehaviour
         nonConsumableItems = StoreInfo.GetNonConsumableItems();
         Messenger.Broadcast( Events.StoreEvents.StoreInitialized );
         Debug.Log( "store initialized" );
-        //Debug.Log( StoreInventory.IsVirtualGoodEquipped( VectorSwarmAssets.NO_ADDS_NONCONS_PRODUCT_ID ) );
+
+        if ( StoreInventory.NonConsumableItemExists( VectorSwarmAssets.NO_ADDS_NONCONS_PRODUCT_ID ) )
+        {
+            SaveData.current.noAdsUnlocked = true;
+            Messenger.Broadcast( Events.StoreEvents.NoAdsPurchased );
+        }
     }
 
     void onMarketPurchase( PurchasableVirtualItem item, string purchaseToken, string payload )
