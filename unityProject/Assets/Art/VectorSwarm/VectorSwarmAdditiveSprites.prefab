@@ -60,10 +60,10 @@ MonoBehaviour:
   forcedTextureWidth: 2048
   forcedTextureHeight: 2048
   textureCompression: 0
-  atlasWidth: 1024
-  atlasHeight: 2048
+  atlasWidth: 512
+  atlasHeight: 1024
   forceSquareAtlas: 0
-  atlasWastage: 23.3920097
+  atlasWastage: 16.2811279
   allowMultipleAtlases: 0
   removeDuplicates: 1
   textureParams:
@@ -6892,7 +6892,7 @@ MonoBehaviour:
     width: 960
     height: 640
   globalScale: 1
-  globalTextureRescale: 1
+  globalTextureRescale: .5
   attachPointTestSprites: []
   pixelPerfectPointSampled: 0
   filterMode: 1

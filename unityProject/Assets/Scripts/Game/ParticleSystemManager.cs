@@ -29,6 +29,12 @@ public class ParticleSystemManager : MonoBehaviour
         instance = null;
     }
 
+    public void CreateBulletExplosion(Vector3 pos)
+    {
+        GameObject go = EntityDatabase.Instance.CreateEntity( EntityDatabase.EntityType.EntityType_BulletExplosion, pos, Quaternion.identity );
+        BulletExplosion explosionScript = go.GetComponent<BulletExplosion>();
+    }
+
     public void CreateEnemyExplosion( Vector3 pos )
     {
         CreateEnemyExplosion( pos, false, Color.black );

@@ -34,6 +34,7 @@ public class EntityDatabase : MonoBehaviour
 
         EntityType_ExplosionParticles = 200,
         EntityType_PlayerExplosion = 201,
+        EntityType_BulletExplosion = 202,
 
         EntityType_ScoreIndicator = 300,
     }
@@ -58,6 +59,7 @@ public class EntityDatabase : MonoBehaviour
 
     public ExplosionParticles   explosionParticlesPrefab;
     public PlayerExplosion      playerExplosionPrefab;
+    public BulletExplosion      bulletExplosionPrefab;
 
     public ScoreIndicator      scoreIndicatorPrefab;
 
@@ -94,6 +96,7 @@ public class EntityDatabase : MonoBehaviour
 
         ObjectPool.CreatePool( explosionParticlesPrefab, 5 );
         ObjectPool.CreatePool( playerExplosionPrefab, 1 );
+        ObjectPool.CreatePool( bulletExplosionPrefab, 5 );
 
         ObjectPool.CreatePool( scoreIndicatorPrefab, 5 );
     }
@@ -163,6 +166,9 @@ public class EntityDatabase : MonoBehaviour
                 break;
             case EntityType.EntityType_PlayerExplosion:
                 entity = playerExplosionPrefab.Spawn( position, rotation ).gameObject;
+                break;
+            case EntityType.EntityType_BulletExplosion:
+                entity = bulletExplosionPrefab.Spawn( position, rotation ).gameObject;
                 break;
             case EntityType.EntityType_ScoreIndicator:
                 entity = scoreIndicatorPrefab.Spawn( position, rotation ).gameObject;

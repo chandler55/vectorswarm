@@ -20,16 +20,21 @@ public class Gun : MonoBehaviour
         if ( mShootTimer > mShootDelay )
         {
             mShootTimer = 0.0f;
-            ShootGun();
+            //ShootGun();
         }
     }
 
-    void ShootGun()
+    public void ShootGun( Vector2 direction )
     {
         GameObject bulletGo = EntityDatabase.Instance.CreateEntity( EntityDatabase.EntityType.EntityType_Bullet, transform.position, Quaternion.identity );
         if ( bulletGo )
         {
             bulletGo.transform.parent = bulletContainer;
+            Bullet bullet = bulletGo.GetComponent<Bullet>();
+            if ( bullet )
+            {
+                bullet.SetDirection( direction );
+            }
         }
     }
 }

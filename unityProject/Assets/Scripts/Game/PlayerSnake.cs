@@ -23,8 +23,8 @@ public class PlayerSnake : Entity
     public Transform gunTransform;
 
     // speed
-    private float mPlayerNormalSpeed = 15.0f;
-    private float mCurrentPlayerSpeedY = 15.0f;
+    private float mPlayerNormalSpeed = 20.0f;
+    private float mCurrentPlayerSpeed = 20.0f;
     private float mPlayerAfterburnerSpeed = 30.0f;
 
     private Transform mTransform = null;
@@ -44,9 +44,6 @@ public class PlayerSnake : Entity
 
     // respawning
     private Vector3 mStartPosition = Vector3.zero;
-
-    private float mShootDelay = 0.2f;
-    private float mShootTimer = 0.0f;
 
     void Awake()
     {
@@ -68,7 +65,7 @@ public class PlayerSnake : Entity
 
         // start with player disabled
 
-        DisablePlayer();
+        //DisablePlayer();
 
         //FlashInvincibility();
     }
@@ -92,8 +89,8 @@ public class PlayerSnake : Entity
 #if DEBUG
         if ( Input.GetKey( KeyCode.X ) && !mAfterburnerActivated )
         {
-            Messenger.Broadcast(Events.GameEvents.TriggerAfterburner);
-           // SetPlayerSpeed( mPlayerAfterburnerSpeed );
+            Messenger.Broadcast( Events.GameEvents.TriggerAfterburner );
+            // SetPlayerSpeed( mPlayerAfterburnerSpeed );
         }
         else if ( Input.GetKey( KeyCode.C ) )
         {
@@ -114,18 +111,8 @@ public class PlayerSnake : Entity
         // Afterburner Logic
         AfterburnerLogic();
 
-        // shooting logic
-        mShootTimer += Time.deltaTime;
-        if ( mShootTimer > mShootDelay )
-        {
-            mShootTimer = 0.0f;
-            ShootGun();
-        }
-
-        // lock y velocity to mCurrentPlayerSpeedY variable
-        Velocity = new Vector2( Velocity.x, mCurrentPlayerSpeedY );
         Position += Velocity * Time.deltaTime;
-
+        Position = Playfield.Instance.ClampBoundary( Position );
         Messenger.Broadcast( Events.GameEvents.PlayerMoved );
     }
 
@@ -133,7 +120,6 @@ public class PlayerSnake : Entity
     {
         if ( mInvincibilityRemaining > 0 )
         {
-
             mInvincibilityRemaining -= Time.deltaTime;
             if ( mInvincibilityRemaining <= 0 )
             {
@@ -194,15 +180,10 @@ public class PlayerSnake : Entity
         SetPlayerSpeed( mPlayerAfterburnerSpeed );
     }
 
-    void ShootGun()
-    {
-        //EntityDatabase.Instance.CreateEntity( EntityDatabase.EntityType.EntityType_Bullet, gunTransform.position, Quaternion.identity );
-    }
-
     private void SetPlayerSpeed( float speed )
     {
-        mCurrentPlayerSpeedY = speed;
-        Messenger.Broadcast<float>( Events.GameEvents.PlayerSpeedUpdated, mCurrentPlayerSpeedY );
+        mCurrentPlayerSpeed = speed;
+        Messenger.Broadcast<float>( Events.GameEvents.PlayerSpeedUpdated, mCurrentPlayerSpeed );
     }
 
     private void SetAfterburner( bool on )
@@ -252,9 +233,12 @@ public class PlayerSnake : Entity
         }
         else
         {
-            if ( !invulnerableToggle )
+            if ( collider.tag == "Enemy" )
             {
-                Die();
+                if ( !invulnerableToggle )
+                {
+                    Die();
+                }
             }
         }
     }
@@ -314,5 +298,14 @@ public class PlayerSnake : Entity
         }
 
         SetPlayerSpeed( mPlayerNormalSpeed );
+    }
+
+    public void Move( Vector2 direction )
+    {
+        Velocity = direction * mCurrentPlayerSpeed;
+        if ( direction.sqrMagnitude > 0.1f )
+        {
+            UpdateRotation();
+        }
     }
 }

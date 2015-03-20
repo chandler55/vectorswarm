@@ -54,7 +54,7 @@ public class Events
         public static string ScoreUpdated = "ScoreUpdated";
 
         public static string ToggleTutorialScreen = "ToggleTutorialScreen";
-
+        public static string RefreshTimeLeft = "TimeLeft";
     }
 
     public static class StoreEvents

@@ -5,7 +5,7 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 3
+  serializedVersion: 4
   m_Component:
   - 4: {fileID: 400000}
   - 114: {fileID: 11400000}
@@ -15,7 +15,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1002 &100001
 EditorExtensionImpl:
   serializedVersion: 6
@@ -30,6 +30,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+  m_RootOrder: 0
 --- !u!1002 &400001
 EditorExtensionImpl:
   serializedVersion: 6
@@ -41,12 +42,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84c7a4b4ee15890498f818262bca0312, type: 1}
+  m_Script: {fileID: 11500000, guid: 84c7a4b4ee15890498f818262bca0312, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   textures: []
   textureRefs: []
   spriteSheets:
-  - texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 1}
+  - texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 3}
     tilesX: 44
     tilesY: 1
     numTiles: 0
@@ -93,7 +95,7 @@ MonoBehaviour:
     disableTrimming: 0
     additive: 0
     scale: {x: 1, y: 1, z: 1}
-    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 1}
+    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 3}
     materialId: 0
     anchor: 4
     anchorX: 36
@@ -121,6 +123,7 @@ MonoBehaviour:
     regionH: 110
     regionId: 0
     colliderType: 0
+    colliderData: []
     boxColliderMin: {x: 0, y: 0}
     boxColliderMax: {x: 0, y: 0}
     polyColliderIslands: []
@@ -133,7 +136,7 @@ MonoBehaviour:
     disableTrimming: 0
     additive: 0
     scale: {x: 1, y: 1, z: 1}
-    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 1}
+    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 3}
     materialId: 0
     anchor: 4
     anchorX: 36
@@ -161,6 +164,7 @@ MonoBehaviour:
     regionH: 110
     regionId: 1
     colliderType: 0
+    colliderData: []
     boxColliderMin: {x: 0, y: 0}
     boxColliderMax: {x: 0, y: 0}
     polyColliderIslands: []
@@ -173,7 +177,7 @@ MonoBehaviour:
     disableTrimming: 0
     additive: 0
     scale: {x: 1, y: 1, z: 1}
-    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 1}
+    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 3}
     materialId: 0
     anchor: 4
     anchorX: 36
@@ -201,6 +205,7 @@ MonoBehaviour:
     regionH: 110
     regionId: 2
     colliderType: 0
+    colliderData: []
     boxColliderMin: {x: 0, y: 0}
     boxColliderMax: {x: 0, y: 0}
     polyColliderIslands: []
@@ -213,7 +218,7 @@ MonoBehaviour:
     disableTrimming: 0
     additive: 0
     scale: {x: 1, y: 1, z: 1}
-    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 1}
+    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 3}
     materialId: 0
     anchor: 4
     anchorX: 36
@@ -241,6 +246,7 @@ MonoBehaviour:
     regionH: 110
     regionId: 3
     colliderType: 0
+    colliderData: []
     boxColliderMin: {x: 0, y: 0}
     boxColliderMax: {x: 0, y: 0}
     polyColliderIslands: []
@@ -253,7 +259,7 @@ MonoBehaviour:
     disableTrimming: 0
     additive: 0
     scale: {x: 1, y: 1, z: 1}
-    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 1}
+    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 3}
     materialId: 0
     anchor: 4
     anchorX: 36
@@ -281,6 +287,7 @@ MonoBehaviour:
     regionH: 110
     regionId: 4
     colliderType: 0
+    colliderData: []
     boxColliderMin: {x: 0, y: 0}
     boxColliderMax: {x: 0, y: 0}
     polyColliderIslands: []
@@ -293,7 +300,7 @@ MonoBehaviour:
     disableTrimming: 0
     additive: 0
     scale: {x: 1, y: 1, z: 1}
-    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 1}
+    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 3}
     materialId: 0
     anchor: 4
     anchorX: 36
@@ -321,6 +328,7 @@ MonoBehaviour:
     regionH: 110
     regionId: 5
     colliderType: 0
+    colliderData: []
     boxColliderMin: {x: 0, y: 0}
     boxColliderMax: {x: 0, y: 0}
     polyColliderIslands: []
@@ -333,7 +341,7 @@ MonoBehaviour:
     disableTrimming: 0
     additive: 0
     scale: {x: 1, y: 1, z: 1}
-    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 1}
+    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 3}
     materialId: 0
     anchor: 4
     anchorX: 36
@@ -361,6 +369,7 @@ MonoBehaviour:
     regionH: 110
     regionId: 6
     colliderType: 0
+    colliderData: []
     boxColliderMin: {x: 0, y: 0}
     boxColliderMax: {x: 0, y: 0}
     polyColliderIslands: []
@@ -373,7 +382,7 @@ MonoBehaviour:
     disableTrimming: 0
     additive: 0
     scale: {x: 1, y: 1, z: 1}
-    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 1}
+    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 3}
     materialId: 0
     anchor: 4
     anchorX: 36
@@ -401,6 +410,7 @@ MonoBehaviour:
     regionH: 110
     regionId: 7
     colliderType: 0
+    colliderData: []
     boxColliderMin: {x: 0, y: 0}
     boxColliderMax: {x: 0, y: 0}
     polyColliderIslands: []
@@ -413,7 +423,7 @@ MonoBehaviour:
     disableTrimming: 0
     additive: 0
     scale: {x: 1, y: 1, z: 1}
-    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 1}
+    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 3}
     materialId: 0
     anchor: 4
     anchorX: 36
@@ -441,6 +451,7 @@ MonoBehaviour:
     regionH: 110
     regionId: 8
     colliderType: 0
+    colliderData: []
     boxColliderMin: {x: 0, y: 0}
     boxColliderMax: {x: 0, y: 0}
     polyColliderIslands: []
@@ -453,7 +464,7 @@ MonoBehaviour:
     disableTrimming: 0
     additive: 0
     scale: {x: 1, y: 1, z: 1}
-    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 1}
+    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 3}
     materialId: 0
     anchor: 4
     anchorX: 36
@@ -481,6 +492,7 @@ MonoBehaviour:
     regionH: 110
     regionId: 9
     colliderType: 0
+    colliderData: []
     boxColliderMin: {x: 0, y: 0}
     boxColliderMax: {x: 0, y: 0}
     polyColliderIslands: []
@@ -493,7 +505,7 @@ MonoBehaviour:
     disableTrimming: 0
     additive: 0
     scale: {x: 1, y: 1, z: 1}
-    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 1}
+    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 3}
     materialId: 0
     anchor: 4
     anchorX: 36
@@ -521,6 +533,7 @@ MonoBehaviour:
     regionH: 110
     regionId: 10
     colliderType: 0
+    colliderData: []
     boxColliderMin: {x: 0, y: 0}
     boxColliderMax: {x: 0, y: 0}
     polyColliderIslands: []
@@ -533,7 +546,7 @@ MonoBehaviour:
     disableTrimming: 0
     additive: 0
     scale: {x: 1, y: 1, z: 1}
-    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 1}
+    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 3}
     materialId: 0
     anchor: 4
     anchorX: 36
@@ -561,6 +574,7 @@ MonoBehaviour:
     regionH: 110
     regionId: 11
     colliderType: 0
+    colliderData: []
     boxColliderMin: {x: 0, y: 0}
     boxColliderMax: {x: 0, y: 0}
     polyColliderIslands: []
@@ -573,7 +587,7 @@ MonoBehaviour:
     disableTrimming: 0
     additive: 0
     scale: {x: 1, y: 1, z: 1}
-    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 1}
+    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 3}
     materialId: 0
     anchor: 4
     anchorX: 36
@@ -601,6 +615,7 @@ MonoBehaviour:
     regionH: 110
     regionId: 12
     colliderType: 0
+    colliderData: []
     boxColliderMin: {x: 0, y: 0}
     boxColliderMax: {x: 0, y: 0}
     polyColliderIslands: []
@@ -613,7 +628,7 @@ MonoBehaviour:
     disableTrimming: 0
     additive: 0
     scale: {x: 1, y: 1, z: 1}
-    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 1}
+    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 3}
     materialId: 0
     anchor: 4
     anchorX: 36
@@ -641,6 +656,7 @@ MonoBehaviour:
     regionH: 110
     regionId: 13
     colliderType: 0
+    colliderData: []
     boxColliderMin: {x: 0, y: 0}
     boxColliderMax: {x: 0, y: 0}
     polyColliderIslands: []
@@ -653,7 +669,7 @@ MonoBehaviour:
     disableTrimming: 0
     additive: 0
     scale: {x: 1, y: 1, z: 1}
-    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 1}
+    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 3}
     materialId: 0
     anchor: 4
     anchorX: 36
@@ -681,6 +697,7 @@ MonoBehaviour:
     regionH: 110
     regionId: 14
     colliderType: 0
+    colliderData: []
     boxColliderMin: {x: 0, y: 0}
     boxColliderMax: {x: 0, y: 0}
     polyColliderIslands: []
@@ -693,7 +710,7 @@ MonoBehaviour:
     disableTrimming: 0
     additive: 0
     scale: {x: 1, y: 1, z: 1}
-    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 1}
+    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 3}
     materialId: 0
     anchor: 4
     anchorX: 36
@@ -721,6 +738,7 @@ MonoBehaviour:
     regionH: 110
     regionId: 15
     colliderType: 0
+    colliderData: []
     boxColliderMin: {x: 0, y: 0}
     boxColliderMax: {x: 0, y: 0}
     polyColliderIslands: []
@@ -733,7 +751,7 @@ MonoBehaviour:
     disableTrimming: 0
     additive: 0
     scale: {x: 1, y: 1, z: 1}
-    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 1}
+    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 3}
     materialId: 0
     anchor: 4
     anchorX: 36
@@ -761,6 +779,7 @@ MonoBehaviour:
     regionH: 110
     regionId: 16
     colliderType: 0
+    colliderData: []
     boxColliderMin: {x: 0, y: 0}
     boxColliderMax: {x: 0, y: 0}
     polyColliderIslands: []
@@ -773,7 +792,7 @@ MonoBehaviour:
     disableTrimming: 0
     additive: 0
     scale: {x: 1, y: 1, z: 1}
-    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 1}
+    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 3}
     materialId: 0
     anchor: 4
     anchorX: 36
@@ -801,6 +820,7 @@ MonoBehaviour:
     regionH: 110
     regionId: 17
     colliderType: 0
+    colliderData: []
     boxColliderMin: {x: 0, y: 0}
     boxColliderMax: {x: 0, y: 0}
     polyColliderIslands: []
@@ -813,7 +833,7 @@ MonoBehaviour:
     disableTrimming: 0
     additive: 0
     scale: {x: 1, y: 1, z: 1}
-    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 1}
+    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 3}
     materialId: 0
     anchor: 4
     anchorX: 36
@@ -841,6 +861,7 @@ MonoBehaviour:
     regionH: 110
     regionId: 18
     colliderType: 0
+    colliderData: []
     boxColliderMin: {x: 0, y: 0}
     boxColliderMax: {x: 0, y: 0}
     polyColliderIslands: []
@@ -853,7 +874,7 @@ MonoBehaviour:
     disableTrimming: 0
     additive: 0
     scale: {x: 1, y: 1, z: 1}
-    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 1}
+    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 3}
     materialId: 0
     anchor: 4
     anchorX: 36
@@ -881,6 +902,7 @@ MonoBehaviour:
     regionH: 110
     regionId: 19
     colliderType: 0
+    colliderData: []
     boxColliderMin: {x: 0, y: 0}
     boxColliderMax: {x: 0, y: 0}
     polyColliderIslands: []
@@ -893,7 +915,7 @@ MonoBehaviour:
     disableTrimming: 0
     additive: 0
     scale: {x: 1, y: 1, z: 1}
-    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 1}
+    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 3}
     materialId: 0
     anchor: 4
     anchorX: 36
@@ -921,6 +943,7 @@ MonoBehaviour:
     regionH: 110
     regionId: 20
     colliderType: 0
+    colliderData: []
     boxColliderMin: {x: 0, y: 0}
     boxColliderMax: {x: 0, y: 0}
     polyColliderIslands: []
@@ -933,7 +956,7 @@ MonoBehaviour:
     disableTrimming: 0
     additive: 0
     scale: {x: 1, y: 1, z: 1}
-    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 1}
+    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 3}
     materialId: 0
     anchor: 4
     anchorX: 36
@@ -961,6 +984,7 @@ MonoBehaviour:
     regionH: 110
     regionId: 21
     colliderType: 0
+    colliderData: []
     boxColliderMin: {x: 0, y: 0}
     boxColliderMax: {x: 0, y: 0}
     polyColliderIslands: []
@@ -973,7 +997,7 @@ MonoBehaviour:
     disableTrimming: 0
     additive: 0
     scale: {x: 1, y: 1, z: 1}
-    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 1}
+    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 3}
     materialId: 0
     anchor: 4
     anchorX: 36
@@ -1001,6 +1025,7 @@ MonoBehaviour:
     regionH: 110
     regionId: 22
     colliderType: 0
+    colliderData: []
     boxColliderMin: {x: 0, y: 0}
     boxColliderMax: {x: 0, y: 0}
     polyColliderIslands: []
@@ -1013,7 +1038,7 @@ MonoBehaviour:
     disableTrimming: 0
     additive: 0
     scale: {x: 1, y: 1, z: 1}
-    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 1}
+    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 3}
     materialId: 0
     anchor: 4
     anchorX: 36
@@ -1041,6 +1066,7 @@ MonoBehaviour:
     regionH: 110
     regionId: 23
     colliderType: 0
+    colliderData: []
     boxColliderMin: {x: 0, y: 0}
     boxColliderMax: {x: 0, y: 0}
     polyColliderIslands: []
@@ -1053,7 +1079,7 @@ MonoBehaviour:
     disableTrimming: 0
     additive: 0
     scale: {x: 1, y: 1, z: 1}
-    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 1}
+    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 3}
     materialId: 0
     anchor: 4
     anchorX: 36
@@ -1081,6 +1107,7 @@ MonoBehaviour:
     regionH: 110
     regionId: 24
     colliderType: 0
+    colliderData: []
     boxColliderMin: {x: 0, y: 0}
     boxColliderMax: {x: 0, y: 0}
     polyColliderIslands: []
@@ -1093,7 +1120,7 @@ MonoBehaviour:
     disableTrimming: 0
     additive: 0
     scale: {x: 1, y: 1, z: 1}
-    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 1}
+    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 3}
     materialId: 0
     anchor: 4
     anchorX: 36
@@ -1121,6 +1148,7 @@ MonoBehaviour:
     regionH: 110
     regionId: 25
     colliderType: 0
+    colliderData: []
     boxColliderMin: {x: 0, y: 0}
     boxColliderMax: {x: 0, y: 0}
     polyColliderIslands: []
@@ -1133,7 +1161,7 @@ MonoBehaviour:
     disableTrimming: 0
     additive: 0
     scale: {x: 1, y: 1, z: 1}
-    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 1}
+    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 3}
     materialId: 0
     anchor: 4
     anchorX: 36
@@ -1161,6 +1189,7 @@ MonoBehaviour:
     regionH: 110
     regionId: 26
     colliderType: 0
+    colliderData: []
     boxColliderMin: {x: 0, y: 0}
     boxColliderMax: {x: 0, y: 0}
     polyColliderIslands: []
@@ -1173,7 +1202,7 @@ MonoBehaviour:
     disableTrimming: 0
     additive: 0
     scale: {x: 1, y: 1, z: 1}
-    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 1}
+    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 3}
     materialId: 0
     anchor: 4
     anchorX: 36
@@ -1201,6 +1230,7 @@ MonoBehaviour:
     regionH: 110
     regionId: 27
     colliderType: 0
+    colliderData: []
     boxColliderMin: {x: 0, y: 0}
     boxColliderMax: {x: 0, y: 0}
     polyColliderIslands: []
@@ -1213,7 +1243,7 @@ MonoBehaviour:
     disableTrimming: 0
     additive: 0
     scale: {x: 1, y: 1, z: 1}
-    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 1}
+    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 3}
     materialId: 0
     anchor: 4
     anchorX: 36
@@ -1241,6 +1271,7 @@ MonoBehaviour:
     regionH: 110
     regionId: 28
     colliderType: 0
+    colliderData: []
     boxColliderMin: {x: 0, y: 0}
     boxColliderMax: {x: 0, y: 0}
     polyColliderIslands: []
@@ -1253,7 +1284,7 @@ MonoBehaviour:
     disableTrimming: 0
     additive: 0
     scale: {x: 1, y: 1, z: 1}
-    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 1}
+    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 3}
     materialId: 0
     anchor: 4
     anchorX: 36
@@ -1281,6 +1312,7 @@ MonoBehaviour:
     regionH: 110
     regionId: 29
     colliderType: 0
+    colliderData: []
     boxColliderMin: {x: 0, y: 0}
     boxColliderMax: {x: 0, y: 0}
     polyColliderIslands: []
@@ -1293,7 +1325,7 @@ MonoBehaviour:
     disableTrimming: 0
     additive: 0
     scale: {x: 1, y: 1, z: 1}
-    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 1}
+    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 3}
     materialId: 0
     anchor: 4
     anchorX: 36
@@ -1321,6 +1353,7 @@ MonoBehaviour:
     regionH: 110
     regionId: 30
     colliderType: 0
+    colliderData: []
     boxColliderMin: {x: 0, y: 0}
     boxColliderMax: {x: 0, y: 0}
     polyColliderIslands: []
@@ -1333,7 +1366,7 @@ MonoBehaviour:
     disableTrimming: 0
     additive: 0
     scale: {x: 1, y: 1, z: 1}
-    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 1}
+    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 3}
     materialId: 0
     anchor: 4
     anchorX: 36
@@ -1361,6 +1394,7 @@ MonoBehaviour:
     regionH: 110
     regionId: 31
     colliderType: 0
+    colliderData: []
     boxColliderMin: {x: 0, y: 0}
     boxColliderMax: {x: 0, y: 0}
     polyColliderIslands: []
@@ -1373,7 +1407,7 @@ MonoBehaviour:
     disableTrimming: 0
     additive: 0
     scale: {x: 1, y: 1, z: 1}
-    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 1}
+    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 3}
     materialId: 0
     anchor: 4
     anchorX: 36
@@ -1401,6 +1435,7 @@ MonoBehaviour:
     regionH: 110
     regionId: 32
     colliderType: 0
+    colliderData: []
     boxColliderMin: {x: 0, y: 0}
     boxColliderMax: {x: 0, y: 0}
     polyColliderIslands: []
@@ -1413,7 +1448,7 @@ MonoBehaviour:
     disableTrimming: 0
     additive: 0
     scale: {x: 1, y: 1, z: 1}
-    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 1}
+    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 3}
     materialId: 0
     anchor: 4
     anchorX: 36
@@ -1441,6 +1476,7 @@ MonoBehaviour:
     regionH: 110
     regionId: 33
     colliderType: 0
+    colliderData: []
     boxColliderMin: {x: 0, y: 0}
     boxColliderMax: {x: 0, y: 0}
     polyColliderIslands: []
@@ -1453,7 +1489,7 @@ MonoBehaviour:
     disableTrimming: 0
     additive: 0
     scale: {x: 1, y: 1, z: 1}
-    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 1}
+    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 3}
     materialId: 0
     anchor: 4
     anchorX: 36
@@ -1481,6 +1517,7 @@ MonoBehaviour:
     regionH: 110
     regionId: 34
     colliderType: 0
+    colliderData: []
     boxColliderMin: {x: 0, y: 0}
     boxColliderMax: {x: 0, y: 0}
     polyColliderIslands: []
@@ -1493,7 +1530,7 @@ MonoBehaviour:
     disableTrimming: 0
     additive: 0
     scale: {x: 1, y: 1, z: 1}
-    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 1}
+    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 3}
     materialId: 0
     anchor: 4
     anchorX: 36
@@ -1521,6 +1558,7 @@ MonoBehaviour:
     regionH: 110
     regionId: 35
     colliderType: 0
+    colliderData: []
     boxColliderMin: {x: 0, y: 0}
     boxColliderMax: {x: 0, y: 0}
     polyColliderIslands: []
@@ -1533,7 +1571,7 @@ MonoBehaviour:
     disableTrimming: 0
     additive: 0
     scale: {x: 1, y: 1, z: 1}
-    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 1}
+    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 3}
     materialId: 0
     anchor: 4
     anchorX: 36
@@ -1561,6 +1599,7 @@ MonoBehaviour:
     regionH: 110
     regionId: 36
     colliderType: 0
+    colliderData: []
     boxColliderMin: {x: 0, y: 0}
     boxColliderMax: {x: 0, y: 0}
     polyColliderIslands: []
@@ -1573,7 +1612,7 @@ MonoBehaviour:
     disableTrimming: 0
     additive: 0
     scale: {x: 1, y: 1, z: 1}
-    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 1}
+    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 3}
     materialId: 0
     anchor: 4
     anchorX: 36
@@ -1601,6 +1640,7 @@ MonoBehaviour:
     regionH: 110
     regionId: 37
     colliderType: 0
+    colliderData: []
     boxColliderMin: {x: 0, y: 0}
     boxColliderMax: {x: 0, y: 0}
     polyColliderIslands: []
@@ -1613,7 +1653,7 @@ MonoBehaviour:
     disableTrimming: 0
     additive: 0
     scale: {x: 1, y: 1, z: 1}
-    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 1}
+    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 3}
     materialId: 0
     anchor: 4
     anchorX: 36
@@ -1641,6 +1681,7 @@ MonoBehaviour:
     regionH: 110
     regionId: 38
     colliderType: 0
+    colliderData: []
     boxColliderMin: {x: 0, y: 0}
     boxColliderMax: {x: 0, y: 0}
     polyColliderIslands: []
@@ -1653,7 +1694,7 @@ MonoBehaviour:
     disableTrimming: 0
     additive: 0
     scale: {x: 1, y: 1, z: 1}
-    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 1}
+    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 3}
     materialId: 0
     anchor: 4
     anchorX: 36
@@ -1681,6 +1722,7 @@ MonoBehaviour:
     regionH: 110
     regionId: 39
     colliderType: 0
+    colliderData: []
     boxColliderMin: {x: 0, y: 0}
     boxColliderMax: {x: 0, y: 0}
     polyColliderIslands: []
@@ -1693,7 +1735,7 @@ MonoBehaviour:
     disableTrimming: 0
     additive: 0
     scale: {x: 1, y: 1, z: 1}
-    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 1}
+    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 3}
     materialId: 0
     anchor: 4
     anchorX: 36
@@ -1721,6 +1763,7 @@ MonoBehaviour:
     regionH: 110
     regionId: 40
     colliderType: 0
+    colliderData: []
     boxColliderMin: {x: 0, y: 0}
     boxColliderMax: {x: 0, y: 0}
     polyColliderIslands: []
@@ -1733,7 +1776,7 @@ MonoBehaviour:
     disableTrimming: 0
     additive: 0
     scale: {x: 1, y: 1, z: 1}
-    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 1}
+    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 3}
     materialId: 0
     anchor: 4
     anchorX: 36
@@ -1761,6 +1804,7 @@ MonoBehaviour:
     regionH: 110
     regionId: 41
     colliderType: 0
+    colliderData: []
     boxColliderMin: {x: 0, y: 0}
     boxColliderMax: {x: 0, y: 0}
     polyColliderIslands: []
@@ -1773,7 +1817,7 @@ MonoBehaviour:
     disableTrimming: 0
     additive: 0
     scale: {x: 1, y: 1, z: 1}
-    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 1}
+    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 3}
     materialId: 0
     anchor: 4
     anchorX: 36
@@ -1801,6 +1845,7 @@ MonoBehaviour:
     regionH: 110
     regionId: 42
     colliderType: 0
+    colliderData: []
     boxColliderMin: {x: 0, y: 0}
     boxColliderMax: {x: 0, y: 0}
     polyColliderIslands: []
@@ -1813,7 +1858,7 @@ MonoBehaviour:
     disableTrimming: 0
     additive: 0
     scale: {x: 1, y: 1, z: 1}
-    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 1}
+    texture: {fileID: 2800000, guid: f38c1e9651d69654c87ea0956466e36d, type: 3}
     materialId: 0
     anchor: 4
     anchorX: 36
@@ -1841,6 +1886,7 @@ MonoBehaviour:
     regionH: 110
     regionId: 43
     colliderType: 0
+    colliderData: []
     boxColliderMin: {x: 0, y: 0}
     boxColliderMax: {x: 0, y: 0}
     polyColliderIslands: []
@@ -1858,10 +1904,10 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 896eb8962d2295b4d939ad2d9e277a3f, type: 2}
   - {fileID: 2100000, guid: 5a9c40ea0fae93a4cb80d38f4c2a684e, type: 2}
   atlasTextures:
-  - {fileID: 2800000, guid: cd6fbfbe8894ff04f9643675be26a573, type: 1}
-  - {fileID: 2800000, guid: 781c2c74baf34e643bf7fdc51b2276ea, type: 1}
-  - {fileID: 2800000, guid: a57fd406b36fc6d44b38c2a82b620ccc, type: 1}
-  - {fileID: 2800000, guid: 83ed0f7a30dec5040bc629f357183e4a, type: 1}
+  - {fileID: 2800000, guid: cd6fbfbe8894ff04f9643675be26a573, type: 3}
+  - {fileID: 2800000, guid: 781c2c74baf34e643bf7fdc51b2276ea, type: 3}
+  - {fileID: 2800000, guid: a57fd406b36fc6d44b38c2a82b620ccc, type: 3}
+  - {fileID: 2800000, guid: 83ed0f7a30dec5040bc629f357183e4a, type: 3}
   atlasTextureFiles: []
   useTk2dCamera: 0
   targetHeight: 640
@@ -1884,6 +1930,7 @@ MonoBehaviour:
   physicsEngine: 0
   physicsDepth: .100000001
   disableTrimming: 0
+  disableRotation: 0
   normalGenerationMode: 0
   padAmount: -1
   autoUpdate: 1

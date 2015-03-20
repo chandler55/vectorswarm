@@ -29,7 +29,17 @@ public class GameHudUI : MonoBehaviour
 
     void Update()
     {
+        if ( menuHUD.activeInHierarchy )
+        {
+            if ( Input.GetKeyDown( KeyCode.Escape ) )
+            {
+                Application.Quit();
+            }
+        }
+        else
+        {
 
+        }
     }
 
     void OnPlayerDeath()

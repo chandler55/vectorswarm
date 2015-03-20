@@ -46,18 +46,6 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if ( Debug.isDebugBuild )
-        {
-            if ( Input.GetKey( KeyCode.S ) )
-            {
-                Time.timeScale = 0;
-            }
-            else if ( Input.GetKey( KeyCode.D ) )
-            {
-                Time.timeScale = 1;
-            }
-        }
-
         waitFrames++;
 
         if ( !mInitialized && waitFrames == 1 )
@@ -69,9 +57,6 @@ public class GameManager : MonoBehaviour
 
     void LoadLevel()
     {
-        //Messenger.Broadcast( Events.GameEvents.GameStart );
-        //Messenger.Broadcast( Events.GameEvents.NewGameStarted );
-
         m_gameState = GameState.GameState_Start;
     }
 

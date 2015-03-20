@@ -22,7 +22,7 @@
     <OutputPath>Temp\UnityVS_bin\Debug\</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DefineConstants>DEBUG;TRACE;UNITY_4_5_4;UNITY_4_5;UNITY_ANDROID;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_WWW;ENABLE_IMAGEEFFECTS;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;UNITY_ANDROID_API;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_PRO_LICENSE</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;UNITY_4_6_1;UNITY_4_6;UNITY_ANDROID;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_IL2CPP;INCLUDE_WP8SUPPORT;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_4_6_FEATURES;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;UNITY5_SCRIPTING_IN_UNITY4;ENABLE_CACHING;ENABLE_CLOTH;UNITY_ANDROID_API;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_MONO;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_PRO_LICENSE</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -30,7 +30,7 @@
     <OutputPath>Temp\UnityVS_bin\Release\</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DefineConstants>TRACE;UNITY_4_5_4;UNITY_4_5;UNITY_ANDROID;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_WWW;ENABLE_IMAGEEFFECTS;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;UNITY_ANDROID_API;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_PRO_LICENSE</DefineConstants>
+    <DefineConstants>TRACE;UNITY_4_6_1;UNITY_4_6;UNITY_ANDROID;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_IL2CPP;INCLUDE_WP8SUPPORT;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_4_6_FEATURES;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;UNITY5_SCRIPTING_IN_UNITY4;ENABLE_CACHING;ENABLE_CLOTH;UNITY_ANDROID_API;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_MONO;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_PRO_LICENSE</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
@@ -67,6 +67,12 @@
     <Reference Include="tk2dSkin">
       <HintPath>Assets\TK2DROOT\tk2d\Editor\tk2dSkin.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEditor.UI">
+      <HintPath>C:\Program Files (x86)\Unity\Editor\Data\UnityExtensions\Unity\GUISystem\4.6.1\Editor\UnityEditor.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>C:\Program Files (x86)\Unity\Editor\Data\UnityExtensions\Unity\GUISystem\4.6.1\UnityEngine.UI.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="UnityVS.unityProject.CSharp.csproj">
@@ -76,6 +82,10 @@
     <ProjectReference Include="UnityVS.unityProject.CSharp.Plugins.csproj">
       <Project>{EB3370BA-3446-6579-A6A8-16D966674768}</Project>
       <Name>UnityVS.unityProject.CSharp.Plugins</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityVS.unityProject.UnityScript.unityproj">
+      <Project>{AAD24B79-2FA0-17D6-0E94-F5B6FCF24654}</Project>
+      <Name>UnityVS.unityProject.UnityScript</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -90,6 +100,19 @@
     <Compile Include="Assets\Editor\LevelRandomSelectionEditor.cs" />
     <Compile Include="Assets\Soomla\Editor\SoomlaPostBuild.cs" />
     <Compile Include="Assets\Soomla\Editor\SoomlaSettingsEditor.cs" />
+    <Compile Include="Assets\TextMesh Pro\Editor\GlyphInfoDrawer.cs" />
+    <Compile Include="Assets\TextMesh Pro\Editor\KerningPairDrawer.cs" />
+    <Compile Include="Assets\TextMesh Pro\Editor\TMPro_AdvancedLayoutEditor.cs" />
+    <Compile Include="Assets\TextMesh Pro\Editor\TMPro_ContextMenus.cs" />
+    <Compile Include="Assets\TextMesh Pro\Editor\TMPro_CreateObjectMenu.cs" />
+    <Compile Include="Assets\TextMesh Pro\Editor\TMPro_DistanceTransform.cs" />
+    <Compile Include="Assets\TextMesh Pro\Editor\TMPro_EditorPanel.cs" />
+    <Compile Include="Assets\TextMesh Pro\Editor\TMPro_EditorShaderUtilities.cs" />
+    <Compile Include="Assets\TextMesh Pro\Editor\TMPro_EditorUtility.cs" />
+    <Compile Include="Assets\TextMesh Pro\Editor\TMPro_FontAssetCreatorWindow.cs" />
+    <Compile Include="Assets\TextMesh Pro\Editor\TMPro_FontEditor.cs" />
+    <Compile Include="Assets\TextMesh Pro\Editor\TMPro_FontPlugin.cs" />
+    <Compile Include="Assets\TextMesh Pro\Editor\TMPro_SDFMaterialEditor.cs" />
     <Compile Include="Assets\TK2DROOT\tk2d\Editor\Camera\tk2dCameraAnchorEditor.cs" />
     <Compile Include="Assets\TK2DROOT\tk2d\Editor\Camera\tk2dCameraEditor.cs" />
     <Compile Include="Assets\TK2DROOT\tk2d\Editor\Fonts\tk2dFontBuilder.cs" />
@@ -182,6 +205,7 @@
     <Compile Include="Assets\TK2DROOT\tk2dUI\Editor\Core\tk2dUIMaskEditor.cs" />
     <Compile Include="Assets\TK2DROOT\tk2dUI\Editor\Core\tk2dUIMethodBindingHelper.cs" />
     <Compile Include="Assets\TK2DROOT\tk2dUI\Editor\Core\tk2dUISpriteAnimatorEditor.cs" />
+    <Compile Include="Assets\UltimateJoystick\Editor\UltimateJoystickEditor.cs" />
     <None Include="Assets\Editor\projsettings.txt" />
     <None Include="Assets\Editor\template-AndroidManifest.txt" />
     <None Include="Assets\Editor\template-GPGSParams.txt" />
@@ -328,6 +352,16 @@
     <None Include="Assets\Plugins\FPSGraph\ReadMe.txt" />
     <None Include="Assets\Plugins\GoKit\easing\easeEquationsLicense.txt" />
     <None Include="Assets\readme.txt" />
+    <None Include="Assets\TextMesh Pro\Resources\Character List.txt" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Bitmap.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Bitmap-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_SDF.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_SDF-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_SDF-Surface.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\TK2DROOT\tk2d\Editor\EditorUtility.shader" />
     <None Include="Assets\TK2DROOT\tk2d\Goodies\TexturePacker\Exporter\2dtoolkit\exporter.xml" />
     <None Include="Assets\TK2DROOT\tk2d\Shaders\AdditiveVertexColor.shader" />
@@ -349,6 +383,8 @@
     <None Include="Assets\Plugins\UnityVS\Editor\UnityVS.VersionSpecific.dll" />
     <None Include="Assets\TK2DROOT\tk2d\Editor\tk2dExternal.dll" />
     <None Include="Assets\TK2DROOT\tk2d\Editor\tk2dSkin.dll" />
+    <None Include="C:\Program Files (x86)\Unity\Editor\Data\UnityExtensions\Unity\GUISystem\4.6.1\Editor\UnityEditor.UI.dll" />
+    <None Include="C:\Program Files (x86)\Unity\Editor\Data\UnityExtensions\Unity\GUISystem\4.6.1\UnityEngine.UI.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2013\UnityVS.CSharp.targets" />
 </Project>

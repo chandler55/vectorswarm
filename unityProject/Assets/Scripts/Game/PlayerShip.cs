@@ -152,4 +152,9 @@ public class PlayerShip : Entity
     {
         //ParticleSystemManager.Instance.CreatePlayerExplision( Position );
     }
+
+    public void Move( Vector2 direction )
+    {
+        //Velocity = direction.normalized * playerspe;
+    }
 }

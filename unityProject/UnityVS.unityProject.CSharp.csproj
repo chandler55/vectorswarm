@@ -22,7 +22,7 @@
     <OutputPath>Temp\UnityVS_bin\Debug\</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DefineConstants>DEBUG;TRACE;UNITY_4_5_4;UNITY_4_5;UNITY_ANDROID;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_WWW;ENABLE_IMAGEEFFECTS;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;UNITY_ANDROID_API;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_PRO_LICENSE</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;UNITY_4_6_1;UNITY_4_6;UNITY_ANDROID;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_IL2CPP;INCLUDE_WP8SUPPORT;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_4_6_FEATURES;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;UNITY5_SCRIPTING_IN_UNITY4;ENABLE_CACHING;ENABLE_CLOTH;UNITY_ANDROID_API;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_MONO;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_PRO_LICENSE</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -30,7 +30,7 @@
     <OutputPath>Temp\UnityVS_bin\Release\</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DefineConstants>TRACE;UNITY_4_5_4;UNITY_4_5;UNITY_ANDROID;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_WWW;ENABLE_IMAGEEFFECTS;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;UNITY_ANDROID_API;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_PRO_LICENSE</DefineConstants>
+    <DefineConstants>TRACE;UNITY_4_6_1;UNITY_4_6;UNITY_ANDROID;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_IL2CPP;INCLUDE_WP8SUPPORT;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_4_6_FEATURES;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;UNITY5_SCRIPTING_IN_UNITY4;ENABLE_CACHING;ENABLE_CLOTH;UNITY_ANDROID_API;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_MONO;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_PRO_LICENSE</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
@@ -127,6 +127,7 @@
     <Compile Include="Assets\Scripts\FadeAndLoad.cs" />
     <Compile Include="Assets\Scripts\FlipAnim.cs" />
     <Compile Include="Assets\Scripts\Game\AfterburnerItem.cs" />
+    <Compile Include="Assets\Scripts\Game\Animations\BulletExplosion.cs" />
     <Compile Include="Assets\Scripts\Game\Animations\RotateAnimation.cs" />
     <Compile Include="Assets\Scripts\Game\Animations\ScaleAnimation.cs" />
     <Compile Include="Assets\Scripts\Game\Animations\SquishingAnimation.cs" />
@@ -136,8 +137,9 @@
     <Compile Include="Assets\Scripts\Game\Boundaries.cs" />
     <Compile Include="Assets\Scripts\Game\Bullet.cs" />
     <Compile Include="Assets\Scripts\Game\CameraFollowPlayer.cs" />
+    <Compile Include="Assets\Scripts\Game\Cheats.cs" />
     <Compile Include="Assets\Scripts\Game\Enemies\Enemy.cs" />
-    <Compile Include="Assets\Scripts\Game\Enemies\EnemySpawner.cs" />
+    <Compile Include="Assets\Scripts\Game\Enemies\EnemySpawner2.cs" />
     <Compile Include="Assets\Scripts\Game\Enemies\FollowEnemy.cs" />
     <Compile Include="Assets\Scripts\Game\Enemies\HourGlassEnemy.cs" />
     <Compile Include="Assets\Scripts\Game\Enemies\LeverEnemy.cs" />
@@ -153,6 +155,7 @@
     <Compile Include="Assets\Scripts\Game\Enemies\StraightSineEnemy.cs" />
     <Compile Include="Assets\Scripts\Game\Enemies\TriangleSineEnemy.cs" />
     <Compile Include="Assets\Scripts\Game\Enemies\VerticalEnemy.cs" />
+    <Compile Include="Assets\Scripts\Game\EnemySpawner.cs" />
     <Compile Include="Assets\Scripts\Game\Entity.cs" />
     <Compile Include="Assets\Scripts\Game\EntityDatabase.cs" />
     <Compile Include="Assets\Scripts\Game\EntityManager.cs" />
@@ -164,12 +167,14 @@
     <Compile Include="Assets\Scripts\Game\GameOverBox.cs" />
     <Compile Include="Assets\Scripts\Game\GameOverScores.cs" />
     <Compile Include="Assets\Scripts\Game\GameSettings.cs" />
+    <Compile Include="Assets\Scripts\Game\GameTime.cs" />
     <Compile Include="Assets\Scripts\Game\GatesDynamite.cs" />
     <Compile Include="Assets\Scripts\Game\Gun.cs" />
     <Compile Include="Assets\Scripts\Game\HighScore.cs" />
     <Compile Include="Assets\Scripts\Game\InstantiateEntity.cs" />
     <Compile Include="Assets\Scripts\Game\LevelManager.cs" />
     <Compile Include="Assets\Scripts\Game\LevelSegment.cs" />
+    <Compile Include="Assets\Scripts\Game\LoadCheatMenu.cs" />
     <Compile Include="Assets\Scripts\Game\LoadGame.cs" />
     <Compile Include="Assets\Scripts\Game\LoadScene.cs" />
     <Compile Include="Assets\Scripts\Game\MovementLogic.cs" />
@@ -183,8 +188,10 @@
     <Compile Include="Assets\Scripts\Game\PlayerProfile.cs" />
     <Compile Include="Assets\Scripts\Game\PlayerShield.cs" />
     <Compile Include="Assets\Scripts\Game\PlayerShip.cs" />
+    <Compile Include="Assets\Scripts\Game\PlayerShootingMechanic.cs" />
     <Compile Include="Assets\Scripts\Game\PlayerSnake.cs" />
     <Compile Include="Assets\Scripts\Game\PlayerSnake2.cs" />
+    <Compile Include="Assets\Scripts\Game\Playfield.cs" />
     <Compile Include="Assets\Scripts\Game\RotateOnVelocity.cs" />
     <Compile Include="Assets\Scripts\Game\SaveData.cs" />
     <Compile Include="Assets\Scripts\Game\SaveLoad.cs" />
@@ -216,6 +223,7 @@
     <Compile Include="Assets\Scripts\Game\UI\SoundButton.cs" />
     <Compile Include="Assets\Scripts\Game\UI\SquishAnimation.cs" />
     <Compile Include="Assets\Scripts\Game\UI\TileSize.cs" />
+    <Compile Include="Assets\Scripts\Game\UI\TimeTextUI.cs" />
     <Compile Include="Assets\Scripts\Game\UI\ToggleLeaderboardsMenu.cs" />
     <Compile Include="Assets\Scripts\Game\UI\ToggleTutorialButton.cs" />
     <Compile Include="Assets\Scripts\Game\UI\TriggerEvent.cs" />
@@ -236,6 +244,29 @@
     <Compile Include="Assets\Scripts\Utils\FpsCounter.cs" />
     <Compile Include="Assets\Scripts\Utils\GameUtils.cs" />
     <Compile Include="Assets\Scripts\Utils\Singleton.cs" />
+    <Compile Include="Assets\TextMesh Pro\Examples\Scripts\Benchmark01.cs" />
+    <Compile Include="Assets\TextMesh Pro\Examples\Scripts\Benchmark02.cs" />
+    <Compile Include="Assets\TextMesh Pro\Examples\Scripts\Benchmark03.cs" />
+    <Compile Include="Assets\TextMesh Pro\Examples\Scripts\Benchmark04.cs" />
+    <Compile Include="Assets\TextMesh Pro\Examples\Scripts\CameraController.cs" />
+    <Compile Include="Assets\TextMesh Pro\Examples\Scripts\FloatingText.cs" />
+    <Compile Include="Assets\TextMesh Pro\Examples\Scripts\ObjectSpin.cs" />
+    <Compile Include="Assets\TextMesh Pro\Examples\Scripts\ShaderPropAnimator.cs" />
+    <Compile Include="Assets\TextMesh Pro\Examples\Scripts\SimpleScript.cs" />
+    <Compile Include="Assets\TextMesh Pro\Examples\Scripts\TextMeshPro_FrameRateCounter.cs" />
+    <Compile Include="Assets\TextMesh Pro\Examples\Scripts\TextMeshProFloatingText.cs" />
+    <Compile Include="Assets\TextMesh Pro\Examples\Scripts\TextMeshSpawner.cs" />
+    <Compile Include="Assets\TextMesh Pro\Examples\Scripts\TMPro_InstructionOverlay.cs" />
+    <Compile Include="Assets\TextMesh Pro\Scripts\TextMeshPro.cs" />
+    <Compile Include="Assets\TextMesh Pro\Scripts\TextMeshProFont.cs" />
+    <Compile Include="Assets\TextMesh Pro\Scripts\TMPro_AdvancedLayout.cs" />
+    <Compile Include="Assets\TextMesh Pro\Scripts\TMPro_EventManager.cs" />
+    <Compile Include="Assets\TextMesh Pro\Scripts\TMPro_ExtensionMethods.cs" />
+    <Compile Include="Assets\TextMesh Pro\Scripts\TMPro_FontUtilities.cs" />
+    <Compile Include="Assets\TextMesh Pro\Scripts\TMPro_MeshUtilities.cs" />
+    <Compile Include="Assets\TextMesh Pro\Scripts\TMPro_Private.cs" />
+    <Compile Include="Assets\TextMesh Pro\Scripts\TMPro_ShaderUtilities.cs" />
+    <Compile Include="Assets\TextMesh Pro\Scripts\TMPro_UpdateManager.cs" />
     <Compile Include="Assets\TK2DROOT\tk2d\Code\Camera\tk2dCamera.cs" />
     <Compile Include="Assets\TK2DROOT\tk2d\Code\Camera\tk2dCameraAnchor.cs" />
     <Compile Include="Assets\TK2DROOT\tk2d\Code\Camera\tk2dCameraUtil.cs" />
@@ -317,6 +348,9 @@
     <Compile Include="Assets\TK2DROOT\tk2dUI_demo\tk2dUIDemo5Controller.cs" />
     <Compile Include="Assets\TK2DROOT\tk2dUI_demo\tk2dUIDemo6Controller.cs" />
     <Compile Include="Assets\TK2DROOT\tk2dUI_demo\tk2dUIDemoController.cs" />
+    <Compile Include="Assets\UltimateJoystick\Scripts\UltimateJoystick.cs" />
+    <Compile Include="Assets\UltimateJoystick\xForExample\Scripts\FirstPersonController.cs" />
+    <Compile Include="Assets\UltimateJoystick\xForExample\Scripts\ThirdPersonController.cs" />
     <Compile Include="Assets\Unsupported\RadialSprite\tk2dRadialSpriteGeomGen.cs" />
     <None Include="Assets\Editor\projsettings.txt" />
     <None Include="Assets\Editor\template-AndroidManifest.txt" />
@@ -464,6 +498,16 @@
     <None Include="Assets\Plugins\FPSGraph\ReadMe.txt" />
     <None Include="Assets\Plugins\GoKit\easing\easeEquationsLicense.txt" />
     <None Include="Assets\readme.txt" />
+    <None Include="Assets\TextMesh Pro\Resources\Character List.txt" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Bitmap.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Bitmap-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_SDF.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_SDF-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_SDF-Surface.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\TK2DROOT\tk2d\Editor\EditorUtility.shader" />
     <None Include="Assets\TK2DROOT\tk2d\Goodies\TexturePacker\Exporter\2dtoolkit\exporter.xml" />
     <None Include="Assets\TK2DROOT\tk2d\Shaders\AdditiveVertexColor.shader" />

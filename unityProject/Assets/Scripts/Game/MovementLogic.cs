@@ -3,6 +3,7 @@ using System.Collections;
 
 public class MovementLogic : MonoBehaviour
 {
+    public UltimateJoystick joystick;
     public float    mEasingAmount = 5.0f;
     public float    mThresholdForAccelerometer = 0.04f;
     private float   mPreviousAccelerationX = 0.0f;
@@ -11,48 +12,43 @@ public class MovementLogic : MonoBehaviour
 
     void Start()
     {
+        GameUtils.Assert( joystick );
         mPlayerSnake = gameObject.GetComponent<PlayerSnake>();
         GameUtils.Assert( mPlayerSnake );
     }
 
     void Update()
     {
-
-        //Player Horizontal Movement
+        // pc controls
+#if UNITY_EDITOR
+        if ( Debug.isDebugBuild )
         {
-#if UNITY_ANDROID || UNITY_IPHONE || UNITY_WP8
+            Vector2 movementDirection = Vector2.zero;
 
-            // move towards accelerometer tilt
-            // tilt to horizontal percentage -0.25 to 0.25
-            float accelerationValueToUse = 0.0f;
-
-            if ( Mathf.Abs( mPreviousAccelerationX - Input.acceleration.x ) < mThresholdForAccelerometer )
+            if ( Input.GetKey( KeyCode.A ) )
             {
-                accelerationValueToUse = mPreviousAccelerationX;
+                movementDirection.x -= 1;
             }
-            else
+            if ( Input.GetKey( KeyCode.D ) )
             {
-                accelerationValueToUse = Input.acceleration.x;
+                movementDirection.x += 1;
+            }
+            if ( Input.GetKey( KeyCode.W ) )
+            {
+                movementDirection.y += 1;
+            }
+            if ( Input.GetKey( KeyCode.S ) )
+            {
+                movementDirection.y -= 1;
             }
 
-            float percentage = Mathf.InverseLerp( -0.25f, 0.25f, accelerationValueToUse );
-            mPreviousAccelerationX = accelerationValueToUse;
+            mPlayerSnake.Move( movementDirection );
 
-            Vector2 tiltPos = new Vector2( Boundaries.Instance.GetPercentageToPosition( percentage ), 0 );
-            Vector2 target = tiltPos - mPlayerSnake.Position;
-
-            /**/
-#else
-            // move towards mouse
-            Vector2 mousePos = Camera.main.ScreenToWorldPoint( Input.mousePosition );
-
-            // lock target within screen 
-            Boundaries.Instance.ClampHorizontal( ref mousePos );
-            Vector2 target = mousePos - mPlayerSnake.Position;
-#endif
-
-            /**/
-            mPlayerSnake.Velocity = target * mEasingAmount;
+            if ( joystick.JoystickPosition.sqrMagnitude > 0.1f )
+                mPlayerSnake.Move( joystick.JoystickPosition );
         }
+#else
+        mPlayerSnake.Move( joystick.JoystickPosition );
+#endif
     }
 }
